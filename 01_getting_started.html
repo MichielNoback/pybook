@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A quick overview &#8212; A short Python introduction</title>
+    <title>2. A quick overview &#8212; A short Python introduction</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '01_getting_started';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data" href="02_data.html" />
-    <link rel="prev" title="Jupyter notebooks" href="00_jupyter.html" />
+    <link rel="next" title="3. Data" href="02_data.html" />
+    <link rel="prev" title="1. Jupyter notebooks" href="00_jupyter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -151,21 +151,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -359,17 +364,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A quick overview</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">2.1. An example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-program">2.2. A real program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">2.3. Excercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">2.4. Key concepts</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-program">A real program</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -381,11 +380,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="a-quick-overview">
-<h1>A quick overview<a class="headerlink" href="#a-quick-overview" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2. </span>A quick overview<a class="headerlink" href="#a-quick-overview" title="Permalink to this headline">#</a></h1>
 <p>In this course you will get to know the programming language <strong>Python</strong>. You will get to know the language up to a level where you will be able to write some scripts and run Python code as an executable program, or in a notebook environment.</p>
 <p>Since this is the preferred way for a majority of data scientists, and a convenient form for educational purposes, we will start in a notebook setting. The document you are currently reading is a <strong>Jupyter</strong> notebook. A scientific notebook is an electronic  document used for <strong>literate programming</strong>. In literate programming, text (usually in the form of <strong>Markdown</strong>), code, and its output (both textual and graphical) are combined.</p>
 <div class="section" id="an-example">
-<h2>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1. </span>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h2>
 <p>Suppose I want to calculate the surface of three different equilateral triangles, with sides 3, 4 and 2.21 respectively.
 First I define a <strong>variable</strong> representing the side and assign an initial value to it. To inspect the value of a variable at any given time you can <code class="docutils literal notranslate"><span class="pre">print()</span></code> it.</p>
 <div class="cell docutils container">
@@ -525,9 +524,8 @@ The area of an equilateral triangle with side 2.21 is 2.44
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop <em>iterates</em> an iterable (a collection of values) and executes the given block for each of the values. We call this type of construct a <strong>flow control</strong> element because it controls the flow of the program.</p>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-real-program">
-<h1>A real program<a class="headerlink" href="#a-real-program" title="Permalink to this headline">#</a></h1>
+<div class="section" id="a-real-program">
+<h2><span class="section-number">2.2. </span>A real program<a class="headerlink" href="#a-real-program" title="Permalink to this headline">#</a></h2>
 <p>By now you may be thinking that this does not look like programming at all. Where is the program?
 Actually there is no program here. A program is usually a piece of functionality on a computer or other device that receives some input (keyboard, mouse, touchscreen, sensor, etc.) and generates some output (screen, terminal, file, database).</p>
 <p>Given the triangle example above, a standalone program for calculating and reporting triangle surface area would look like this:</p>
@@ -558,8 +556,9 @@ The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span
 <li><p><code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is the list of arguments entered on the command line, in this case <code class="docutils literal notranslate"><span class="pre">[&quot;triangle_surface.py&quot;,</span> <span class="pre">&quot;3&quot;,</span> <span class="pre">&quot;4&quot;,</span> <span class="pre">&quot;2.21&quot;]</span></code>. We’ll get to lists in the next chapter.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">arg</span> <span class="pre">in</span> <span class="pre">sys.argv[1:]:</span></code> this says: “iterate the command-line arguments but skip the first”. Again, subject of a later chapter.</p></li>
 </ul>
+</div>
 <div class="section" id="excercises">
-<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3. </span>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">#</a></h2>
 <p>These assume that you already have Python3 installed on your device. Use the Qt console from Anaconda Navigator for these. Alternatively you can use the terminal Python 3 REPL (Read, Evaluate Print Loop) engine by typing <code class="docutils literal notranslate"><span class="pre">python3</span></code> (so without any argument) in the Terminal or Command prompt. Both options provide an interactive Python session we call a REPL (for Read Evaluate Print Loop).</p>
 <ol class="arabic simple">
 <li><p>First enter <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> and press enter to load the math module.</p></li>
@@ -584,9 +583,8 @@ The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span
 </li>
 </ol>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="key-concepts">
-<h1>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h1>
+<div class="section" id="key-concepts">
+<h2><span class="section-number">2.4. </span>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>(computer) program</strong>: a computer program is a sequence or set of instructions in a programming language that a computer (or other device) can execute or interpret.</p></li>
 <li><p><strong>flow control</strong>: programming elements that control the flow of a program. Flow control elements are used for iteration and conditional execution.</p></li>
@@ -599,6 +597,7 @@ The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span
 <li><p><strong>script</strong>: a text file with computer code that can be executed as a program, usually by the <em>interpreter</em> for the programming lanuage used.</p></li>
 <li><p><strong>variable</strong>: a program element that couples a name to a memory location with some contents.</p></li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -638,7 +637,7 @@ The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Jupyter notebooks</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Jupyter notebooks</p>
       </div>
     </a>
     <a class="right-next"
@@ -646,7 +645,7 @@ The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -668,17 +667,11 @@ The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A quick overview</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">2.1. An example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-program">2.2. A real program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">2.3. Excercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">2.4. Key concepts</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-program">A real program</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

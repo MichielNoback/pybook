@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data &#8212; A short Python introduction</title>
+    <title>3. Data &#8212; A short Python introduction</title>
   
   
   
@@ -62,8 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '02_data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Anaconda" href="12_anaconda.html" />
-    <link rel="prev" title="A quick overview" href="01_getting_started.html" />
+    <link rel="next" title="4. Flow control" href="03_flow_control.html" />
+    <link rel="prev" title="2. A quick overview" href="01_getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -129,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,21 +149,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -357,49 +362,45 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">Scalar types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">Exercise 2.1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">Mathematical operators with strings?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">3.1. Scalar types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">3.1.1. Exercise 2.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.2. Mathematical operators with strings?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">Collection types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">3.2. Collection types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">3.2.1. Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.2.1.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-dot-operator-and-objects">Meet the dot operator and objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-dot-operator-and-objects">3.2.2. Meet the dot operator and objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-list">Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">Multidimensional lists</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">Methods of type list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-list">3.2.3. Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2.3.1. Exercise</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">3.2.3.2. Multidimensional lists</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">3.2.3.3. Methods of type list</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-tuple">Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-set">Collection type <code class="docutils literal notranslate"><span class="pre">set</span></code>: {}</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-sets-and-dicts">Why sets (and dicts)?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-tuple">3.2.4. Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-set">3.2.5. Collection type <code class="docutils literal notranslate"><span class="pre">set</span></code>: {}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-sets-and-dicts">3.2.5.1. Why sets (and dicts)?</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">Set theory operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diy">DIY</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">3.2.6. Set theory operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diy">3.2.7.1. DIY</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">Shared operations of collection types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">What do I need to memorize?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.2.8. Shared operations of collection types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.2.9.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">3.3. Key concepts</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -411,12 +412,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="data">
-<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3. </span>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
 <p>Without data there is not much computing to be done. All programs take data as input (from file, a database, keyboard, a GUI) and most of them also generate data as output.<br />
 In essence, there are only a few basic types of data: text and numbers. Data can be aggregated in more complex structures such as collections and objects.</p>
 <p>In this chapter we’ll explore the different base data types of Python, both <strong>scalar</strong> and <strong>collection</strong>.</p>
 <div class="section" id="scalar-types">
-<h2>Scalar types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>Scalar types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">#</a></h2>
 <p>A scalar data type, or just <strong>scalar</strong>, is any non-collection value. Put differently, a scalar is a singular value. There are just a few different scalar values in Python to be found in the vast majority of Python code, and they are the same or at least similar across the vast majority of programming languages.</p>
 <ul class="simple">
 <li><p><strong>Numeric types</strong> represent numbers and they come in two flavours; with and without decimal part.</p>
@@ -493,12 +494,12 @@ False
 </div>
 <p>When reading from the command-line args (terminal) or from file, your data will always be character data, even though they are numeric. You always need to do the conversion yourself (unless you use dedicated libraries for it).</p>
 <div class="section" id="exercise-2-1">
-<h3>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.1. </span>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Permalink to this headline">#</a></h3>
 <p>Try some conversions yourself.<br />
 Figure out why some fail and some do not (sometimes where you expected it), what the result is and what the logic behind the conversion is. Especially conversions to <code class="docutils literal notranslate"><span class="pre">bool</span></code> are interesting and very relevant in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;condition&gt;:</span></code> blocks.</p>
 </div>
 <div class="section" id="mathematical-operators-with-strings">
-<h3>Mathematical operators with strings?<a class="headerlink" href="#mathematical-operators-with-strings" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.2. </span>Mathematical operators with strings?<a class="headerlink" href="#mathematical-operators-with-strings" title="Permalink to this headline">#</a></h3>
 <p>Yes, some math operators work with string as well, but not all:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,7 +529,7 @@ Hello, Hello,
 </div>
 </div>
 <div class="section" id="collection-types">
-<h2>Collection types<a class="headerlink" href="#collection-types" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2. </span>Collection types<a class="headerlink" href="#collection-types" title="Permalink to this headline">#</a></h2>
 <p>Collection types, also named Container types, are exactly what their name implies; they are collections of other types (scalar or collection). The number of collection types in the base language is limited, and there are only a few that are used in the majority of cases; these are listed here. A very important aspect of collections is that they are <strong>iterable</strong>: they can be traversed to inspect or access all individual elements.</p>
 <ul class="simple">
 <li><p><strong>Sequence types</strong> These all have elements in a specific order and these can be addressed using the position of the element - its <strong>index</strong>.</p>
@@ -544,7 +545,7 @@ Hello, Hello,
 </ul>
 <p>Below, common aspects of collections are discussed first. These are <strong>slicing</strong> and accessing methods via the <strong>dot operator</strong> (<code class="docutils literal notranslate"><span class="pre">object.method()</span></code>). Some details of individual collection types are discussed in later sections.</p>
 <div class="section" id="slicing">
-<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.1. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
 <p>A any sequence type can be considered as a street with houses. The house number identifies a house within the street. In Python these addresses start at zero, but unlike house numbers you can also start from the end, with -1:</p>
 <code style="font-size: x-large; font-weight: bold; color: darkred">
  0  1  2  3  4  5  6  7 	
@@ -582,7 +583,7 @@ Here are some examples using strings. They work the same in lists and tuples as 
 </div>
 <p>As you can see, when the step is negative (last 2 examples), start and stop will be “reversed”. I don’t understand this design decision.</p>
 <div class="section" id="exercise">
-<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.1.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h4>
 <p>Given the string <code class="docutils literal notranslate"><span class="pre">txt</span> <span class="pre">=</span> <span class="pre">'aA.bB.cC.dD.eE.fF.gG.hH.zZ'</span></code>, write code using string slicing to print to screen</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;abcdefgz&quot;</span></code></p></li>
@@ -601,7 +602,7 @@ Here are some examples using strings. They work the same in lists and tuples as 
 </div>
 </div>
 <div class="section" id="meet-the-dot-operator-and-objects">
-<h3>Meet the dot operator and objects<a class="headerlink" href="#meet-the-dot-operator-and-objects" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.2. </span>Meet the dot operator and objects<a class="headerlink" href="#meet-the-dot-operator-and-objects" title="Permalink to this headline">#</a></h3>
 <p>So far I have skipped the point that Python is an <strong>Object-Oriented</strong> programming language.<br />
 Being object-oriented means the (almost) everything is being modeled as an entity with data and behaviour (e.g. methods) where the objects’ <strong>class</strong> holds the <em>blueprint</em> for creating objects (instances) according to that blueprint.</p>
 <p>Let’s explore this concept with the string type. In Python, strings have only a single property - their character sequence. They do, however, have many methods.<br />
@@ -627,7 +628,7 @@ The difference lies in the fact that -unlike properties- methods have parenthese
 </div>
 </div>
 <div class="section" id="id1">
-<h4>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.2.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>Given this variable (use your own name!)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michiel Noback&#39;</span>
 </pre></div>
@@ -662,7 +663,7 @@ The difference lies in the fact that -unlike properties- methods have parenthese
 </div>
 </div>
 <div class="section" id="collection-type-list">
-<h3>Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []<a class="headerlink" href="#collection-type-list" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.3. </span>Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []<a class="headerlink" href="#collection-type-list" title="Permalink to this headline">#</a></h3>
 <p>A list is an <strong>ordered mutable sequence of elements</strong>.</p>
 <p><strong>Ordered</strong> means that individual elements can be accessed using their index.<br />
 <strong>Mutable</strong> means that lists can be extended, shortened, end elements can be changed (swapped).</p>
@@ -683,7 +684,7 @@ Here are a few basic operations with lists.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h4>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.3.1. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>Given the list below, investigate whether list slicing behaves the same as with strings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -695,7 +696,7 @@ Here are a few basic operations with lists.</p>
 </div>
 </div>
 <div class="section" id="multidimensional-lists">
-<h4>Multidimensional lists<a class="headerlink" href="#multidimensional-lists" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.3.2. </span>Multidimensional lists<a class="headerlink" href="#multidimensional-lists" title="Permalink to this headline">#</a></h4>
 <p>Since you can put any Python data type in a list, it is easy to create a multidimensional list (matrix).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># gives [3, 4]</span>
@@ -705,7 +706,7 @@ Here are a few basic operations with lists.</p>
 <p>Note that Python has dedicated libraries for working with datastructures of this type: Numpy (number crunching) and Pandas (spreadsheet type data).</p>
 </div>
 <div class="section" id="methods-of-type-list">
-<h4>Methods of type list<a class="headerlink" href="#methods-of-type-list" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.3.3. </span>Methods of type list<a class="headerlink" href="#methods-of-type-list" title="Permalink to this headline">#</a></h4>
 <p>Class <code class="docutils literal notranslate"><span class="pre">list</span></code> als has an extensive collection of methods to apply to lists. Here are just a few. Also, there is the Python builtin <code class="docutils literal notranslate"><span class="pre">len()</span></code> that will give you the length of any iterable. Again, this is only a glimpse of what is available. <em>Any</em> operation you can think of with lists is probably already implemented, if not in the core data types then for sure in Numpy of Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,7 +725,7 @@ Here are a few basic operations with lists.</p>
 </div>
 </div>
 <div class="section" id="collection-type-tuple">
-<h3>Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()<a class="headerlink" href="#collection-type-tuple" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.4. </span>Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()<a class="headerlink" href="#collection-type-tuple" title="Permalink to this headline">#</a></h3>
 <p>A tuple is an <strong>ordered immutable sequence of elements</strong>.</p>
 <p><strong>Ordered</strong> means that individual elements can be accessed using their index.<br />
 <strong>Immutable</strong> means that tuples cannot be changes once they are created.</p>
@@ -755,7 +756,7 @@ Here are a few basic operations with tuples.</p>
 <p>It is very informative to visualize this kind of stuff in <a class="reference external" href="https://pythontutor.com/">https://pythontutor.com/</a></p>
 </div>
 <div class="section" id="collection-type-set">
-<h3>Collection type <code class="docutils literal notranslate"><span class="pre">set</span></code>: {}<a class="headerlink" href="#collection-type-set" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.5. </span>Collection type <code class="docutils literal notranslate"><span class="pre">set</span></code>: {}<a class="headerlink" href="#collection-type-set" title="Permalink to this headline">#</a></h3>
 <p>A set is a collection type that can only hold unique values.<br />
 If a value is added that is already present this will have no effect (the value will be ignored).<br />
 If you attempt to add a mutable type (an unhashable element) you get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
@@ -790,7 +791,7 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </div>
 </div>
 <div class="section" id="why-sets-and-dicts">
-<h4>Why sets (and dicts)?<a class="headerlink" href="#why-sets-and-dicts" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.5.1. </span>Why sets (and dicts)?<a class="headerlink" href="#why-sets-and-dicts" title="Permalink to this headline">#</a></h4>
 <p>Although any collection in Python supports membership tests, like <code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">collection</span></code>, sets have several properties that make them extremely useful.</p>
 <ul class="simple">
 <li><p>Sets are guaranteed to have unique elements</p></li>
@@ -800,7 +801,7 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </div>
 </div>
 <div class="section" id="set-theory-operations">
-<h3>Set theory operations<a class="headerlink" href="#set-theory-operations" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.6. </span>Set theory operations<a class="headerlink" href="#set-theory-operations" title="Permalink to this headline">#</a></h3>
 <p>Given the sets depicted here; set A and B:</p>
 <p><img alt="sets" src="_images/sets.png" /></p>
 <p>Where set A contains the elements <code class="docutils literal notranslate"><span class="pre">{'apple',</span> <span class="pre">'banana',</span> <span class="pre">'kiwi'}</span></code> and<br />
@@ -828,7 +829,7 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="section" id="collection-type-dict">
-<h3>Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}<a class="headerlink" href="#collection-type-dict" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.7. </span>Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}<a class="headerlink" href="#collection-type-dict" title="Permalink to this headline">#</a></h3>
 <p>The last collection type discussed here is the dict, which is an abbreviation of <em>dictionary</em>.<br />
 It is used to hold mappings between <em>keys</em> and <em>values</em>, much like real dictionaries.<br />
 Like sets, the keys of a dict must be immutable types. There are no restrictions for the values. Also like sets, the keys are always unique. The values, however, can contain duplicates.<br />
@@ -857,12 +858,12 @@ Dicts cannot be sliced, but finding values is done using <code class="docutils l
 </div>
 </div>
 <div class="section" id="diy">
-<h4>DIY<a class="headerlink" href="#diy" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.7.1. </span>DIY<a class="headerlink" href="#diy" title="Permalink to this headline">#</a></h4>
 <p>Now take some time to figure out what the <code class="docutils literal notranslate"><span class="pre">dict</span></code> methods <code class="docutils literal notranslate"><span class="pre">setdefault()</span></code> and <code class="docutils literal notranslate"><span class="pre">getdefault()</span></code> are for and how they are used. Try them out!</p>
 </div>
 </div>
 <div class="section" id="shared-operations-of-collection-types">
-<h3>Shared operations of collection types<a class="headerlink" href="#shared-operations-of-collection-types" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.8. </span>Shared operations of collection types<a class="headerlink" href="#shared-operations-of-collection-types" title="Permalink to this headline">#</a></h3>
 <p>Many operations (operators and methods) are applicable to all or a subset of collection types. Slicing only works on sequence types (list, tuple, string), but not on dict or set. Here are some of the most-used collection operations.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -911,7 +912,7 @@ Dicts cannot be sliced, but finding values is done using <code class="docutils l
 </table>
 </div>
 <div class="section" id="what-do-i-need-to-memorize">
-<h3>What do I need to memorize?<a class="headerlink" href="#what-do-i-need-to-memorize" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.9. </span>What do I need to memorize?<a class="headerlink" href="#what-do-i-need-to-memorize" title="Permalink to this headline">#</a></h3>
 <p>Do you need to know all these string methods, and methods from other datatypes?</p>
 <p>      <strong>NO!</strong></p>
 <p>You will simply remember the ones you use most without any problem.<br />
@@ -925,7 +926,7 @@ For the most part you will need to learn how to quickly find answers to your pro
 </ol>
 <p>Also, it may be worth your while to have some cheat sheets copied to your Desktop (fysical or virtual).</p>
 <div class="section" id="id3">
-<h4>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.9.1. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>Use the above (sequence of) resources to find out how to …</p>
 <ul class="simple">
 <li><p>print three string variables as one, with a <code class="docutils literal notranslate"><span class="pre">+</span></code> between each string</p></li>
@@ -936,9 +937,8 @@ For the most part you will need to learn how to quickly find answers to your pro
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="key-concepts">
-<h1>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h1>
+<div class="section" id="key-concepts">
+<h2><span class="section-number">3.3. </span>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>collection</strong>: variable that is composed of multiple values i.e. <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> etc.</p></li>
 <li><p><strong>class</strong>: A blueprint for creating objects of that type. Classes define data and -mainly- behaviour in the form of methods. These methods may be blueprint-scoped (class methods) or instance-scoped (object methods).</p></li>
@@ -946,6 +946,7 @@ For the most part you will need to learn how to quickly find answers to your pro
 <li><p><strong>keywords</strong>: The reserved words of the programming language. These include words like <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code> etc.</p></li>
 <li><p><strong>scalar</strong> variable consisting of a single value.</p></li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -985,15 +986,15 @@ For the most part you will need to learn how to quickly find answers to your pro
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">A quick overview</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>A quick overview</p>
       </div>
     </a>
     <a class="right-next"
-       href="12_anaconda.html"
+       href="03_flow_control.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Anaconda</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Flow control</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1015,49 +1016,45 @@ For the most part you will need to learn how to quickly find answers to your pro
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">Scalar types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">Exercise 2.1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">Mathematical operators with strings?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">3.1. Scalar types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">3.1.1. Exercise 2.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.2. Mathematical operators with strings?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">Collection types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">3.2. Collection types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">3.2.1. Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.2.1.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-dot-operator-and-objects">Meet the dot operator and objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-dot-operator-and-objects">3.2.2. Meet the dot operator and objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.2.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-list">Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">Multidimensional lists</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">Methods of type list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-list">3.2.3. Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2.3.1. Exercise</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">3.2.3.2. Multidimensional lists</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">3.2.3.3. Methods of type list</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-tuple">Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-set">Collection type <code class="docutils literal notranslate"><span class="pre">set</span></code>: {}</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-sets-and-dicts">Why sets (and dicts)?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-tuple">3.2.4. Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-set">3.2.5. Collection type <code class="docutils literal notranslate"><span class="pre">set</span></code>: {}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-sets-and-dicts">3.2.5.1. Why sets (and dicts)?</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">Set theory operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diy">DIY</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">3.2.6. Set theory operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diy">3.2.7.1. DIY</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">Shared operations of collection types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">What do I need to memorize?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.2.8. Shared operations of collection types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.2.9.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">3.3. Key concepts</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

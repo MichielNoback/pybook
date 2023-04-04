@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jupyter notebooks &#8212; A short Python introduction</title>
+    <title>1. Jupyter notebooks &#8212; A short Python introduction</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '00_jupyter';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="A quick overview" href="01_getting_started.html" />
-    <link rel="prev" title="ITANN course: Introduction to Python Programming" href="ITANN_course_description.html" />
+    <link rel="next" title="2. A quick overview" href="01_getting_started.html" />
+    <link rel="prev" title="A short Python intro" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -151,21 +151,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Jupyter notebooks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -359,31 +364,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Jupyter notebooks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">Markdown</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-one-header">level one header</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-three-header">level three header</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-five-header">level five header</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">1.1. Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-two-header">1.2. level two header</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-three-header">1.2.1. level three header</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#level-five-header">1.2.1.1. level five header</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#h1-heading">h1 Heading</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h2-heading">h2 Heading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h6-heading">h6 Heading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h2-heading">1.3. h2 Heading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h6-heading">1.3.1. h6 Heading</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-keyboard-shortcuts">Jupyter keyboard shortcuts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipython-jupyter-magic-commands">IPython/Jupyter magic commands</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">1.4. Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-keyboard-shortcuts">1.4.1. Jupyter keyboard shortcuts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipython-jupyter-magic-commands">1.4.2. IPython/Jupyter magic commands</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -395,29 +393,28 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-notebooks">
-<h1>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1. </span>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h1>
 <p>Jupyter (IPython) is a browser-based notebook with support for highlighted code, code execution and result embedding, text with markup (Markdown, MathJax Equations or HTML), inline plots and other media.</p>
 <div class="section" id="markdown">
-<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.1. </span>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
 <p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.</p>
 <p>Using Markdown is different than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.
 See <a class="reference external" href="https://www.markdownguide.org/">https://www.markdownguide.org/</a></p>
 <p>An example illustrates best. To generate paragraph headers</p>
 <p>You use hash symbols like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># level one header</span>
-<span class="c1">## level three header</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## level two header</span>
+<span class="c1">### level three header</span>
 <span class="c1">##### level five header</span>
 </pre></div>
 </div>
 <p>Which will be <em>rendered</em> in any app “speaking” markdown into something like this:</p>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="level-one-header">
-<h1>level one header<a class="headerlink" href="#level-one-header" title="Permalink to this headline">#</a></h1>
+<div class="section" id="level-two-header">
+<h2><span class="section-number">1.2. </span>level two header<a class="headerlink" href="#level-two-header" title="Permalink to this headline">#</a></h2>
 <div class="section" id="level-three-header">
-<h2>level three header<a class="headerlink" href="#level-three-header" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">1.2.1. </span>level three header<a class="headerlink" href="#level-three-header" title="Permalink to this headline">#</a></h3>
 <div class="section" id="level-five-header">
-<h3>level five header<a class="headerlink" href="#level-five-header" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">1.2.1.1. </span>level five header<a class="headerlink" href="#level-five-header" title="Permalink to this headline">#</a></h4>
 <p>Here are the most-used markup elements:</p>
 <div class="highlight-markup notranslate"><div class="highlight"><pre><span></span># h1 Heading
 ## h2 Heading
@@ -431,12 +428,10 @@ _italic_
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="h1-heading">
-<h1>h1 Heading<a class="headerlink" href="#h1-heading" title="Permalink to this headline">#</a></h1>
 <div class="section" id="h2-heading">
-<h2>h2 Heading<a class="headerlink" href="#h2-heading" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3. </span>h2 Heading<a class="headerlink" href="#h2-heading" title="Permalink to this headline">#</a></h2>
 <div class="section" id="h6-heading">
-<h3>h6 Heading<a class="headerlink" href="#h6-heading" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>h6 Heading<a class="headerlink" href="#h6-heading" title="Permalink to this headline">#</a></h3>
 <p><strong>bold</strong>
 <em>italic</em>
 ~~strikethrough~~</p>
@@ -463,7 +458,7 @@ _italic_
 </div>
 </div>
 <div class="section" id="equations">
-<h2>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4. </span>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">#</a></h2>
 <p>Most Markdown processors also support rendering of equations that are specified Latex-style.
 For instance, this syntax for the equation of the sample standard deviation</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$
@@ -474,7 +469,7 @@ $<span class="math notranslate nohighlight">\(s = \sqrt{\frac{1}{N-1} \sum_{i=1}
 <p>Use single dollar sign delimiters <code class="docutils literal notranslate"><span class="pre">$&lt;equation&gt;$</span></code> for inline equations and double dollar sign delimiters <code class="docutils literal notranslate"><span class="pre">$$&lt;equation&gt;$$</span></code> for paragraph equations.<br />
 See <a class="reference external" href="http://tug.ctan.org/info/undergradmath/undergradmath.pdf">this pdf</a> or <a class="reference external" href="https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/">this website</a> for a nice cheat sheets.</p>
 <div class="section" id="jupyter-keyboard-shortcuts">
-<h3>Jupyter keyboard shortcuts<a class="headerlink" href="#jupyter-keyboard-shortcuts" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.4.1. </span>Jupyter keyboard shortcuts<a class="headerlink" href="#jupyter-keyboard-shortcuts" title="Permalink to this headline">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Enter</span></code>	to enter “Edit mode”</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cmd</span><span class="o">+</span><span class="n">A</span>       <span class="n">Select</span> <span class="nb">all</span>
 <span class="n">Cmd</span><span class="o">+</span><span class="n">C</span>       <span class="n">Copy</span>
@@ -500,7 +495,7 @@ See <a class="reference external" href="http://tug.ctan.org/info/undergradmath/u
 </div>
 </div>
 <div class="section" id="ipython-jupyter-magic-commands">
-<h3>IPython/Jupyter magic commands<a class="headerlink" href="#ipython-jupyter-magic-commands" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.4.2. </span>IPython/Jupyter magic commands<a class="headerlink" href="#ipython-jupyter-magic-commands" title="Permalink to this headline">#</a></h3>
 <p>There are many -simply run <code class="docutils literal notranslate"><span class="pre">%magic</span></code> to see them all- these are especially nice to know of.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">%magic</span></code></strong>: reference on all magic commands</p></li>
@@ -546,12 +541,12 @@ See <a class="reference external" href="http://tug.ctan.org/info/undergradmath/u
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ITANN_course_description.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ITANN course: Introduction to Python Programming</p>
+        <p class="prev-next-title">A short Python intro</p>
       </div>
     </a>
     <a class="right-next"
@@ -559,7 +554,7 @@ See <a class="reference external" href="http://tug.ctan.org/info/undergradmath/u
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A quick overview</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>A quick overview</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -581,31 +576,24 @@ See <a class="reference external" href="http://tug.ctan.org/info/undergradmath/u
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Jupyter notebooks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">Markdown</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-one-header">level one header</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-three-header">level three header</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-five-header">level five header</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">1.1. Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-two-header">1.2. level two header</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-three-header">1.2.1. level three header</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#level-five-header">1.2.1.1. level five header</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#h1-heading">h1 Heading</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h2-heading">h2 Heading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h6-heading">h6 Heading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h2-heading">1.3. h2 Heading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h6-heading">1.3.1. h6 Heading</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-keyboard-shortcuts">Jupyter keyboard shortcuts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipython-jupyter-magic-commands">IPython/Jupyter magic commands</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">1.4. Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-keyboard-shortcuts">1.4.1. Jupyter keyboard shortcuts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipython-jupyter-magic-commands">1.4.2. IPython/Jupyter magic commands</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

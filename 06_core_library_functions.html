@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The core library functions &#8212; A short Python introduction</title>
+    <title>7. The core library functions &#8212; A short Python introduction</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '06_core_library_functions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8. Comprehensions" href="07_comprehensions.html" />
+    <link rel="prev" title="6. Files are the main source of data" href="05_reading_writing_files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -127,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -147,21 +149,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -355,29 +362,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-iteration-counter-with-enumerate">Get an iteration counter with <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-files-with-open">Read and write files with <code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-characters-and-ascii-unicode">Converting between characters and ASCII/unicode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-with-sorted-and-list-sort">Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-parameter">The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-advanced-topic">Lambdas  (advanced topic)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">Multi-key sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">7.1. Built-in functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-iteration-counter-with-enumerate">7.1.1. Get an iteration counter with <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-files-with-open">7.1.2. Read and write files with <code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-characters-and-ascii-unicode">7.1.3. Converting between characters and ASCII/unicode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-with-sorted-and-list-sort">7.1.4. Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-parameter">7.1.4.1. The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-advanced-topic">7.1.4.2. Lambdas  (advanced topic)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">7.1.4.3. Multi-key sorting</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-filter-and-map-optional">Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-modules">Working with modules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-your-own-modules">Using your own modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-modules">Core modules</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-sys">Module <code class="docutils literal notranslate"><span class="pre">sys</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-os-os-path">Modules <code class="docutils literal notranslate"><span class="pre">os</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">os.path</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-itertools-module">The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-csv">Module <code class="docutils literal notranslate"><span class="pre">csv</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pickle-module">The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shelve-module">The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-filter-and-map-optional">7.2. Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-modules">7.3. Working with modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-your-own-modules">7.3.1. Using your own modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-modules">7.3.2. Core modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-sys">7.3.2.1. Module <code class="docutils literal notranslate"><span class="pre">sys</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-os-os-path">7.3.2.2. Modules <code class="docutils literal notranslate"><span class="pre">os</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">os.path</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-itertools-module">7.3.2.3. The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-csv">7.3.2.4. Module <code class="docutils literal notranslate"><span class="pre">csv</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pickle-module">7.3.2.5. The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shelve-module">7.3.2.6. The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#json">7.3.2.7. JSON</a></li>
 </ul>
 </li>
 </ul>
@@ -394,12 +401,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="the-core-library-functions">
-<h1>The core library functions<a class="headerlink" href="#the-core-library-functions" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">7. </span>The core library functions<a class="headerlink" href="#the-core-library-functions" title="Permalink to this headline">#</a></h1>
 <p>Python ships with a wealth of built-in functions at your disposal.
 Some are readily available but many should be “activated” using an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
 <p>This chapter only deals with a very cursory inspection; your should really bookmark the <a class="reference external" href="https://docs.python.org/3/library/index.html">docs</a>.</p>
 <div class="section" id="built-in-functions">
-<h2>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.1. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h2>
 <p>These are the functions you have always at your disposal, without <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. The list is not very long because this keeps the core of Python lean.
 The complete list can be found in the <a class="reference external" href="https://docs.python.org/3/library/functions.html">doc page on built-ins</a></p>
 <p>The core contains “constructor functions” for all built-in datatypes - which we have already seen: <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">list()</span></code>, <code class="docutils literal notranslate"><span class="pre">set()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> (some were not discussed and will neither be listed here)</p>
@@ -416,7 +423,7 @@ The complete list can be found in the <a class="reference external" href="https:
 <li><p><code class="docutils literal notranslate"><span class="pre">zip()</span></code> yields n-length tuples, where n is the number of iterables passed as positional arguments to zip().  The i-th element in every tuple comes from the i-th iterable argument to zip().</p></li>
 </ul>
 <div class="section" id="get-an-iteration-counter-with-enumerate">
-<h3>Get an iteration counter with <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code><a class="headerlink" href="#get-an-iteration-counter-with-enumerate" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Get an iteration counter with <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code><a class="headerlink" href="#get-an-iteration-counter-with-enumerate" title="Permalink to this headline">#</a></h3>
 <p>Used primarily in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to get hold of an iteration counter. It is a solution for the <code class="docutils literal notranslate"><span class="pre">for(int</span> <span class="pre">i,</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">length(seq),</span> <span class="pre">i++){}</span></code> structure in other languages. The enumeration is wrapped around an iterable object such as string, list or other collection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -436,7 +443,7 @@ the number 4 letter of the alphabet is d
 </div>
 </div>
 <div class="section" id="read-and-write-files-with-open">
-<h3>Read and write files with <code class="docutils literal notranslate"><span class="pre">open()</span></code><a class="headerlink" href="#read-and-write-files-with-open" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>Read and write files with <code class="docutils literal notranslate"><span class="pre">open()</span></code><a class="headerlink" href="#read-and-write-files-with-open" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function gives an iterator of file contents when used in a read-only context. It is often used in conjunction with the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -481,7 +488,7 @@ When you want to <strong>write to file</strong> these are the options at your di
 </div>
 </div>
 <div class="section" id="converting-between-characters-and-ascii-unicode">
-<h3>Converting between characters and ASCII/unicode<a class="headerlink" href="#converting-between-characters-and-ascii-unicode" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.3. </span>Converting between characters and ASCII/unicode<a class="headerlink" href="#converting-between-characters-and-ascii-unicode" title="Permalink to this headline">#</a></h3>
 <p>Below the surface, characters are just numbers. Originally there were only 128 characters that could be encoded using a byte: the ASCII characters:</p>
 <p><img alt="ASCII codes" src="_images/ASCII_table.png" /></p>
 <p>The pair of functions <strong><code class="docutils literal notranslate"><span class="pre">chr()</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">ord()</span></code></strong> can be used to convert characters to their numeric counterpart and vice versa. For instance,</p>
@@ -516,7 +523,7 @@ t   is encoded by 116
 </div>
 </div>
 <div class="section" id="sorting-with-sorted-and-list-sort">
-<h3>Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code><a class="headerlink" href="#sorting-with-sorted-and-list-sort" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.4. </span>Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code><a class="headerlink" href="#sorting-with-sorted-and-list-sort" title="Permalink to this headline">#</a></h3>
 <p>Sorting is quite ubiquitous in programming: give top-5 performing employees, sort countries on average income, sort members on last name, etc.</p>
 <p>There are two functions available.</p>
 <ul class="simple">
@@ -583,7 +590,7 @@ t   is encoded by 116
 </div>
 </div>
 <div class="section" id="the-key-parameter">
-<h4>The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter<a class="headerlink" href="#the-key-parameter" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.1.4.1. </span>The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter<a class="headerlink" href="#the-key-parameter" title="Permalink to this headline">#</a></h4>
 <p>This parameter makes it possible to define custom sorting of collection types and objects. It takes as value a function that will return some property of each element to sort on.</p>
 <p>For instance, suppose you want to sort a list of words on the second character:</p>
 <div class="cell docutils container">
@@ -603,7 +610,7 @@ t   is encoded by 116
 </div>
 </div>
 <div class="section" id="lambdas-advanced-topic">
-<h4>Lambdas  (advanced topic)<a class="headerlink" href="#lambdas-advanced-topic" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.1.4.2. </span>Lambdas  (advanced topic)<a class="headerlink" href="#lambdas-advanced-topic" title="Permalink to this headline">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> parameter <code class="docutils literal notranslate"><span class="pre">key</span></code> is most often used in conjunction with an anonymous type of function called a <strong>lambda</strong>. They are usually defined at the location where they are needed and have the form of</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="o">&lt;</span><span class="n">data</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">return</span> <span class="nb">property</span> <span class="n">of</span> <span class="n">data</span><span class="o">&gt;</span>
 </pre></div>
@@ -650,7 +657,7 @@ t   is encoded by 116
 </div>
 </div>
 <div class="section" id="multi-key-sorting">
-<h4>Multi-key sorting<a class="headerlink" href="#multi-key-sorting" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.1.4.3. </span>Multi-key sorting<a class="headerlink" href="#multi-key-sorting" title="Permalink to this headline">#</a></h4>
 <p>Whenever you need sorting based on multiple properties - e.g. sorting first on family name and then on given name - you can employ the trick of tuple sorting:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +686,7 @@ t   is encoded by 116
 </div>
 </div>
 <div class="section" id="using-filter-and-map-optional">
-<h2>Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)<a class="headerlink" href="#using-filter-and-map-optional" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span>Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)<a class="headerlink" href="#using-filter-and-map-optional" title="Permalink to this headline">#</a></h2>
 <p>These functions are used on collections, to filter the elements in them on some property, or to change each element or to swap them for something else.</p>
 <p>Fot example, imagine a cupcake production line. There will be a machine taking in a plate of cupcakes and applying frosting to all of them: it <strong>maps</strong> a cupcake to a frosted cupcake. There will also be a machine taking in a plate of cupcakes, removing the badly formed ones: it <strong>filters</strong> the cupcakes, only letting the good ones pass.</p>
 <ul class="simple">
@@ -725,7 +732,7 @@ Here follows an example of a map/filter chain. Note that both map and filter pro
 <p>Note that working with these functions is superceded by the use of comprehensions. These are outlined in the next chapter.</p>
 </div>
 <div class="section" id="working-with-modules">
-<h2>Working with modules<a class="headerlink" href="#working-with-modules" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span>Working with modules<a class="headerlink" href="#working-with-modules" title="Permalink to this headline">#</a></h2>
 <p>The core functionality of Python that is available to you once you start coding is rather small. That is because the deveolpers of the language wanted to keep the memory footprint as small as possible.
 Why load functionality if there is a significant possibility it will not be used?</p>
 <p>To solve the footprint problem, most functionality in Python is put inside <strong><em>modules</em></strong>.</p>
@@ -781,7 +788,7 @@ Why load functionality if there is a significant possibility it will not be used
 <p>Be hesitant to do this because it clutters your global namespace.<br />
 Besides this, using the <code class="docutils literal notranslate"><span class="pre">math.ceil()</span></code> syntax makes it clear in which module the function was defined.</p>
 <div class="section" id="using-your-own-modules">
-<h3>Using your own modules<a class="headerlink" href="#using-your-own-modules" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Using your own modules<a class="headerlink" href="#using-your-own-modules" title="Permalink to this headline">#</a></h3>
 <p>Whenever you create functionality that you want to reuse between scripts you can put those functions within a script and put this in the <strong>Python search path</strong>. This concept is out of scope for the course. The simplest way is to put it somewhere in a subfolder of your current project.</p>
 <p>See <a class="reference external" href="https://realpython.com/lessons/module-search-path/">RealPython</a> for a discussion of this topic.</p>
 <p>In the example below, the module is defined by file <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> located in folder <code class="docutils literal notranslate"><span class="pre">./scripts</span></code>, the contents of which are:</p>
@@ -831,7 +838,7 @@ None
 </div>
 </div>
 <div class="section" id="core-modules">
-<h3>Core modules<a class="headerlink" href="#core-modules" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>Core modules<a class="headerlink" href="#core-modules" title="Permalink to this headline">#</a></h3>
 <p>Besides the math module we have seen before Python ships with a wealth of other modles, each with their specific purpose and application domain. Here are just a few, and even less examples; have a look at <a class="reference external" href="https://docs.python.org/3/library/">The Python docs</a> for a complete listing.</p>
 <p>For all modules, importing them and typing <code class="docutils literal notranslate"><span class="pre">help(module)</span></code> is the best way to get detailed information.</p>
 <table class="colwidths-auto table">
@@ -868,7 +875,7 @@ None
 </tbody>
 </table>
 <div class="section" id="module-sys">
-<h4>Module <code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#module-sys" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.1. </span>Module <code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#module-sys" title="Permalink to this headline">#</a></h4>
 <p>This module is used for interacting with the interpreter, the <em>Python system</em>, not with the Operating System (see module <code class="docutils literal notranslate"><span class="pre">os</span></code>). Here are the main attributes and functions (copied from help):</p>
 <p>Objects:</p>
 <ul class="simple">
@@ -929,7 +936,7 @@ end log test
 </div>
 </div>
 <div class="section" id="modules-os-os-path">
-<h4>Modules <code class="docutils literal notranslate"><span class="pre">os</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">os.path</span></code><a class="headerlink" href="#modules-os-os-path" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.2. </span>Modules <code class="docutils literal notranslate"><span class="pre">os</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">os.path</span></code><a class="headerlink" href="#modules-os-os-path" title="Permalink to this headline">#</a></h4>
 <p>As stated, the <code class="docutils literal notranslate"><span class="pre">os</span></code> module is used to interact with the operating system, especially the file system. Here are some common use cases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -985,7 +992,7 @@ Downloads/data/project1
 </div>
 </div>
 <div class="section" id="the-itertools-module">
-<h4>The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module<a class="headerlink" href="#the-itertools-module" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.3. </span>The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module<a class="headerlink" href="#the-itertools-module" title="Permalink to this headline">#</a></h4>
 <p>Module <code class="docutils literal notranslate"><span class="pre">itertools</span></code> provides functions that create iterators for efficient looping. Here are a few:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1008,7 +1015,7 @@ Downloads/data/project1
 </div>
 </div>
 <div class="section" id="module-csv">
-<h4>Module <code class="docutils literal notranslate"><span class="pre">csv</span></code><a class="headerlink" href="#module-csv" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.4. </span>Module <code class="docutils literal notranslate"><span class="pre">csv</span></code><a class="headerlink" href="#module-csv" title="Permalink to this headline">#</a></h4>
 <p>Text files with the csv format are quite ubiquitous in data science.</p>
 <p>Of course, you can write your own parser for every file type, which is not difficult of course, but you can make it even easier for yourself. Just use module csv!</p>
 <p>Here, I present some examples for reading csv files. Remember that writing is just as easy!</p>
@@ -1080,7 +1087,7 @@ Downloads/data/project1
 </div>
 </div>
 <div class="section" id="the-pickle-module">
-<h4>The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module<a class="headerlink" href="#the-pickle-module" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.5. </span>The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module<a class="headerlink" href="#the-pickle-module" title="Permalink to this headline">#</a></h4>
 <p>Python can write any data structure and objects into a file and read it again out of that file.
 This is done using the pickle module.</p>
 <p>This is a very useful feature if -for example- you want to store program state for a next run.
@@ -1111,7 +1118,7 @@ Here is a simple example.</p>
 </div>
 </div>
 <div class="section" id="the-shelve-module">
-<h4>The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module<a class="headerlink" href="#the-shelve-module" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.6. </span>The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module<a class="headerlink" href="#the-shelve-module" title="Permalink to this headline">#</a></h4>
 <p>Related to the pickle module is the shelve module.<br />
 It is generally used to store data in a database-like structure.<br />
 The difference is you do NOT have to load the entire data structure every time you want to access a single item of it.</p>
@@ -1156,7 +1163,7 @@ With the example below, a binary filed named <code class="docutils literal notra
 </div>
 </div>
 <div class="section" id="json">
-<h4>JSON<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">7.3.2.7. </span>JSON<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h4>
 <p>Although pickle and shelve are convenient, With serious applications JSON is the way to go. There are many libraries and programming languages with integrated support for json, and stored files are human-readable as well.</p>
 </div>
 </div>
@@ -1194,6 +1201,24 @@ With the example below, a binary filed named <code class="docutils literal notra
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="05_reading_writing_files.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Files are the main source of data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_comprehensions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Comprehensions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1212,29 +1237,29 @@ With the example below, a binary filed named <code class="docutils literal notra
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-iteration-counter-with-enumerate">Get an iteration counter with <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-files-with-open">Read and write files with <code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-characters-and-ascii-unicode">Converting between characters and ASCII/unicode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-with-sorted-and-list-sort">Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-parameter">The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-advanced-topic">Lambdas  (advanced topic)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">Multi-key sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">7.1. Built-in functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-iteration-counter-with-enumerate">7.1.1. Get an iteration counter with <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-files-with-open">7.1.2. Read and write files with <code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-characters-and-ascii-unicode">7.1.3. Converting between characters and ASCII/unicode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-with-sorted-and-list-sort">7.1.4. Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-parameter">7.1.4.1. The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-advanced-topic">7.1.4.2. Lambdas  (advanced topic)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">7.1.4.3. Multi-key sorting</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-filter-and-map-optional">Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-modules">Working with modules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-your-own-modules">Using your own modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-modules">Core modules</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-sys">Module <code class="docutils literal notranslate"><span class="pre">sys</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-os-os-path">Modules <code class="docutils literal notranslate"><span class="pre">os</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">os.path</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-itertools-module">The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-csv">Module <code class="docutils literal notranslate"><span class="pre">csv</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pickle-module">The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shelve-module">The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-filter-and-map-optional">7.2. Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-modules">7.3. Working with modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-your-own-modules">7.3.1. Using your own modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-modules">7.3.2. Core modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-sys">7.3.2.1. Module <code class="docutils literal notranslate"><span class="pre">sys</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-os-os-path">7.3.2.2. Modules <code class="docutils literal notranslate"><span class="pre">os</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">os.path</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-itertools-module">7.3.2.3. The <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-csv">7.3.2.4. Module <code class="docutils literal notranslate"><span class="pre">csv</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pickle-module">7.3.2.5. The <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shelve-module">7.3.2.6. The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#json">7.3.2.7. JSON</a></li>
 </ul>
 </li>
 </ul>

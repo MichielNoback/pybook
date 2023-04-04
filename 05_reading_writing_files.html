@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Files are the main source of data &#8212; A short Python introduction</title>
+    <title>6. Files are the main source of data &#8212; A short Python introduction</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '05_reading_writing_files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. The core library functions" href="06_core_library_functions.html" />
+    <link rel="prev" title="5. Functions" href="04_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -127,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -147,21 +149,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -355,10 +362,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">Iterating contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">Closing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">Writing to file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">6.1. Iterating contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">6.2. Closing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">6.3. The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">6.4. Writing to file</a></li>
 </ul>
             </nav>
         </div>
@@ -371,7 +378,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="files-are-the-main-source-of-data">
-<h1>Files are the main source of data<a class="headerlink" href="#files-are-the-main-source-of-data" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">6. </span>Files are the main source of data<a class="headerlink" href="#files-are-the-main-source-of-data" title="Permalink to this headline">#</a></h1>
 <p>In most data science related scripts and analysis workflows, data will enter via files. To be more precise: via text files.<br />
 Fortunately, reading from file is really simple in Python.</p>
 <p>And if you have structured data in the form of csv, tsv, xml or Excel, the Python ecosystem prvides a wealth of dedicated data reading functions. If you are going to work with excel-style data (data organized in rows with examples and variables in columns) a lot, it is recommended to have a look at the Pandas library (we’ll have a peek at that at the end of this chapter).
@@ -413,7 +420,7 @@ In this chapter however we are going to check out the basics of file reading and
 <p>opens the file in read mode (the second argument is the <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument which defaults to <code class="docutils literal notranslate"><span class="pre">'r'</span></code>, so it could have been omitted). The functions returns a stream, or handle on the file. <strong>Not the actual contents yet</strong>.</p>
 <p>Reading the contents happens with the <code class="docutils literal notranslate"><span class="pre">file.read()</span></code> function call.</p>
 <div class="section" id="iterating-contents">
-<h2>Iterating contents<a class="headerlink" href="#iterating-contents" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.1. </span>Iterating contents<a class="headerlink" href="#iterating-contents" title="Permalink to this headline">#</a></h2>
 <p>Usually you want to iterate over file contents line by line without the need to store it all in memry as-is. This is done by applying the for-loop on the file stream:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -438,7 +445,7 @@ In this chapter however we are going to check out the basics of file reading and
 To only remove whitespace characters at the end, use <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code> with an optional argument specifying which characters to strip off.</p>
 </div>
 <div class="section" id="closing-files">
-<h2>Closing files<a class="headerlink" href="#closing-files" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.2. </span>Closing files<a class="headerlink" href="#closing-files" title="Permalink to this headline">#</a></h2>
 <p>It is good custom to close streams to files that you open. In read mode this is not essential, but in write mode it is. You do this using the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method. The above fragment is better like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -462,7 +469,7 @@ To only remove whitespace characters at the end, use <code class="docutils liter
 </div>
 </div>
 <div class="section" id="the-best-way-using-with">
-<h2>The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#the-best-way-using-with" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.3. </span>The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#the-best-way-using-with" title="Permalink to this headline">#</a></h2>
 <p>Since programmers forgot to close their files all the time, the “with open” syntax was introduced. If you simply always use this form you will never go wrong.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -486,7 +493,7 @@ To only remove whitespace characters at the end, use <code class="docutils liter
 </div>
 </div>
 <div class="section" id="writing-to-file">
-<h2>Writing to file<a class="headerlink" href="#writing-to-file" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.4. </span>Writing to file<a class="headerlink" href="#writing-to-file" title="Permalink to this headline">#</a></h2>
 <p>To open a stream for writing you need to set the mode to one of these:</p>
 <ul class="simple">
 <li><p>“w” (open for writing, truncating the file first)</p></li>
@@ -549,6 +556,24 @@ If the mode <code class="docutils literal notranslate"><span class="pre">&quot;a
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="04_functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Functions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06_core_library_functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>The core library functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -567,10 +592,10 @@ If the mode <code class="docutils literal notranslate"><span class="pre">&quot;a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">Iterating contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">Closing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">Writing to file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">6.1. Iterating contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">6.2. Closing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">6.3. The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">6.4. Writing to file</a></li>
 </ul>
   </nav></div>
 

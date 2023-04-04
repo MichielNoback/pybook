@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flow control &#8212; A short Python introduction</title>
+    <title>4. Flow control &#8212; A short Python introduction</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '03_flow_control';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Functions" href="04_functions.html" />
+    <link rel="prev" title="3. Data" href="02_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -127,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -147,21 +149,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -355,21 +362,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flow control</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">Code blocks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">4.1. Code blocks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">4.2. Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">4.2.1. Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">4.2.2. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">Optional: Switch(ing)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">4.3. Conditionals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">4.3.1. Optional: Switch(ing)</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -381,7 +384,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="flow-control">
-<h1>Flow control<a class="headerlink" href="#flow-control" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4. </span>Flow control<a class="headerlink" href="#flow-control" title="Permalink to this headline">#</a></h1>
 <p>Besides data, flow control is at the heart of programming. What is the use of a list if you can’t iterate it? How could you ever take alterantive courses of action based on some variable value without the use of if/else blocks?</p>
 <p>This chapter deals with all aspects concerning control of program flow or in short flow control.</p>
 <p>These are the constructs that you will see:</p>
@@ -390,9 +393,8 @@ document.write(`
 <li><p><strong>decisions</strong> using <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> and its shorthand <code class="docutils literal notranslate"><span class="pre">if...else</span></code></p></li>
 <li><p><strong>fine-tuning</strong> these constructs using <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code></p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="code-blocks">
-<h1>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h1>
+<div class="section" id="code-blocks">
+<h2><span class="section-number">4.1. </span>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h2>
 <p>At the heart of iteration lies the concept of code blocks: one or multiple statements that belong together and are executed multiple times, or optionally, depending on the flow control element.</p>
 <p>A code block is defined by <strong>indentation</strong> (4 spaces usually), and in flow control it always follows an iteration or decision statement ending with a colon:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;some flow control element&gt;:
@@ -403,8 +405,9 @@ document.write(`
 code not belonging to the flow control element
 </pre></div>
 </div>
+</div>
 <div class="section" id="iteration">
-<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.2. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
 <p>The keyword <code class="docutils literal notranslate"><span class="pre">for</span></code> is at the heart of iteration. All constructs involving <code class="docutils literal notranslate"><span class="pre">for</span></code> have this general structure:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
     <span class="c1">#do_something with the element</span>
@@ -521,7 +524,7 @@ There are some useful cases for the shorthand form. One of these is demonstrated
 </div>
 </div>
 <div class="section" id="using-else-with-a-for-loop">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop<a class="headerlink" href="#using-else-with-a-for-loop" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.2.1. </span>Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop<a class="headerlink" href="#using-else-with-a-for-loop" title="Permalink to this headline">#</a></h3>
 <p>If you want to have a block executed <em>after</em> the for loop, you can of course simply place it below the block. However, if you want to have it executed only when no <code class="docutils literal notranslate"><span class="pre">break</span></code> has been issued you need and <code class="docutils literal notranslate"><span class="pre">else</span></code> clause:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -541,7 +544,7 @@ There are some useful cases for the shorthand form. One of these is demonstrated
 </div>
 </div>
 <div class="section" id="the-while-loop">
-<h3>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
 <p>If you want to repeat without a collection the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is your friend. Especially with user input this one comes in handy. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause can be used here as well (not demonstrated).
 Here is a typical use of <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
 <div class="cell docutils container">
@@ -582,7 +585,7 @@ Here is a typical use of <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="section" id="conditionals">
-<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3. </span>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">#</a></h2>
 <p>Deciding what to next, based on the value of a variable, some user input, the content of a file, the availability on a remote data source. You need to do these things all the time and this is where you use conditionals.</p>
 <p>The if/else syntax has these elements and their restrictions in occurrences:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>    <span class="c1"># One is mandatory and only one allowed</span>
@@ -633,7 +636,7 @@ You may not drive a car alone yet
 </div>
 </div>
 <div class="section" id="optional-switch-ing">
-<h3>Optional: Switch(ing)<a class="headerlink" href="#optional-switch-ing" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.3.1. </span>Optional: Switch(ing)<a class="headerlink" href="#optional-switch-ing" title="Permalink to this headline">#</a></h3>
 <p>You can skip this part if you want. It is a useful and powerful technique, but not essential for a beginning programmer.</p>
 <p>If you have a distinct set of possibilities other programming languages provide the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.
 In Python up to version 3.10 this was not available. In the (not-executable in my Python version) snippet below it is shown for Python &gt;= 3.10.</p>
@@ -715,6 +718,24 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -733,21 +754,17 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flow control</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">Code blocks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">4.1. Code blocks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">4.2. Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">4.2.1. Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">4.2.2. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">Optional: Switch(ing)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">4.3. Conditionals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">4.3.1. Optional: Switch(ing)</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

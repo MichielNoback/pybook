@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>09 Regular expressions and the re module &#8212; A short Python introduction</title>
+    <title>10. Regular expressions &#8212; A short Python introduction</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '09_regex';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. Object-oriented programming" href="10_oo_programming.html" />
+    <link rel="prev" title="9. 08 The exception mechanism" href="08_exception_mechanism.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -127,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -147,21 +149,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -345,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>09 Regular expressions and the re module</h1>
+    <h1>Regular expressions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,20 +362,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-syntax">Regex syntax</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-classes">Character classes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#special-character-classes">Special character classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">10.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-syntax">10.2. Regex syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-classes">10.2.1. Character classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#special-character-classes">10.2.1.1. Special character classes</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anchors">Anchors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">Alternatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#being-greedy-or-non-greedy">Being greedy or non-greedy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">10.2.2. Quantifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anchors">10.2.3. Anchors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">10.2.4. Alternatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#being-greedy-or-non-greedy">10.2.5. Being greedy or non-greedy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-match-objects">Working with <code class="docutils literal notranslate"><span class="pre">match</span></code> objects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-flags">Modifying flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-match-objects">10.3. Working with <code class="docutils literal notranslate"><span class="pre">match</span></code> objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-flags">10.4. Modifying flags</a></li>
 </ul>
             </nav>
         </div>
@@ -380,10 +387,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="regular-expressions-and-the-re-module">
-<h1>09 Regular expressions and the <code class="docutils literal notranslate"><span class="pre">re</span></code> module<a class="headerlink" href="#regular-expressions-and-the-re-module" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="regular-expressions">
+<h1><span class="section-number">10. </span>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h1>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Sometimes, literal text searching is not enough.</p>
 <p>For instance, when searching for email addresses, zipcodes, telephone numbers, dates or biological sequence patterns (my field), it is impossible to say <em>what exactly</em> you want found, but you can say what it will <em>look like</em>.</p>
 <p>This is where regular expressions come in. They provide a means to specify in a dedicated mini “language”, what the pattern looks like.</p>
@@ -450,9 +457,9 @@ document.write(`
 <p>Before looking at the functions of the <code class="docutils literal notranslate"><span class="pre">re</span></code> module in more detail, we’ll cover the basics of all regex elements first.</p>
 </div>
 <div class="section" id="regex-syntax">
-<h2>Regex syntax<a class="headerlink" href="#regex-syntax" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.2. </span>Regex syntax<a class="headerlink" href="#regex-syntax" title="Permalink to this headline">#</a></h2>
 <div class="section" id="character-classes">
-<h3>Character classes<a class="headerlink" href="#character-classes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.2.1. </span>Character classes<a class="headerlink" href="#character-classes" title="Permalink to this headline">#</a></h3>
 <p>One of the pillars under regular expression syntax is the use of character classes. Character classes specify -for a single character position in the pattern- which characters are allowed on that position.</p>
 <p>For instance, in the example above, (<code class="docutils literal notranslate"><span class="pre">[Tt]</span></code>), it was specified that both ‘T’ and ‘t’ were allowed at the first position of the expression. Character classes are generally specified between brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, but there are a few much-used character classes that have their own symbol.</p>
 <table class="colwidths-auto table">
@@ -486,7 +493,7 @@ document.write(`
 </tbody>
 </table>
 <div class="section" id="special-character-classes">
-<h4>Special character classes<a class="headerlink" href="#special-character-classes" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">10.2.1.1. </span>Special character classes<a class="headerlink" href="#special-character-classes" title="Permalink to this headline">#</a></h4>
 <p>There are quite a few; see the <a class="reference external" href="https://docs.python.org/3/library/re.html">docs</a>. Here are only the most-used ones.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -563,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="quantifiers">
-<h3>Quantifiers<a class="headerlink" href="#quantifiers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.2.2. </span>Quantifiers<a class="headerlink" href="#quantifiers" title="Permalink to this headline">#</a></h3>
 <p>Quantifiers are used to specify how often a (series of) characters are allowed to occur.<br />
 The universal form is with the <code class="docutils literal notranslate"><span class="pre">{from,to}</span></code> syntax, but there are a few shortcuts here as well:</p>
 <table class="colwidths-auto table">
@@ -615,7 +622,7 @@ more than 2: [&#39;aaaa&#39;, &#39;aaa&#39;]
 </div>
 </div>
 <div class="section" id="anchors">
-<h3>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.2.3. </span>Anchors<a class="headerlink" href="#anchors" title="Permalink to this headline">#</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">^</span></code> to anchor a pattern at the start of the search string and <code class="docutils literal notranslate"><span class="pre">$</span></code> to anchor at the end. In the special case that you want to have the whole search string match the pattern, you use both anchors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,7 +640,7 @@ At the end: [&#39;!&#39;]
 </div>
 </div>
 <div class="section" id="alternatives">
-<h3>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.2.4. </span>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">#</a></h3>
 <p>To indicate alternative patterns you can use the <code class="docutils literal notranslate"><span class="pre">|</span></code> OR sign. Can als be used in conjunction with grabbing elements using parentheses. See below for details.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,7 +658,7 @@ Alternative patterns: [&#39;bike&#39;, &#39;bite&#39;, &#39;car&#39;, &#39;bar&#
 </div>
 </div>
 <div class="section" id="being-greedy-or-non-greedy">
-<h3>Being greedy or non-greedy<a class="headerlink" href="#being-greedy-or-non-greedy" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.2.5. </span>Being greedy or non-greedy<a class="headerlink" href="#being-greedy-or-non-greedy" title="Permalink to this headline">#</a></h3>
 <p>Sometimes, you want to influence the way a pattern is matched with regard to the length of the match.
 Consider this example:</p>
 <div class="cell docutils container">
@@ -684,7 +691,7 @@ What if you are only interested in the first word, up to the first space? In tha
 </div>
 </div>
 <div class="section" id="working-with-match-objects">
-<h2>Working with <code class="docutils literal notranslate"><span class="pre">match</span></code> objects<a class="headerlink" href="#working-with-match-objects" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.3. </span>Working with <code class="docutils literal notranslate"><span class="pre">match</span></code> objects<a class="headerlink" href="#working-with-match-objects" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">search()</span></code> and <code class="docutils literal notranslate"><span class="pre">finditer()</span></code> functions return a (sequence of) Match objects. These match objects give much flexibility in dealing with your matches: from <em><strong>sub-patterns</strong></em> to <em><strong>match locations</strong></em>.</p>
 <p>With this type of analysis it ofetn a good idea to create a compiled pattern. This saves much computation time if the operation is repeated often.</p>
 <p>When placing pairs of parenthese in the pattern you can catch sub-patterns.</p>
@@ -717,7 +724,7 @@ match start: 111
 </div>
 </div>
 <div class="section" id="modifying-flags">
-<h2>Modifying flags<a class="headerlink" href="#modifying-flags" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.4. </span>Modifying flags<a class="headerlink" href="#modifying-flags" title="Permalink to this headline">#</a></h2>
 <p>Finally, the Python regex engine gives you the possibility to modify the behaviour of its regex functions by using the <code class="docutils literal notranslate"><span class="pre">flags=</span></code> argument.
 See <a class="reference external" href="https://docs.python.org/3/library/re.html#contents-of-module-re">here</a> for details on the flags.</p>
 <p>The most-used are listed below</p>
@@ -779,6 +786,24 @@ See <a class="reference external" href="https://docs.python.org/3/library/re.htm
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="08_exception_mechanism.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>08 The exception mechanism</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="10_oo_programming.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Object-oriented programming</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -797,20 +822,20 @@ See <a class="reference external" href="https://docs.python.org/3/library/re.htm
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-syntax">Regex syntax</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-classes">Character classes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#special-character-classes">Special character classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">10.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-syntax">10.2. Regex syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-classes">10.2.1. Character classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#special-character-classes">10.2.1.1. Special character classes</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">Quantifiers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anchors">Anchors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">Alternatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#being-greedy-or-non-greedy">Being greedy or non-greedy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers">10.2.2. Quantifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anchors">10.2.3. Anchors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">10.2.4. Alternatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#being-greedy-or-non-greedy">10.2.5. Being greedy or non-greedy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-match-objects">Working with <code class="docutils literal notranslate"><span class="pre">match</span></code> objects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-flags">Modifying flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-match-objects">10.3. Working with <code class="docutils literal notranslate"><span class="pre">match</span></code> objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-flags">10.4. Modifying flags</a></li>
 </ul>
   </nav></div>
 

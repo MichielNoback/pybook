@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anaconda &#8212; A short Python introduction</title>
+    <title>13. (Ana)conda &#8212; A short Python introduction</title>
   
   
   
@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '12_anaconda';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Data" href="02_data.html" />
+    <link rel="prev" title="12. Exercises" href="11_exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -128,7 +128,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -148,21 +148,25 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. (Ana)conda</a></li>
 </ul>
 
     </div>
@@ -346,7 +350,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Anaconda</h1>
+    <h1>(Ana)conda</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,9 +360,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">Package manager</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">This course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">13.1. Package manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">13.2. Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">13.3. This course</a></li>
 </ul>
             </nav>
         </div>
@@ -370,8 +374,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="anaconda">
-<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ana-conda">
+<h1><span class="section-number">13. </span>(Ana)conda<a class="headerlink" href="#ana-conda" title="Permalink to this headline">#</a></h1>
 <p>Anaconda is a distribution of Python containing Python, the “conda” package and environment manager, and many software packages for data analytics, data science, and scientific computing.</p>
 <p>Over 150 packages are automatically installed with Anaconda, including Python, NumPy, Pandas, Matplotlib, Jupyter, IPython, Spyder
 See <a class="reference external" href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a></p>
@@ -382,16 +386,16 @@ See <a class="reference external" href="https://www.anaconda.com/products/distri
 <li><p><strong>Anaconda Navigator</strong> A desktop application that lets you manage integrated applications, packages, and environments without using the command line.</p></li>
 </ol>
 <div class="section" id="package-manager">
-<h2>Package manager<a class="headerlink" href="#package-manager" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.1. </span>Package manager<a class="headerlink" href="#package-manager" title="Permalink to this headline">#</a></h2>
 <p>A package is a dedicated set of functions that is wrapped together and labeled with a package name. You load them using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. The core Python library only contains a limited amount of packages: <code class="docutils literal notranslate"><span class="pre">sys</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code> etc. Using a package manager you can install, delete and update packages that do not ship with the core of Python.</p>
 </div>
 <div class="section" id="environments">
-<h2>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.2. </span>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">#</a></h2>
 <p>When starting to work on bigger projects you will use multiple packages. Between projects, these differ and even sometimes cause some conflicts. That is where environments come in. They are isolated (virtual) spaces for working  with Pyton projects. When installing a package in an environment, it does not affect other environments.</p>
 <p>See <a class="reference external" href="https://www.youtube.com/watch?v=23aQdrS58e0">This video</a> for an excellent explanation of environment management. It is demonstrated using miniconda which is Anaconda without the GUI (the GUI also gives all this functionality).</p>
 </div>
 <div class="section" id="this-course">
-<h2>This course<a class="headerlink" href="#this-course" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.3. </span>This course<a class="headerlink" href="#this-course" title="Permalink to this headline">#</a></h2>
 <p>In this course we will be working with the tools provided by Anaconda Navigator: Jupyter Notebooks for <em>literate programming</em> (also the majority of the course material), Qt Console for quick testing and experimenting and Spyder for writing <em>scripts</em>. These can all be launched from the Anaconda Navigator Home panel.<br />
 We will not be working with environments; there is no need because everything we do will be available from any Python 3 distribution.</p>
 </div>
@@ -429,12 +433,12 @@ We will not be working with environments; there is no need because everything we
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02_data.html"
+       href="11_exercises.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Exercises</p>
       </div>
     </a>
 </div></div>
@@ -455,9 +459,9 @@ We will not be working with environments; there is no need because everything we
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">Package manager</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">This course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">13.1. Package manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">13.2. Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">13.3. This course</a></li>
 </ul>
   </nav></div>
 

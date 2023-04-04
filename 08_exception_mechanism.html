@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>08 The exception mechanism &#8212; A short Python introduction</title>
+    <title>9. The exception mechanism &#8212; A short Python introduction</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '08_exception_mechanism';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="10. Regular expressions" href="09_regex.html" />
+    <link rel="prev" title="8. Comprehensions" href="07_comprehensions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -127,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -147,21 +149,25 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
 </ul>
 
     </div>
@@ -345,7 +351,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>08 The exception mechanism</h1>
+    <h1>The exception mechanism</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,9 +361,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-exceptions">What are exceptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catching-exceptions">Catching exceptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">Raising exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-exceptions">9.1. What are exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catching-exceptions">9.2. Catching exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">9.3. Raising exceptions</a></li>
 </ul>
             </nav>
         </div>
@@ -370,9 +376,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="the-exception-mechanism">
-<h1>08 The exception mechanism<a class="headerlink" href="#the-exception-mechanism" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">9. </span>The exception mechanism<a class="headerlink" href="#the-exception-mechanism" title="Permalink to this headline">#</a></h1>
 <div class="section" id="what-are-exceptions">
-<h2>What are exceptions<a class="headerlink" href="#what-are-exceptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.1. </span>What are exceptions<a class="headerlink" href="#what-are-exceptions" title="Permalink to this headline">#</a></h2>
 <p>By now you have probably seen quite some errors in you code passing by: Syntax Errors, ValueErrors, IndexErrors etc. The first is something you cannot deal with in your program but the others are called (runtime) exceptions. They indicate that something exceptional has occurred. The Python interpreter is designed in such a way that when this happens you get a <strong><em>Traceback</em></strong> of the method calls all the way down the <strong><em>call stack</em></strong>.
 We will now investigate these concepts in more detail, and als introduce a mechanism that you can use to hook into the flow of exceptions.</p>
 <p>Consider the code cell below, which has two methods calling each other to form a small call stack.</p>
@@ -433,7 +439,7 @@ Fortunately this traceback is really informative; it gives you in nice highlight
 <p><img alt="" src="_images/python_traceback.png" /></p>
 </div>
 <div class="section" id="catching-exceptions">
-<h2>Catching exceptions<a class="headerlink" href="#catching-exceptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.2. </span>Catching exceptions<a class="headerlink" href="#catching-exceptions" title="Permalink to this headline">#</a></h2>
 <p>So are we completely helpless in case of such events? No! We have have the tools to hook into the exception mechanism to prevent a crashing program. The basic tool is the try/except block:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># do something risky</span>
@@ -640,7 +646,7 @@ last name=Levee
 </div>
 </div>
 <div class="section" id="raising-exceptions">
-<h2>Raising exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.3. </span>Raising exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this headline">#</a></h2>
 <p>Sometimes you want to message your own error. In that case you will want to <code class="docutils literal notranslate"><span class="pre">raise</span></code> one in your code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -707,6 +713,24 @@ last name=Levee
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="07_comprehensions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Comprehensions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="09_regex.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Regular expressions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -725,9 +749,9 @@ last name=Levee
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-exceptions">What are exceptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catching-exceptions">Catching exceptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">Raising exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-exceptions">9.1. What are exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catching-exceptions">9.2. Catching exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">9.3. Raising exceptions</a></li>
 </ul>
   </nav></div>
 

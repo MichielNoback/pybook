@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comprehensions &#8212; A short Python introduction</title>
+    <title>8. Comprehensions &#8212; A short Python introduction</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '07_comprehensions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9. 08 The exception mechanism" href="08_exception_mechanism.html" />
+    <link rel="prev" title="7. The core library functions" href="06_core_library_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -127,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="ITANN_course_description.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -147,21 +149,26 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="ITANN_course_description.html">
-                    ITANN course: Introduction to Python Programming
+                <a class="reference internal" href="intro.html">
+                    A short Python intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. 08 The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">14. Anaconda</a></li>
 </ul>
 
     </div>
@@ -355,17 +362,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-mapping">filtering and mapping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comprehensions">What are comprehensions?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-essential-to-python-programming">Are these essential to Python programming?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List comprehensions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-shorthand-in-the-mapping">if else shorthand in the mapping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">Nested comprehensions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples">Some more examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-mapping">8.1. filtering and mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comprehensions">8.2. What are comprehensions?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-essential-to-python-programming">8.2.1. Are these essential to Python programming?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">8.2.2. List comprehensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-shorthand-in-the-mapping">8.2.2.1. if else shorthand in the mapping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">8.2.2.2. Nested comprehensions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples">8.2.2.3. Some more examples</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-comprehensions">dict comprehensions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-comprehensions">Other comprehensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-comprehensions">8.2.3. dict comprehensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-comprehensions">8.2.4. Other comprehensions</a></li>
 </ul>
 </li>
 </ul>
@@ -380,15 +387,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="comprehensions">
-<h1>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">8. </span>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">#</a></h1>
 <div class="section" id="filtering-and-mapping">
-<h2>filtering and mapping<a class="headerlink" href="#filtering-and-mapping" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">8.1. </span>filtering and mapping<a class="headerlink" href="#filtering-and-mapping" title="Permalink to this headline">#</a></h2>
 <p>In the previous chapter there was a section on <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code>. These functions represent processes that are present in a majority of data processing activities.</p>
 <p>For convenience, the concepts are repeated here:</p>
 <p><img alt="Map vs Filter" src="_images/map_filter.png" /></p>
 </div>
 <div class="section" id="what-are-comprehensions">
-<h2>What are comprehensions?<a class="headerlink" href="#what-are-comprehensions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">8.2. </span>What are comprehensions?<a class="headerlink" href="#what-are-comprehensions" title="Permalink to this headline">#</a></h2>
 <p>Comprehensions are shorthand syntactic structures that can be used to generate, filter and map different types of collections:</p>
 <ul class="simple">
 <li><p><strong>list comprehensions</strong> generate lists using <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
@@ -398,12 +405,12 @@ document.write(`
 <li><p><strong>generator comprehensions</strong> are used to generate values <em>on demand</em> using <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
 </ul>
 <div class="section" id="are-these-essential-to-python-programming">
-<h3>Are these essential to Python programming?<a class="headerlink" href="#are-these-essential-to-python-programming" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">8.2.1. </span>Are these essential to Python programming?<a class="headerlink" href="#are-these-essential-to-python-programming" title="Permalink to this headline">#</a></h3>
 <p>Comprehensions have superseded the use of the <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code> functions, and are very popular constructs of the language.</p>
 <p>However, some beginning programmers feel awkward using them. So remember, if you feel ill at ease with these, you can always implement any comprehension using regular flow control elements such as <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> structures, or fall back to the use of <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code></p>
 </div>
 <div class="section" id="list-comprehensions">
-<h3>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">8.2.2. </span>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h3>
 <p>The most-used type of comprehension is list comprehension, or listcomp in short.</p>
 <p>Let’s implement both examples from the picture using these.</p>
 <div class="cell docutils container">
@@ -454,7 +461,7 @@ document.write(`
 <p><img alt="listcomp anatomy" src="_images/listcomp_anatomy.png" /></p>
 <p>The above example shows a list comprehension. However, this general structure applies to all comprehension types. All comprehension have an iteration at their core that generate data elements. These data elements can be filtered using a predicate, and optionally be mapped -to multiple values if so required- to the resulting values that end up in the final collection.</p>
 <div class="section" id="if-else-shorthand-in-the-mapping">
-<h4>if else shorthand in the mapping<a class="headerlink" href="#if-else-shorthand-in-the-mapping" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">8.2.2.1. </span>if else shorthand in the mapping<a class="headerlink" href="#if-else-shorthand-in-the-mapping" title="Permalink to this headline">#</a></h4>
 <p>The mapping operation itself can also contain flow control using if else shorthand, as in the example below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,7 +479,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="nested-comprehensions">
-<h4>Nested comprehensions<a class="headerlink" href="#nested-comprehensions" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">8.2.2.2. </span>Nested comprehensions<a class="headerlink" href="#nested-comprehensions" title="Permalink to this headline">#</a></h4>
 <p>Comprehensions can be nested to create complex combinations and datastructures.<br />
 Note that when you think the code gets unclear it is time to simplify things and switch back to regular flow control.</p>
 <div class="cell docutils container">
@@ -514,7 +521,7 @@ Note that when you think the code gets unclear it is time to simplify things and
 </div>
 </div>
 <div class="section" id="some-more-examples">
-<h4>Some more examples<a class="headerlink" href="#some-more-examples" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">8.2.2.3. </span>Some more examples<a class="headerlink" href="#some-more-examples" title="Permalink to this headline">#</a></h4>
 <p>Below are some additional examples to give you a general idea of the possibilities.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,7 +588,7 @@ Note that when you think the code gets unclear it is time to simplify things and
 </div>
 </div>
 <div class="section" id="dict-comprehensions">
-<h3>dict comprehensions<a class="headerlink" href="#dict-comprehensions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">8.2.3. </span>dict comprehensions<a class="headerlink" href="#dict-comprehensions" title="Permalink to this headline">#</a></h3>
 <p>Dict comprehensions are different because they need to produce key-value pairs in the form of <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,7 +613,7 @@ Note that when you think the code gets unclear it is time to simplify things and
 </div>
 </div>
 <div class="section" id="other-comprehensions">
-<h3>Other comprehensions<a class="headerlink" href="#other-comprehensions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">8.2.4. </span>Other comprehensions<a class="headerlink" href="#other-comprehensions" title="Permalink to this headline">#</a></h3>
 <p>Set comprehensions look a lot like dict comprehensions but they have no key: value pairs.<br />
 Tuples are created using the tuple constructor.<br />
 Generator expressions generate values that can be used to feed other collections, or iterate the values.<br />
@@ -629,7 +636,7 @@ Other that the embracing symbols they work the same as lists.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1}
 (&#39;H&#39;, &#39;A&#39;, &#39;P&#39;, &#39;P&#39;, &#39;Y&#39;)
-&lt;generator object &lt;genexpr&gt; at 0x105ae1970&gt;
+&lt;generator object &lt;genexpr&gt; at 0x1059d0900&gt;
 frozenset({0, 1})
 </pre></div>
 </div>
@@ -670,6 +677,24 @@ frozenset({0, 1})
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="06_core_library_functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>The core library functions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08_exception_mechanism.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>08 The exception mechanism</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -688,17 +713,17 @@ frozenset({0, 1})
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-mapping">filtering and mapping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comprehensions">What are comprehensions?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-essential-to-python-programming">Are these essential to Python programming?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List comprehensions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-shorthand-in-the-mapping">if else shorthand in the mapping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">Nested comprehensions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples">Some more examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-mapping">8.1. filtering and mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comprehensions">8.2. What are comprehensions?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-essential-to-python-programming">8.2.1. Are these essential to Python programming?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">8.2.2. List comprehensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-shorthand-in-the-mapping">8.2.2.1. if else shorthand in the mapping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">8.2.2.2. Nested comprehensions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples">8.2.2.3. Some more examples</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-comprehensions">dict comprehensions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-comprehensions">Other comprehensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-comprehensions">8.2.3. dict comprehensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-comprehensions">8.2.4. Other comprehensions</a></li>
 </ul>
 </li>
 </ul>
