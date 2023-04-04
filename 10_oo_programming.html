@@ -1,0 +1,1120 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object-oriented programming &#8212; A short Python introduction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10_oo_programming';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ITANN_course_description.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Hanze-Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Hanze-Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ITANN_course_description.html">
+                    ITANN course: Introduction to Python Programming
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F10_oo_programming.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/10_oo_programming.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Object-oriented programming</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-objects">Classes and Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-the-mother-of-all-classes">Class <code class="docutils literal notranslate"><span class="pre">object</span></code>, the mother of all classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-behaviour">Adding behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-to-swim">Learn to swim</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-example">A more realistic example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constructor-init">The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-injected-self-argument">The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-and-interpreter-hooks">Object and interpreter hooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-some-hooks">Implement some hooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-performance-class">The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reservation-class">The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-performance">Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bring-it-all-together">Bring it all together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-an-iteration-hook">Implementing an iteration hook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-iteration">An alternative iteration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-hooks">The main hooks</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="object-oriented-programming">
+<h1>Object-oriented programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">#</a></h1>
+<p>You already know that Python is an <em>object-oriented</em> programming language and have seen some aspects of it.</p>
+<p>For instance, the dot operator that lets you access methods on objects, like in this fragment:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Howdy, Mike&#39;</span>
+<span class="n">message2</span> <span class="o">=</span> <span class="s1">&#39;Howdy, Rose&#39;</span>
+<span class="n">message</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Howdy&#39;</span><span class="p">,</span> <span class="s1">&#39;Bye&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the <strong><em>string instances</em></strong> named <code class="docutils literal notranslate"><span class="pre">message</span></code> and <code class="docutils literal notranslate"><span class="pre">message2</span></code> are defined. In the third line, the dot operator is applied to the instance named <code class="docutils literal notranslate"><span class="pre">message</span></code> to call its method <code class="docutils literal notranslate"><span class="pre">replace()</span></code>. Since <code class="docutils literal notranslate"><span class="pre">replace()</span></code> is called on this particular instance, the replacement is applied to the data stored in the string instance <code class="docutils literal notranslate"><span class="pre">message</span></code>, not in the data of <code class="docutils literal notranslate"><span class="pre">message2</span></code>.
+So, although the method is defined in the blueprint of all string objects, class <code class="docutils literal notranslate"><span class="pre">str</span></code>, when the method is called it will work on the actual data of the current instance on which the method is called.</p>
+<p>This is the essence of object-oriented programming.</p>
+<div class="section" id="classes-and-objects">
+<h2>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">#</a></h2>
+<p>In this programming paradigm <strong>classes</strong> form the blueprint for creating <strong>objects</strong> (also called instances).</p>
+<p><img alt="Class vs Objects" src="_images/class_vs_objects.png" /></p>
+<p>Although Python provides a wealth of classes - and you have already seen quite a few: <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, etc.-  there are many occasions where the need for custom classes arise.</p>
+<p>The key point of using classes is to combine data and related functionality (methods) into a single entity.
+Before embarking on a little (slightly) realistic example let’s have a look at a minimal class and build some data and functionality into it.</p>
+<p>Here is a Duck class that does absolutely nothing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, there is something you can do <em>with</em> it: you can create a Duck <em><strong>instance</strong></em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mallard</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The duck instance named mallard is a single “materialization” of the Duck blueprint. Although you might think there is no functionality attached to the class, actually there is. You can <code class="docutils literal notranslate"><span class="pre">print()</span></code> it for instance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mallard</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x108034490&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>By printing it, you get to see the name of the objects’ class, where it was defined, en where this instance lives in memory. When a new instance is created, it will only have a different memory address:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mallard</span><span class="p">)</span>
+<span class="n">shellduck</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shellduck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x108034490&gt;
+&lt;__main__.Duck object at 0x108034a00&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="class-object-the-mother-of-all-classes">
+<h2>Class <code class="docutils literal notranslate"><span class="pre">object</span></code>, the mother of all classes<a class="headerlink" href="#class-object-the-mother-of-all-classes" title="Permalink to this headline">#</a></h2>
+<p>Any object is printable because there is a base class named <code class="docutils literal notranslate"><span class="pre">object</span></code> that already specifies some behaviour that is usefull for all data types you can think of: printing, testing for equality, that sort of thing</p>
+<p>So, although you say this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>you actually get this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Which says: “Duck <strong><em>inherits</em></strong> (is a subtype of) from class object”</p>
+<p>When you inherit from class <code class="docutils literal notranslate"><span class="pre">object</span></code>, you get all the functionality defined in that class, and that is quite a collection. In the console, when you Define a Duck class, create an instance (<code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">Duck()</span></code>) and type <code class="docutils literal notranslate"><span class="pre">d._</span></code> followed by a tab (completion) or <code class="docutils literal notranslate"><span class="pre">dir(d)</span></code>, you see something like this listing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="vm">__class__</span><span class="p">,</span> <span class="fm">__delattr__</span><span class="p">,</span> <span class="vm">__dict__</span><span class="p">,</span> <span class="fm">__dir__</span><span class="p">,</span> <span class="vm">__doc__</span><span class="p">,</span> <span class="fm">__eq__</span><span class="p">,</span> <span class="fm">__format__</span><span class="p">,</span>
+<span class="fm">__ge__</span><span class="p">,</span> <span class="fm">__getattribute__</span><span class="p">,</span> <span class="fm">__gt__</span><span class="p">,</span> <span class="fm">__hash__</span><span class="p">,</span> <span class="fm">__init__</span><span class="p">,</span> <span class="n">__init_subclass__</span><span class="p">,</span>
+<span class="fm">__le__</span><span class="p">,</span> <span class="fm">__lt__</span><span class="p">,</span> <span class="vm">__module__</span><span class="p">,</span> <span class="fm">__ne__</span><span class="p">,</span> <span class="fm">__new__</span><span class="p">,</span> <span class="n">__reduce__</span><span class="p">,</span> <span class="n">__reduce_ex__</span><span class="p">,</span>
+<span class="fm">__repr__</span><span class="p">,</span> <span class="fm">__setattr__</span><span class="p">,</span> <span class="n">__sizeof__</span><span class="p">,</span> <span class="fm">__str__</span><span class="p">,</span> <span class="n">__subclasshook__</span><span class="p">,</span> <span class="vm">__weakref__</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>These are the main <strong><em>hooks</em></strong> used by the Python language that have a default implementation (and therefore defined in class <code class="docutils literal notranslate"><span class="pre">object</span></code>). Some are properties, some are methods. For instance, the <strong>hash</strong>() method makes it possible to get a hash code from any object using the <code class="docutils literal notranslate"><span class="pre">hash()</span></code> method. Here are some examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pintail</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The hash code is&#39;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">(</span><span class="n">pintail</span><span class="p">))</span>              <span class="c1"># calls __hash__()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The class is&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">pintail</span><span class="p">))</span>                  <span class="c1"># calls __class__()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The class attribute is&#39;</span><span class="p">,</span> <span class="n">pintail</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>    <span class="c1"># direct access to attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mallard equals pintail: &quot;</span><span class="p">,</span> <span class="n">mallard</span> <span class="o">==</span> <span class="n">pintail</span><span class="p">)</span> <span class="c1"># calls __eq__()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The hash code is 276837512
+The class is &lt;class &#39;__main__.Duck&#39;&gt;
+The class attribute is &lt;class &#39;__main__.Duck&#39;&gt;
+mallard equals pintail:  False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">#</a></h3>
+<p>Inheritance is one of the key concepts of the object-oriented programming paradigm. Classes can be defined to be <strong><em>subclasses</em></strong> of other classes. In the example above, class Duck is said to be a subclass of class object. By being a subclass, a class inherits all data and -especially- functionality from its <strong><em>superclass</em></strong>.
+It is a very interesting topic, extremely relevant to designing applications, but also very much out of scope for this course.</p>
+</div>
+</div>
+<div class="section" id="adding-behaviour">
+<h2>Adding behaviour<a class="headerlink" href="#adding-behaviour" title="Permalink to this headline">#</a></h2>
+<div class="section" id="learn-to-swim">
+<h3>Learn to swim<a class="headerlink" href="#learn-to-swim" title="Permalink to this headline">#</a></h3>
+<p>If we want to have a use for this duck we could give it something to do: swimming for instance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">swim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quack quack&#39;</span><span class="p">)</span>
+        
+<span class="n">eider</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+<span class="n">eider</span><span class="o">.</span><span class="n">swim</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quack quack
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a class specifying behaviour (a method) but one single property (data / variables). Don’t worry about the <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> just yet - it will be addressed in the next section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        
+    <span class="k">def</span> <span class="nf">swim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;quack quack I am a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+
+<span class="n">ruddy_duck</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">(</span><span class="s2">&quot;Ruddy Duck&quot;</span><span class="p">)</span>
+<span class="n">ruddy_duck</span><span class="o">.</span><span class="n">swim</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quack quack I am a Ruddy Duck
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-more-realistic-example">
+<h2>A more realistic example<a class="headerlink" href="#a-more-realistic-example" title="Permalink to this headline">#</a></h2>
+<p>Suppose you have a small theater and want to have a system for managing your reservations. Since you are a beginning Python enthousiast you decide to program it yourself.</p>
+<p>The first thing any good (OO-)programmer would do is to <em>model</em> the entities and their relations within the application.</p>
+<p><img alt="reservation system" src="_images/reservation_system.png" /></p>
+<p>Yes! This looks an awful lot like a database diagram (ERD), except for the missing id fields.</p>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        <strong>Naming conventions</strong>. You may have noticed the use of uppercase characters as first letter of the classes. This is one of the <a href="https://peps.python.org/pep-0008/">PEP 8 style guide</a> conventions. It states that "Class names should normally use the CapWords convention." Properties (fields) and methods (functions) of classes should again follow this rule "Function names should be lowercase, with words separated by underscores as necessary to improve readability."
+    </span>
+</div>
+<p>The next step is of course implementing these classes. You usually start at the simplest classes, without any reference to classes that have not been created yet.<br />
+Therefore we’ll start with the Customer class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Customer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+
+<span class="n">cust1</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Pete&quot;</span><span class="p">,</span> <span class="s2">&quot;Walsh&quot;</span><span class="p">,</span> <span class="s2">&quot;p.walsh@example.com&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A Customer! </span><span class="si">{</span><span class="n">cust1</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> is coming. His email is </span><span class="si">{</span><span class="n">cust1</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Customer! Pete is coming. His email is p.walsh@example.com
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-constructor-init">
+<h3>The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code><a class="headerlink" href="#the-constructor-init" title="Permalink to this headline">#</a></h3>
+<p>As seen before, the keyword <code class="docutils literal notranslate"><span class="pre">class</span></code> is used to communicate there is a class definition - an object blueprint. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is called the <strong><em>constructor</em></strong> method because it is used to <em>construct</em> an object: an instance of the class. A constructor can receive arguments that are required to have a cvorrect, functional instance of the class.</p>
+<p>You never call the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method directly!
+The <code class="docutils literal notranslate"><span class="pre">Customer(...)</span></code> expression is where a new Customer instance is created. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is invoked by the Python interpreter and the <code class="docutils literal notranslate"><span class="pre">self</span></code> reference is injected and a reference to the object in memory is returned (and bound to <code class="docutils literal notranslate"><span class="pre">cust1</span></code>.</p>
+</div>
+<div class="section" id="the-injected-self-argument">
+<h3>The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument<a class="headerlink" href="#the-injected-self-argument" title="Permalink to this headline">#</a></h3>
+<p>There is something special going on in there: the <code class="docutils literal notranslate"><span class="pre">self</span></code> method argument. In OO-Python, all methods invoked on an instance will receive as first argument -inserted by the Python interpreter- a reference to the <strong>current executing object</strong> and convention states that you name it <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<p>Because you have a reference to the current executing object you can attach, access and modify its data using this reference.</p>
+</div>
+</div>
+<div class="section" id="object-and-interpreter-hooks">
+<h2>Object and interpreter hooks<a class="headerlink" href="#object-and-interpreter-hooks" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is one of the many object and interpreter hooks that exist in Python. They are called “dunder” methods because of the “double underscores”. When you implement these, <em>they let you interact with operators and built-in functions</em>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> hook makes it possible to hook into the <code class="docutils literal notranslate"><span class="pre">()</span></code> construction process by defining an argument list. In the listing in a previous paragraph some hoks are specified in class <code class="docutils literal notranslate"><span class="pre">object</span></code>. We will see a few more hooks later in this chapter.<br />
+See for instance <a class="reference external" href="https://towardsdatascience.com/a-guide-to-pythons-dunder-methods-3b8104fce335">here</a> for more details.
+</span></p>
+</div><div class="section" id="implement-some-hooks">
+<h3>Implement some hooks<a class="headerlink" href="#implement-some-hooks" title="Permalink to this headline">#</a></h3>
+<p>When you print the object reference itself you get something like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cust1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Customer object at 0x1080347f0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output says it is an instance of the Customer class that is defined in the <code class="docutils literal notranslate"><span class="pre">__main__</span></code> scope and that it can be found at memory “location” <code class="docutils literal notranslate"><span class="pre">0x7fbe709e8fa0</span></code> - not very informative.</p>
+<p>Time to implement <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Customer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s1"> [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s1">]&#39;</span>
+
+<span class="n">cust2</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;Marsh&quot;</span><span class="p">,</span> <span class="s2">&quot;j.marsh@example.com&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cust2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Julia Marsh [j.marsh@example.com]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a hook for interacting with the <code class="docutils literal notranslate"><span class="pre">print()</span></code> built-in. When print receives an object to print it will look for the <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method and call it.</p>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        <h4>Hooks __str__() and __repr__()</h4>
+        Hooks <code>__str__()</code> and <code>__repr__()</code>, targeting the built-in functions <code>str()</code> and <code>repr()</code> respectively, are both used to get a string representation of an object. However, their intent is different:<br>
+        <ul>
+        <li>str() is used for generating human-readable output while repr() is mainly used for debugging and development. <i>repr’s goal is to be unambiguous and str’s is to be readable</i>.</li>
+        <li>repr() fetches the “formal” string representation of an object (a representation that has all information about the object) and str() is used to fetch the “informal” string representation of an object.</li>
+        <li>The print() and str() built-in function use __str__() to display the string representation of the object while the repr() built-in function uses __repr__() to display the object.</li>
+        </ul>
+    </span>
+</div></div>
+<div class="section" id="the-performance-class">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class<a class="headerlink" href="#the-performance-class" title="Permalink to this headline">#</a></h3>
+<p>Similar to the Customer class we can now implement the Performance class. The properties listed above are “title”, “datetime”, “seat_price”, “max_seats” and “reserved_seats”. All properties except the last one (which will simply default to 0) are useful to specify at construction time. Here is a first version.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Performance</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">seat_price</span><span class="p">,</span> <span class="n">max_seats</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">datetime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span> <span class="o">=</span> <span class="n">seat_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span> <span class="o">=</span> <span class="n">max_seats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reserved</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="si">}</span><span class="s1"> - €</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span><span class="si">}</span><span class="s1">); reserved </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">reserved</span><span class="si">}</span><span class="s1"> out of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">perf1</span> <span class="o">=</span> <span class="n">Performance</span><span class="p">(</span><span class="s2">&quot;The Tempest&quot;</span><span class="p">,</span> <span class="s2">&quot;2022/12/20 20:00H&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perf1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Tempest (2022/12/20 20:00H - €12); reserved 0 out of 50
+</pre></div>
+</div>
+</div>
+</div>
+<p>The coding pattern here is similar to the Customer class. One thing warrants some attention: The use of a string to specify datetime. Working with actual date/time data is a very important topic of course but out of scope in this course.
+In a more realist setting we would have done something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2022/12/20 20:00H&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%MH&quot;</span><span class="p">)</span>
+<span class="n">perf1</span> <span class="o">=</span> <span class="n">Performance</span><span class="p">(</span><span class="s2">&quot;The Tempest&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-reservation-class">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class<a class="headerlink" href="#the-reservation-class" title="Permalink to this headline">#</a></h3>
+<p>The Performace class is not ready - we will need to implement some means to process reservations. To do that we need a Reservation class first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Reservation</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer</span><span class="p">,</span> <span class="n">performance</span><span class="p">,</span> <span class="n">num_tickets</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">customer</span> <span class="o">=</span> <span class="n">customer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">performance</span> <span class="o">=</span> <span class="n">performance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_tickets</span> <span class="o">=</span> <span class="n">num_tickets</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Reservation by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">performance</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_tickets</span><span class="si">}</span><span class="s1"> tickets&#39;</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># needed for printing when in container</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s1">, tickets=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_tickets</span><span class="si">}</span><span class="s1">&#39;</span>
+
+
+<span class="n">res1</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">cust1</span><span class="p">,</span> <span class="n">perf1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reservation by Pete for The Tempest: 4 tickets
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finish-performance">
+<h3>Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code><a class="headerlink" href="#finish-performance" title="Permalink to this headline">#</a></h3>
+<p>Next, an <code class="docutils literal notranslate"><span class="pre">add_reservation()</span></code> and <code class="docutils literal notranslate"><span class="pre">tickets_sold()</span></code> method are added, and a check on each reservation to assure we are not sold out yet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_reservation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reservation</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Add a reservation to this performance.</span>
+<span class="sd">    Raises a valueError when sold out&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span> <span class="o">+</span> <span class="n">reservation</span><span class="o">.</span><span class="n">num_tickets</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> seats available&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reservation</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">tickets_sold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Get the number of tickets sold&#39;&#39;&#39;</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">res</span><span class="o">.</span><span class="n">num_tickets</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bring-it-all-together">
+<h3>Bring it all together<a class="headerlink" href="#bring-it-all-together" title="Permalink to this headline">#</a></h3>
+<p>Below is the finished <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class, and some example use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Performance</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">seat_price</span><span class="p">,</span> <span class="n">max_seats</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">datetime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span> <span class="o">=</span> <span class="n">seat_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span> <span class="o">=</span> <span class="n">max_seats</span>
+        <span class="c1">#self.reserved = 0            # not used anymore</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>    <span class="c1"># a list to store reservations</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="si">}</span><span class="s1"> - €</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span><span class="si">}</span><span class="s1">); reserved </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> out of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">add_reservation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reservation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Add a reservation to this performance.</span>
+<span class="sd">        Raises a valueError when the reservation size exceeds the available seats.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span> <span class="o">+</span> <span class="n">reservation</span><span class="o">.</span><span class="n">num_tickets</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> seats available&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reservation</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">tickets_sold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Get the number of tickets sold&#39;&#39;&#39;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">res</span><span class="o">.</span><span class="n">num_tickets</span>
+        <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perf2</span> <span class="o">=</span> <span class="n">Performance</span><span class="p">(</span><span class="s2">&quot;Hamlet&quot;</span><span class="p">,</span> <span class="s2">&quot;2023/01/18 20:00H&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perf2</span><span class="p">)</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">cust1</span><span class="p">,</span> <span class="n">perf2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+<span class="n">perf2</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perf2</span><span class="p">)</span>
+
+<span class="c1">## How do you test sold out? Try it!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hamlet (2023/01/18 20:00H - €15); reserved 0 out of 50
+Reservation by Pete for Hamlet: 4 tickets
+Hamlet (2023/01/18 20:00H - €15); reserved 4 out of 50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="implementing-an-iteration-hook">
+<h3>Implementing an iteration hook<a class="headerlink" href="#implementing-an-iteration-hook" title="Permalink to this headline">#</a></h3>
+<p>It would be very nice to be able to iterate the <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class on its reservations. All you need to do is implement the <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> hooks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># should return an object responsible for iteration. Here: the object itself.</span>
+<span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+    <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="bp">self</span>
+
+<span class="c1"># is responsible for the actual iteration process. </span>
+<span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">StopIteration</span> <span class="c1"># required to end the iteration.</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method is called when an instance of your class is used in an iteration context such as a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop or collection constructors. It is expected to return an object that will actually do the iteration. Usually this is the object itself, but you can delegate to instance variables that are iterable objects themselves as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ListWrapper</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed_elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">seed_elements</span><span class="p">:</span> <span class="c1"># non-empty</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">seed_elements</span><span class="p">)</span>
+            
+    <span class="k">def</span> <span class="nf">addElements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
+    
+<span class="n">lw</span> <span class="o">=</span> <span class="n">ListWrapper</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">lw</span><span class="o">.</span><span class="n">addElements</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">lw</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s2">&quot; - &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 - 4 - 1 - 6 - 3 - 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is the complete finsihed <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Performance</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">seat_price</span><span class="p">,</span> <span class="n">max_seats</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">datetime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span> <span class="o">=</span> <span class="n">seat_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span> <span class="o">=</span> <span class="n">max_seats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>    <span class="c1"># a list to store reservations</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="si">}</span><span class="s1"> - €</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span><span class="si">}</span><span class="s1">); reserved </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> out of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">add_reservation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reservation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Add a reservation to this performance.</span>
+<span class="sd">        Raises a valueError when the reservation size exceeds the available seats.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span> <span class="o">+</span> <span class="n">reservation</span><span class="o">.</span><span class="n">num_tickets</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> seats available&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reservation</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">tickets_sold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Get the number of tickets sold&#39;&#39;&#39;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">res</span><span class="o">.</span><span class="n">num_tickets</span>
+        <span class="k">return</span> <span class="n">total</span>
+    
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the iteration process in action.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perf3</span> <span class="o">=</span> <span class="n">Performance</span><span class="p">(</span><span class="s2">&quot;Romo and Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;2023/03/08 20:00H&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;Marsh&quot;</span><span class="p">,</span> <span class="s2">&quot;j.marsh@example.com&quot;</span><span class="p">),</span> <span class="n">perf3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">perf3</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res3</span><span class="p">)</span>
+<span class="n">res4</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="s2">&quot;Dole&quot;</span><span class="p">,</span> <span class="s2">&quot;p.dole@example.com&quot;</span><span class="p">),</span> <span class="n">perf3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">perf3</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res4</span><span class="p">)</span>
+<span class="n">res5</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Walsh&quot;</span><span class="p">,</span> <span class="s2">&quot;a.walsh@example.com&quot;</span><span class="p">),</span> <span class="n">perf3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">perf3</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">perf3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">perf3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reservation for </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">num_tickets</span><span class="si">}</span><span class="s1"> tickets&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Romo and Julia (2023/03/08 20:00H - €15); reserved 11 out of 40
+Reservation for Julia: 4 tickets
+Reservation for Peter: 2 tickets
+Reservation for Alex: 5 tickets
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the <strong><em>chaining</em></strong> of the dot operator to access object that are properties of objects: <code class="docutils literal notranslate"><span class="pre">res.customer.first</span></code>.</p>
+<p>There are many more hooks you can implement; for indexing (<code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>), comparison (<code class="docutils literal notranslate"><span class="pre">__eq__()</span></code>) and many more.</p>
+<p><a class="reference external" href="https://towardsdatascience.com/a-guide-to-pythons-dunder-methods-3b8104fce335">Here</a> is the link again to the website going deeper into the topic.</p>
+<p>This finishes this example. Can you improve or extend on the design?</p>
+</div>
+<div class="section" id="an-alternative-iteration">
+<h3>An alternative iteration<a class="headerlink" href="#an-alternative-iteration" title="Permalink to this headline">#</a></h3>
+<p>Alternatively, you can implement iteration using <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PerformanceAltIt</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">seat_price</span><span class="p">,</span> <span class="n">max_seats</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">datetime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span> <span class="o">=</span> <span class="n">seat_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span> <span class="o">=</span> <span class="n">max_seats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>    <span class="c1"># a list to store reservations</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="si">}</span><span class="s1"> - €</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seat_price</span><span class="si">}</span><span class="s1">); reserved </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> out of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">add_reservation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reservation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Add a reservation to this performance.</span>
+<span class="sd">        Raises a valueError when the reservation size exceeds the available seats.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span> <span class="o">+</span> <span class="n">reservation</span><span class="o">.</span><span class="n">num_tickets</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_seats</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">tickets_sold</span><span class="p">()</span><span class="si">}</span><span class="s1"> seats available&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reservation</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">tickets_sold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Get the number of tickets sold&#39;&#39;&#39;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">res</span><span class="o">.</span><span class="n">num_tickets</span>
+        <span class="k">return</span> <span class="n">total</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reservations</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perf4</span> <span class="o">=</span> <span class="n">PerformanceAltIt</span><span class="p">(</span><span class="s2">&quot;Romo and Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;2023/03/08 20:00H&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;Marsh&quot;</span><span class="p">,</span> <span class="s2">&quot;j.marsh@example.com&quot;</span><span class="p">),</span> <span class="n">perf4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">perf4</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res3</span><span class="p">)</span>
+<span class="n">res4</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="s2">&quot;Dole&quot;</span><span class="p">,</span> <span class="s2">&quot;p.dole@example.com&quot;</span><span class="p">),</span> <span class="n">perf4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">perf4</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res4</span><span class="p">)</span>
+<span class="n">res5</span> <span class="o">=</span> <span class="n">Reservation</span><span class="p">(</span><span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Walsh&quot;</span><span class="p">,</span> <span class="s2">&quot;a.walsh@example.com&quot;</span><span class="p">),</span> <span class="n">perf4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">perf4</span><span class="o">.</span><span class="n">add_reservation</span><span class="p">(</span><span class="n">res5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">perf4</span><span class="p">)</span>
+
+<span class="c1">#iteration: no problem</span>
+<span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">perf4</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reservation for </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">num_tickets</span><span class="si">}</span><span class="s1"> tickets&#39;</span><span class="p">)</span>
+
+<span class="c1">#indexing and slicing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perf4</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Romo and Julia (2023/03/08 20:00H - €15); reserved 11 out of 40
+Reservation for Julia: 4 tickets
+Reservation for Peter: 2 tickets
+Reservation for Alex: 5 tickets
+[name=Julia Marsh, tickets=4, name=Peter Dole, tickets=2]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-main-hooks">
+<h2>The main hooks<a class="headerlink" href="#the-main-hooks" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__()</span></code>: used by constructor new Instance<code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>: used by <code class="docutils literal notranslate"><span class="pre">str(</span> <span class="pre">)</span></code> (and <code class="docutils literal notranslate"><span class="pre">print()</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>: used by <code class="docutils literal notranslate"><span class="pre">repr()</span></code> (and <code class="docutils literal notranslate"><span class="pre">print()</span></code> when it does not find a <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> to implement iteration. Alternatively, this can be done using <code class="docutils literal notranslate"><span class="pre">__len__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-objects">Classes and Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-the-mother-of-all-classes">Class <code class="docutils literal notranslate"><span class="pre">object</span></code>, the mother of all classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-behaviour">Adding behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-to-swim">Learn to swim</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-example">A more realistic example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constructor-init">The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-injected-self-argument">The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-and-interpreter-hooks">Object and interpreter hooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-some-hooks">Implement some hooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-performance-class">The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reservation-class">The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-performance">Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bring-it-all-together">Bring it all together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-an-iteration-hook">Implementing an iteration hook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-iteration">An alternative iteration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-hooks">The main hooks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michiel Noback
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprehensions &#8212; A short Python introduction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_comprehensions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ITANN_course_description.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Hanze-Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Hanze-Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ITANN_course_description.html">
+                    ITANN course: Introduction to Python Programming
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F07_comprehensions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/07_comprehensions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Comprehensions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-mapping">filtering and mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comprehensions">What are comprehensions?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-essential-to-python-programming">Are these essential to Python programming?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List comprehensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-shorthand-in-the-mapping">if else shorthand in the mapping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">Nested comprehensions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples">Some more examples</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-comprehensions">dict comprehensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-comprehensions">Other comprehensions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="comprehensions">
+<h1>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">#</a></h1>
+<div class="section" id="filtering-and-mapping">
+<h2>filtering and mapping<a class="headerlink" href="#filtering-and-mapping" title="Permalink to this headline">#</a></h2>
+<p>In the previous chapter there was a section on <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code>. These functions represent processes that are present in a majority of data processing activities.</p>
+<p>For convenience, the concepts are repeated here:</p>
+<p><img alt="Map vs Filter" src="_images/map_filter.png" /></p>
+</div>
+<div class="section" id="what-are-comprehensions">
+<h2>What are comprehensions?<a class="headerlink" href="#what-are-comprehensions" title="Permalink to this headline">#</a></h2>
+<p>Comprehensions are shorthand syntactic structures that can be used to generate, filter and map different types of collections:</p>
+<ul class="simple">
+<li><p><strong>list comprehensions</strong> generate lists using <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p><strong>tuple comprehensions</strong> generate tuples using the <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> constructor</p></li>
+<li><p><strong>set comprehensions</strong> generate sets using <code class="docutils literal notranslate"><span class="pre">{}</span></code> with single values</p></li>
+<li><p><strong>dict comprehensions</strong> generate dictionaries using <code class="docutils literal notranslate"><span class="pre">{}</span></code> with key-value combinations</p></li>
+<li><p><strong>generator comprehensions</strong> are used to generate values <em>on demand</em> using <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+</ul>
+<div class="section" id="are-these-essential-to-python-programming">
+<h3>Are these essential to Python programming?<a class="headerlink" href="#are-these-essential-to-python-programming" title="Permalink to this headline">#</a></h3>
+<p>Comprehensions have superseded the use of the <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code> functions, and are very popular constructs of the language.</p>
+<p>However, some beginning programmers feel awkward using them. So remember, if you feel ill at ease with these, you can always implement any comprehension using regular flow control elements such as <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> structures, or fall back to the use of <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code></p>
+</div>
+<div class="section" id="list-comprehensions">
+<h3>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h3>
+<p>The most-used type of comprehension is list comprehension, or listcomp in short.</p>
+<p>Let’s implement both examples from the picture using these.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="c1">#map</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">])</span>
+
+<span class="c1">#filter</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[81, 1, 25, 16, 64, 9, 4, 1, 16]
+[1, 4, 3, 2, 1, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using plain Python</span>
+
+<span class="c1">#map</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1">#filter</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[81, 1, 25, 16, 64, 9, 4, 1, 16]
+[1, 4, 3, 2, 1, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="listcomp anatomy" src="_images/listcomp_anatomy.png" /></p>
+<p>The above example shows a list comprehension. However, this general structure applies to all comprehension types. All comprehension have an iteration at their core that generate data elements. These data elements can be filtered using a predicate, and optionally be mapped -to multiple values if so required- to the resulting values that end up in the final collection.</p>
+<div class="section" id="if-else-shorthand-in-the-mapping">
+<h4>if else shorthand in the mapping<a class="headerlink" href="#if-else-shorthand-in-the-mapping" title="Permalink to this headline">#</a></h4>
+<p>The mapping operation itself can also contain flow control using if else shorthand, as in the example below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;int&#39;</span> <span class="k">else</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 4, &#39;aa&#39;, &#39;cc&#39;, 12, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nested-comprehensions">
+<h4>Nested comprehensions<a class="headerlink" href="#nested-comprehensions" title="Permalink to this headline">#</a></h4>
+<p>Comprehensions can be nested to create complex combinations and datastructures.<br />
+Note that when you think the code gets unclear it is time to simplify things and switch back to regular flow control.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">A</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">B</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">A</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">B</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;3c&#39;, &#39;3e&#39;, &#39;2c&#39;, &#39;2e&#39;, &#39;5c&#39;, &#39;5e&#39;]
+[[3, &#39;c&#39;], [3, &#39;e&#39;], [2, &#39;c&#39;], [2, &#39;e&#39;], [5, &#39;c&#39;], [5, &#39;e&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Besides generating nested structures, they can also be used to filter and process nested stuctures. For instance, given this list of x-y-z coordinates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xyz_coordinates</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)]</span>
+
+<span class="c1">#filter for coordinates that are negative</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">coord</span> <span class="k">for</span> <span class="n">xyz</span> <span class="ow">in</span> <span class="n">xyz_coordinates</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">xyz</span> <span class="k">if</span> <span class="n">coord</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1">#filter for xyz combinations where any coordinate is negative</span>
+<span class="nb">print</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="ow">in</span> <span class="n">xyz_coordinates</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3, -5, -7, -5]
+[&#39;9/2/-3&#39;, &#39;2/-5/4&#39;, &#39;5/-7/-5&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="some-more-examples">
+<h4>Some more examples<a class="headerlink" href="#some-more-examples" title="Permalink to this headline">#</a></h4>
+<p>Below are some additional examples to give you a general idea of the possibilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="c1"># a list of tuples: the square root (rounded) and square of each number</span>
+<span class="p">[(</span><span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(3.0, 81),
+ (1.0, 1),
+ (2.24, 25),
+ (2.0, 16),
+ (2.83, 64),
+ (1.73, 9),
+ (1.41, 4),
+ (1.0, 1),
+ (2.0, 16)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">NaN</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span> <span class="c1"># create a NaN variable</span>
+
+<span class="c1"># a list of tuples: the square root (rounded) and square of each number if number is positive else a NaN</span>
+<span class="p">[(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">NaN</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(3.0, 81),
+ (nan, 1),
+ (2.23606797749979, 25),
+ (2.0, 16),
+ (nan, 64),
+ (1.7320508075688772, 9),
+ (1.4142135623730951, 4),
+ (1.0, 1),
+ (2.0, 16)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="c1"># only when n is positive</span>
+<span class="p">[</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.0, 2.23606797749979, 2.0, 1.7320508075688772, 1.4142135623730951, 1.0, 2.0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dict-comprehensions">
+<h3>dict comprehensions<a class="headerlink" href="#dict-comprehensions" title="Permalink to this headline">#</a></h3>
+<p>Dict comprehensions are different because they need to produce key-value pairs in the form of <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">120</span><span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{110: &#39;n&#39;,
+ 111: &#39;o&#39;,
+ 112: &#39;p&#39;,
+ 113: &#39;q&#39;,
+ 114: &#39;r&#39;,
+ 115: &#39;s&#39;,
+ 116: &#39;t&#39;,
+ 117: &#39;u&#39;,
+ 118: &#39;v&#39;,
+ 119: &#39;w&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-comprehensions">
+<h3>Other comprehensions<a class="headerlink" href="#other-comprehensions" title="Permalink to this headline">#</a></h3>
+<p>Set comprehensions look a lot like dict comprehensions but they have no key: value pairs.<br />
+Tuples are created using the tuple constructor.<br />
+Generator expressions generate values that can be used to feed other collections, or iterate the values.<br />
+Other that the embracing symbols they work the same as lists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#set with {}</span>
+<span class="nb">print</span><span class="p">({</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)})</span>
+
+<span class="c1">#tuple with tuple()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s1">&#39;happy&#39;</span><span class="p">))</span>
+
+<span class="c1">#generator with ()</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">gen</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1}
+(&#39;H&#39;, &#39;A&#39;, &#39;P&#39;, &#39;P&#39;, &#39;Y&#39;)
+&lt;generator object &lt;genexpr&gt; at 0x105ae1970&gt;
+frozenset({0, 1})
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-mapping">filtering and mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comprehensions">What are comprehensions?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-essential-to-python-programming">Are these essential to Python programming?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List comprehensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-shorthand-in-the-mapping">if else shorthand in the mapping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">Nested comprehensions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples">Some more examples</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-comprehensions">dict comprehensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-comprehensions">Other comprehensions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michiel Noback
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

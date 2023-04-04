@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A quick overview &#8212; A short Python introduction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_getting_started';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data" href="02_data.html" />
+    <link rel="prev" title="Jupyter notebooks" href="00_jupyter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ITANN_course_description.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Hanze-Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Hanze-Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ITANN_course_description.html">
+                    ITANN course: Introduction to Python Programming
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A quick overview</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F01_getting_started.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/01_getting_started.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A quick overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A quick overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-program">A real program</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-quick-overview">
+<h1>A quick overview<a class="headerlink" href="#a-quick-overview" title="Permalink to this headline">#</a></h1>
+<p>In this course you will get to know the programming language <strong>Python</strong>. You will get to know the language up to a level where you will be able to write some scripts and run Python code as an executable program, or in a notebook environment.</p>
+<p>Since this is the preferred way for a majority of data scientists, and a convenient form for educational purposes, we will start in a notebook setting. The document you are currently reading is a <strong>Jupyter</strong> notebook. A scientific notebook is an electronic  document used for <strong>literate programming</strong>. In literate programming, text (usually in the form of <strong>Markdown</strong>), code, and its output (both textual and graphical) are combined.</p>
+<div class="section" id="an-example">
+<h2>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h2>
+<p>Suppose I want to calculate the surface of three different equilateral triangles, with sides 3, 4 and 2.21 respectively.
+First I define a <strong>variable</strong> representing the side and assign an initial value to it. To inspect the value of a variable at any given time you can <code class="docutils literal notranslate"><span class="pre">print()</span></code> it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">side</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">side</span><span class="p">)</span> <span class="c1"># print the side</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the use of <code class="docutils literal notranslate"><span class="pre">#text</span></code> to add human-readable comments to the code. Everything on a line after <code class="docutils literal notranslate"><span class="pre">#</span></code> will be ignored when evaluating the cell.</p>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        <strong>Code comments</strong><br> Any text occurring on a line after a hash symbol <code>#</code> will be ignored by the python interpreter. Text after a hash is called code comment. <br><br>
+    </span>
+</div><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> is a <strong>function</strong> that can be used to display text on the console (or in a notebook).<br />
+If it is the last statement in a notebook cell, you can simply type the name of the variable you want to see without wrapping it in a call to print().</p>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        <strong>Functions</strong><br>A function is a re-usable piece of code, accessible by its name. It can receive input data (arguments) specified by its parameters. These are passed to the function between parentheses. For instance, <code>print(..., sep=" ")</code> is a function named print that can receive any number of arguments to print (...) that will be displayed on the console separated by the value specified with the "sep" parameter. You can create your own functions very easily as will be shown later.
+    </span>
+</div><p>Next, I use the <code class="docutils literal notranslate"><span class="pre">side</span></code> variable to calculate the surface of a 3 - 3 - 3 triangle. The formula is <span class="math notranslate nohighlight">\(\frac{1}{2} * width * height\)</span>, but since it is equilateral we can simply use <span class="math notranslate nohighlight">\(\frac{1}{2} * side^2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">side</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">area</span> <span class="o">=</span>  <span class="mf">0.5</span> <span class="o">*</span> <span class="n">side</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="sa">f</span><span class="s1">&#39;The area of an equilateral triangle with side </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The area of an equilateral triangle with side 3 is 4.5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        <strong>Operators</strong><br> 
+        Operators such as <code>*</code> and <code>**</code> are (combinations of) symbols within Python code that <i>operate</i> on (usually) the two values on either side of it (named <i>operands</i>), and that will generate a new value from these two input values. 
+        We call this combination an <i>expression</i>. <br> 
+        For instance, <code>+</code> is the addition operator that takes the values on either side and returns the sum of the two.
+        Other mathematical operators are, not surprisingly, minus (<code>-</code>), plus (<code>+</code>), division (<code>/</code>). <br> 
+        There are many more operators, classified as <i>mathematical</i> (like the above), <i>assignment</i> (like the `=` symbol in the above cells), <i>comparison</i> operators (such as "&lt;"), and some more categories. A complete listing of operators can be found <a href="https://www.w3schools.com/python/python_operators.asp">here</a> or 
+        <a href="https://www.tutorialspoint.com/python/python_basic_operators.htm">here</a>.
+    </span>
+</div><p>This:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;The area of an equilateral triangle with side </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>is a format string; a series of characters in which we can insert values from python variables at the location of the curly braces to produce this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">area</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">equilateral</span> <span class="pre">triangle</span> <span class="pre">with</span> <span class="pre">side</span> <span class="pre">3</span> <span class="pre">is</span> <span class="pre">4.5'</span></code></p>
+<p>Until a few Python versions ago we could not use these <em>format strings</em> and needed to write this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">print(&quot;The</span> <span class="pre">area</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">equilateral</span> <span class="pre">triangle</span> <span class="pre">with</span> <span class="pre">side</span> <span class="pre">&quot;,</span> <span class="pre">side,</span> <span class="pre">&quot;</span> <span class="pre">is</span> <span class="pre">&quot;,</span> <span class="pre">area)'</span></code></p>
+<p>instead of this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">f'The</span> <span class="pre">area</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">equilateral</span> <span class="pre">triangle</span> <span class="pre">with</span> <span class="pre">side</span> <span class="pre">{side}</span> <span class="pre">is</span> <span class="pre">{area}'</span></code></p>
+<p>Now I want to do the same calculation and reporting for other triangles. I could just copy-and-paste all code, as in the cell below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">side</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">area</span> <span class="o">=</span>  <span class="mf">0.5</span> <span class="o">*</span> <span class="n">side</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The area of an equilateral triangle with side </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+
+<span class="n">side</span> <span class="o">=</span> <span class="mf">2.21</span>
+<span class="n">area</span> <span class="o">=</span>  <span class="mf">0.5</span> <span class="o">*</span> <span class="n">side</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1">#note the use of round() in the statement below</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The area of an equilateral triangle with side </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The area of an equilateral triangle with side 4 is 8.0
+The area of an equilateral triangle with side 2.21 is 2.44
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is awful!</p>
+<p>Copy-and-paste activities are a real no-no in programming.<br />
+Whenever you catch yourself using Ctrl+C &amp; Ctrl+V, stop and consider a better way to do it.<br />
+In many cases this will result in extracting the copied code into a <strong>function</strong>.</p>
+<p>Below, the re-used piece of code is embedded in the function <code class="docutils literal notranslate"><span class="pre">triangle_area()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_triangle_area</span><span class="p">(</span><span class="n">side</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span>  <span class="mf">0.5</span> <span class="o">*</span> <span class="n">side</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The area of an equilateral triangle with side </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll visit the theory and practice of functions in a later chapter. Suffice to know here is that a named piece of code has been defined which can be used by that name when it is also given a value for its input argument, <code class="docutils literal notranslate"><span class="pre">side</span></code>.</p>
+<p>With this function defined (and loaded) it is easy to repeat the operation for a series of values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_triangle_area</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">print_triangle_area</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">print_triangle_area</span><span class="p">(</span><span class="mf">2.21</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The area of an equilateral triangle with side 3 is 4.5
+The area of an equilateral triangle with side 4 is 8.0
+The area of an equilateral triangle with side 2.21 is 2.44
+</pre></div>
+</div>
+</div>
+</div>
+<p>But wait! There is still copied code. Taking a leap forward in Python programming concepts - the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, here is an even better way to do it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sides</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">2.21</span><span class="p">]</span>        <span class="c1"># a list of values</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">sides</span><span class="p">:</span>             <span class="c1"># iterate using for</span>
+    <span class="n">print_triangle_area</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># the iterated block</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The area of an equilateral triangle with side 3 is 4.5
+The area of an equilateral triangle with side 4 is 8.0
+The area of an equilateral triangle with side 2.21 is 2.44
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop <em>iterates</em> an iterable (a collection of values) and executes the given block for each of the values. We call this type of construct a <strong>flow control</strong> element because it controls the flow of the program.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-real-program">
+<h1>A real program<a class="headerlink" href="#a-real-program" title="Permalink to this headline">#</a></h1>
+<p>By now you may be thinking that this does not look like programming at all. Where is the program?
+Actually there is no program here. A program is usually a piece of functionality on a computer or other device that receives some input (keyboard, mouse, touchscreen, sensor, etc.) and generates some output (screen, terminal, file, database).</p>
+<p>Given the triangle example above, a standalone program for calculating and reporting triangle surface area would look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;This program calculates the surface of equilateral triangles with sides given on the command line.&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">print_triangle_area</span><span class="p">(</span><span class="n">side</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span>  <span class="mf">0.5</span> <span class="o">*</span> <span class="n">side</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The area of an equilateral triangle with side </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">side</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="n">print_triangle_area</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Suppose this code is stored in a text file (e.g. ‘triangle_surface.py’) on your computer it could be run from a terminal (Linux or MacOS) or command prompt (Windows) using the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>python3<span class="w"> </span>triangle_surface.py<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span>.21
+The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span>an<span class="w"> </span>equilateral<span class="w"> </span>triangle<span class="w"> </span>with<span class="w"> </span>side<span class="w"> </span><span class="m">3</span><span class="w"> </span>is<span class="w"> </span><span class="m">4</span>.5
+The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span>an<span class="w"> </span>equilateral<span class="w"> </span>triangle<span class="w"> </span>with<span class="w"> </span>side<span class="w"> </span><span class="m">4</span><span class="w"> </span>is<span class="w"> </span><span class="m">8</span>.0
+The<span class="w"> </span>area<span class="w"> </span>of<span class="w"> </span>an<span class="w"> </span>equilateral<span class="w"> </span>triangle<span class="w"> </span>with<span class="w"> </span>side<span class="w"> </span><span class="m">2</span>.21<span class="w"> </span>is<span class="w"> </span><span class="m">2</span>.44
+</pre></div>
+</div>
+<p>The code for this program, which we usually call a <strong>script</strong>, can be found <a class="reference download internal" download="" href="_downloads/aca19472e6dd0fdc764e01ac9ac12d87/triangle_surface.py"><span class="xref download myst">here</span></a>.</p>
+<p>There are some elements that you may not understand yet. For those who cannot proceed without a little premature explanation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> says “load the functionality located in module <code class="docutils literal notranslate"><span class="pre">sys</span></code> and make it available here”. The functionality that is available by default in any Python program is rather limited to keep it lean. Any additional functionality must be loaded from modules using an <strong>import statement</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is the list of arguments entered on the command line, in this case <code class="docutils literal notranslate"><span class="pre">[&quot;triangle_surface.py&quot;,</span> <span class="pre">&quot;3&quot;,</span> <span class="pre">&quot;4&quot;,</span> <span class="pre">&quot;2.21&quot;]</span></code>. We’ll get to lists in the next chapter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">arg</span> <span class="pre">in</span> <span class="pre">sys.argv[1:]:</span></code> this says: “iterate the command-line arguments but skip the first”. Again, subject of a later chapter.</p></li>
+</ul>
+<div class="section" id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">#</a></h2>
+<p>These assume that you already have Python3 installed on your device. Use the Qt console from Anaconda Navigator for these. Alternatively you can use the terminal Python 3 REPL (Read, Evaluate Print Loop) engine by typing <code class="docutils literal notranslate"><span class="pre">python3</span></code> (so without any argument) in the Terminal or Command prompt. Both options provide an interactive Python session we call a REPL (for Read Evaluate Print Loop).</p>
+<ol class="arabic simple">
+<li><p>First enter <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> and press enter to load the math module.</p></li>
+<li><p>Inspect the value of <code class="docutils literal notranslate"><span class="pre">math.pi</span></code> and try out the function <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>.</p></li>
+<li><p>Calculate the following (using <code class="docutils literal notranslate"><span class="pre">math.pi</span></code> and <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> where relevant).</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{4.6 + 1.2}{2.09}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3\times4^\frac{7}{12}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r = 6\)</span> <br />
+<span class="math notranslate nohighlight">\(\frac{2}{3}\times \pi r^3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5 \times (\frac{4 + 2}{\sqrt{7} \times 9})\)</span></p></li>
+</ul>
+</li>
+<li><p>On your computer, create a folder that will hold the exercises of this course. In it, put a copy of the above script <a class="reference download internal" download="" href="_downloads/aca19472e6dd0fdc764e01ac9ac12d87/triangle_surface.py"><span class="xref download myst">triangle_surface.py</span></a>. Run the script as demonstrated above. Try out some other command-line arguments.</p></li>
+<li><p>Change the script at some points and investigate the effect:</p>
+<ul class="simple">
+<li><p>comment-out (e.g. put a hash symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> in front of it) the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> statement</p></li>
+<li><p>change <code class="docutils literal notranslate"><span class="pre">float(side)</span></code> to <code class="docutils literal notranslate"><span class="pre">int(side)</span></code></p></li>
+<li><p>change <code class="docutils literal notranslate"><span class="pre">sys.argv[1:]</span></code> to <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and to <code class="docutils literal notranslate"><span class="pre">sys.argv[2:]</span></code></p></li>
+<li><p>use your imagination and experiment further</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="key-concepts">
+<h1>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><strong>(computer) program</strong>: a computer program is a sequence or set of instructions in a programming language that a computer (or other device) can execute or interpret.</p></li>
+<li><p><strong>flow control</strong>: programming elements that control the flow of a program. Flow control elements are used for iteration and conditional execution.</p></li>
+<li><p><strong>function</strong>: A function is a chunk of code (usually named) that you can re-use, rather than copying it multiple times. Functions enable programmers to break down a problem into smaller pieces, each of which performs a particular task.</p></li>
+<li><p><strong>import</strong>: A statement making functionality available that is not loaded by default.</p></li>
+<li><p><strong>Jupyter</strong>: a Notebook platform in which you do interactive <em>literate programming</em>. It supports Julia, Python and R.</p></li>
+<li><p><strong>Markdown</strong>: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. It is used in a wide range of settings: Jupyter Notebooks, R Markdown, eBook authoring etcetera.</p></li>
+<li><p><strong>operator</strong>: a symbol that operates on operands, usually on both sides, together forming an expression.</p></li>
+<li><p><strong>Python</strong>: a very popular <em>programming language</em>, praised for its ease of learning and use and applicability in a wide range of programming challenges.</p></li>
+<li><p><strong>script</strong>: a text file with computer code that can be executed as a program, usually by the <em>interpreter</em> for the programming lanuage used.</p></li>
+<li><p><strong>variable</strong>: a program element that couples a name to a memory location with some contents.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="00_jupyter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Jupyter notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A quick overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-program">A real program</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michiel Noback
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

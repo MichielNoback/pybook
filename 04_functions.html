@@ -1,0 +1,947 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions &#8212; A short Python introduction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_functions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ITANN_course_description.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Hanze-Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Hanze-Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ITANN_course_description.html">
+                    ITANN course: Introduction to Python Programming
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F04_functions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/04_functions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-functions">What are functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-functions">Creating and using functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-example">A more realistic example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-ve-got-to-adhere-to-the-contract">You’ve got to adhere to the contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-values-give-more-flexibility">Default values give more flexibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-can-only-return-one-thing">Functions can only return one thing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communicate-intent-and-details-via-docstring">Communicate intent and details via docstring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-and-the-global-keyword">Scope and the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-function-stuff">Advanced function stuff</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-testing">Design and Testing</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
+<div class="section" id="what-are-functions">
+<h2>What are functions<a class="headerlink" href="#what-are-functions" title="Permalink to this headline">#</a></h2>
+<p>A function is a reusable piece of functionality which performs (ideally) a single and well-defined task and handles error-conditions in a graceful manner.<br />
+Many functions are already provided by Python itself or one of its many external libraries.</p>
+<p>Functions themselves usually call one or more functions within the function body.</p>
+<p>Here is a very simple example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what shall I call you? &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goodday to you,&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="n">say_hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what shall I call you? &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goodday to you,&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">say_hello</span><span class="p">()</span>
+
+<span class="nn">Cell In[1], line 2,</span> in <span class="ni">say_hello</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what shall I call you? &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goodday to you,&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/education/lib/python3.9/site-packages/ipykernel/kernelbase.py:1190,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1190</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1195</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1196</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function asks for the users’ name and serves it back with a greeting.
+It <em>calls</em> two functions itself to perform its task: <code class="docutils literal notranslate"><span class="pre">input()</span></code> which will read input entered using a keyboard on the command line and <code class="docutils literal notranslate"><span class="pre">print()</span></code> which outputs text to that same command-line (also called terminal or console).</p>
+<p>Actually, this function does not adhere to the definition stated above “… a single and well-defined task and handles error-conditions in a graceful manner.” Can you spot the flaw(s) in the function defined above?</p>
+<br />
+<details>
+<summary style="color:OrangeRed;cursor:pointer;">&#10149; Just tell me!</summary>
+    <blockquote>
+       <li> There is no check for the user input. What if the user enters an empty line? </li>
+    </blockquote>
+</details>
+<p>These aspects will be discussed in detail later in this chapter.</p>
+<p>In this chapter we’ll be looking at how to design, implement and call (use) functions.
+The next chapter deals with an overview of some of the most-used built-in functions of the Python language.</p>
+</div>
+<div class="section" id="creating-and-using-functions">
+<h2>Creating and using functions<a class="headerlink" href="#creating-and-using-functions" title="Permalink to this headline">#</a></h2>
+<p>Functions must</p>
+<ul class="simple">
+<li><p>start with the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code></p></li>
+<li><p>have a legal name (in short: no reserved words or funny characters, and don’t start with a number).</p></li>
+<li><p>have an argument list, but it may be empty: <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p>have a function body starting after a colon, indented one level with respect to the function definition line, and with at the least the keyword <code class="docutils literal notranslate"><span class="pre">pass</span></code> in it.</p></li>
+</ul>
+<p><em>Naming convention</em> for functions state that they should be lowercase (verbs), with words separated by underscores to improve readability.”</p>
+<p>Here is a minimal function that is perfectly legal and perfectly useless:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_nothing</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>The indentation level is usually 4 spaces, but must be the same within a single code block (and you are strongly encouraged to be consistent within all your source files). In Python, whitespaces (space, tab and newline characters) are an essential part of the syntax!</p>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        Actually, empty functions are a much-used construct in <strong>test-driven development</strong>, a programming paradigm in which a placeholder function is created first, together with an extensive <strong>test suite</strong> (a set of testing functions assessing the correctness and robustness of a function). Only then the function is iteratively implemented and marked finished when all tests pass. See 
+    <a href="https://en.wikipedia.org/wiki/Test-driven_development">Wikipedia</a>
+    </span>
+</div><p>Here are some variations that will NOT run because of a syntax error.</p>
+<p>This one gives <code class="docutils literal notranslate"><span class="pre">IndentationError:</span> <span class="pre">expected</span> <span class="pre">an</span> <span class="pre">indented</span> <span class="pre">block</span></code> because there is no indentation in the function body:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_nothing</span><span class="p">():</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+<p>This one gives an <code class="docutils literal notranslate"><span class="pre">IndentationError:</span> <span class="pre">unindent</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">match</span> <span class="pre">any</span> <span class="pre">outer</span> <span class="pre">indentation</span> <span class="pre">level</span></code> because the indentation is not the same within the function body:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_nothing</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;two&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This one gives a <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code> because there is no colon to start the function body:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_nothing</span><span class="p">()</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Often, Python will be quite specific in where things go wrong, as in the last example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">do_nothing</span><span class="p">()</span>
+                    <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+</div>
+<div class="section" id="a-more-realistic-example">
+<h3>A more realistic example<a class="headerlink" href="#a-more-realistic-example" title="Permalink to this headline">#</a></h3>
+<p>Now for a more realistic -though still simple- example: calculating distance from speed and time. Note that in the function below the <strong>parameters</strong> have been given names to communicate the units in which they should be passed. Yes this is important! A Mars orbiter crashed in 1999 because of a coding mistake involving different use of measurement units, costing $193 million (see <a class="reference external" href="https://www.zentao.pm/blog/the-seven-most-expensive-bugs-in-code-history-1137.html">The seven most expensive Bugs in code history</a>). We’ll see in a later section in this chapter how to document this as well in a more human-readable manner using docstrings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance_meters</span><span class="p">(</span><span class="n">speed_km_h</span><span class="p">,</span> <span class="n">time_sec</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Calculates the distance in meters given a speed in km/h and</span>
+<span class="sd">    elapsed time in seconds&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">*</span> <span class="n">speed_km_h</span> <span class="o">*</span> <span class="n">time_sec</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)))</span>                  <span class="c1"># one hour</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters</span><span class="p">(</span><span class="n">time_sec</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">speed_km_h</span> <span class="o">=</span> <span class="mi">36</span><span class="p">))</span> <span class="c1"># using named arguments</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+100000.0
+50.0
+Calculates the distance in meters given a speed in km/h and
+    elapsed time in seconds
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see in the above example, calling functions is quite flexible. By using <strong>grouping parentheses</strong> you can do some in-place calculations within the <strong>argument list parentheses</strong> (yes they look exactly the same but have very different functions within the code. The only difference is their context.</p>
+<p>In the last example above you can see the use of named arguments. When using the parameter names to pass the arguments, the order in which they are passed does not need to match the order of the parameters in the function definition.</p>
+<div class="alert alert-block alert-info">
+    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
+    <span style="display:block;overflow:hidden;">
+        <strong>Parameters versus Arguments</strong><br>
+        A parameter is a variable in a function definition. It is a placeholder and hence does not have a concrete value. An argument is a value passed during function invocation. In a way, arguments fill in the place the parameters have held for them.
+    </span>
+</div></div>
+<div class="section" id="you-ve-got-to-adhere-to-the-contract">
+<h3>You’ve got to adhere to the contract<a class="headerlink" href="#you-ve-got-to-adhere-to-the-contract" title="Permalink to this headline">#</a></h3>
+<p>When a function defines two parameters and no default values, you <em>must</em> provide exactly two values when calling the function.
+These three invocations fail for that reason.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance_meters</span><span class="p">()</span>
+<span class="n">distance_meters</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">distance_meters</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You will get an error message like this: <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">distance_meters()</span> <span class="pre">takes</span> <span class="pre">2</span> <span class="pre">positional</span> <span class="pre">arguments</span> <span class="pre">but</span> <span class="pre">3</span> <span class="pre">were</span> <span class="pre">given</span> </code>.</p>
+<p>Of course, if you provide values of a type other than expected you will get an error (if you’re lucky), or return values that are very strange and that are hard to debug if you are not so lucky.</p>
+</div>
+<div class="section" id="default-values-give-more-flexibility">
+<h3>Default values give more flexibility<a class="headerlink" href="#default-values-give-more-flexibility" title="Permalink to this headline">#</a></h3>
+<p>If you can think of a sensible default value for your parameters you can provide these. That way you can make the invocation and execution of your functions much more flexible.</p>
+<p>There is an important aspect to think about: only provide default values if they make sense, and of course you can provide only one default value so choose the most appropriate ones if you have multiple candidates.</p>
+<p>Here is the distance calculating function again, in a slightly modified version. The <code class="docutils literal notranslate"><span class="pre">time_sec</span></code> parameter now has a default value. This means that if this argument is omitted, you do not get an error but instead the function will execute with the default. If you <em>do</em> provide a value for it, this will override the default value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance_meters2</span><span class="p">(</span><span class="n">speed_km_h</span><span class="p">,</span> <span class="n">time_sec</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">*</span> <span class="n">speed_km_h</span> <span class="o">*</span> <span class="n">time_sec</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters2</span><span class="p">(</span><span class="mi">36</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters2</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters2</span><span class="p">(</span><span class="n">speed_km_h</span> <span class="o">=</span> <span class="mi">36</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_meters2</span><span class="p">(</span><span class="n">speed_km_h</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">time_sec</span> <span class="o">=</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1">#print(distance_meters2(time_sec = 5)) #TypeError!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+50.0
+10.0
+50.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions-can-only-return-one-thing">
+<h3>Functions can only return one thing<a class="headerlink" href="#functions-can-only-return-one-thing" title="Permalink to this headline">#</a></h3>
+<p>Functions can only return a single value. If you want to return more than one value, you’ve got to wrap them inside a collection type or class instance:</p>
+<ul class="simple">
+<li><p>list</p></li>
+<li><p>tuple</p></li>
+<li><p>dict</p></li>
+<li><p>class instance (an object)</p></li>
+<li><p>a generator function (a special kind of function)</p></li>
+</ul>
+</div>
+<div class="section" id="communicate-intent-and-details-via-docstring">
+<h3>Communicate intent and details via docstring<a class="headerlink" href="#communicate-intent-and-details-via-docstring" title="Permalink to this headline">#</a></h3>
+<p>So far you have seen only simple comments using a single hash <code class="docutils literal notranslate"><span class="pre">#</span></code>. These comments generally serve to communicate something about the code to yourself or maybe to your colleague programmer.<br />
+However, if you’re successfull there will also be others using your code in the context of an imported library. If you wish to provide them with info on how your functions should be used, you should take some time to write a <strong>pydoc docstring</strong>. A triple-quoted string at the top of your function body will make it available though the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> attribute and via the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance_meters3</span><span class="p">(</span><span class="n">speed_km_h</span><span class="p">,</span> <span class="n">time_sec</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Calculate the distance.</span>
+<span class="sd">    </span>
+<span class="sd">    The distance is calculated in meters, given a speed in km/h and elapsed time in seconds.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    speed_km_h : float</span>
+<span class="sd">        The speed in km per hour (km/h)</span>
+<span class="sd">    time_sec : float</span>
+<span class="sd">        Elapsed time, in seconds. Defaults to 1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Covered distance, in meters </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">*</span> <span class="n">speed_km_h</span> <span class="o">*</span> <span class="n">time_sec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(distance_meters3.__doc__) #gives the same info, but without context.</span>
+<span class="n">help</span><span class="p">(</span><span class="n">distance_meters3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function distance_meters3 in module __main__:
+
+distance_meters3(speed_km_h, time_sec=1)
+    Calculate the distance.
+    
+    The distance is calculated in meters, given a speed in km/h and elapsed time in seconds.
+    
+    Parameters
+    ----------
+    speed_km_h : float
+        The speed in km per hour (km/h)
+    time_sec : float
+        Elapsed time, in seconds. Defaults to 1.
+    
+    Returns
+    -------
+    float
+        Covered distance, in meters
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scope-and-the-global-keyword">
+<h3>Scope and the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword<a class="headerlink" href="#scope-and-the-global-keyword" title="Permalink to this headline">#</a></h3>
+<p>So far I have avoided the concept of scope. Scope has to do with “visibility” of objects from within your code as well as “write access”.
+In the snippet below, the function reads a variable from global scope but does not attempt to change it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">def</span> <span class="nf">do_it</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b has value </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">do_it</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a has value 12
+b has value 5
+c has value 5
+a has value 12
+</pre></div>
+</div>
+</div>
+</div>
+<p>No problem here. But now the function attempts to change the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>. We get an <code class="docutils literal notranslate"><span class="pre">UnboundLocalError:</span> <span class="pre">local</span> <span class="pre">variable</span> <span class="pre">'a'</span> <span class="pre">referenced</span> <span class="pre">before</span> <span class="pre">assignment</span></code> Here, the error message is not as clear as we would possibly like it because it seems as if the variable does not exist (yet).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">def</span> <span class="nf">do_it</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b has value </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">do_it</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 10&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b has value </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">do_it</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">Input In [6],</span> in <span class="ni">do_it</span><span class="nt">(b)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">do_it</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b has value </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">UnboundLocalError</span>: local variable &#39;a&#39; referenced before assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>To solve this, we need to specify within the function that we are going to access the global variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, using the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword. This is solved below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">def</span> <span class="nf">do_it</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">a</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b has value </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">do_it</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s OK again. But what if we try to do the reverse - accessing a local variable from the global context? This fails again, unless we make variable <code class="docutils literal notranslate"><span class="pre">c</span></code> global as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">def</span> <span class="nf">do_it</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">a</span>
+    <span class="k">global</span> <span class="n">c</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b has value </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">do_it</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When creating your own scripts you should try to avoid creating (many) global variables and especially to define global variables from a local context, as was done with variable <code class="docutils literal notranslate"><span class="pre">c</span></code> in the above example.</p>
+</div>
+<div class="section" id="advanced-function-stuff">
+<h3>Advanced function stuff<a class="headerlink" href="#advanced-function-stuff" title="Permalink to this headline">#</a></h3>
+<p>Functions are also objects and can be created within another function.
+You can pass (references to) functions around as you can with any object in Python. Moreover, functions can be defined within, and returned from, other functions. Below is an example where the <code class="docutils literal notranslate"><span class="pre">get_messenger()</span></code> function returns either a top-level function (<code class="docutils literal notranslate"><span class="pre">say_hello_anonymous</span></code>) or a <strong>closure</strong>, <code class="docutils literal notranslate"><span class="pre">say_hello_with_name</span></code> that even holds the value of the function variable <code class="docutils literal notranslate"><span class="pre">name</span></code> <em>after it has been returned from the creating function</em>.
+Note that you do <em>not</em> use parentheses when passing a function object!
+Take a minute to figure out what is happening here. Although it is a rather short piece of code it already shows some advanced Python stuff, as well as not-yet discussed flow control with <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_messenger</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Give me your name please: &#39;</span><span class="p">)</span>
+    
+    <span class="c1"># this closure &#39;encloses&#39; the name variable that is local to this function and </span>
+    <span class="c1"># keeps a reference even though it is returned from within this function context</span>
+    <span class="k">def</span> <span class="nf">say_hello_with_name</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Howdy, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+
+    <span class="c1">#another enclosed function</span>
+    <span class="k">def</span> <span class="nf">say_hello_anonymous</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello unknown guest&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># a non-empty name will evaluate to True</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">say_hello_with_name</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">say_hello_anonymous</span>
+    
+
+<span class="k">def</span> <span class="nf">use_messenger</span><span class="p">(</span><span class="n">messenger</span><span class="p">):</span>
+    <span class="c1"># the argument to this function is another function!</span>
+    <span class="n">messenger</span><span class="p">()</span>
+    
+<span class="n">use_messenger</span><span class="p">(</span><span class="n">get_messenger</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Give me your name please: Mike
+Howdy, Mike!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="design-and-testing">
+<h3>Design and Testing<a class="headerlink" href="#design-and-testing" title="Permalink to this headline">#</a></h3>
+<p>When you embark on serious programming you will be creating many functions along the way. Here are some “rules” that may help you create robust, maintainable and extensible programs.</p>
+<ol class="arabic simple">
+<li><p><strong>Break up the problem into manageable pieces</strong>. When designing an algorithm, first think about which individual steps it involves. Then implement each step as a separate function.</p></li>
+<li><p><strong>Have functions do only one thing</strong>. If your function apparantly does more than one thing, split it up!</p></li>
+<li><p><strong>Create small functions</strong>. If your functions spans more than 30 lines it is probable too big, split it up! If it is indented by more than 3 levels, split it up!</p></li>
+<li><p><strong>Use names that mean something</strong>. Use short but descriptive names. We are way past the era where function names could not be longer than 8 characters.</p></li>
+<li><p><strong>Verify function arguments</strong>. For instance, if you get a negative elapsed time, is it still a good idea to carry on? We’ll discuss error handling and Exceptions in a later chapter.</p></li>
+<li><p><strong>Write test code</strong>. Something out of scope for this course, but very important nevertheless. Have a look at <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a>.</p></li>
+</ol>
+<p>Below is a small example testing the distance calculation function (this test does not work in a notebook environment; run the script at <code class="docutils literal notranslate"><span class="pre">scripts/unittest_distance_calc.py</span></code> from the commandline to try out)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="k">def</span> <span class="nf">distance_meters4</span><span class="p">(</span><span class="n">speed_km_h</span><span class="p">,</span> <span class="n">time_sec</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">*</span> <span class="n">speed_km_h</span> <span class="o">*</span> <span class="n">time_sec</span>
+
+<span class="k">class</span> <span class="nc">TestDistanceCalculations</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">distance_meters4</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">places</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">distance_meters4</span><span class="p">(</span><span class="mi">4000000</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">places</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">distance_meters4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">places</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">test_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">distance_meters4</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="n">places</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">distance_meters4</span><span class="p">(</span><span class="mi">36</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="n">places</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+        
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This outputs (on my machine at least):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>michiel$ python3 scripts/unittest_distance_calc.py 
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-functions">What are functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-functions">Creating and using functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-example">A more realistic example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-ve-got-to-adhere-to-the-contract">You’ve got to adhere to the contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-values-give-more-flexibility">Default values give more flexibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-can-only-return-one-thing">Functions can only return one thing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communicate-intent-and-details-via-docstring">Communicate intent and details via docstring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-and-the-global-keyword">Scope and the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-function-stuff">Advanced function stuff</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-testing">Design and Testing</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michiel Noback
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

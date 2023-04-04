@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow control &#8212; A short Python introduction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_flow_control';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ITANN_course_description.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Hanze-Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Hanze-Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ITANN_course_description.html">
+                    ITANN course: Introduction to Python Programming
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">Jupyter notebooks</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">A quick overview</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">Data</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">Anaconda</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F03_flow_control.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/03_flow_control.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Flow control</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flow control</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">Code blocks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">Optional: Switch(ing)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="flow-control">
+<h1>Flow control<a class="headerlink" href="#flow-control" title="Permalink to this headline">#</a></h1>
+<p>Besides data, flow control is at the heart of programming. What is the use of a list if you can’t iterate it? How could you ever take alterantive courses of action based on some variable value without the use of if/else blocks?</p>
+<p>This chapter deals with all aspects concerning control of program flow or in short flow control.</p>
+<p>These are the constructs that you will see:</p>
+<ul class="simple">
+<li><p><strong>iteration</strong> (repeated execution) using <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code>, and use cases for a closing <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p><strong>decisions</strong> using <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> and its shorthand <code class="docutils literal notranslate"><span class="pre">if...else</span></code></p></li>
+<li><p><strong>fine-tuning</strong> these constructs using <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code></p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="code-blocks">
+<h1>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h1>
+<p>At the heart of iteration lies the concept of code blocks: one or multiple statements that belong together and are executed multiple times, or optionally, depending on the flow control element.</p>
+<p>A code block is defined by <strong>indentation</strong> (4 spaces usually), and in flow control it always follows an iteration or decision statement ending with a colon:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;some flow control element&gt;:
+    block code 
+    block code
+    ...
+
+code not belonging to the flow control element
+</pre></div>
+</div>
+<div class="section" id="iteration">
+<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">for</span></code> is at the heart of iteration. All constructs involving <code class="docutils literal notranslate"><span class="pre">for</span></code> have this general structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="c1">#do_something with the element</span>
+</pre></div>
+</div>
+<p>Let’s walk through some examples to demonstrate iteration and its details. Note that some examples can be implemented much more efficiently than shown here!</p>
+<p>The alternative to <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> is used when you have no collection but want to repeat for another reason. This will be demonstrated at the end of this section.</p>
+<p>Here are our good old fruits:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kiwi&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and here is a basic iteration</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Jummy, a </span><span class="si">{</span><span class="n">fruit</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jummy, a kiwi!
+Jummy, a banana!
+Jummy, a apple!
+Jummy, a pear!
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if we want to keep a <strong>counter</strong>? <em>Don’t do this</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;fruit </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">fruit</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Instead, use the function <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> to wrap your iterable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fruits</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;fruit </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">fruit</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fruit 0 is kiwi
+fruit 1 is banana
+fruit 2 is apple
+fruit 3 is pear
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you are not interested in all items, but want to exit when you found a specific item? Use the <strong>break</strong> keyword:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kiwi
+banana
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see <code class="docutils literal notranslate"><span class="pre">break</span></code> skips all subsequent iterations. Similarly, if you want to skip only a single iteration you can use <code class="docutils literal notranslate"><span class="pre">continue</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> 
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kiwi
+apple
+pear
+</pre></div>
+</div>
+</div>
+</div>
+<p>For many of these flow control structures there is a <strong>shorthand</strong> if the code block to execute only constitutes a single statement. The above could also have been written as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However this gives less readable code in my opinion.
+There are some useful cases for the shorthand form. One of these is demonstrated in the next snippet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="n">infix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span> <span class="k">else</span> <span class="s2">&quot;not &quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;you are </span><span class="si">{</span><span class="n">infix</span><span class="si">}</span><span class="s1">allowed to drink alcohol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>you are not allowed to drink alcohol
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-else-with-a-for-loop">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop<a class="headerlink" href="#using-else-with-a-for-loop" title="Permalink to this headline">#</a></h3>
+<p>If you want to have a block executed <em>after</em> the for loop, you can of course simply place it below the block. However, if you want to have it executed only when no <code class="docutils literal notranslate"><span class="pre">break</span></code> has been issued you need and <code class="docutils literal notranslate"><span class="pre">else</span></code> clause:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s2">&quot;papaya&quot;</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;papaya was not found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>papaya was not found
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-while-loop">
+<h3>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
+<p>If you want to repeat without a collection the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is your friend. Especially with user input this one comes in handy. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause can be used here as well (not demonstrated).
+Here is a typical use of <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please give your name: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Welcome, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please give your name: &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Welcome, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/education/lib/python3.9/site-packages/ipykernel/kernelbase.py:1190,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1190</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1195</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1196</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">#</a></h2>
+<p>Deciding what to next, based on the value of a variable, some user input, the content of a file, the availability on a remote data source. You need to do these things all the time and this is where you use conditionals.</p>
+<p>The if/else syntax has these elements and their restrictions in occurrences:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>    <span class="c1"># One is mandatory and only one allowed</span>
+    <span class="k">pass</span>
+<span class="k">elif</span> <span class="n">condition</span><span class="p">:</span>  <span class="c1"># Optional, but many allowed</span>
+    <span class="k">pass</span>
+<span class="k">else</span><span class="p">:</span>            <span class="c1"># Optional, executed only when all of the above evaluated to False; only one allowed</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>In this setup, only a single block will ever execute: the first one to evaluate to True, or the else clause.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">17</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can take driving lessons&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are allowed to drive, when you have licence of course&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You may not drive a car alone yet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You can take driving lessons
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you have a situation where you want more blocks to run you need to chain multiple <code class="docutils literal notranslate"><span class="pre">if</span></code>s together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">17</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can take driving lessons&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are allowed to drive, when you have a licence of course&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You may not drive a car alone yet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You can take driving lessons
+You may not drive a car alone yet
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="optional-switch-ing">
+<h3>Optional: Switch(ing)<a class="headerlink" href="#optional-switch-ing" title="Permalink to this headline">#</a></h3>
+<p>You can skip this part if you want. It is a useful and powerful technique, but not essential for a beginning programmer.</p>
+<p>If you have a distinct set of possibilities other programming languages provide the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.
+In Python up to version 3.10 this was not available. In the (not-executable in my Python version) snippet below it is shown for Python &gt;= 3.10.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">http_error</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">400</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Bad request&quot;</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Not found&quot;</span>
+        <span class="c1"># If an exact match is not confirmed, this last case will be used if provided</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Something&#39;s wrong with the internet&quot;</span>
+        
+<span class="n">http_status</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Below, you see how you can create switch-like structures using a dict and adding functions as values in it. Again this uses local-defined functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">demo_old_switch</span><span class="p">(</span><span class="n">fruit</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">banana</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Banana yummie!&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">kiwi</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kiwi only when juicy and sweet&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">default</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I don&#39;t know this fruit&quot;</span><span class="p">)</span>
+    
+    <span class="n">actions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="n">banana</span><span class="p">,</span>
+        <span class="s2">&quot;kiwi&quot;</span><span class="p">:</span> <span class="n">kiwi</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="n">default</span>
+    <span class="p">}</span>
+    
+    <span class="n">actions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">)()</span>
+
+    
+<span class="n">demo_old_switch</span><span class="p">(</span><span class="s2">&quot;kiwi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kiwi only when juicy and sweet
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flow control</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">Code blocks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">Optional: Switch(ing)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michiel Noback
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
