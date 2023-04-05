@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A short Python intro &#8212; A short Python introduction</title>
+    <title>An intro to Python programming &#8212; Programming Python</title>
   
   
   
@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Jupyter notebooks" href="00_jupyter.html" />
+    <link rel="next" title="1. Jupyter notebooks and Markdown" href="00_jupyter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -149,17 +149,17 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    A short Python intro
+                    An intro to Python programming
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
@@ -350,7 +350,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>A short Python intro</h1>
+    <h1>An intro to Python programming</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -360,7 +360,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#created-for">Created for</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-audience">Target audience</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-get-started">To get started</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-python-cheat-sheets">The best Python cheat sheets</a></li>
@@ -376,30 +376,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="a-short-python-intro">
-<h1>A short Python intro<a class="headerlink" href="#a-short-python-intro" title="Permalink to this headline">#</a></h1>
-<div class="section" id="created-for">
-<h2>Created for<a class="headerlink" href="#created-for" title="Permalink to this headline">#</a></h2>
-<p>This tutorial is created for use in Python introductory courses at Hanze University of Applied Science, Groningen, The Netherlands.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="an-intro-to-python-programming">
+<h1>An intro to Python programming<a class="headerlink" href="#an-intro-to-python-programming" title="Permalink to this headline">#</a></h1>
+<div class="section" id="target-audience">
+<h2>Target audience<a class="headerlink" href="#target-audience" title="Permalink to this headline">#</a></h2>
+<p>This tutorial is created for use in Python introductory courses organized at the Institute for Life Science &amp; Technology (Hanze University of Applied Science, Groningen, The Netherlands).</p>
 </div>
 <div class="section" id="to-get-started">
 <h2>To get started<a class="headerlink" href="#to-get-started" title="Permalink to this headline">#</a></h2>
 <p>In order to program with Python you will need to have a Python interpreter on your machine. That is because Python is an interpreted language, not compiled.
-If you never intend to use notebooks, simply download an interpreter for your machine from <a class="reference external" href="https://www.python.org/">python.org/</a>. However, if you want to use Jupyter notebooks and some more handy tools out-of-the box, go to <a class="reference external" href="https://www.anaconda.com/">anaconda.com/</a>.</p>
+If you never intend to use notebooks but simply want to write scripts and do interactive coding, simply download an interpreter for your machine from <a class="reference external" href="https://www.python.org/">python.org</a>. However, if you want to use Jupyter notebooks and some more handy tools such as QTconsole out-of-the box, go to <a class="reference external" href="https://www.anaconda.com/">anaconda.com</a>. The conda package manager is also very nice when you proceed to do some more work that needs third-party libraries.</p>
 </div>
 <div class="section" id="how-to-use">
 <h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">#</a></h2>
-<p>This book contains a series of notebooks introducing programming concepts in Python in a data science setting. The raw notebooks can be downloaded or cloned from <a class="reference external" href="https://github.com/MichielNoback/python_intro">Github</a>.
+<p>This book contains a series of notebooks transformed into chapters introducing programming concepts in Python.
+The raw notebooks can be downloaded or cloned from <a class="reference external" href="https://github.com/MichielNoback/python_intro">Github</a>.
 You can view these notebooks interactively on <a class="reference external" href="https://mybinder.org/">Binder</a> (but slow).<br />
-Here is a direct link:
+Here is a direct link to open the notebooks folder in Binder:
 <a class="reference external" href="https://mybinder.org/v2/gh/MichielNoback/python_intro/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>If you wish to work on the exercises, it is probably best to download this notebook to your local machine from <a class="reference external" href="https://raw.githubusercontent.com/MichielNoback/python_intro/master/11_exercises.ipynb">here</a>. you will need Python and Jupyter installed of course.</p>
+<p>If you wish to work on the exercises, it is probably best to download the excercises notebook to your local machine from <a class="reference external" href="https://raw.githubusercontent.com/MichielNoback/python_intro/master/11_exercises.ipynb">here</a>.
+You will need to have Python and Jupyter installed on your machine of course. There are no dependencies other that the Python standard library.</p>
 </div>
 <div class="section" id="the-best-python-cheat-sheets">
 <h2>The best Python cheat sheets<a class="headerlink" href="#the-best-python-cheat-sheets" title="Permalink to this headline">#</a></h2>
-<p>A concise <a class="reference external" href="https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf">Python3</a> cheat sheet.<br />
-A <a class="reference external" href="https://github.com/ehmatthes/pcc/blob/master/cheat_sheets/beginners_python_cheat_sheet_pcc_all.pdf">Python3 extensive</a> cheat sheet.<br />
-A <a class="reference external" href="https://www.edureka.co/blog/wp-content/uploads/2018/10/Jupyter_Notebook_CheatSheet_Edureka.pdf">Jupyter Notebook</a> cheat.</p>
+<p>There are many Python cheat sheets available in the public domain to help you get going. Here are a few you may want to pin over your desk for quick reference.</p>
+<p>A <a class="reference external" href="https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf">concise Python3 cheat sheet</a>.<br />
+An <a class="reference external" href="https://github.com/ehmatthes/pcc/blob/master/cheat_sheets/beginners_python_cheat_sheet_pcc_all.pdf">extensive Python3 cheat sheet</a> .<br />
+A <a class="reference external" href="https://www.edureka.co/blog/wp-content/uploads/2018/10/Jupyter_Notebook_CheatSheet_Edureka.pdf">Jupyter Notebook cheat sheet</a> which is already present within a running Jupyter instance of course.<br />
+A <a class="reference external" href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf">conda cheat sheet</a>.</p>
 </div>
 <div class="section" id="copyright">
 <h2>Copyright<a class="headerlink" href="#copyright" title="Permalink to this headline">#</a></h2>
@@ -445,7 +449,7 @@ A <a class="reference external" href="https://www.edureka.co/blog/wp-content/upl
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Jupyter notebooks</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Jupyter notebooks and Markdown</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -467,7 +471,7 @@ A <a class="reference external" href="https://www.edureka.co/blog/wp-content/upl
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#created-for">Created for</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-audience">Target audience</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-get-started">To get started</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-python-cheat-sheets">The best Python cheat sheets</a></li>

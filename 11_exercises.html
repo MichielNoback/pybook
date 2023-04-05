@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. Exercises &#8212; A short Python introduction</title>
+    <title>12. Exercises &#8212; Programming Python</title>
   
   
   
@@ -59,6 +59,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '11_exercises';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -150,17 +152,17 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    A short Python intro
+                    An intro to Python programming
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Files are the main source of data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
@@ -363,11 +365,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">12.1. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">12.2. Getting started</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">12.2.1. Operator precedence (1)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">12.2.2. Operator precedence (2)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">12.2.3. Assignment shortcut operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.4. The Floor division and Modulo operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge">12.2.4.1. Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-math">12.2.1. Simple math</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-edit-a-script">12.2.2. Run and edit a script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">12.2.3. Operator precedence (1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">12.2.4. Operator precedence (2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">12.2.5. Assignment shortcut operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.6. The Floor division and Modulo operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge">12.2.6.1. Challenge</a></li>
 </ul>
 </li>
 </ul>
@@ -485,8 +489,40 @@ Of course, you should always really try to solve it yourself before going to the
 </div>
 <div class="section" id="getting-started">
 <h2><span class="section-number">12.2. </span>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<div class="section" id="simple-math">
+<h3><span class="section-number">12.2.1. </span>Simple math<a class="headerlink" href="#simple-math" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>First enter <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> and press enter to load the math module.</p></li>
+<li><p>Inspect the value of <code class="docutils literal notranslate"><span class="pre">math.pi</span></code> and try out the function <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>.</p></li>
+<li><p>Calculate the following (using <code class="docutils literal notranslate"><span class="pre">math.pi</span></code> and <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> where relevant).</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{4.6 + 1.2}{2.09}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3\times4^\frac{7}{12}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r = 6\)</span> <br />
+<span class="math notranslate nohighlight">\(\frac{2}{3}\times \pi r^3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5 \times (\frac{4 + 2}{\sqrt{7} \times 9})\)</span></p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-and-edit-a-script">
+<h3><span class="section-number">12.2.2. </span>Run and edit a script<a class="headerlink" href="#run-and-edit-a-script" title="Permalink to this headline">#</a></h3>
+<p>On your computer, create a folder that will hold the exercises of this course. In it, put a copy of the script <a class="reference download internal" download="" href="_downloads/aca19472e6dd0fdc764e01ac9ac12d87/triangle_surface.py"><span class="xref download myst">triangle_surface.py</span></a> from the scripts folder. Run the script as demonstrated above. Try out some other command-line arguments.</p>
+<p>Change the script at some points and investigate the effect:
+- comment-out (e.g. put a hash symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> in front of it) the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> statement
+- change <code class="docutils literal notranslate"><span class="pre">float(side)</span></code> to <code class="docutils literal notranslate"><span class="pre">int(side)</span></code>
+- change <code class="docutils literal notranslate"><span class="pre">sys.argv[1:]</span></code> to <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and to <code class="docutils literal notranslate"><span class="pre">sys.argv[2:]</span></code>
+- use your imagination and experiment further</p>
+</div>
 <div class="section" id="operator-precedence-1">
-<h3><span class="section-number">12.2.1. </span>Operator precedence (1)<a class="headerlink" href="#operator-precedence-1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.2.3. </span>Operator precedence (1)<a class="headerlink" href="#operator-precedence-1" title="Permalink to this headline">#</a></h3>
 <p>In the code cell below, it was attempted to calculate the surface area of a circle. However, because of <a class="reference external" href="https://www.tutorialspoint.com/python/operators_precedence_example.htm">operator precedence</a> the outcome is wrong! It should be 12.57. Can you correct this by using parentheses in the calculation? While you are at it, also add some spaces to make the code more readable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,7 +547,7 @@ Of course, you should always really try to solve it yourself before going to the
 </div>
 </details></div>
 <div class="section" id="operator-precedence-2">
-<h3><span class="section-number">12.2.2. </span>Operator precedence (2)<a class="headerlink" href="#operator-precedence-2" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.2.4. </span>Operator precedence (2)<a class="headerlink" href="#operator-precedence-2" title="Permalink to this headline">#</a></h3>
 <p>Correct the calculations below by making use of grouping parentheses.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 <span class="mi">45</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>
@@ -544,7 +580,7 @@ Of course, you should always really try to solve it yourself before going to the
 </div>
 </details></div>
 <div class="section" id="assignment-shortcut-operators">
-<h3><span class="section-number">12.2.3. </span>Assignment shortcut operators<a class="headerlink" href="#assignment-shortcut-operators" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.2.5. </span>Assignment shortcut operators<a class="headerlink" href="#assignment-shortcut-operators" title="Permalink to this headline">#</a></h3>
 <p>The code cell below is not wrong, but it can be expressed more efficiently by using dedicated <a class="reference external" href="https://www.tutorialspoint.com/python/assignment_operators_example.htm">assignment operators</a>.
 Can you improve by using these? Although flow control was not dealt with explicitly the code should be pretty obvious (this is one of the strengths of Python).</p>
 <div class="cell docutils container">
@@ -579,7 +615,7 @@ i is now 15; the cumulative sum is 35 and the cumulative &quot;fraction&quot; is
 </details>
 </div>
 <div class="section" id="the-floor-division-and-modulo-operators">
-<h3><span class="section-number">12.2.4. </span>The Floor division and Modulo operators<a class="headerlink" href="#the-floor-division-and-modulo-operators" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.2.6. </span>The Floor division and Modulo operators<a class="headerlink" href="#the-floor-division-and-modulo-operators" title="Permalink to this headline">#</a></h3>
 <p>The floor division and modulo operators are handy tools if you want to work with currency, weight and distance units.</p>
 <p>The <strong>modulo operator</strong> <code class="docutils literal notranslate"><span class="pre">%</span></code> gives the <em>remainder</em> of a division:</p>
 <div class="cell docutils container">
@@ -685,7 +721,7 @@ i is now 15; the cumulative sum is 35 and the cumulative &quot;fraction&quot; is
 </div>
 </details>
 <div class="section" id="challenge">
-<h4><span class="section-number">12.2.4.1. </span>Challenge<a class="headerlink" href="#challenge" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">12.2.6.1. </span>Challenge<a class="headerlink" href="#challenge" title="Permalink to this headline">#</a></h4>
 <p>Can you already take this to the next level and put the solution in a function?</p>
 </div>
 </div>
@@ -1908,11 +1944,13 @@ You could employ several strategies. The first is classical joining where you en
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">12.1. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">12.2. Getting started</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">12.2.1. Operator precedence (1)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">12.2.2. Operator precedence (2)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">12.2.3. Assignment shortcut operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.4. The Floor division and Modulo operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge">12.2.4.1. Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-math">12.2.1. Simple math</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-edit-a-script">12.2.2. Run and edit a script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">12.2.3. Operator precedence (1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">12.2.4. Operator precedence (2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">12.2.5. Assignment shortcut operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.6. The Floor division and Modulo operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge">12.2.6.1. Challenge</a></li>
 </ul>
 </li>
 </ul>
