@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '02_data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Flow control" href="03_flow_control.html" />
+    <link rel="next" title="4. Control the flow of things" href="03_flow_control.html" />
     <link rel="prev" title="2. A quick overview" href="01_getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. It’s all about data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
@@ -362,23 +362,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">3.1. Scalar types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">3.1.1. Exercise 2.1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.2. Mathematical operators with strings?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.1. Mathematical operators with strings?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">3.2. Collection types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">3.2.1. Slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.2.1.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-dot-operator-and-objects">3.2.2. Meet the dot operator and objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.2.1. Exercise</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">3.2.1. Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dot-operator-works-on-objects">3.2.2. The dot operator works on <em>objects</em></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-list">3.2.3. Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2.3.1. Exercise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">3.2.3.2. Multidimensional lists</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">3.2.3.3. Methods of type list</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">3.2.3.1. Multidimensional lists</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">3.2.3.2. Methods of type list</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-tuple">3.2.4. Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()</a></li>
@@ -387,18 +379,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">3.2.6. Set theory operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diy">3.2.7.1. DIY</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.2.8. Shared operations of collection types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.2.9.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">3.3. Key concepts</a></li>
 </ul>
             </nav>
         </div>
@@ -492,15 +477,18 @@ False
 </div>
 </div>
 </div>
-<p>When reading from the command-line args (terminal) or from file, your data will always be character data, even though they are numeric. You always need to do the conversion yourself (unless you use dedicated libraries for it).</p>
-<div class="section" id="exercise-2-1">
-<h3><span class="section-number">3.1.1. </span>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Permalink to this headline">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Data from outside is always string!</p>
+<p>When reading from the command-line (terminal) or from file, your data will always be character data, even though they are numeric. You always need to do the conversion yourself, unless you use dedicated libraries for reading from file.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
 <p>Try some conversions yourself.<br />
 Figure out why some fail and some do not (sometimes where you expected it), what the result is and what the logic behind the conversion is. Especially conversions to <code class="docutils literal notranslate"><span class="pre">bool</span></code> are interesting and very relevant in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;condition&gt;:</span></code> blocks.</p>
 </div>
 <div class="section" id="mathematical-operators-with-strings">
-<h3><span class="section-number">3.1.2. </span>Mathematical operators with strings?<a class="headerlink" href="#mathematical-operators-with-strings" title="Permalink to this headline">#</a></h3>
-<p>Yes, some math operators work with string as well, but not all:</p>
+<h3><span class="section-number">3.1.1. </span>Mathematical operators with strings?<a class="headerlink" href="#mathematical-operators-with-strings" title="Permalink to this headline">#</a></h3>
+<p>Yes, some math operators work with strings as well, but not all:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="s1">&#39;world!&#39;</span><span class="p">)</span>
@@ -547,16 +535,23 @@ Hello, Hello,
 <div class="section" id="slicing">
 <h3><span class="section-number">3.2.1. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
 <p>A any sequence type can be considered as a street with houses. The house number identifies a house within the street. In Python these addresses start at zero, but unlike house numbers you can also start from the end, with -1:</p>
-<code style="font-size: x-large; font-weight: bold; color: darkred">
- 0  1  2  3  4  5  6  7 	
- A  B  C  D  E  F  G  H
--8 -7 -6 -5 -4 -3 -2 -1
-</code>
+<pre style="font-size: x-large; font-weight: bold; color: darkred;">
+ 0  1  2  3  4  5  6  7 
+ A  B  C  D  E  F  G  H  
+-8 -7 -6 -5 -4 -3 -2 -1  
+</pre>
 <p>You can access a single house, a range of houses or in a pattern. All this is done using <strong>slicing</strong>. Its general syntax is <code class="docutils literal notranslate"><span class="pre">[start:stop:step]</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">step</span></code> is 1 by default and it is not mandatory, and if <code class="docutils literal notranslate"><span class="pre">start</span></code> or <code class="docutils literal notranslate"><span class="pre">stop</span></code> is omitted this means “from the beginning (0)” or “to the end”.<br />
 Note that <code class="docutils literal notranslate"><span class="pre">stop</span></code> is NOT inclusive!<br />
 If you try to access an element (character) that does not exist you will get an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.<br />
 Here are some examples using strings. They work the same in lists and tuples as you will discover.</p>
+<div class="important admonition">
+<p class="admonition-title">indexing quirks</p>
+<p>Python is zero-based which means ‘addresses’ always start at 0.<br />
+In series indexing such as in <code class="docutils literal notranslate"><span class="pre">[,]</span></code> and <code class="docutils literal notranslate"><span class="pre">range()</span></code>, the ‘to’-part is always <em>exclusive</em>.<br />
+So, <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3]</span></code> will select the second and third element!</p>
+</div>
+<p>Here are some indexing examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJK&#39;</span>
@@ -569,6 +564,7 @@ Here are some examples using strings. They work the same in lists and tuples as 
 </div>
 </div>
 </div>
+<p>And here some slicing examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJK&#39;</span>
@@ -581,9 +577,10 @@ Here are some examples using strings. They work the same in lists and tuples as 
 </div>
 </div>
 </div>
-<p>As you can see, when the step is negative (last 2 examples), start and stop will be “reversed”. I don’t understand this design decision.</p>
-<div class="section" id="exercise">
-<h4><span class="section-number">3.2.1.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h4>
+<p>As you can see, when the step is negative (last 2 examples), start and stop will be “reversed”.<br />
+I personaally don’t understand this design decision.</p>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
 <p>Given the string <code class="docutils literal notranslate"><span class="pre">txt</span> <span class="pre">=</span> <span class="pre">'aA.bB.cC.dD.eE.fF.gG.hH.zZ'</span></code>, write code using string slicing to print to screen</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;abcdefgz&quot;</span></code></p></li>
@@ -591,6 +588,7 @@ Here are some examples using strings. They work the same in lists and tuples as 
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;BCDEFGH&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'bC.fG.'</span></code></p></li>
 </ul>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;aA.bB.cC.dD.eE.fF.gG.hH.zZ&#39;</span>
@@ -600,11 +598,10 @@ Here are some examples using strings. They work the same in lists and tuples as 
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="meet-the-dot-operator-and-objects">
-<h3><span class="section-number">3.2.2. </span>Meet the dot operator and objects<a class="headerlink" href="#meet-the-dot-operator-and-objects" title="Permalink to this headline">#</a></h3>
+<div class="section" id="the-dot-operator-works-on-objects">
+<h3><span class="section-number">3.2.2. </span>The dot operator works on <em>objects</em><a class="headerlink" href="#the-dot-operator-works-on-objects" title="Permalink to this headline">#</a></h3>
 <p>So far I have skipped the point that Python is an <strong>Object-Oriented</strong> programming language.<br />
-Being object-oriented means the (almost) everything is being modeled as an entity with data and behaviour (e.g. methods) where the objects’ <strong>class</strong> holds the <em>blueprint</em> for creating objects (instances) according to that blueprint.</p>
+Being object-oriented means that everything is being modeled as an entity with data and behaviour (e.g. methods) where the objects’ <strong>class</strong> holds the <em>blueprint</em> for creating objects (instances) according to that blueprint.</p>
 <p>Let’s explore this concept with the string type. In Python, strings have only a single property - their character sequence. They do, however, have many methods.<br />
 Properties and methods can borh be accessed on an object using the <strong>dot operator</strong>.<br />
 The difference lies in the fact that -unlike properties- methods have parentheses after their name that (optionally) define method arguments.</p>
@@ -613,38 +610,44 @@ The difference lies in the fact that -unlike properties- methods have parenthese
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>      <span class="c1"># every character to uppercase</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ll&quot;</span><span class="p">))</span>   <span class="c1"># find(&#39;str&#39;) gives the index where a given substring occurs (or -1 if not present)</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi I am a programmer&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>    <span class="c1"># split on space to get a list of words</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">))</span> <span class="c1"># combine individual characters with a separator</span>
-
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">))</span> <span class="c1"># combine individual characters with a separator</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>    <span class="c1"># right jusitify at 10 characters</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo bar baz&quot;</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>  <span class="c1"># make all first letters of words uppercase. Alternatively, call on the class itself: str.title(&quot;foo bar baz&quot;)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HELLO
+2
+[&#39;Hi&#39;, &#39;I&#39;, &#39;am&#39;, &#39;a&#39;, &#39;programmer&#39;]
+A+B+C
+     Hello
+Foo Bar Baz
+</pre></div>
 </div>
-<div class="section" id="id1">
-<h4><span class="section-number">3.2.2.1. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
 <p>Given this variable (use your own name!)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michiel Noback&#39;</span>
 </pre></div>
 </div>
 <p>use any combination of find() and slicing to print only your first name.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michiel Noback&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Your Name&#39;</span>
 <span class="c1"># your code</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The dot operator works on <strong>all objects</strong> in Python. Of course, the set of available methods differs from type to type; a list for instance does not have <code class="docutils literal notranslate"><span class="pre">upper()</span></code>.  You may be wondering how you can recognize what is an object and what is not? Well, that one is simple: <em>everything in Python is an object</em>.</p>
+<p>The dot operator works on <strong>all objects</strong> in Python. Of course, the set of available methods differs from type to type. For instance, a list does not have <code class="docutils literal notranslate"><span class="pre">upper()</span></code> and string does not have <code class="docutils literal notranslate"><span class="pre">append()</span></code>.  You may be wondering how you can recognize what is an object and what is not? Well, that one is simple: <em>everything in Python is an object</em>.</p>
 <p>Try it out!</p>
-<p>Use the function <code class="docutils literal notranslate"><span class="pre">type()</span></code> again to get the object type of any variable or type. There are (of course) a few exceptions: the reserved <strong>keywords</strong> of the language do not have a type: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, etc; type <code class="docutils literal notranslate"><span class="pre">help(&quot;keywords&quot;)</span></code> or see <a class="reference external" href="https://realpython.com/python-keywords/">Python keywords</a>. Here are some built-in and custom types.</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">type()</span></code> to get the object type of any variable or type. There are (of course) a few exceptions: the reserved <strong>keywords</strong> of the language do not have a type: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, etc; type <code class="docutils literal notranslate"><span class="pre">help(&quot;keywords&quot;)</span></code> or see <a class="reference external" href="https://realpython.com/python-keywords/">Python keywords</a>. Here are some built-in and custom types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
@@ -658,6 +661,13 @@ The difference lies in the fact that -unlike properties- methods have parenthese
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">Foo</span><span class="p">()))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;builtin_function_or_method&#39;&gt;
+&lt;class &#39;type&#39;&gt;
+&lt;class &#39;__main__.Foo&#39;&gt;
+</pre></div>
 </div>
 </div>
 </div>
@@ -683,9 +693,10 @@ Here are a few basic operations with lists.</p>
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h4><span class="section-number">3.2.3.1. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
 <p>Given the list below, investigate whether list slicing behaves the same as with strings.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">,</span> <span class="s2">&quot;pear&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;plum&quot;</span><span class="p">]</span>
@@ -694,19 +705,18 @@ Here are a few basic operations with lists.</p>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="multidimensional-lists">
-<h4><span class="section-number">3.2.3.2. </span>Multidimensional lists<a class="headerlink" href="#multidimensional-lists" title="Permalink to this headline">#</a></h4>
-<p>Since you can put any Python data type in a list, it is easy to create a multidimensional list (matrix).</p>
+<h4><span class="section-number">3.2.3.1. </span>Multidimensional lists<a class="headerlink" href="#multidimensional-lists" title="Permalink to this headline">#</a></h4>
+<p>Since you can put any Python data type in a list, it is possible to create a multidimensional list. When it has two dimensions we also call thiis a matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># gives [3, 4]</span>
 <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># gives [6]</span>
 </pre></div>
 </div>
-<p>Note that Python has dedicated libraries for working with datastructures of this type: Numpy (number crunching) and Pandas (spreadsheet type data).</p>
+<p>Note that Python has dedicated libraries for working with datastructures of this type: Numpy (number crunching) and Pandas (spreadsheet type data), so if you find yourself really getting into this domain you should really check these out.</p>
 </div>
 <div class="section" id="methods-of-type-list">
-<h4><span class="section-number">3.2.3.3. </span>Methods of type list<a class="headerlink" href="#methods-of-type-list" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.2.3.2. </span>Methods of type list<a class="headerlink" href="#methods-of-type-list" title="Permalink to this headline">#</a></h4>
 <p>Class <code class="docutils literal notranslate"><span class="pre">list</span></code> als has an extensive collection of methods to apply to lists. Here are just a few. Also, there is the Python builtin <code class="docutils literal notranslate"><span class="pre">len()</span></code> that will give you the length of any iterable. Again, this is only a glimpse of what is available. <em>Any</em> operation you can think of with lists is probably already implemented, if not in the core data types then for sure in Numpy of Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -831,9 +841,15 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 <div class="section" id="collection-type-dict">
 <h3><span class="section-number">3.2.7. </span>Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}<a class="headerlink" href="#collection-type-dict" title="Permalink to this headline">#</a></h3>
 <p>The last collection type discussed here is the dict, which is an abbreviation of <em>dictionary</em>.<br />
-It is used to hold mappings between <em>keys</em> and <em>values</em>, much like real dictionaries.<br />
-Like sets, the keys of a dict must be immutable types. There are no restrictions for the values. Also like sets, the keys are always unique. The values, however, can contain duplicates.<br />
-Dicts cannot be sliced, but finding values is done using <code class="docutils literal notranslate"><span class="pre">dictionary[key]</span></code>.</p>
+It is used to hold mappings between <em>keys</em> and <em>values</em>, much like real dictionaries.</p>
+<p>A dict can be created as a literal in as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_supply</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This says “for key apple the corresponding value is 5”</p>
+<p>Like sets, the keys of a dict must be immutable types. There are no restrictions for the values. Also like sets, the keys are always unique. The values, however, may contain duplicates.<br />
+Values can be of any data type: numbers, strings, lists, other dicts…</p>
+<p>Dicts cannot be sliced, but finding values is done using <code class="docutils literal notranslate"><span class="pre">dictionary[key]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zoo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lion&#39;</span> <span class="p">:</span> <span class="s1">&#39;Carl&#39;</span><span class="p">,</span>
@@ -857,9 +873,10 @@ Dicts cannot be sliced, but finding values is done using <code class="docutils l
 </div>
 </div>
 </div>
-<div class="section" id="diy">
-<h4><span class="section-number">3.2.7.1. </span>DIY<a class="headerlink" href="#diy" title="Permalink to this headline">#</a></h4>
-<p>Now take some time to figure out what the <code class="docutils literal notranslate"><span class="pre">dict</span></code> methods <code class="docutils literal notranslate"><span class="pre">setdefault()</span></code> and <code class="docutils literal notranslate"><span class="pre">getdefault()</span></code> are for and how they are used. Try them out!</p>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
+<p>Now take some time to figure out what the <code class="docutils literal notranslate"><span class="pre">dict</span></code> methods <code class="docutils literal notranslate"><span class="pre">update()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code> are intended for and how they are used. Try them out!<br />
+Feel free to try some other methods. Remember, <code class="docutils literal notranslate"><span class="pre">help(dict)</span></code> gives you almost all the information you need.</p>
 </div>
 </div>
 <div class="section" id="shared-operations-of-collection-types">
@@ -925,8 +942,8 @@ For the most part you will need to learn how to quickly find answers to your pro
 <li><p>Ask a colleague/friend/random tech wizard on the street. Possibly preceeded by asking the <a class="reference external" href="https://rubberduckdebugging.com/">debug duck</a></p></li>
 </ol>
 <p>Also, it may be worth your while to have some cheat sheets copied to your Desktop (fysical or virtual).</p>
-<div class="section" id="id3">
-<h4><span class="section-number">3.2.9.1. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
 <p>Use the above (sequence of) resources to find out how to …</p>
 <ul class="simple">
 <li><p>print three string variables as one, with a <code class="docutils literal notranslate"><span class="pre">+</span></code> between each string</p></li>
@@ -935,17 +952,17 @@ For the most part you will need to learn how to quickly find answers to your pro
 <li><p>round a number to 2 decimals</p></li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="key-concepts">
-<h2><span class="section-number">3.3. </span>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Key concepts</p>
 <ul class="simple">
 <li><p><strong>collection</strong>: variable that is composed of multiple values i.e. <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> etc.</p></li>
 <li><p><strong>class</strong>: A blueprint for creating objects of that type. Classes define data and -mainly- behaviour in the form of methods. These methods may be blueprint-scoped (class methods) or instance-scoped (object methods).</p></li>
-<li><p><strong>(im)mutable</strong>: Indicates whether the collection can change or not.</p></li>
+<li><p><strong>immutable</strong>: Means that the collection or variable can not change.</p></li>
 <li><p><strong>keywords</strong>: The reserved words of the programming language. These include words like <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code> etc.</p></li>
 <li><p><strong>scalar</strong> variable consisting of a single value.</p></li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 
@@ -994,7 +1011,7 @@ For the most part you will need to learn how to quickly find answers to your pro
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Flow control</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Control the flow of things</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1017,23 +1034,15 @@ For the most part you will need to learn how to quickly find answers to your pro
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">3.1. Scalar types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1">3.1.1. Exercise 2.1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.2. Mathematical operators with strings?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.1. Mathematical operators with strings?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">3.2. Collection types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">3.2.1. Slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.2.1.1. Exercise</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-the-dot-operator-and-objects">3.2.2. Meet the dot operator and objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.2.1. Exercise</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">3.2.1. Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dot-operator-works-on-objects">3.2.2. The dot operator works on <em>objects</em></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-list">3.2.3. Collection type <code class="docutils literal notranslate"><span class="pre">list</span></code>: []</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2.3.1. Exercise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">3.2.3.2. Multidimensional lists</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">3.2.3.3. Methods of type list</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-lists">3.2.3.1. Multidimensional lists</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-type-list">3.2.3.2. Methods of type list</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-tuple">3.2.4. Collection type <code class="docutils literal notranslate"><span class="pre">tuple</span></code>: ()</a></li>
@@ -1042,18 +1051,11 @@ For the most part you will need to learn how to quickly find answers to your pro
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">3.2.6. Set theory operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diy">3.2.7.1. DIY</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.2.8. Shared operations of collection types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.2.9.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">3.3. Key concepts</a></li>
 </ul>
   </nav></div>
 

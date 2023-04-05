@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Flow control &#8212; Programming Python</title>
+    <title>4. Control the flow of things &#8212; Programming Python</title>
   
   
   
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Flow control</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
@@ -351,7 +351,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Flow control</h1>
+    <h1>Control the flow of things</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,9 +362,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">4.1. Code blocks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">4.2. Iteration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">4.2.1. Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">4.2.2. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration-with-for-and-in">4.2. Iteration with <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">in</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exiting-loops-and-other-blocks">4.2.1. Exiting loops and other blocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">4.2.2. Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">4.2.3. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">4.3. Conditionals</a><ul class="nav section-nav flex-column">
@@ -382,8 +383,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="flow-control">
-<h1><span class="section-number">4. </span>Flow control<a class="headerlink" href="#flow-control" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="control-the-flow-of-things">
+<h1><span class="section-number">4. </span>Control the flow of things<a class="headerlink" href="#control-the-flow-of-things" title="Permalink to this headline">#</a></h1>
 <p>Besides data, flow control is at the heart of programming. What is the use of a list if you can’t iterate it? How could you ever take alterantive courses of action based on some variable value without the use of if/else blocks?</p>
 <p>This chapter deals with all aspects concerning control of program flow or in short flow control.</p>
 <p>These are the constructs that you will see:</p>
@@ -394,7 +395,7 @@ document.write(`
 </ul>
 <div class="section" id="code-blocks">
 <h2><span class="section-number">4.1. </span>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h2>
-<p>At the heart of iteration lies the concept of code blocks: one or multiple statements that belong together and are executed multiple times, or optionally, depending on the flow control element.</p>
+<p>All flow control elements make use of code blocks: one or multiple statements (lines) that belong together and are executed together.</p>
 <p>A code block is defined by <strong>indentation</strong> (4 spaces usually), and in flow control it always follows an iteration or decision statement ending with a colon:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;some flow control element&gt;:
     block code 
@@ -404,17 +405,21 @@ document.write(`
 code not belonging to the flow control element
 </pre></div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Indent consistently</p>
+<p>A code block always starts with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and the subsequent lines belonging to the same block must be indented in <em>exactly the same way</em>. It is recommended to use 4 spaces. Most code editors will substitute a tab for four spaces.</p>
 </div>
-<div class="section" id="iteration">
-<h2><span class="section-number">4.2. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
-<p>The keyword <code class="docutils literal notranslate"><span class="pre">for</span></code> is at the heart of iteration. All constructs involving <code class="docutils literal notranslate"><span class="pre">for</span></code> have this general structure:</p>
+</div>
+<div class="section" id="iteration-with-for-and-in">
+<h2><span class="section-number">4.2. </span>Iteration with <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#iteration-with-for-and-in" title="Permalink to this headline">#</a></h2>
+<p>The keywords <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">in</span></code> are at the heart of iteration. All constructs involving <code class="docutils literal notranslate"><span class="pre">for</span></code> have this general structure:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
-    <span class="c1">#do_something with the element</span>
+    <span class="c1">#code block with the current value of element</span>
 </pre></div>
 </div>
 <p>Let’s walk through some examples to demonstrate iteration and its details. Note that some examples can be implemented much more efficiently than shown here!</p>
 <p>The alternative to <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> is used when you have no collection but want to repeat for another reason. This will be demonstrated at the end of this section.</p>
-<p>Here are our good old fruits:</p>
+<p>Here are some fruits again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kiwi&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">]</span>
@@ -422,7 +427,7 @@ code not belonging to the flow control element
 </div>
 </div>
 </div>
-<p>and here is a basic iteration</p>
+<p>and here is iteration on the fruits:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
@@ -463,6 +468,28 @@ fruit 3 is pear
 </div>
 </div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> function wraps the iteration of your collection and provides a counter value for each loop execution. It returns a tuple of <code class="docutils literal notranslate"><span class="pre">(counter_value,</span> <span class="pre">element)</span></code> that you can automatically unpack, as in <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i,</span> <span class="pre">fruit</span> <span class="pre">in</span> <span class="pre">enumerate(fruits)</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Automatic unpacking of tuples</p>
+<p>Since functions can return only one thing, multiple return values are often wrapped into a tuple.</p>
+<p>When you call a function that returns a tuple, such as this one</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_tup</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you can catch the tuple as a whole</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">get_tup</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or unpack it automatically (implicit or explicit)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="n">get_tup</span><span class="p">()</span>
+<span class="c1"># same</span>
+<span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_tup</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exiting-loops-and-other-blocks">
+<h3><span class="section-number">4.2.1. </span>Exiting loops and other blocks<a class="headerlink" href="#exiting-loops-and-other-blocks" title="Permalink to this headline">#</a></h3>
 <p>If you are not interested in all items, but want to exit when you found a specific item? Use the <strong>break</strong> keyword:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,8 +549,9 @@ There are some useful cases for the shorthand form. One of these is demonstrated
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="using-else-with-a-for-loop">
-<h3><span class="section-number">4.2.1. </span>Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop<a class="headerlink" href="#using-else-with-a-for-loop" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop<a class="headerlink" href="#using-else-with-a-for-loop" title="Permalink to this headline">#</a></h3>
 <p>If you want to have a block executed <em>after</em> the for loop, you can of course simply place it below the block. However, if you want to have it executed only when no <code class="docutils literal notranslate"><span class="pre">break</span></code> has been issued you need and <code class="docutils literal notranslate"><span class="pre">else</span></code> clause:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +571,7 @@ There are some useful cases for the shorthand form. One of these is demonstrated
 </div>
 </div>
 <div class="section" id="the-while-loop">
-<h3><span class="section-number">4.2.2. </span>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.2.3. </span>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
 <p>If you want to repeat without a collection the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is your friend. Especially with user input this one comes in handy. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause can be used here as well (not demonstrated).
 Here is a typical use of <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
 <div class="cell docutils container">
@@ -754,9 +782,10 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">4.1. Code blocks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">4.2. Iteration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">4.2.1. Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">4.2.2. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration-with-for-and-in">4.2. Iteration with <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">in</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exiting-loops-and-other-blocks">4.2.1. Exiting loops and other blocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-else-with-a-for-loop">4.2.2. Using <code class="docutils literal notranslate"><span class="pre">else</span></code> with a for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">4.2.3. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">4.3. Conditionals</a><ul class="nav section-nav flex-column">
