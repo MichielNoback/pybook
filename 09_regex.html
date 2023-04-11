@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
@@ -399,11 +399,9 @@ document.write(`
 </div>
 <p>Specifies a pattern that will look for four digits followed by two upper- or lowercase latters.</p>
 <p>The Python <code class="docutils literal notranslate"><span class="pre">re</span></code> module provides all functionality for this kind of work.</p>
-<div class="alert alert-block alert-info">
-    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
-    <span style="display:block;overflow:hidden;">
-        <strong>Regex</strong><br> A regular expression or regex consists of a combination of literal character sequences, character classes, quantifiers, groupings and positional anchors that can be used to search for patterns in text.<br><br>
-    </span>
+<div class="note admonition">
+<p class="admonition-title">Regex</p>
+<p>A regular expression or regex consists of a combination of literal character sequences, character classes, quantifiers, groupings and positional anchors that can be used to search for patterns in text in order to locate, extract or replace the occurrences.</p>
 </div>
 <p>In this tutorial the concepts will be demonstrated using te Python <code class="docutils literal notranslate"><span class="pre">re</span></code> module. To use this module, you will need to <em>import</em> it of course:</p>
 <div class="cell docutils container">
@@ -534,11 +532,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="alert alert-block alert-info">
-    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
-    <span style="display:block;overflow:hidden;">
-        <strong>The escape character `\`</strong><br> The backslash '\' has special meaning; it _escapes_ the special meaning of the following symbol, or gives it special meaning (as seen above) depending on context.<br><br>
-    </span>
+<div class="warning admonition">
+<p class="admonition-title">The escape character <code class="docutils literal notranslate"><span class="pre">\</span></code></p>
+<p>The backslash <code class="docutils literal notranslate"><span class="pre">\</span></code> has special meaning; it <em>escapes</em> the special meaning of the following symbol, or gives it special meaning (as seen above) depending on context.</p>
+<p>It is the cause of many programming errors and bugs, especially when the backslash itself is part of the pattern.</p>
 </div>
 <p>When looking for a literal ‘[‘ or ‘]’ in a search string for instance, you need to do this:</p>
 <div class="cell docutils container">

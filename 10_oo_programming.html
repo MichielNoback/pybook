@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
@@ -441,7 +441,7 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x103349670&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x103f3a160&gt;
 </pre></div>
 </div>
 </div>
@@ -456,8 +456,8 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x103349670&gt;
-&lt;__main__.Duck object at 0x103349b20&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x103f3a160&gt;
+&lt;__main__.Duck object at 0x103f3aac0&gt;
 </pre></div>
 </div>
 </div>
@@ -496,7 +496,7 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The hash code is 271796619
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The hash code is 272579214
 The class is &lt;class &#39;__main__.Duck&#39;&gt;
 The class attribute is &lt;class &#39;__main__.Duck&#39;&gt;
 mallard equals pintail:  False
@@ -562,11 +562,13 @@ It is a very interesting topic, extremely relevant to designing applications, bu
 <p>The first thing any good (OO-)programmer would do is to <em>model</em> the entities and their relations within the application.</p>
 <p><img alt="reservation system" src="_images/reservation_system.png" /></p>
 <p>Yes! This looks an awful lot like a database diagram (ERD), except for the missing id fields.</p>
-<div class="alert alert-block alert-info">
-    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
-    <span style="display:block;overflow:hidden;">
-        <strong>Naming conventions</strong>. You may have noticed the use of uppercase characters as first letter of the classes. This is one of the <a href="https://peps.python.org/pep-0008/">PEP 8 style guide</a> conventions. It states that "Class names should normally use the CapWords convention." Properties (fields) and methods (functions) of classes should again follow this rule "Function names should be lowercase, with words separated by underscores as necessary to improve readability."
-    </span>
+<div class="note admonition">
+<p class="admonition-title">Naming conventions</p>
+<p>You may have noticed the use of uppercase characters as first letter of the classes. This is one of the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8 style guide</a> conventions. It states that</p>
+<ul class="simple">
+<li><p>Class names should normally use the CapWords convention.</p></li>
+<li><p>Function names should be lowercase, with words separated by underscores as necessary to improve readability.</p></li>
+</ul>
 </div>
 <p>The next step is of course implementing these classes. You usually start at the simplest classes, without any reference to classes that have not been created yet.<br />
 Therefore we’ll start with the Customer class.</p>
@@ -605,11 +607,11 @@ The <code class="docutils literal notranslate"><span class="pre">Customer(...)</
 <h2><span class="section-number">11.5. </span>Object and interpreter hooks<a class="headerlink" href="#object-and-interpreter-hooks" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is one of the many object and interpreter hooks that exist in Python. They are called “dunder” methods because of the “double underscores”. When you implement these, <em>they let you interact with operators and built-in functions</em>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> hook makes it possible to hook into the <code class="docutils literal notranslate"><span class="pre">()</span></code> construction process by defining an argument list. In the listing in a previous paragraph some hoks are specified in class <code class="docutils literal notranslate"><span class="pre">object</span></code>. We will see a few more hooks later in this chapter.<br />
-See for instance <a class="reference external" href="https://towardsdatascience.com/a-guide-to-pythons-dunder-methods-3b8104fce335">here</a> for more details.
-</span></p>
-</div><div class="section" id="implement-some-hooks">
+See for instance <a class="reference external" href="https://towardsdatascience.com/a-guide-to-pythons-dunder-methods-3b8104fce335">here</a> for more details.</p>
+<div class="section" id="implement-some-hooks">
 <h3><span class="section-number">11.5.1. </span>Implement some hooks<a class="headerlink" href="#implement-some-hooks" title="Permalink to this headline">#</a></h3>
 <p>When you print the object reference itself you get something like this:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a hook for interacting with the <code class="docutils literal notranslate"><span class="pre">print()</span></code> built-in. When print receives an object to print it will look for the <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method and call it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cust1</span><span class="p">)</span>
@@ -617,13 +619,27 @@ See for instance <a class="reference external" href="https://towardsdatascience.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Customer object at 0x103349d60&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Customer object at 0x103f3ac40&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Hooks <strong>str</strong>() and <strong>repr</strong>()</p>
+<p>Hooks <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>, targeting the built-in functions <code class="docutils literal notranslate"><span class="pre">str()</span></code> and <code class="docutils literal notranslate"><span class="pre">repr()</span></code> respectively, are both used to get a string representation of an object. However, their intent is different:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str()</span></code> is used for generating human-readable output while <code class="docutils literal notranslate"><span class="pre">repr()</span></code> is mainly used for debugging and development.</p></li>
+<li><p>repr’s goal is to be unambiguous and str’s is to be readable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repr()</span></code> fetches the “formal” string representation of an object (a representation that has all information about the object) and <code class="docutils literal notranslate"><span class="pre">str()</span></code> is used to fetch the “informal” string representation of an object.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">str()</span></code> built-in function use <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> to display the string representation of the object while the <code class="docutils literal notranslate"><span class="pre">repr()</span></code> built-in function uses <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> to display the object.</p></li>
+</ul>
+</div>
 <p>This output says it is an instance of the Customer class that is defined in the <code class="docutils literal notranslate"><span class="pre">__main__</span></code> scope and that it can be found at memory “location” <code class="docutils literal notranslate"><span class="pre">0x7fbe709e8fa0</span></code> - not very informative.</p>
 <p>Time to implement <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>.</p>
+</div>
+<div class="section" id="the-performance-class">
+<h3><span class="section-number">11.5.2. </span>The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class<a class="headerlink" href="#the-performance-class" title="Permalink to this headline">#</a></h3>
+<p>Similar to the Customer class we can now implement the Performance class. The properties listed above are “title”, “datetime”, “seat_price”, “max_seats” and “reserved_seats”. All properties except the last one (which will simply default to 0) are useful to specify at construction time. Here is a first version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Customer</span><span class="p">:</span>
@@ -645,22 +661,6 @@ See for instance <a class="reference external" href="https://towardsdatascience.
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a hook for interacting with the <code class="docutils literal notranslate"><span class="pre">print()</span></code> built-in. When print receives an object to print it will look for the <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method and call it.</p>
-<div class="alert alert-block alert-info">
-    <img src="pics/64px-Simple_Information.png" style="float:left;margin-right:10px;">
-    <span style="display:block;overflow:hidden;">
-        <h4>Hooks __str__() and __repr__()</h4>
-        Hooks <code>__str__()</code> and <code>__repr__()</code>, targeting the built-in functions <code>str()</code> and <code>repr()</code> respectively, are both used to get a string representation of an object. However, their intent is different:<br>
-        <ul>
-        <li>str() is used for generating human-readable output while repr() is mainly used for debugging and development. <i>repr’s goal is to be unambiguous and str’s is to be readable</i>.</li>
-        <li>repr() fetches the “formal” string representation of an object (a representation that has all information about the object) and str() is used to fetch the “informal” string representation of an object.</li>
-        <li>The print() and str() built-in function use __str__() to display the string representation of the object while the repr() built-in function uses __repr__() to display the object.</li>
-        </ul>
-    </span>
-</div></div>
-<div class="section" id="the-performance-class">
-<h3><span class="section-number">11.5.2. </span>The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class<a class="headerlink" href="#the-performance-class" title="Permalink to this headline">#</a></h3>
-<p>Similar to the Customer class we can now implement the Performance class. The properties listed above are “title”, “datetime”, “seat_price”, “max_seats” and “reserved_seats”. All properties except the last one (which will simply default to 0) are useful to specify at construction time. Here is a first version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Performance</span><span class="p">:</span>

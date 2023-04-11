@@ -370,8 +370,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">4.3. Conditionals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">4.3.1. Optional: Switch(ing)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-using-basic-python">4.3.2. Switching using basic Python</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">4.4. Key concepts</a></li>
 </ul>
             </nav>
         </div>
@@ -680,10 +682,15 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
 <span class="n">http_status</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="switching-using-basic-python">
+<h3><span class="section-number">4.3.2. </span>Switching using basic Python<a class="headerlink" href="#switching-using-basic-python" title="Permalink to this headline">#</a></h3>
 <p>Below, you see how you can create switch-like structures using a dict and adding functions as values in it. Again this uses local-defined functions.</p>
+<p>You don’t see this type of structure very often but they’re perfectly valid as substitute for if/else or match/case. A typical use case for this would be a decision-tree that you have to execute many times in a program, for instance messaging to the user in a verbose or non-verbose manner.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">demo_old_switch</span><span class="p">(</span><span class="n">fruit</span><span class="p">):</span>
+    <span class="c1"># method-local defined functions</span>
     <span class="k">def</span> <span class="nf">banana</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Banana yummie!&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">kiwi</span><span class="p">():</span>
@@ -691,13 +698,14 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
     <span class="k">def</span> <span class="nf">default</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I don&#39;t know this fruit&quot;</span><span class="p">)</span>
     
+    <span class="c1"># put the function names in a dict</span>
     <span class="n">actions</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="n">banana</span><span class="p">,</span>
         <span class="s2">&quot;kiwi&quot;</span><span class="p">:</span> <span class="n">kiwi</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="n">default</span>
     <span class="p">}</span>
     
-    <span class="n">actions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">)()</span>
+    <span class="n">actions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">)()</span>     <span class="c1"># This looks funny doesn&#39;t it?</span>
 
     
 <span class="n">demo_old_switch</span><span class="p">(</span><span class="s2">&quot;kiwi&quot;</span><span class="p">)</span>
@@ -710,6 +718,17 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="key-concepts">
+<h2><span class="section-number">4.4. </span>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p><strong>code block</strong>: an equally indented block of code executed as a single unit. Used in flow control and functions.</p></li>
+<li><p><strong>flow control</strong>: controlling the flow a a program using loops or decision structures.</p></li>
+<li><p><strong>iteration</strong>: sequentially looping over a collection of elements.</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -790,8 +809,10 @@ In Python up to version 3.10 this was not available. In the (not-executable in m
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">4.3. Conditionals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-switch-ing">4.3.1. Optional: Switch(ing)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-using-basic-python">4.3.2. Switching using basic Python</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">4.4. Key concepts</a></li>
 </ul>
   </nav></div>
 

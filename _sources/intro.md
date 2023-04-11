@@ -2,7 +2,7 @@
 
 ## Target audience
 This tutorial is created for use in Python introductory courses organized at the Institute for Life Science & Technology (Hanze University of Applied Science, Groningen, The Netherlands). 
-
+The schedule for the three-week Python module can be found [here](course_program.md).
 
 ## To get started
 In order to program with Python you will need to have a Python interpreter on your machine. That is because Python is an interpreted language, not compiled.
@@ -18,6 +18,27 @@ Here is a direct link to open the notebooks folder in Binder:
 
 If you wish to work on the exercises, it is probably best to download the excercises notebook to your local machine from [here](https://raw.githubusercontent.com/MichielNoback/python_intro/master/11_exercises.ipynb). 
 You will need to have Python and Jupyter installed on your machine of course. There are no dependencies other that the Python standard library.
+
+
+## Learning goals
+After succesfully attending the course, learners will be able to write basic Python code dedicated to data science challenges.  
+In more detail, after attending this course, students will 
+
+* use correct data structures and syntax elements for a given purpose:
+    * data types (scalars, list, dict, set)
+    * flow control elements (if/else, for)
+    * functions
+* understand the object-oriented nature of Python
+* run, edit and write Jupyter notebooks
+* read and apply Python documentation using the help() function or online resources 
+* deal with a data analysis project in a logical and structured manner (formulate problem, reformulate in separate steps, rewrite in pseudocode, translate to Python)
+* analyse and solve bugs and errors in their own code
+* read data from, and write data to file using Pythons built-in functionality
+* create simple list comprehensions used for generating, filtering and processing collections
+* being able to design, implement and use simple data classes
+* being able to define and use regular expressions 
+* creating and using modules
+
 
 
 ## The best Python cheat sheets
