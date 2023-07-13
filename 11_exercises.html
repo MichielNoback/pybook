@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -370,10 +371,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">12.2.3. Operator precedence (1)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">12.2.4. Operator precedence (2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">12.2.5. Assignment shortcut operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.6. The Floor division and Modulo operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge">12.2.6.1. Challenge</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.6. The Floor division and Modulo operators</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">12.3. Data types</a><ul class="nav section-nav flex-column">
@@ -381,7 +379,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">12.3.2. String formatting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slicing">12.3.3. String slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-lists">12.3.4. Working with lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-between-lists-and-tuples">12.3.5. Choosing between lists and tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-lists-or-tuples">12.3.5. Choosing lists or tuples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-lists">12.3.6. Tuples and lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">12.3.7. sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">12.3.8. dict</a></li>
@@ -392,10 +390,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-2">12.4.2. if/else (2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-for-1">12.4.3. Looping with <code class="docutils literal notranslate"><span class="pre">for</span></code> (1)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-for-2">12.4.4. Looping with <code class="docutils literal notranslate"><span class="pre">for</span></code> (2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-while">12.4.5. Looping with <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">12.5. Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refactor-to-use-functions">12.5.1. Refactor to use functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-conversions">12.5.2. Unit conversions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-translations">12.5.3. DNA translations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">12.6. Reading and Writing files</a><ul class="nav section-nav flex-column">
@@ -436,11 +437,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-guessing-game">12.12.1. A number guessing game (✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-palindromes-to">12.12.2. Finding palindromes (✲ to ✲✲✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">12.12.3. Hangman word guessing game (✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.4. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.5. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.6. Implement k-Means clustering (✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.7. Implement neighbor joining clustering(✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.8. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">12.12.4. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.5. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.6. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.7. Implement k-Means clustering (✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.8. Implement neighbor joining clustering(✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">12.12.9. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.10. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
 </ul>
 </li>
 </ul>
@@ -458,8 +461,8 @@ document.write(`
 <h1><span class="section-number">12. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">12.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>These exercises are meant for you to practice your skills. The sections are numbered according to the chapter numbering so you know where to look for exercises of a particular chapter.</p>
-<p>You can deal with the exercises in several ways. The most convenient is to clone or download the entire repository, and work on the notebook on your own machine. You can also download only this notebook, but that will not include all  solutions.</p>
+<p>These exercises are meant for you to practice your skills. The sections are numbered according to the chapter numbering so you know where to look for the exercises belonging to a particular chapter.</p>
+<p>You can deal with the exercises in several ways. The most convenient is to clone or download this notebook by clicking on the download icon at the top of this page, and work on the notebook on your own machine. You can also clone or download the entire repository by clicking on the github icon (the little cat). The exercises notebook is in the <code class="docutils literal notranslate"><span class="pre">_sources</span></code> folder. That has the advantage that all data files are included (the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder).</p>
 <p>Hints and/or solutions are often included; they can be displayed where it says <span style = "color:OrangeRed;cursor:pointer;">”➥ Click to see the solution”</span> or <span style = "color:OrangeRed;cursor:pointer;">”➥ Give me a hint”</span>. Unfortunately, rendering of these hints is not flawless: they only get displayed correctly in a hosted notebook environment (not in a static viewer such as nbviewer or github).<br />
 Give it a try:</p>
 <details>
@@ -720,10 +723,6 @@ i is now 15; the cumulative sum is 35 and the cumulative &quot;fraction&quot; is
 </pre></div>
 </div>
 </details>
-<div class="section" id="challenge">
-<h4><span class="section-number">12.2.6.1. </span>Challenge<a class="headerlink" href="#challenge" title="Permalink to this headline">#</a></h4>
-<p>Can you already take this to the next level and put the solution in a function?</p>
-</div>
 </div>
 </div>
 <div class="section" id="data-types">
@@ -895,8 +894,8 @@ Have a look at the <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 </div>
-<div class="section" id="choosing-between-lists-and-tuples">
-<h3><span class="section-number">12.3.5. </span>Choosing between lists and tuples<a class="headerlink" href="#choosing-between-lists-and-tuples" title="Permalink to this headline">#</a></h3>
+<div class="section" id="choosing-lists-or-tuples">
+<h3><span class="section-number">12.3.5. </span>Choosing lists or tuples<a class="headerlink" href="#choosing-lists-or-tuples" title="Permalink to this headline">#</a></h3>
 <p>In essence, a tuple is a list that cannot be changed after it has been created. For the following use cases, choose the most appropriate of these two and implement the case.</p>
 <p>a) Create a collection with the different roles that users of a web application can have: ‘GUEST’, ‘USER’, and ‘ADMIN’.</p>
 <details>
@@ -906,8 +905,12 @@ Have a look at the <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 </details>
-<p>b) A chess board has 64 fields, indicated by letters for the 8 columns (a-h) and numbers for the rows (1-8). So A1 is the lowerleft field and H8 the upper right one. A chess move consists of a piece (e.g. pawn, knight, queen etc) going from a field of origin (e.g. B2) to a field of destination (e.g. B4).
-Create a collection storing a moves in a chess game.
+<br>
+<p>b) A chess board has 64 fields, indicated by letters for the 8 columns (a-h) and numbers for the rows (1-8). See below.<br />
+<img alt="chess board" src="_images/chess_board.png" /></p>
+<p>So ‘a1’ is the lowerleft field and ‘h8’ the upper right one. A chess move consists of a piece (e.g. pawn, knight, queen etc) going from a field of origin (e.g. b2) to a field of destination (e.g. b4). The chess pieces are shown below.<br />
+<img alt="Chess pieces" src="_images/chess_pieces.jpeg" /></p>
+<p>Create a collection storing moves of a chess game.
 Demonstrate its use by creating and storing a few moves.</p>
 <details>
   <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
@@ -929,7 +932,7 @@ Demonstrate its use by creating and storing a few moves.</p>
 </pre></div>
 </div>
 </details>
-<p>c) Create a collection representing the board of the game ‘tic tac toe’ (Dutch: boter kaas en eieren) in which each ‘cell’ can (1) be empty - a space ‘ ‘ (2) have a cross ‘X’ or (3) a circle ‘O’. Remember, collections can be nested!</p>
+<br><p>c) Create a collection representing the board of the game ‘tic tac toe’ (Dutch: boter kaas en eieren) in which each ‘cell’ can (1) be empty - a space ‘ ‘ (2) have a cross ‘X’ or (3) a circle ‘O’. Remember, collections can be nested!</p>
 <details>
   <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using module pprint to get a nice 2D printed representation</span>
@@ -943,7 +946,7 @@ Demonstrate its use by creating and storing a few moves.</p>
 </pre></div>
 </div>
 </details>
-</div>
+<br></div>
 <div class="section" id="tuples-and-lists">
 <h3><span class="section-number">12.3.6. </span>Tuples and lists<a class="headerlink" href="#tuples-and-lists" title="Permalink to this headline">#</a></h3>
 <p>Tuples are supposed to be immutable. Let’s explore the extend of this rule, and also some other behaviour of tuples and lists.</p>
@@ -1182,12 +1185,38 @@ Counter(text)
 </div>
 </div>
 </div>
+<div class="section" id="looping-with-while">
+<h3><span class="section-number">12.4.5. </span>Looping with <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#looping-with-while" title="Permalink to this headline">#</a></h3>
+<p>Ask the user a for username of at least 6 characters long, consisting of only alphabet characters or number. Repeat the question as long as there is no correct username provided. If the input is correct, print “You are registered as &lt;USERNAME&gt;!” and exit the loop. If the input is empty, print “Registration cancelled.” and exit as well.<br />
+(NB this is not nice to do in Visual Studio Code)</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me a hint</summary>
+  This is a typical use case for `while True:`.  
+</details>  
+  <br>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a username&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;You entered &quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Registration cancelled&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="n">username</span><span class="o">.</span><span class="n">isalnum</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;You are registered as &quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Username incorrect: &quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">&quot;; should be at least 6 characters of only letters and digits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+</div>
 </div>
 <div class="section" id="functions">
 <h2><span class="section-number">12.5. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <div class="section" id="refactor-to-use-functions">
 <h3><span class="section-number">12.5.1. </span>Refactor to use functions<a class="headerlink" href="#refactor-to-use-functions" title="Permalink to this headline">#</a></h3>
-<p>Refactor the above assignment (03.3) to use functions for each sub-assignment. You will end up with at least 4 functions, something like this:</p>
+<p>Refactor the assignment “Looping with <code class="docutils literal notranslate"><span class="pre">for</span></code> (2)” to use functions for each sub-assignment. You will end up with at least 4 functions, something like this:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">count_sentences(text)</span></code>: counts the number of sentences</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">count_words(sentence)</span></code>: counts the words in a sentence</p></li>
@@ -1196,6 +1225,61 @@ Counter(text)
 </ul>
 <p>You can ignore the fact that this may not be the most efficient way to get all statistics in a single analysis.
 Feel free to be creative in your refactoring.</p>
+</div>
+<div class="section" id="unit-conversions">
+<h3><span class="section-number">12.5.2. </span>Unit conversions<a class="headerlink" href="#unit-conversions" title="Permalink to this headline">#</a></h3>
+<p>Write a function that can be used to convert units in different temperature scales between each other.<br />
+For instance, temperature in degrees Fahrenheit to Celsius is <code class="docutils literal notranslate"><span class="pre">°F</span> <span class="pre">=</span> <span class="pre">(°C</span> <span class="pre">*</span> <span class="pre">9/5)</span> <span class="pre">+</span> <span class="pre">32</span></code>.<br />
+Conversely, <code class="docutils literal notranslate"><span class="pre">°C</span> <span class="pre">=</span> <span class="pre">(°F</span> <span class="pre">-</span> <span class="pre">32)</span> <span class="pre">*</span> <span class="pre">5/9</span></code>. And Kelvin to Celsius: <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">+</span> <span class="pre">273.15</span></code>.</p>
+<p>Your function should take three arguments: the input temp, the origin scale and the destination scale.<br />
+It should print the converted value as well as the input and output types.</p>
+</div>
+<div class="section" id="dna-translations">
+<h3><span class="section-number">12.5.3. </span>DNA translations<a class="headerlink" href="#dna-translations" title="Permalink to this headline">#</a></h3>
+<p>In its most basic form, DNA can be seen as a sequence of 3-letter words (called <em>codons</em>), each of which encodes a single amino acid or a stop signal.<br />
+So, this short DNA sequence <code class="docutils literal notranslate"><span class="pre">ATGCCGGGCTAA</span></code> can be translated into Met-Pro-Gly-Stop. Or, in single-letter encoding <code class="docutils literal notranslate"><span class="pre">MPG*</span></code>. For details on this central dogma of molecular biology, see <a class="reference external" href="https://atdbio.com/nucleic-acids-book/Transcription-Translation-and-Replication">here</a>.<br />
+The snippet below generates the DNA codon translation table that can be used to translate DNA into protein.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">=</span> <span class="s2">&quot;tcag&quot;</span>
+<span class="n">codons</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">bases</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bases</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">bases</span><span class="p">]</span>
+<span class="n">amino_acids</span> <span class="o">=</span> <span class="s1">&#39;FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG&#39;</span>
+<span class="n">codon_table</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">codons</span><span class="p">,</span> <span class="n">amino_acids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is your task to create a function that can translate DNA into protein. The function should receive two arguments: the DNA sequence (<code class="docutils literal notranslate"><span class="pre">seq</span></code>) and the position to start translation at, <code class="docutils literal notranslate"><span class="pre">start</span></code>. This last argument should default to 0 (the first nucleotide).<br />
+Here is a test sequence you can use (parts of):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CATCATGAAATCGCTTGTCGCACTACTGCTGCTTTTAGTCGCTACTTCTGCCTTTGCTGACCAGTATGTAAATGGCTACA</span>
+<span class="n">CTAGAAAAGACGGAACTTATGTCAACGGCTATAC</span>
+</pre></div>
+</div>
+<p>As an optional extra argument you could implement that the function exits and returns the protein sequence when a stop (<code class="docutils literal notranslate"><span class="pre">*</span></code>) is encountered, defaulting on <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me a hint</summary>
+  To get hold of a codon, you will need something like `codon = seq[i: i+3]`
+</details>  
+  <br>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exit_on_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">peptide</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="n">codon</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">amino_acid</span> <span class="o">=</span> <span class="n">codon_table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">codon</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="c1"># Default return value when the codon is not three letters</span>
+        <span class="n">peptide</span> <span class="o">+=</span> <span class="n">amino_acid</span>
+
+        <span class="k">if</span> <span class="n">amino_acid</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span> <span class="ow">and</span> <span class="n">exit_on_stop</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">peptide</span>
+
+<span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;CATCATGAAATCGCTTGTCGCACTACTGCTGCTTTTAGTCGCTACTTCTGCCTTTGCTGACCAGTATGTAAATGGCTACACTAGAAAAGACGGAACTTATGTCAACGGCTATAC&quot;</span>
+<span class="n">translate</span><span class="p">(</span><span class="n">dna</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">exit_on_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
 </div>
 </div>
 <div class="section" id="reading-and-writing-files">
@@ -1809,15 +1893,27 @@ The guessing party takes turns guessing wich letter will be in the word. If the 
 </pre></div>
 </div>
 </div>
+<div class="section" id="wordle-lingo-game-to">
+<h3><span class="section-number">12.12.4. </span>Wordle / Lingo game (✲✲ to ✲✲✲✲✲)<a class="headerlink" href="#wordle-lingo-game-to" title="Permalink to this headline">#</a></h3>
+<p>Lingo was one of the longest-running tv game shows.
+In this game the player needs to guess a word of a fixed length (usually between 5 and 7 letters).
+It looks for instance like this:</p>
+<p><img alt="wordle" src="_images/wordle.png" /></p>
+<p>It is you challenge to create such a game.</p>
+<p>Configurable (through interface or command-line arguments) should at least be the word length (with default of 5), the language (use a default that suits you) and -optionally- the number of guesses a user can take, with a default of 6.<br />
+After a guess, the user receives information about the letters on correct positions, letters at wrong positions, and wrong letters.</p>
+<p>There are word lists in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of this repo that you can use to randomly pick words: <code class="docutils literal notranslate"><span class="pre">dutch_words.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">english_words.txt</span></code>.<br />
+Many ways exist to make this challenge really challenging. For instance, you can create a GUI (there are several libraries for that purpose available in Python but I suggest you use TkInter - see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>).</p>
+</div>
 <div class="section" id="encrypt-and-decrypt-messages-using-caesar-cipher-to">
-<h3><span class="section-number">12.12.4. </span>Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)<a class="headerlink" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.5. </span>Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)<a class="headerlink" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to" title="Permalink to this headline">#</a></h3>
 <p>Caesar’s cipher is one of the simplest and most widely known encryption techniques. Each letter in a text is replaced by a letter some fixed number of positions down (or iup) the alphabet.
 For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence (see <a class="reference external" href="https://en.wikipedia.org/wiki/Caesar_cipher">Wikipedia</a>).</p>
 <p>It is your task to create such a cipher, where the program takes two command-line arguments. The first one is the shift (left being negative) and the second a filename or a literal text.</p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module is a good idea, but not required.</p>
 </div>
 <div class="section" id="create-a-data-dashboard-to">
-<h3><span class="section-number">12.12.5. </span>Create a data dashboard (✲✲ to ✲✲✲✲)<a class="headerlink" href="#create-a-data-dashboard-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.6. </span>Create a data dashboard (✲✲ to ✲✲✲✲)<a class="headerlink" href="#create-a-data-dashboard-to" title="Permalink to this headline">#</a></h3>
 <p>Create an app that receives a file with structured data (columns) as input. The app then reads this file <em>in a streaming manner</em> and reports statistics of the file contents. The first three of these are mandatory, the subsequent features are optional and increase the level of this challenge.</p>
 <ol class="arabic simple">
 <li><p>Dimensions of the dataset (rows/comuns)</p></li>
@@ -1834,7 +1930,7 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 </ol>
 </div>
 <div class="section" id="implement-k-means-clustering">
-<h3><span class="section-number">12.12.6. </span>Implement k-Means clustering (✲✲✲✲)<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.7. </span>Implement k-Means clustering (✲✲✲✲)<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h3>
 <p>The k-Means clustering algorithm is used much in data science to group data in an unsupervised manner. See <a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">Wikipedia</a> for details.</p>
 <p>For this assignment you should implement this algorithm in a program that takes two command-line arguments. The first is a file with the input data and the second should be an optional argument for the <code class="docutils literal notranslate"><span class="pre">k-parameter</span></code> which defaults to 3.</p>
 <p>The output should be a file holding a copy of the input data, but with an extra column appended indicating the cluster number in which the example is put. For instance, given this input, a random sample from the famous “Fisher’s iris” dataset:</p>
@@ -1864,12 +1960,23 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 <p>With only one mismatch between the <code class="docutils literal notranslate"><span class="pre">Species</span></code> and <code class="docutils literal notranslate"><span class="pre">cluster</span></code> columns.</p>
 </div>
 <div class="section" id="implement-neighbor-joining-clustering">
-<h3><span class="section-number">12.12.7. </span>Implement neighbor joining clustering(✲✲✲✲)<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.8. </span>Implement neighbor joining clustering(✲✲✲✲)<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h3>
 <p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Neighbor_joining">Wikipedia</a> for details.
 You could employ several strategies. The first is classical joining where you end up with a structure with all nodes connected. You can also force the algorithm to stop when a set number of clusters has been formed. This makes it comparable to k-Means but without the random seeding (thus deterministic).</p>
 </div>
+<div class="section" id="a-puzzle-game">
+<h3><span class="section-number">12.12.9. </span>A puzzle game (✲✲✲ - ✲✲✲✲✲)<a class="headerlink" href="#a-puzzle-game" title="Permalink to this headline">#</a></h3>
+<p>Especially older people will probably know the windows Minesweeper game. It looks like this:</p>
+<a class="reference internal image-reference" href="_images/minesweeper.jpg"><img alt="mine sweeper" class="align-center" src="_images/minesweeper.jpg" style="width: 250px;" /></a>
+<p>I have programmed a slightly different version of it using Python and a GUI framework called TKinter:</p>
+<a class="reference internal image-reference" href="_images/mine_hunter.png"><img alt="mine hunter" class="align-center" src="_images/mine_hunter.png" style="width: 300px;" /></a>
+<p>The app code is in the repo of this book <a class="reference external" href="https://github.com/MichielNoback/python_intro">here</a> (in folder <code class="docutils literal notranslate"><span class="pre">gui_demo</span></code>).<br />
+You can download that entire repository as zip archive (button <code class="docutils literal notranslate"><span class="pre">Code</span></code>).</p>
+<p>Study the code, and read or watch some tutorials.<br />
+Next, head over to <a class="reference external" href="https://www.puzzle-tents.com/">https://www.puzzle-tents.com/</a> and choose a game you would like to re-create. Implement that game using python and tkinter.</p>
+</div>
 <div class="section" id="create-a-game-of-life-simulation-app">
-<h3><span class="section-number">12.12.8. </span>Create a Game of Life simulation app (✲✲✲✲✲)<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.10. </span>Create a Game of Life simulation app (✲✲✲✲✲)<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> or Conway’s Game of Life is a simulation of a simple growth experiment. It follows a few simple rules deciding whether a cell (an element in a 2D grid) will live or die. The challenge here is to visualize the simulation so you will need to work with a Graphical User Interface (GUI) toolkit. There are several libraries for that purpose available in Python but I suggest you use TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p>
 </div>
 </div>
@@ -1884,16 +1991,16 @@ You could employ several strategies. The first is classical joining where you en
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "education"
         },
         kernelOptions: {
-            name: "python3",
+            name: "education",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'education'</script>
 
                 </article>
               
@@ -1949,10 +2056,7 @@ You could employ several strategies. The first is classical joining where you en
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">12.2.3. Operator precedence (1)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">12.2.4. Operator precedence (2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">12.2.5. Assignment shortcut operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.6. The Floor division and Modulo operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge">12.2.6.1. Challenge</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">12.2.6. The Floor division and Modulo operators</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">12.3. Data types</a><ul class="nav section-nav flex-column">
@@ -1960,7 +2064,7 @@ You could employ several strategies. The first is classical joining where you en
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">12.3.2. String formatting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slicing">12.3.3. String slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-lists">12.3.4. Working with lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-between-lists-and-tuples">12.3.5. Choosing between lists and tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-lists-or-tuples">12.3.5. Choosing lists or tuples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-lists">12.3.6. Tuples and lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">12.3.7. sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">12.3.8. dict</a></li>
@@ -1971,10 +2075,13 @@ You could employ several strategies. The first is classical joining where you en
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-2">12.4.2. if/else (2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-for-1">12.4.3. Looping with <code class="docutils literal notranslate"><span class="pre">for</span></code> (1)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-for-2">12.4.4. Looping with <code class="docutils literal notranslate"><span class="pre">for</span></code> (2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-while">12.4.5. Looping with <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">12.5. Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refactor-to-use-functions">12.5.1. Refactor to use functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-conversions">12.5.2. Unit conversions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-translations">12.5.3. DNA translations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">12.6. Reading and Writing files</a><ul class="nav section-nav flex-column">
@@ -2015,11 +2122,13 @@ You could employ several strategies. The first is classical joining where you en
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-guessing-game">12.12.1. A number guessing game (✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-palindromes-to">12.12.2. Finding palindromes (✲ to ✲✲✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">12.12.3. Hangman word guessing game (✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.4. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.5. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.6. Implement k-Means clustering (✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.7. Implement neighbor joining clustering(✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.8. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">12.12.4. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.5. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.6. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.7. Implement k-Means clustering (✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.8. Implement neighbor joining clustering(✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">12.12.9. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.10. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
 </ul>
 </li>
 </ul>
