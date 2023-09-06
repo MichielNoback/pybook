@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -362,7 +363,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">3.1. Scalar types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.1. Mathematical operators with strings?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-delimited-sequences-of-characters">3.1.1. Strings are delimited sequences of characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-and-conversions">3.1.2. Types and conversions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.3. Mathematical operators with strings?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">3.2. Collection types</a><ul class="nav section-nav flex-column">
@@ -382,6 +385,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.2.8. Shared operations of collection types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-chatgpt">3.2.10. Note on ChatGPT</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">3.3. Key concepts</a></li>
@@ -400,22 +404,46 @@ document.write(`
 <h1><span class="section-number">3. </span>It’s all about data<a class="headerlink" href="#it-s-all-about-data" title="Permalink to this headline">#</a></h1>
 <p>Without data there is not much computing to be done. All programs take data as input and most of them also generate data as output.<br />
 Input can come from a variety of sources: from file, a database, keyboard, a GUI, web socket and output can go to different destinations as well.</p>
-<p>There are only a few basic types of data: text and numbers (and booleans). However, data can be aggregated into more complex structures such as collections and objects.</p>
+<p>There are only a few basic types of data: text and numbers (and booleans).
+However, data can be aggregated into more complex structures such as collections and objects.</p>
 <p>In this chapter we’ll explore the different core data types of Python, both <strong>scalar</strong> and <strong>collection</strong>.</p>
 <div class="section" id="scalar-types">
 <h2><span class="section-number">3.1. </span>Scalar types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">#</a></h2>
-<p>A scalar data type, or just <strong>scalar</strong>, is any non-collection value. Put differently, a scalar is a singular value. There are just a few different scalar values in Python to be found in the vast majority of Python code, and they are the same or at least similar across the vast majority of programming languages.</p>
+<p>A scalar data type, or just <strong>scalar</strong>, is any non-collection value. Put differently, a scalar is a singular value. There are just a few different scalar values in basic Python, and they are the same or at least similar across the vast majority of programming languages.</p>
 <ul class="simple">
-<li><p><strong>Numeric types</strong> represent numbers and they come in two flavours; with and without decimal part.</p>
+<li><p><strong>Numeric types</strong> represent numbers and they come in two flavours.</p>
 <ul>
 <li><p>integers have no decimal part (<code class="docutils literal notranslate"><span class="pre">int</span></code>) e.g. <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">140000000198</span></code></p></li>
 <li><p>floating point numbers do have a decimal part (<code class="docutils literal notranslate"><span class="pre">float</span></code>) e.g. <code class="docutils literal notranslate"><span class="pre">3.211</span></code>, <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, <code class="docutils literal notranslate"><span class="pre">5E-5</span></code></p></li>
 </ul>
 </li>
-<li><p><strong>Text</strong>: aka string data (<code class="docutils literal notranslate"><span class="pre">str</span></code>) e.g. <code class="docutils literal notranslate"><span class="pre">&quot;It's</span> <span class="pre">a</span> <span class="pre">wonderful</span> <span class="pre">world&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'What</span> <span class="pre">a</span> <span class="pre">challenge!'</span></code></p></li>
-<li><p><strong>Logical</strong>: aka boolean (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) with only two possible values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>Text</strong>: string data (<code class="docutils literal notranslate"><span class="pre">str</span></code>) e.g. <code class="docutils literal notranslate"><span class="pre">&quot;It's</span> <span class="pre">a</span> <span class="pre">wonderful</span> <span class="pre">world&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'What</span> <span class="pre">a</span> <span class="pre">challenge!'</span></code></p></li>
+<li><p><strong>Logical</strong>: boolean values (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) with only two possible values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 <p>(I skipped binary and complex types for conciseness)</p>
+<div class="section" id="strings-are-delimited-sequences-of-characters">
+<h3><span class="section-number">3.1.1. </span>Strings are delimited sequences of characters<a class="headerlink" href="#strings-are-delimited-sequences-of-characters" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> type holds text data. When you create a string literal in your code, you will need to indicate where it starts and ends. You do that with quotes, either single (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). They have to be the same at both ends.<br />
+That you have two options is convenient when you have literal quotes in your variable, as in these examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;The boy said &quot;No man is an island&quot; and the man replied &quot;I am bloody Ibiza!&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s2">&quot;The lady&#39;s bracelet was lost at sea.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The boy said &quot;No man is an island&quot; and the man replied &quot;I am bloody Ibiza!&quot;
+The lady&#39;s bracelet was lost at sea.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="types-and-conversions">
+<h3><span class="section-number">3.1.2. </span>Types and conversions<a class="headerlink" href="#types-and-conversions" title="Permalink to this headline">#</a></h3>
 <p>Since Python is a <strong>dynamically typed language</strong> you do not need to specify its type when creating a variable. However, you can inspect the type by using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function on any literal or variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -485,16 +513,20 @@ False
 <div class="tip admonition">
 <p class="admonition-title">Exercise</p>
 <p>Try some conversions yourself.<br />
-Figure out why some fail and some do not (sometimes where you expected it), what the result is and what the logic behind the conversion is. Especially conversions to <code class="docutils literal notranslate"><span class="pre">bool</span></code> are interesting and very relevant in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;condition&gt;:</span></code> blocks.</p>
+Figure out why some fail and some do not (sometimes where you expected it),
+what the result is and what the logic behind the conversion is.<br />
+Especially conversions to <code class="docutils literal notranslate"><span class="pre">bool</span></code> are interesting and very relevant in
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;condition&gt;:</span></code> blocks.</p>
+</div>
 </div>
 <div class="section" id="mathematical-operators-with-strings">
-<h3><span class="section-number">3.1.1. </span>Mathematical operators with strings?<a class="headerlink" href="#mathematical-operators-with-strings" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.3. </span>Mathematical operators with strings?<a class="headerlink" href="#mathematical-operators-with-strings" title="Permalink to this headline">#</a></h3>
 <p>Yes, some math operators work with strings as well, but not all:</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="s1">&#39;world!&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># gives a TypeError</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># One of the most common Python errors</span>
 </pre></div>
 </div>
 </div>
@@ -505,10 +537,10 @@ Hello, Hello,
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="s1">&#39;world!&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># gives a TypeError</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># One of the most common Python errors</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
@@ -564,6 +596,14 @@ So, <code class="docutils literal notranslate"><span class="pre">[1,</span> <spa
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The character(s) selected by letters[0] are A
+The character(s) selected by letters[3] are D
+The character(s) selected by letters[-3] are I
+The character(s) selected by letters[2:6] are CDEF
+</pre></div>
+</div>
+</div>
 </div>
 <p>And here some slicing examples.</p>
 <div class="cell docutils container">
@@ -577,12 +617,21 @@ So, <code class="docutils literal notranslate"><span class="pre">[1,</span> <spa
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The character(s) selected by letters[::2] are ACEGIK
+The character(s) selected by letters[:] are ABCDEFGHIJK
+The character(s) selected by letters[::-2] are KIGECA
+The character(s) selected by letters[:-5:-2] are KI
+</pre></div>
+</div>
+</div>
 </div>
 <p>As you can see, when the step is negative (last 2 examples), start and stop will be “reversed”.<br />
-I personaally don’t understand this design decision.</p>
+I personally don’t understand this design decision.</p>
 <div class="tip admonition">
 <p class="admonition-title">Exercise</p>
-<p>Given the string <code class="docutils literal notranslate"><span class="pre">txt</span> <span class="pre">=</span> <span class="pre">'aA.bB.cC.dD.eE.fF.gG.hH.zZ'</span></code>, write code using string slicing to print to screen</p>
+<p>Given the string <code class="docutils literal notranslate"><span class="pre">txt</span> <span class="pre">=</span> <span class="pre">'aA.bB.cC.dD.eE.fF.gG.hH.zZ'</span></code>, write code using
+string slicing to print to screen</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;abcdefgz&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;........&quot;</span></code></p></li>
@@ -604,7 +653,7 @@ I personaally don’t understand this design decision.</p>
 <p>So far I have skipped the point that Python is an <strong>Object-Oriented</strong> programming language.<br />
 Being object-oriented means that everything is being modeled as an entity with data and behaviour (e.g. methods) where the objects’ <strong>class</strong> holds the <em>blueprint</em> for creating objects (instances) according to that blueprint.</p>
 <p>Let’s explore this concept with the string type. In Python, strings have only a single property - their character sequence. They do, however, have many methods.<br />
-Properties and methods can borh be accessed on an object using the <strong>dot operator</strong>.<br />
+Properties and methods can both be accessed on an object using the <strong>dot operator</strong>.<br />
 The difference lies in the fact that -unlike properties- methods have parentheses after their name that (optionally) define method arguments.</p>
 <p>Here are some examples of methods on string objects.</p>
 <div class="cell docutils container">
@@ -646,8 +695,9 @@ Foo Bar Baz
 </div>
 </div>
 </div>
-<p>The dot operator works on <strong>all objects</strong> in Python. Of course, the set of available methods differs from type to type. For instance, a list does not have <code class="docutils literal notranslate"><span class="pre">upper()</span></code> and string does not have <code class="docutils literal notranslate"><span class="pre">append()</span></code>.  You may be wondering how you can recognize what is an object and what is not? Well, that one is simple: <em>everything in Python is an object</em>.</p>
-<p>Try it out!</p>
+<p>The dot operator works on <strong>all objects</strong> in Python. Of course, the set of available methods differs from type to type. For instance, a list does not have <code class="docutils literal notranslate"><span class="pre">upper()</span></code> and string does not have <code class="docutils literal notranslate"><span class="pre">append()</span></code>.</p>
+<p>You may be wondering how you can recognize what is an object and what is not?<br />
+Well, that one is simple: <strong><em>everything in Python is an object</em></strong>.</p>
 <p>Use the function <code class="docutils literal notranslate"><span class="pre">type()</span></code> to get the object type of any variable or type. There are (of course) a few exceptions: the reserved <strong>keywords</strong> of the language do not have a type: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, etc; type <code class="docutils literal notranslate"><span class="pre">help(&quot;keywords&quot;)</span></code> or see <a class="reference external" href="https://realpython.com/python-keywords/">Python keywords</a>. Here are some built-in and custom types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,10 +743,18 @@ Here are a few basic operations with lists.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apple&#39;, &#39;orange&#39;, &#39;kiwi&#39;, &#39;pear&#39;, &#39;banana&#39;, &#39;plum&#39;]
+[&#39;apple&#39;, &#39;orange&#39;, &#39;plum&#39;]
+[&#39;apple&#39;, &#39;grapefruit&#39;, &#39;strawberry&#39;, &#39;orange&#39;, &#39;plum&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Exercise</p>
-<p>Given the list below, investigate whether list slicing behaves the same as with strings.</p>
+<p>Given the list below, investigate whether list slicing behaves the same
+as with strings.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -723,12 +781,20 @@ Here are a few basic operations with lists.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">]</span> <span class="c1"># note the square brackets</span>
 <span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;plum&quot;</span><span class="p">])</span>    <span class="c1"># adds an embedded list</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s2">&quot;guava&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">])</span>    <span class="c1"># addes each element separately</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s2">&quot;guava&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">])</span>   <span class="c1"># adds each element separately</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="c1"># removes and returns last element</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">))</span>  <span class="c1"># len() is one of the built-in functions. See chapter on functions for more info</span>
 <span class="n">fruits</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apple&#39;, &#39;orange&#39;, &#39;kiwi&#39;, [&#39;banana&#39;, &#39;plum&#39;], &#39;guava&#39;, &#39;cherry&#39;]
+cherry
+5
+[&#39;guava&#39;, [&#39;banana&#39;, &#39;plum&#39;], &#39;kiwi&#39;, &#39;orange&#39;, &#39;apple&#39;]
 </pre></div>
 </div>
 </div>
@@ -751,6 +817,12 @@ Here are a few basic operations with tuples.</p>
 <span class="c1">#animals += (&quot;platypus&quot;)            # Gives a TypeError because this is a string surrounded by parentheses</span>
 <span class="c1">#animals[1:2] = ()                  # TypeError because tuples are immutable</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;bear&#39;, &#39;horse&#39;)
+(&#39;bear&#39;, &#39;horse&#39;, &#39;ant&#39;, &#39;platypus&#39;)
 </pre></div>
 </div>
 </div>
@@ -787,6 +859,11 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;beetle&#39;, &#39;deer&#39;}
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -797,6 +874,12 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 
 <span class="n">animals</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;deer&quot;</span><span class="p">)</span> <span class="c1"># remove an element</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;beetle&#39;, &#39;deer&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;)}
+{&#39;beetle&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;)}
 </pre></div>
 </div>
 </div>
@@ -820,7 +903,7 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 <ul class="simple">
 <li><p>the <strong>union</strong> of two sets is the set of elements that are in A or in B (<code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">∪</span> <span class="pre">B</span></code>)</p></li>
 <li><p>the <strong>intersections</strong> of two sets is the set of elements that are in A and in B (<code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">∩</span> <span class="pre">B</span></code>)</p></li>
-<li><p>set A and set B are <strong>disjoint</strong> if they have no elemenst in common.</p></li>
+<li><p>set A and set B are <strong>disjoint</strong> if they have no elements in common.</p></li>
 <li><p>set B is a <strong>proper subset</strong> of A if all elements of B are also in B but <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">≠</span> <span class="pre">A</span></code></p></li>
 <li><p>the <strong>symmetric difference</strong> is the complement of the intersection</p></li>
 </ul>
@@ -837,13 +920,22 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pear&#39;, &#39;banana&#39;, &#39;orange&#39;, &#39;kiwi&#39;, &#39;apple&#39;}
+{&#39;kiwi&#39;}
+False
+False
+{&#39;pear&#39;, &#39;apple&#39;, &#39;orange&#39;, &#39;banana&#39;}
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="collection-type-dict">
 <h3><span class="section-number">3.2.7. </span>Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}<a class="headerlink" href="#collection-type-dict" title="Permalink to this headline">#</a></h3>
 <p>The last collection type discussed here is the dict, which is an abbreviation of <em>dictionary</em>.<br />
 It is used to hold mappings between <em>keys</em> and <em>values</em>, much like real dictionaries.</p>
-<p>A dict can be created as a literal in as follows:</p>
+<p>A dict can be created as a literal as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_supply</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -873,11 +965,22 @@ Values can be of any data type: numbers, strings, lists, other dicts…</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Sue&#39;, &#39;Lilith&#39;]
+we have lions!
+we have lions!
+Bobolin
+None
+</pre></div>
+</div>
+</div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Exercise</p>
-<p>Now take some time to figure out what the <code class="docutils literal notranslate"><span class="pre">dict</span></code> methods <code class="docutils literal notranslate"><span class="pre">update()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code> are intended for and how they are used. Try them out!<br />
-Feel free to try some other methods. Remember, <code class="docutils literal notranslate"><span class="pre">help(dict)</span></code> gives you almost all the information you need.</p>
+<p>Now take some time to figure out what the <code class="docutils literal notranslate"><span class="pre">dict</span></code> methods <code class="docutils literal notranslate"><span class="pre">update()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code> are
+intended for and how they are used. Try them out!<br />
+Feel free to try some other methods.
+Remember, <code class="docutils literal notranslate"><span class="pre">help(dict)</span></code> gives you almost all the information you need.</p>
 </div>
 </div>
 <div class="section" id="shared-operations-of-collection-types">
@@ -939,6 +1042,7 @@ For the most part you will need to learn how to quickly find answers to your pro
 <li><p>Use the dot operator within your editor. This usually suggests possible methods on an object (or class).</p></li>
 <li><p>use <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Jupyter or the Python console, e.g. help(str)</p></li>
 <li><p>Use <a class="reference external" href="https://docs.python.org/3/">the python docs</a>, in particular <a class="reference external" href="https://docs.python.org/3/library/index.html">The Python Standard lLibrary</a></p></li>
+<li><p>ChatGPT or other LLM (note on next slide)</p></li>
 <li><p>GIYF (Google Is Your Friend)</p></li>
 <li><p>Ask a colleague/friend/random tech wizard on the street. Possibly preceeded by asking the <a class="reference external" href="https://rubberduckdebugging.com/">debug duck</a></p></li>
 </ol>
@@ -953,6 +1057,28 @@ For the most part you will need to learn how to quickly find answers to your pro
 <li><p>round a number to 2 decimals</p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="note-on-chatgpt">
+<h3><span class="section-number">3.2.10. </span>Note on ChatGPT<a class="headerlink" href="#note-on-chatgpt" title="Permalink to this headline">#</a></h3>
+<p>ChatGPT is a (real) game changer in programming.
+However, it is <strong><em>never unsure</em></strong>: it does make mistakes, and will serve utter nonsense with utter conviction.
+Given this snippet and output,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, True, 2, 4, 6, &#39;c&#39;, &#39;a&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>and the question “why do the values 1 and False not appear in this result, it answered this:</p>
+<p><img alt="chatGPT_nonsense.png" src="_images/chatGPT_nonsense.png" /></p>
 </div>
 </div>
 <div class="section" id="key-concepts">
@@ -1038,7 +1164,9 @@ For the most part you will need to learn how to quickly find answers to your pro
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-types">3.1. Scalar types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.1. Mathematical operators with strings?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-delimited-sequences-of-characters">3.1.1. Strings are delimited sequences of characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-and-conversions">3.1.2. Types and conversions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators-with-strings">3.1.3. Mathematical operators with strings?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-types">3.2. Collection types</a><ul class="nav section-nav flex-column">
@@ -1058,6 +1186,7 @@ For the most part you will need to learn how to quickly find answers to your pro
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.2.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.2.8. Shared operations of collection types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.2.9. What do I need to memorize?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-chatgpt">3.2.10. Note on ChatGPT</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">3.3. Key concepts</a></li>

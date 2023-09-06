@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Control the flow of things</a></li>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -387,7 +388,7 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="control-the-flow-of-things">
 <h1><span class="section-number">4. </span>Control the flow of things<a class="headerlink" href="#control-the-flow-of-things" title="Permalink to this headline">#</a></h1>
-<p>Besides data, flow control is at the heart of programming. What is the use of a list if you can’t iterate it? How could you ever take alterantive courses of action based on some variable value without the use of if/else blocks?</p>
+<p>Besides data, flow control is at the heart of programming. What is the use of a list if you can’t iterate it? How could you ever take alternative courses of action based on some variable value without the use of if/else blocks?</p>
 <p>This chapter deals with all aspects concerning control of program flow or in short flow control.</p>
 <p>These are the constructs that you will see:</p>
 <ul class="simple">
@@ -398,10 +399,11 @@ document.write(`
 <div class="section" id="code-blocks">
 <h2><span class="section-number">4.1. </span>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h2>
 <p>All flow control elements make use of code blocks: one or multiple statements (lines) that belong together and are executed together.</p>
-<p>A code block is defined by <strong>indentation</strong> (4 spaces usually), and in flow control it always follows an iteration or decision statement ending with a colon:</p>
+<p>A code block is defined by <strong>indentation</strong> (usually 4 spaces).<br />
+In flow control it always follows an iteration or decision statement ending with a <strong>colon</strong>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;some flow control element&gt;:
-    block code 
-    block code
+    statement belonging to block 
+    statement belonging to block 
     ...
 
 code not belonging to the flow control element
@@ -509,7 +511,7 @@ banana
 </div>
 </div>
 </div>
-<p>As you can see <code class="docutils literal notranslate"><span class="pre">break</span></code> skips all subsequent iterations. Similarly, if you want to skip only a single iteration you can use <code class="docutils literal notranslate"><span class="pre">continue</span></code>:</p>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">break</span></code> skips all subsequent iterations. Similarly, if you want to skip only a single iteration you can use <code class="docutils literal notranslate"><span class="pre">continue</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
@@ -576,40 +578,12 @@ There are some useful cases for the shorthand form. One of these is demonstrated
 <h3><span class="section-number">4.2.3. </span>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
 <p>If you want to repeat without a collection the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is your friend. Especially with user input this one comes in handy. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause can be used here as well (not demonstrated).
 Here is a typical use of <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please give your name: &quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Welcome, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please give your name: &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Welcome, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/miniconda3/envs/education/lib/python3.9/site-packages/ipykernel/kernelbase.py:1190,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1190</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1193</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1195</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1196</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -621,7 +595,7 @@ Here is a typical use of <code class="docutils literal notranslate"><span class=
     <span class="k">pass</span>
 <span class="k">elif</span> <span class="n">condition</span><span class="p">:</span>  <span class="c1"># Optional, but many allowed</span>
     <span class="k">pass</span>
-<span class="k">else</span><span class="p">:</span>            <span class="c1"># Optional, executed only when all of the above evaluated to False; only one allowed</span>
+<span class="k">else</span><span class="p">:</span>            <span class="c1"># Optional, when all conditions False, only one allowed</span>
     <span class="k">pass</span>
 </pre></div>
 </div>

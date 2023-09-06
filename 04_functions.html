@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -499,7 +500,10 @@ It <em>calls</em> two functions itself to perform its task: <code class="docutil
 <p>In the last example above you can see the use of named arguments. When using the parameter names to pass the arguments, the order in which they are passed does not need to match the order of the parameters in the function definition.</p>
 <div class="note admonition">
 <p class="admonition-title">Parameters versus Arguments</p>
-<p>A parameter is a variable in a function definition. It is a placeholder and hence does not have a concrete value. An argument is a value passed during function invocation. In a way, arguments fill in the place the parameters have held for them.</p>
+<p>A parameter is a variable in a function definition. It is a placeholder
+and hence does not have a concrete value. An argument is a value passed
+during function invocation.<br />
+In a way, arguments fill in the place the parameters have held for them.</p>
 </div>
 </div>
 <div class="section" id="you-ve-got-to-adhere-to-the-contract">
@@ -642,7 +646,7 @@ a has value 12
 </div>
 </div>
 <p>No problem here. But now the function attempts to change the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>. We get an <code class="docutils literal notranslate"><span class="pre">UnboundLocalError:</span> <span class="pre">local</span> <span class="pre">variable</span> <span class="pre">'a'</span> <span class="pre">referenced</span> <span class="pre">before</span> <span class="pre">assignment</span></code> Here, the error message is not as clear as we would possibly like it because it seems as if the variable does not exist (yet).</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
 
@@ -699,6 +703,14 @@ a has value 12
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a has value 13
+b has value 5
+c has value 5
+a has value 13
+</pre></div>
+</div>
+</div>
 </div>
 <p>That’s OK again. But what if we try to do the reverse - accessing a local variable from the global context? This fails again, unless we make variable <code class="docutils literal notranslate"><span class="pre">c</span></code> global as well.</p>
 <div class="cell docutils container">
@@ -718,6 +730,15 @@ a has value 12
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a has value </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c has value </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a has value 13
+b has value 5
+c has value 5
+a has value 13
+c has value 6
 </pre></div>
 </div>
 </div>
@@ -750,8 +771,8 @@ a has value 12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At 06/04/2023 16:08:13 you messaged foo
-At 06/04/2023 16:08:13 you messaged bar
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At 06/09/2023 10:06:54 you messaged foo
+At 06/09/2023 10:06:54 you messaged bar
 You messaged bye
 You messaged auf wiedersehen
 </pre></div>

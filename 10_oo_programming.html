@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -364,28 +365,27 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-objects">11.1. Classes and Objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-the-mother-of-all-classes">11.2. Class <code class="docutils literal notranslate"><span class="pre">object</span></code>, the mother of all classes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">11.2.1. Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-behaviour">11.2.2. Adding behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-to-swim">11.2.2.1. Learn to swim</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-behaviour">11.3. Adding behaviour</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-to-swim">11.3.1. Learn to swim</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constructor-init">11.2.3. The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-injected-self-argument">11.2.4. The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-points-in-space">11.2.5. Another example: points in space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-and-interpreter-hooks">11.2.6. Object and interpreter hooks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-example">11.4. A more realistic example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constructor-init">11.4.1. The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-injected-self-argument">11.4.2. The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complex-example-optional">11.3. A more complex example (optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-some-hooks">11.3.1. Implement some hooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-performance-class">11.3.2. The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reservation-class">11.3.3. The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-performance">11.3.4. Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bring-it-all-together">11.3.5. Bring it all together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-an-iteration-hook">11.3.6. Implementing an iteration hook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-iteration">11.3.7. An alternative iteration</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-and-interpreter-hooks">11.5. Object and interpreter hooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-some-hooks">11.5.1. Implement some hooks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-performance-class">11.5.2. The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reservation-class">11.5.3. The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-performance">11.5.4. Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bring-it-all-together">11.5.5. Bring it all together</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-an-iteration-hook">11.5.6. Implementing an iteration hook</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-iteration">11.5.7. An alternative iteration</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-hooks">11.6. The main hooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-hooks">11.4. The main hooks</a></li>
 </ul>
             </nav>
         </div>
@@ -402,21 +402,22 @@ document.write(`
 <p>You already know that Python is an <em>object-oriented</em> programming language and have seen some aspects of it.</p>
 <p>For instance, the dot operator that lets you access methods on objects, like in this fragment:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Howdy, Mike&#39;</span>
-<span class="n">message2</span> <span class="o">=</span> <span class="s1">&#39;Howdy, Rose&#39;</span>
 <span class="n">message</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Howdy&#39;</span><span class="p">,</span> <span class="s1">&#39;Bye&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, the <strong><em>string instances</em></strong> named <code class="docutils literal notranslate"><span class="pre">message</span></code> and <code class="docutils literal notranslate"><span class="pre">message2</span></code> are defined. In the third line, the dot operator is applied to the instance named <code class="docutils literal notranslate"><span class="pre">message</span></code> to call its method <code class="docutils literal notranslate"><span class="pre">replace()</span></code>. Since <code class="docutils literal notranslate"><span class="pre">replace()</span></code> is called on this particular instance, the replacement is applied to the data stored in the string instance <code class="docutils literal notranslate"><span class="pre">message</span></code>, not in the data of <code class="docutils literal notranslate"><span class="pre">message2</span></code>.
-So, although the method is defined in the blueprint of all string objects, class <code class="docutils literal notranslate"><span class="pre">str</span></code>, when the method is called it will work on the actual data of the current instance on which the method is called.</p>
+<p>Here, the <strong><em>string instance</em></strong> named <code class="docutils literal notranslate"><span class="pre">message</span></code> is defined and assigned.<br />
+In the second line, the dot operator is applied to this instance to call its method <code class="docutils literal notranslate"><span class="pre">replace()</span></code>. Since <code class="docutils literal notranslate"><span class="pre">replace()</span></code> is <em>called on this particular instance</em>, the replacement is applied to the data stored in this particular string instance, not in any other string.</p>
+<p>The method <code class="docutils literal notranslate"><span class="pre">replace</span></code> is defined in the blueprint of all string objects (class <code class="docutils literal notranslate"><span class="pre">str</span></code>). But when the method is called, it will only operate on the data of the instance on which the method is called.</p>
 <p>This is the essence of object-oriented programming.</p>
 <div class="section" id="classes-and-objects">
 <h2><span class="section-number">11.1. </span>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">#</a></h2>
-<p>In this programming paradigm <strong>classes</strong> form the blueprint for creating <strong>objects</strong> (also called instances).</p>
+<p>In this programming paradigm <strong>classes</strong> form the blueprint for creating <strong>objects</strong> (also called instances).<br />
+Objects have properties (data) and functionality with access to those properties.</p>
 <p><img alt="Class vs Objects" src="_images/class_vs_objects.png" /></p>
-<p>Although Python provides a wealth of classes - and you have already seen quite a few: <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, etc.-  there are many occasions where the need for custom classes arise.</p>
+<p>Although Python provides a wealth of classes - and you have already seen quite a few: <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, etc.-  there are many occasions where the need for custom classes arises.</p>
 <p>The key point of using classes is to combine data and related functionality (methods) into a single entity.
 Before embarking on a little (slightly) realistic example let’s have a look at a minimal class and build some data and functionality into it.</p>
-<p>Here is a Duck class that does absolutely nothing:</p>
+<p>Here is a Duck class (also called <strong><em>type</em></strong>) that is absolutely useless:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
@@ -425,7 +426,7 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 </div>
-<p>However, there is something you can do <em>with</em> it: you can create a Duck <em><strong>instance</strong></em>:</p>
+<p>However, there is something you can do with it: you can create a Duck <em><strong>instance</strong></em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mallard</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
@@ -433,7 +434,8 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 </div>
-<p>The duck instance named mallard is a single “materialization” of the Duck blueprint. Although you might think there is no functionality attached to the class, actually there is. You can <code class="docutils literal notranslate"><span class="pre">print()</span></code> it for instance.</p>
+<p>The duck instance named mallard is a single “materialization” of the Duck blueprint.<br />
+Although you might think there is no functionality attached to the class, actually there is. Every Python class gets some base functionality out of the box, through <strong><em>inheritance</em></strong> from the base class named <code class="docutils literal notranslate"><span class="pre">object</span></code>. For instance, you can <code class="docutils literal notranslate"><span class="pre">print()</span></code> it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mallard</span><span class="p">)</span>
@@ -441,12 +443,12 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x103f3a160&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x1043235e0&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>By printing it, you get to see the name of the objects’ class, where it was defined, en where this instance lives in memory. When a new instance is created, it will only have a different memory address:</p>
+<p>By printing it, you get to see the name of the objects’ class, where it was defined (namespace), en where this instance lives in memory. When a new instance is created, it will have a different memory address:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mallard</span><span class="p">)</span>
@@ -456,8 +458,8 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x103f3a160&gt;
-&lt;__main__.Duck object at 0x103f3aac0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Duck object at 0x1043235e0&gt;
+&lt;__main__.Duck object at 0x104323b80&gt;
 </pre></div>
 </div>
 </div>
@@ -465,8 +467,8 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 <div class="section" id="class-object-the-mother-of-all-classes">
 <h2><span class="section-number">11.2. </span>Class <code class="docutils literal notranslate"><span class="pre">object</span></code>, the mother of all classes<a class="headerlink" href="#class-object-the-mother-of-all-classes" title="Permalink to this headline">#</a></h2>
-<p>Any object is printable because there is a base class named <code class="docutils literal notranslate"><span class="pre">object</span></code> that already specifies some behaviour that is usefull for all data types you can think of: printing, testing for equality, that sort of thing</p>
-<p>So, although you say this:</p>
+<p>Any object is printable because there is a base class named <code class="docutils literal notranslate"><span class="pre">object</span></code> that already specifies some behaviour that is useful for all classes you can think of: printing, testing for equality, that sort of thing</p>
+<p>So, although you code this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -496,7 +498,7 @@ Before embarking on a little (slightly) realistic example let’s have a look at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The hash code is 272579214
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The hash code is 272835476
 The class is &lt;class &#39;__main__.Duck&#39;&gt;
 The class attribute is &lt;class &#39;__main__.Duck&#39;&gt;
 mallard equals pintail:  False
@@ -507,18 +509,17 @@ mallard equals pintail:  False
 <div class="section" id="inheritance">
 <h3><span class="section-number">11.2.1. </span>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">#</a></h3>
 <p>Inheritance is one of the key concepts of the object-oriented programming paradigm. Classes can be defined to be <strong><em>subclasses</em></strong> of other classes. In the example above, class Duck is said to be a subclass of class object. By being a subclass, a class inherits all data and -especially- functionality from its <strong><em>superclass</em></strong>.
-It is a very interesting topic, extremely relevant to designing applications, but also very much out of scope for this course.</p>
-</div>
+It is a very interesting topic, extremely relevant to designing applications, but also out of scope for this course.</p>
 </div>
 <div class="section" id="adding-behaviour">
-<h2><span class="section-number">11.3. </span>Adding behaviour<a class="headerlink" href="#adding-behaviour" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">11.2.2. </span>Adding behaviour<a class="headerlink" href="#adding-behaviour" title="Permalink to this headline">#</a></h3>
 <div class="section" id="learn-to-swim">
-<h3><span class="section-number">11.3.1. </span>Learn to swim<a class="headerlink" href="#learn-to-swim" title="Permalink to this headline">#</a></h3>
-<p>If we want to have a use for this duck we could give it something to do: swimming for instance.</p>
+<h4><span class="section-number">11.2.2.1. </span>Learn to swim<a class="headerlink" href="#learn-to-swim" title="Permalink to this headline">#</a></h4>
+<p>If we want to have a use for this duck we could give it something to do: quacking for instance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">swim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quack quack&#39;</span><span class="p">)</span>
         
 <span class="n">eider</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
@@ -527,19 +528,26 @@ It is a very interesting topic, extremely relevant to designing applications, bu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quack quack
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quack quack&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">eider</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">eider</span><span class="o">.</span><span class="n">swim</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;Duck&#39; object has no attribute &#39;swim&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here is a class specifying behaviour (a method) but one single property (data / variables). Don’t worry about the <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> just yet - it will be addressed in the next section.</p>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">class</span></code> is used to communicate there is a class definition - an object blueprint. Don’t worry about the <code class="docutils literal notranslate"><span class="pre">self</span></code> just yet - it will be addressed next. The next step is adding property.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         
-    <span class="k">def</span> <span class="nf">swim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;quack quack I am a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         
 
@@ -556,8 +564,96 @@ It is a very interesting topic, extremely relevant to designing applications, bu
 </div>
 </div>
 </div>
-<div class="section" id="a-more-realistic-example">
-<h2><span class="section-number">11.4. </span>A more realistic example<a class="headerlink" href="#a-more-realistic-example" title="Permalink to this headline">#</a></h2>
+<div class="section" id="the-constructor-init">
+<h3><span class="section-number">11.2.3. </span>The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code><a class="headerlink" href="#the-constructor-init" title="Permalink to this headline">#</a></h3>
+<p>Here is a class specifying behaviour (the <code class="docutils literal notranslate"><span class="pre">quack()</span></code> method, and a single property, the <code class="docutils literal notranslate"><span class="pre">name</span></code> data field.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is called the <strong><em>constructor</em></strong> method because it is used to <em>construct</em> an object (an instance of the class). A constructor can receive arguments that are required to have a correct, functional instance of the class. In this case the Ducks’ name.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> hook makes it possible to hook into the <code class="docutils literal notranslate"><span class="pre">()</span></code> construction process by defining an argument list. As can be seen in the listing above, some hooks are already specified in class <code class="docutils literal notranslate"><span class="pre">object</span></code>. Some of these hooks you will want to re-implement for your application/your class.</p>
+<p>We will see a few more hooks in this chapter.</p>
+</div>
+<div class="section" id="the-injected-self-argument">
+<h3><span class="section-number">11.2.4. </span>The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument<a class="headerlink" href="#the-injected-self-argument" title="Permalink to this headline">#</a></h3>
+<p>There is something special going on in the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> and <code class="docutils literal notranslate"><span class="pre">quack()</span></code> methods: the <code class="docutils literal notranslate"><span class="pre">self</span></code> method argument.<br />
+In OO-Python, all methods invoked on an instance will receive as first argument -inserted by the Python interpreter- a reference to the <strong>current executing object</strong> and convention states that you name it <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<p>Because you have a reference to the current executing object you can attach, access and modify its data using this reference.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Omitting the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument when implementing an object method is one of the more common programming mistakes.</p>
+</div>
+</div>
+<div class="section" id="another-example-points-in-space">
+<h3><span class="section-number">11.2.5. </span>Another example: points in space<a class="headerlink" href="#another-example-points-in-space" title="Permalink to this headline">#</a></h3>
+<p>Here is the blueprint of a <code class="docutils literal notranslate"><span class="pre">Point</span></code> type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> 
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_coord</span><span class="p">,</span> <span class="n">y_coord</span><span class="p">,</span> <span class="n">z_coord</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_coord</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_coord</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z_coord</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Only Point instances allowed: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.23606797749979
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, this use case becomes more realistic. In fact, there are many Point classes out there just like this one that are being used in production environments.<br />
+The only difference they probably have lots more hooks implemented.</p>
+</div>
+<div class="section" id="object-and-interpreter-hooks">
+<h3><span class="section-number">11.2.6. </span>Object and interpreter hooks<a class="headerlink" href="#object-and-interpreter-hooks" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is one of the many object and interpreter hooks that exist in Python. They are called “dunder” methods because of the “double underscores”. When you implement these, <em>they let you interact with operators and built-in functions</em>.</p>
+<p>See for instance <a class="reference external" href="https://towardsdatascience.com/a-guide-to-pythons-dunder-methods-3b8104fce335">here</a> for more details.</p>
+<p>Let’s add a few before proceeding with more complex example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_coord</span><span class="p">,</span> <span class="n">y_coord</span><span class="p">,</span> <span class="n">z_coord</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># initialize hook</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_coord</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_coord</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z_coord</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># print support hook</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s1">: [x=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, y=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">, z=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="si">}</span><span class="s1">]&#39;</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="c1"># addition support hook</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Only Point instances allowed: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">p5</span> <span class="o">=</span> <span class="n">p3</span> <span class="o">+</span> <span class="n">p4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Point&#39;&gt;: [x=4, y=6, z=0]
+&lt;class &#39;__main__.Point&#39;&gt;: [x=7, y=8, z=7]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-more-complex-example-optional">
+<h2><span class="section-number">11.3. </span>A more complex example (optional)<a class="headerlink" href="#a-more-complex-example-optional" title="Permalink to this headline">#</a></h2>
+<p>This worked example demonstrates the use of multiple ineteracting and interdependent custom types. Also, more hooks are demonstrated, notably the <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code>, <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> hooks.</p>
 <p>Suppose you have a small theater and want to have a system for managing your reservations. Since you are a beginning Python enthousiast you decide to program it yourself.</p>
 <p>The first thing any good (OO-)programmer would do is to <em>model</em> the entities and their relations within the application.</p>
 <p><img alt="reservation system" src="_images/reservation_system.png" /></p>
@@ -591,25 +687,10 @@ Therefore we’ll start with the Customer class.</p>
 </div>
 </div>
 </div>
-<div class="section" id="the-constructor-init">
-<h3><span class="section-number">11.4.1. </span>The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code><a class="headerlink" href="#the-constructor-init" title="Permalink to this headline">#</a></h3>
-<p>As seen before, the keyword <code class="docutils literal notranslate"><span class="pre">class</span></code> is used to communicate there is a class definition - an object blueprint. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is called the <strong><em>constructor</em></strong> method because it is used to <em>construct</em> an object: an instance of the class. A constructor can receive arguments that are required to have a cvorrect, functional instance of the class.</p>
-<p>You never call the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method directly!
-The <code class="docutils literal notranslate"><span class="pre">Customer(...)</span></code> expression is where a new Customer instance is created. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is invoked by the Python interpreter and the <code class="docutils literal notranslate"><span class="pre">self</span></code> reference is injected and a reference to the object in memory is returned (and bound to <code class="docutils literal notranslate"><span class="pre">cust1</span></code>.</p>
-</div>
-<div class="section" id="the-injected-self-argument">
-<h3><span class="section-number">11.4.2. </span>The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument<a class="headerlink" href="#the-injected-self-argument" title="Permalink to this headline">#</a></h3>
-<p>There is something special going on in there: the <code class="docutils literal notranslate"><span class="pre">self</span></code> method argument. In OO-Python, all methods invoked on an instance will receive as first argument -inserted by the Python interpreter- a reference to the <strong>current executing object</strong> and convention states that you name it <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-<p>Because you have a reference to the current executing object you can attach, access and modify its data using this reference.</p>
-</div>
-</div>
-<div class="section" id="object-and-interpreter-hooks">
-<h2><span class="section-number">11.5. </span>Object and interpreter hooks<a class="headerlink" href="#object-and-interpreter-hooks" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is one of the many object and interpreter hooks that exist in Python. They are called “dunder” methods because of the “double underscores”. When you implement these, <em>they let you interact with operators and built-in functions</em>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> hook makes it possible to hook into the <code class="docutils literal notranslate"><span class="pre">()</span></code> construction process by defining an argument list. In the listing in a previous paragraph some hoks are specified in class <code class="docutils literal notranslate"><span class="pre">object</span></code>. We will see a few more hooks later in this chapter.<br />
-See for instance <a class="reference external" href="https://towardsdatascience.com/a-guide-to-pythons-dunder-methods-3b8104fce335">here</a> for more details.</p>
+<p>You never call the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method directly!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Customer(...)</span></code> expression is where a new Customer instance is created. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is invoked by the Python interpreter and the <code class="docutils literal notranslate"><span class="pre">self</span></code> reference is injected and a reference to the object in memory is returned (and bound to <code class="docutils literal notranslate"><span class="pre">cust1</span></code>).</p>
 <div class="section" id="implement-some-hooks">
-<h3><span class="section-number">11.5.1. </span>Implement some hooks<a class="headerlink" href="#implement-some-hooks" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.1. </span>Implement some hooks<a class="headerlink" href="#implement-some-hooks" title="Permalink to this headline">#</a></h3>
 <p>When you print the object reference itself you get something like this:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a hook for interacting with the <code class="docutils literal notranslate"><span class="pre">print()</span></code> built-in. When print receives an object to print it will look for the <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method and call it.</p>
 <div class="cell docutils container">
@@ -619,7 +700,7 @@ See for instance <a class="reference external" href="https://towardsdatascience.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Customer object at 0x103f3ac40&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Customer object at 0x111042af0&gt;
 </pre></div>
 </div>
 </div>
@@ -638,7 +719,7 @@ See for instance <a class="reference external" href="https://towardsdatascience.
 <p>Time to implement <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>.</p>
 </div>
 <div class="section" id="the-performance-class">
-<h3><span class="section-number">11.5.2. </span>The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class<a class="headerlink" href="#the-performance-class" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.2. </span>The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class<a class="headerlink" href="#the-performance-class" title="Permalink to this headline">#</a></h3>
 <p>Similar to the Customer class we can now implement the Performance class. The properties listed above are “title”, “datetime”, “seat_price”, “max_seats” and “reserved_seats”. All properties except the last one (which will simply default to 0) are useful to specify at construction time. Here is a first version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,7 +774,7 @@ In a more realist setting we would have done something like this:</p>
 </div>
 </div>
 <div class="section" id="the-reservation-class">
-<h3><span class="section-number">11.5.3. </span>The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class<a class="headerlink" href="#the-reservation-class" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.3. </span>The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class<a class="headerlink" href="#the-reservation-class" title="Permalink to this headline">#</a></h3>
 <p>The Performace class is not ready - we will need to implement some means to process reservations. To do that we need a Reservation class first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -721,7 +802,7 @@ In a more realist setting we would have done something like this:</p>
 </div>
 </div>
 <div class="section" id="finish-performance">
-<h3><span class="section-number">11.5.4. </span>Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code><a class="headerlink" href="#finish-performance" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.4. </span>Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code><a class="headerlink" href="#finish-performance" title="Permalink to this headline">#</a></h3>
 <p>Next, an <code class="docutils literal notranslate"><span class="pre">add_reservation()</span></code> and <code class="docutils literal notranslate"><span class="pre">tickets_sold()</span></code> method are added, and a check on each reservation to assure we are not sold out yet:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_reservation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reservation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Add a reservation to this performance.</span>
@@ -740,7 +821,7 @@ In a more realist setting we would have done something like this:</p>
 </div>
 </div>
 <div class="section" id="bring-it-all-together">
-<h3><span class="section-number">11.5.5. </span>Bring it all together<a class="headerlink" href="#bring-it-all-together" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.5. </span>Bring it all together<a class="headerlink" href="#bring-it-all-together" title="Permalink to this headline">#</a></h3>
 <p>Below is the finished <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class, and some example use.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -796,7 +877,7 @@ Hamlet (2023/01/18 20:00H - €15); reserved 4 out of 50
 </div>
 </div>
 <div class="section" id="implementing-an-iteration-hook">
-<h3><span class="section-number">11.5.6. </span>Implementing an iteration hook<a class="headerlink" href="#implementing-an-iteration-hook" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.6. </span>Implementing an iteration hook<a class="headerlink" href="#implementing-an-iteration-hook" title="Permalink to this headline">#</a></h3>
 <p>It would be very nice to be able to iterate the <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class on its reservations. All you need to do is implement the <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> hooks:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># should return an object responsible for iteration. Here: the object itself.</span>
 <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
@@ -916,7 +997,7 @@ Reservation for Alex: 5 tickets
 <p>This finishes this example. Can you improve or extend on the design?</p>
 </div>
 <div class="section" id="an-alternative-iteration">
-<h3><span class="section-number">11.5.7. </span>An alternative iteration<a class="headerlink" href="#an-alternative-iteration" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.7. </span>An alternative iteration<a class="headerlink" href="#an-alternative-iteration" title="Permalink to this headline">#</a></h3>
 <p>Alternatively, you can implement iteration using <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -986,7 +1067,7 @@ Reservation for Alex: 5 tickets
 </div>
 </div>
 <div class="section" id="the-main-hooks">
-<h2><span class="section-number">11.6. </span>The main hooks<a class="headerlink" href="#the-main-hooks" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.4. </span>The main hooks<a class="headerlink" href="#the-main-hooks" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__()</span></code>: used by constructor new Instance<code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>: used by <code class="docutils literal notranslate"><span class="pre">str(</span> <span class="pre">)</span></code> (and <code class="docutils literal notranslate"><span class="pre">print()</span></code>)</p></li>
@@ -1066,28 +1147,27 @@ Reservation for Alex: 5 tickets
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-objects">11.1. Classes and Objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-the-mother-of-all-classes">11.2. Class <code class="docutils literal notranslate"><span class="pre">object</span></code>, the mother of all classes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">11.2.1. Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-behaviour">11.2.2. Adding behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-to-swim">11.2.2.1. Learn to swim</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-behaviour">11.3. Adding behaviour</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-to-swim">11.3.1. Learn to swim</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constructor-init">11.2.3. The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-injected-self-argument">11.2.4. The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-points-in-space">11.2.5. Another example: points in space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-and-interpreter-hooks">11.2.6. Object and interpreter hooks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-realistic-example">11.4. A more realistic example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constructor-init">11.4.1. The constructor: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-injected-self-argument">11.4.2. The injected <code class="docutils literal notranslate"><span class="pre">self</span></code> argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complex-example-optional">11.3. A more complex example (optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-some-hooks">11.3.1. Implement some hooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-performance-class">11.3.2. The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reservation-class">11.3.3. The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-performance">11.3.4. Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bring-it-all-together">11.3.5. Bring it all together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-an-iteration-hook">11.3.6. Implementing an iteration hook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-iteration">11.3.7. An alternative iteration</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-and-interpreter-hooks">11.5. Object and interpreter hooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-some-hooks">11.5.1. Implement some hooks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-performance-class">11.5.2. The <code class="docutils literal notranslate"><span class="pre">Performance</span></code> class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reservation-class">11.5.3. The <code class="docutils literal notranslate"><span class="pre">Reservation</span></code> class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-performance">11.5.4. Finish <code class="docutils literal notranslate"><span class="pre">Performance</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bring-it-all-together">11.5.5. Bring it all together</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-an-iteration-hook">11.5.6. Implementing an iteration hook</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-iteration">11.5.7. An alternative iteration</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-hooks">11.6. The main hooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-hooks">11.4. The main hooks</a></li>
 </ul>
   </nav></div>
 

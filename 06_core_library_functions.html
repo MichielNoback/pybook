@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -367,8 +368,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-characters-and-ascii-unicode">7.1.3. Converting between characters and ASCII/unicode</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-with-sorted-and-list-sort">7.1.4. Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-parameter">7.1.4.1. The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas">7.1.4.2. Lambdas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">7.1.4.3. Multi-key sorting</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-optional">7.1.5. Lambdas (optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">7.1.5.1. Multi-key sorting</a></li>
 </ul>
 </li>
 </ul>
@@ -407,7 +410,7 @@ Some are readily available but many should be “activated” using an <code cla
 <p>This chapter only deals with a very cursory inspection; your should really bookmark the <a class="reference external" href="https://docs.python.org/3/library/index.html">docs</a>.</p>
 <div class="section" id="built-in-functions">
 <h2><span class="section-number">7.1. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h2>
-<p>These are the functions you have always at your disposal, without <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. The list is not very long because this keeps the core of Python lean.
+<p>The builtins are the functions you have always at your disposal, without <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. The list is not very long because this keeps the core of Python lean.
 The complete list can be found in the <a class="reference external" href="https://docs.python.org/3/library/functions.html">doc page on built-ins</a></p>
 <p>The core contains “constructor functions” for all built-in datatypes - which we have already seen: <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">list()</span></code>, <code class="docutils literal notranslate"><span class="pre">set()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> (some were not discussed and will neither be listed here)</p>
 <p>Also already discussed or demonstrated were <code class="docutils literal notranslate"><span class="pre">help()</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">range()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code></p>
@@ -609,8 +612,9 @@ t   is encoded by 116
 </div>
 </div>
 </div>
-<div class="section" id="lambdas">
-<h4><span class="section-number">7.1.4.2. </span>Lambdas<a class="headerlink" href="#lambdas" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="lambdas-optional">
+<h3><span class="section-number">7.1.5. </span>Lambdas (optional)<a class="headerlink" href="#lambdas-optional" title="Permalink to this headline">#</a></h3>
 <div class="note admonition">
 <p class="admonition-title">Lambdas</p>
 <p>A lambda function is a small anonymous function that is usually locally defined.
@@ -660,10 +664,10 @@ They can take any number of arguments but can only have a single expression.</p>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="multi-key-sorting">
-<h4><span class="section-number">7.1.4.3. </span>Multi-key sorting<a class="headerlink" href="#multi-key-sorting" title="Permalink to this headline">#</a></h4>
-<p>Whenever you need sorting based on multiple properties - e.g. sorting first on family name and then on given name - you can employ the trick of tuple sorting:</p>
+<h4><span class="section-number">7.1.5.1. </span>Multi-key sorting<a class="headerlink" href="#multi-key-sorting" title="Permalink to this headline">#</a></h4>
+<p>Whenever you need sorting based on multiple properties - e.g. sorting first on family name and then on given name - you can employ the trick of tuple sorting.<br />
+If your ‘key’ function returns a tuple, then standard tuple sorting will be performed: on each consecutive element of the tuple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">persons</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="s1">&#39;Adams&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">},</span>
@@ -693,7 +697,7 @@ They can take any number of arguments but can only have a single expression.</p>
 <div class="section" id="using-filter-and-map-optional">
 <h2><span class="section-number">7.2. </span>Using <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code> (optional)<a class="headerlink" href="#using-filter-and-map-optional" title="Permalink to this headline">#</a></h2>
 <p>These functions are used on collections, to filter the elements in them on some property, or to change each element or to swap them for something else. They represent important players in the filter-map-reduce functional programming paradigm.</p>
-<p>Fot example, imagine a cupcake production line. There will be a machine taking in a plate of cupcakes and applying frosting to all of them: it <strong>maps</strong> a cupcake to a frosted cupcake. There will also be a machine taking in a plate of cupcakes, removing the badly formed ones: it <strong>filters</strong> the cupcakes, only letting the good ones pass.</p>
+<p>For example, imagine a cupcake production line. There will be a machine taking in a plate of cupcakes and applying frosting to all of them: it <strong>maps</strong> a cupcake to a frosted cupcake. There will also be a machine taking in a plate of cupcakes, removing the badly formed ones: it <strong>filters</strong> the cupcakes, only letting the good ones pass.</p>
 <ul class="simple">
 <li><p><strong>map()</strong> applies a function (e.g. frosting) to all members of a collection, and returns the resulting collection, which is of course the same size as the original</p></li>
 <li><p><strong>filter()</strong> applies a function (e.g. scanning bad cupcakes) to all members of a collection, only keeping those members that pass the function (return True)</p></li>
@@ -734,7 +738,7 @@ Here follows an example of a map/filter chain. Note that both map and filter pro
 </div>
 </div>
 </div>
-<p>Note that working with these functions is superceded by the use of comprehensions. These are outlined in the next chapter.</p>
+<p>Note that working with these functions is largely superceded by the use of comprehensions, which are outlined in the next chapter. I included these functions here for completeness’ sake, and because not everybody likes comprehensions.</p>
 </div>
 <div class="section" id="working-with-modules">
 <h2><span class="section-number">7.3. </span>Working with modules<a class="headerlink" href="#working-with-modules" title="Permalink to this headline">#</a></h2>
@@ -964,7 +968,8 @@ end log test
 /Users/michielnoback/Desktop
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Credittabel Bio-Informatica regulier 2023-2024.xlsx&#39;, &#39;.DS_Store&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Screenshot 2023-08-30 at 17.14.43 2.png&#39;,
+ &#39;1. afstudeerverslag Beer-o-meter.pdf&#39;]
 </pre></div>
 </div>
 </div>
@@ -1174,7 +1179,8 @@ With the example below, a binary filed named <code class="docutils literal notra
 </div>
 <div class="section" id="json">
 <h4><span class="section-number">7.3.2.7. </span>JSON<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h4>
-<p>Although pickle and shelve are convenient, With serious applications JSON is the way to go. There are many libraries and programming languages with integrated support for json, and stored files are human-readable as well.</p>
+<p>Although pickle and shelve are convenient, With serious applications JSON is the way to go. There are many libraries and programming languages with integrated support for json, and stored files are human-readable as well. This is outside the scope of this course.<br />
+Have a look at the <a class="reference external" href="https://docs.python.org/3/library/json.html">json module</a></p>
 </div>
 </div>
 </div>
@@ -1264,8 +1270,10 @@ With the example below, a binary filed named <code class="docutils literal notra
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-characters-and-ascii-unicode">7.1.3. Converting between characters and ASCII/unicode</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-with-sorted-and-list-sort">7.1.4. Sorting with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-parameter">7.1.4.1. The <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas">7.1.4.2. Lambdas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">7.1.4.3. Multi-key sorting</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-optional">7.1.5. Lambdas (optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-key-sorting">7.1.5.1. Multi-key sorting</a></li>
 </ul>
 </li>
 </ul>

@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebooks and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_data.html">3. It’s all about data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -392,12 +393,13 @@ In this chapter however we are going to check out the basics of file reading and
 </pre></div>
 </div>
 <p>This file in <em>csv format</em> (for Comma-Separated Values) can be found <a class="reference download internal" download="" href="_downloads/1954ae0da4afe245777000533087652a/lengths.csv"><span class="xref download myst">here</span></a> (at <code class="docutils literal notranslate"><span class="pre">./data/lengths.csv</span></code>)</p>
-<p>To read this data in the most convenient way possible, we can read its contents in one operation:</p>
+<p>To read this data in the simplest way possible, we can read its contents in one operation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/lengths.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -408,6 +410,8 @@ In this chapter however we are going to check out the basics of file reading and
 4,f,182
 5,f,172
 6,m,189
+
+&lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -420,7 +424,7 @@ In this chapter however we are going to check out the basics of file reading and
 <p>Reading the contents happens with the <code class="docutils literal notranslate"><span class="pre">file.read()</span></code> function call.</p>
 <div class="section" id="iterating-contents">
 <h2><span class="section-number">6.1. </span>Iterating contents<a class="headerlink" href="#iterating-contents" title="Permalink to this headline">#</a></h2>
-<p>Usually you want to iterate over file contents line by line without the need to store it all in memry as-is. This is done by applying the for-loop on the file stream:</p>
+<p>Usually you want to iterate over file contents line by line without the need to store it all in memory as-is. This is done by applying the for-loop on the file stream:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/lengths.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>

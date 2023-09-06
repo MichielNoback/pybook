@@ -413,7 +413,6 @@ Markdown isn’t like that. When you create a Markdown-formatted file, you add M
 <h3><span class="section-number">1.1.1. </span>level three header<a class="headerlink" href="#level-three-header" title="Permalink to this headline">#</a></h3>
 <div class="section" id="level-five-header">
 <h4><span class="section-number">1.1.1.1. </span>level five header<a class="headerlink" href="#level-five-header" title="Permalink to this headline">#</a></h4>
-<p>Note that the numbering you will see in a the Jupyterbook form of this document is added by Jupyterbook and will normally be absent after rendering.</p>
 </div>
 </div>
 <div class="section" id="inline-markup-elements">
@@ -421,14 +420,14 @@ Markdown isn’t like that. When you create a Markdown-formatted file, you add M
 <p>Here are some more often-used inline markup elements:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>If you want <span class="gs">**bold text**</span> you surround that part with double asterisks.  
 If you want <span class="ge">_some italic words_</span> you surround them with single underscores.  
-You can combine this into ***bold and italic*** of course!  
+You can combine this into <span class="gs">**_bold and italic_**</span> of course!  
 This is some Python code: <span class="sb">`print(&quot;hello, world&quot;)`</span>
 </pre></div>
 </div>
-<p>And thes will render as shown below:</p>
+<p>And these will render as shown below:</p>
 <p>If you want <strong>bold text</strong> you surround that part with double asterisks.<br />
 If you want <em>some italic words</em> you surround them with single underscores.<br />
-You can combine this into <em><strong>bold and italic</strong></em> of course!
+You can combine this into <em><strong>bold and italic</strong></em> of course!<br />
 This is some Python code: <code class="docutils literal notranslate"><span class="pre">print(&quot;hello,</span> <span class="pre">world&quot;)</span></code></p>
 <p>Below are a few of the block-level markup elements:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">&gt; </span><span class="ge">This is a blockquote. It can span multiple lines. </span>
@@ -508,16 +507,21 @@ For instance, this syntax for the equation of the sample standard deviation</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$
 </pre></div>
 </div>
-<p>renders as
-$<span class="math notranslate nohighlight">\(s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}\)</span>$</p>
+<p>renders as</p>
+<div class="math notranslate nohighlight">
+\[s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}\]</div>
 <p>Use single dollar sign delimiters <code class="docutils literal notranslate"><span class="pre">$&lt;equation&gt;$</span></code> for inline equations and double dollar sign delimiters <code class="docutils literal notranslate"><span class="pre">$$&lt;equation&gt;$$</span></code> for paragraph equations.<br />
 See <a class="reference external" href="http://tug.ctan.org/info/undergradmath/undergradmath.pdf">this pdf</a> or <a class="reference external" href="https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/">this website</a> for a nice cheat sheets.</p>
 </div>
 </div>
 <div class="section" id="jupyter">
 <h2><span class="section-number">1.2. </span>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">#</a></h2>
-<p>A notebook is an ordered series of cells that are either <em>markdown</em>, <em>code</em> or <em>raw text</em>. You can move these cells up or down, and evaluate/execute them individually or all in one. You toggle between two “states”: <em>edit mode</em> or <em>command mode</em>. When in edit mode you can edit cells but not delete, change, create or move them. WFor that you need to be in command mode.
-When in edit mode, use <code class="docutils literal notranslate"><span class="pre">esc</span></code> key to go to command mode. When in command mode, use <code class="docutils literal notranslate"><span class="pre">enter</span></code> key to edit the current selected cell.</p>
+<p>A notebook is an ordered series of cells that are either <em>markdown</em>, <em>code</em> or <em>raw text</em>.<br />
+You can move these cells up or down, and evaluate/execute them individually or all in one.</p>
+<p>You toggle between two “states”: <em>edit mode</em> or <em>command mode</em>.</p>
+<p>When in edit mode you can edit cells but not delete, change, create or move them. For that you need to be in command mode.<br />
+When in edit mode, use <code class="docutils literal notranslate"><span class="pre">esc</span></code> key to go to command mode.<br />
+When in command mode, use <code class="docutils literal notranslate"><span class="pre">enter</span></code> key to edit the current selected cell.</p>
 <div class="section" id="keyboard-shortcuts-in-edit-mode">
 <h3><span class="section-number">1.2.1. </span>Keyboard shortcuts in edit mode<a class="headerlink" href="#keyboard-shortcuts-in-edit-mode" title="Permalink to this headline">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Enter</span></code>	to enter “Edit mode”</strong></p>
