@@ -166,9 +166,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Getting started</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">23. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">24. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -956,26 +966,22 @@ end log test
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>                          <span class="c1">#working dir - defaults to where the script lives</span>
-<span class="c1">#os.chdir(&quot;~/Desktop&quot;)                      #relative paths from user home don&#39;t work</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/Desktop&quot;</span><span class="p">))</span>   <span class="c1">#this workaround needed, or an absolute path</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>        <span class="c1"># list contents (only first two items)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/michielnoback/git_projects/python_intro
-/Users/michielnoback/Desktop
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Screenshot 2023-08-30 at 17.14.43 2.png&#39;,
- &#39;1. afstudeerverslag Beer-o-meter.pdf&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;13_next_steps.ipynb&#39;, &#39;07_comprehensions.ipynb&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Other <code class="docutils literal notranslate"><span class="pre">os</span></code> functions that are often used:</p>
 <ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">os.chdir()</span></code></strong>: change the current working directory</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">os.mkdir(path[,</span> <span class="pre">mode])</span></code></strong>: Create a directory named path (with unix mode). You can also create temporary directories; see tempfile module</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">os.remove(path)</span></code></strong>: Remove (delete) the file path. If path is a directory, an OSError is raised; see rmdir() below to remove a directory.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">os.rename(src,dst)</span></code></strong>: Rename the file or directory src to dst</p></li>
@@ -999,7 +1005,7 @@ end log test
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;/Users/michielnoback&#39;, &#39;Desktop&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;/Users/michielnoback/git_projects&#39;, &#39;python_intro&#39;)
 Downloads/data/project1
 </pre></div>
 </div>
@@ -1049,32 +1055,22 @@ Downloads/data/project1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-
-<span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/exp_data.csv&#39;</span><span class="p">))</span> <span class="c1"># parameter delimiter defaults to &#39;,&#39;</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/exp_data.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">csv</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/exp_data.csv&#39;</span><span class="p">))</span> <span class="c1"># parameter delimiter defaults to &#39;,&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/miniconda3/envs/education/lib/python3.9/site-packages/IPython/core/interactiveshell.py:284,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/exp_data.csv&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;exp&#39;, &#39;value&#39;, &#39;message&#39;]
+[&#39;1&#39;, &#39;0.567&#39;, &#39;OK&#39;]
+[&#39;2&#39;, &#39;0.334&#39;, &#39;OK&#39;]
+[&#39;3&#39;, &#39;0.325&#39;, &#39;ND&#39;]
+[&#39;4&#39;, &#39;0.766&#39;, &#39;OK&#39;]
+[&#39;5&#39;, &#39;0.455&#39;, &#39;OK&#39;]
+[&#39;6&#39;, &#39;0.421&#39;, &#39;ERR&#39;]
+[&#39;7&#39;, &#39;0.876&#39;, &#39;OK&#39;]
 </pre></div>
 </div>
 </div>
@@ -1082,9 +1078,10 @@ Downloads/data/project1
 <p>Alternatively, you can get an iterator of dictionaries where the first line in the file is assumed to be a header line</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_dict_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/exp_data.csv&#39;</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_dict_reader</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/exp_data.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1206,16 +1203,16 @@ Have a look at the <a class="reference external" href="https://docs.python.org/3
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "education"
         },
         kernelOptions: {
-            name: "python3",
+            name: "education",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'education'</script>
 
                 </article>
               

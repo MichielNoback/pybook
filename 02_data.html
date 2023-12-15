@@ -166,9 +166,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Getting started</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">23. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">24. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -576,8 +586,10 @@ Hello, Hello,
 <p>You can access a single house, a range of houses or in a pattern. All this is done using <strong>slicing</strong>. Its general syntax is <code class="docutils literal notranslate"><span class="pre">[start:stop:step]</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">step</span></code> is 1 by default and it is not mandatory, and if <code class="docutils literal notranslate"><span class="pre">start</span></code> or <code class="docutils literal notranslate"><span class="pre">stop</span></code> is omitted this means “from the beginning (0)” or “to the end”.<br />
 Note that <code class="docutils literal notranslate"><span class="pre">stop</span></code> is NOT inclusive!<br />
-If you try to access an element (character) that does not exist you will get an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.<br />
-Here are some examples using strings. They work the same in lists and tuples as you will discover.</p>
+Below the different concepts of slicing are demonstrated.</p>
+<p><img alt="indexing_examples.png" src="_images/indexing_examples.png" /></p>
+<p>If you try to access an element (character) that does not exist you will get an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.<br />
+Here are some code examples using strings. They work the same in lists and tuples as you will discover.</p>
 <div class="important admonition">
 <p class="admonition-title">indexing quirks</p>
 <p>Python is zero-based which means ‘addresses’ always start at 0.<br />
@@ -921,11 +933,11 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pear&#39;, &#39;banana&#39;, &#39;orange&#39;, &#39;kiwi&#39;, &#39;apple&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;orange&#39;, &#39;apple&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;kiwi&#39;}
 {&#39;kiwi&#39;}
 False
 False
-{&#39;pear&#39;, &#39;apple&#39;, &#39;orange&#39;, &#39;banana&#39;}
+{&#39;orange&#39;, &#39;apple&#39;, &#39;banana&#39;, &#39;pear&#39;}
 </pre></div>
 </div>
 </div>
@@ -961,7 +973,7 @@ Values can be of any data type: numbers, strings, lists, other dicts…</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">zoo</span><span class="p">[</span><span class="s1">&#39;rhino&#39;</span><span class="p">])</span>
 
 <span class="c1">#print(zoo[&#39;giraffe&#39;])     # gives a KeyError</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zoo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;giraffe&#39;</span><span class="p">))</span>  <span class="c1"># returns None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zoo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;giraffe&#39;</span><span class="p">))</span>  <span class="c1"># returns None </span>
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1084,7 @@ Given this snippet and output,</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, True, 2, 4, 6, &#39;c&#39;, &#39;a&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, True, 2, 4, &#39;c&#39;, 6, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -1105,16 +1117,16 @@ Given this snippet and output,</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "education"
         },
         kernelOptions: {
-            name: "python3",
+            name: "education",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'education'</script>
 
                 </article>
               
