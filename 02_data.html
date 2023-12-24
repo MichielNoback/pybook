@@ -390,7 +390,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">3.3.6. Set theory operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.3.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.3.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#default-vales">3.3.7.1. Default vales</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.3.8. Shared operations of collection types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.3.9. What do I need to memorize?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-chatgpt">3.3.10. Note on ChatGPT</a></li>
@@ -1141,7 +1144,7 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;deer&#39;, &#39;beetle&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;beetle&#39;, &#39;deer&#39;}
 </pre></div>
 </div>
 </div>
@@ -1159,8 +1162,8 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;zebra&#39;, &#39;armadillo&#39;), &#39;deer&#39;, &#39;beetle&#39;}
-{(&#39;zebra&#39;, &#39;armadillo&#39;), &#39;beetle&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;beetle&#39;, &#39;deer&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;)}
+{&#39;beetle&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;)}
 </pre></div>
 </div>
 </div>
@@ -1202,11 +1205,11 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;banana&#39;, &#39;orange&#39;, &#39;kiwi&#39;, &#39;pear&#39;, &#39;apple&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;orange&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;banana&#39;, &#39;pear&#39;}
 {&#39;kiwi&#39;}
 False
 False
-{&#39;banana&#39;, &#39;orange&#39;, &#39;pear&#39;, &#39;apple&#39;}
+{&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;, &#39;pear&#39;}
 </pre></div>
 </div>
 </div>
@@ -1220,10 +1223,10 @@ It is used to hold mappings between <em>keys</em> and <em>values</em>, much like
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_supply</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>This says “for key apple the corresponding value is 5”</p>
+<p>This says “for key apple the corresponding value is 5, the value belonging to pear is 2 and the value of orange is 4”.</p>
 <p>Like sets, the keys of a dict must be immutable types. There are no restrictions for the values. Also like sets, the keys are always unique. The values, however, may contain duplicates.<br />
-Values can be of any data type: numbers, strings, lists, other dicts…</p>
-<p>Dicts cannot be sliced, but finding values is done using <code class="docutils literal notranslate"><span class="pre">dictionary[key]</span></code>.</p>
+Values can be of any data type: numbers, strings, lists, other dicts, dedicated objects.</p>
+<p>Dicts cannot be sliced. Finding values is done using <code class="docutils literal notranslate"><span class="pre">dictionary[key]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zoo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lion&#39;</span> <span class="p">:</span> <span class="s1">&#39;Carl&#39;</span><span class="p">,</span>
@@ -1232,7 +1235,7 @@ Values can be of any data type: numbers, strings, lists, other dicts…</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">zoo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;leopard&quot;</span><span class="p">))</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">zoo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lion&#39;</span><span class="p">)):</span>       <span class="c1"># workst because get() returns None when key is absent, and None evaulates to False</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">zoo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lion&#39;</span><span class="p">)):</span>       <span class="c1"># works because get() returns None when key is absent, and None evaulates to False</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;we have lions!&#39;</span><span class="p">)</span>
 
 <span class="c1"># better solution </span>
@@ -1262,6 +1265,133 @@ None
 intended for and how they are used. Try them out!<br />
 Feel free to try some other methods.
 Remember, <code class="docutils literal notranslate"><span class="pre">help(dict)</span></code> gives you almost all the information you need.</p>
+</div>
+<div class="section" id="default-vales">
+<h4><span class="section-number">3.3.7.1. </span>Default vales<a class="headerlink" href="#default-vales" title="Permalink to this headline">#</a></h4>
+<p>A use case often encountered with dicts is collecting elements by a key. Suppose for instance we have a file containing these lines (file reading is discussed in a later chapter):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;jonagold, apple</span>
+<span class="s1">elstar, apple</span>
+<span class="s1">conference, pear</span>
+<span class="s1">junami, apple</span>
+<span class="s1">doyenne, pear</span>
+<span class="s1">opal, plum&#39;&#39;&#39;</span>
+
+<span class="n">fruits</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fruits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;jonagold, apple&#39;,
+ &#39;elstar, apple&#39;,
+ &#39;conference, pear&#39;,
+ &#39;junami, apple&#39;,
+ &#39;doyenne, pear&#39;,
+ &#39;opal, plum&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, if we want to collect the different varieties of the fruit species in a dict, we could do something like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_summary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">variety</span><span class="p">,</span> <span class="n">species</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">fruit_summary</span><span class="p">:</span>
+        <span class="n">fruit_summary</span><span class="p">[</span><span class="n">species</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">variety</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fruit_summary</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="n">fruit_summary</span><span class="p">[</span><span class="n">species</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">variety</span><span class="p">)</span>
+<span class="n">fruit_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;apple&#39;: [&#39;jonagold&#39;, &#39;elstar&#39;, &#39;junami&#39;],
+ &#39;pear&#39;: [&#39;conference&#39;, &#39;doyenne&#39;],
+ &#39;plum&#39;: [&#39;opal&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although correct, this is not very efficient. For each line, there are 2 or three key lookups: <code class="docutils literal notranslate"><span class="pre">fruit_summary[species]</span></code>; the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code> also performs a lookup.<br />
+Enter default values!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_summary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">variety</span><span class="p">,</span> <span class="n">species</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="n">fruit_summary</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">variety</span><span class="p">)</span>
+<span class="n">fruit_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;apple&#39;: [&#39;jonagold&#39;, &#39;elstar&#39;, &#39;junami&#39;],
+ &#39;pear&#39;: [&#39;conference&#39;, &#39;doyenne&#39;],
+ &#39;plum&#39;: [&#39;opal&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that if you are only interested in counts, using only the base library you would do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_summary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">variety</span><span class="p">,</span> <span class="n">species</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="n">fruit_summary</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">fruit_summary</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">fruit_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;apple&#39;: 3, &#39;pear&#39;: 2, &#39;plum&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we have two lookups. Two more advanced dict implementations can be of help here. The first is <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>. It needs a so-called factory method that will provide a value for a key that is not present yet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="n">fruit_summary</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># int factory</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">variety</span><span class="p">,</span> <span class="n">species</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="n">fruit_summary</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">fruit_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>defaultdict(int, {&#39;apple&#39;: 3, &#39;pear&#39;: 2, &#39;plum&#39;: 1})
+</pre></div>
+</div>
+</div>
+</div>
+<p>But since counting is done so often, there is even a more specialized type for this: <code class="docutils literal notranslate"><span class="pre">Counter</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">fruit_summary</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">variety</span><span class="p">,</span> <span class="n">species</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="n">fruit_summary</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="n">species</span><span class="p">])</span>
+<span class="n">fruit_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;apple&#39;: 3, &#39;pear&#39;: 2, &#39;plum&#39;: 1})
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the fruit has to be wrapped in a list, otherwise the string is processed as an iterable of individual letters.</p>
 </div>
 </div>
 <div class="section" id="shared-operations-of-collection-types">
@@ -1472,7 +1602,10 @@ Given this snippet and output,</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-theory-operations">3.3.6. Set theory operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.3.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-type-dict">3.3.7. Collection type <code class="docutils literal notranslate"><span class="pre">dict</span></code>: {}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#default-vales">3.3.7.1. Default vales</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-operations-of-collection-types">3.3.8. Shared operations of collection types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-memorize">3.3.9. What do I need to memorize?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-chatgpt">3.3.10. Note on ChatGPT</a></li>
