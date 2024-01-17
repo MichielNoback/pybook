@@ -426,7 +426,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">12.10. Regular Expressions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tbd">12.10.1. TBD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restriction-enzymes">12.10.1. Restriction enzymes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-dna-and-protein">12.10.2. Legal DNA and Protein</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dates">12.10.3. Dates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telephone-numbers">12.10.4. Telephone numbers</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming">12.11. Object-oriented Programming</a><ul class="nav section-nav flex-column">
@@ -1674,8 +1677,210 @@ This involves catching and dealing with exceptions/errors, but also verifying us
 </div>
 <div class="section" id="regular-expressions">
 <h2><span class="section-number">12.10. </span>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h2>
-<div class="section" id="tbd">
-<h3><span class="section-number">12.10.1. </span>TBD<a class="headerlink" href="#tbd" title="Permalink to this headline">#</a></h3>
+<div class="section" id="restriction-enzymes">
+<h3><span class="section-number">12.10.1. </span>Restriction enzymes<a class="headerlink" href="#restriction-enzymes" title="Permalink to this headline">#</a></h3>
+<p>For each of these <a class="reference external" href="https://en.wikipedia.org/wiki/Restriction_enzyme">restriction enzyme</a> recognition sequences, write the corresponding best / most specific / most concise regex. See <a class="reference external" href="https://droog.gs.washington.edu/parc/images/iupac.html">here</a> for the IUPAC ambiguity codes.</p>
+<p><strong>challenge</strong> write a function that does this automatically.</p>
+<ul class="simple">
+<li><p>GAATTC (ECORI)</p></li>
+<li><p>CCWGG (EcoRII)</p></li>
+<li><p>GGATCNNNN (AlwI)</p></li>
+<li><p>GGYRCC (BanI)</p></li>
+<li><p>GCCNNNNNGGC (BglI)</p></li>
+</ul>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ecor_r1</span> <span class="o">=</span> <span class="s2">&quot;GA</span><span class="si">{2}</span><span class="s2">T</span><span class="si">{2}</span><span class="s2">C</span>
+<span class="n">eco_r2</span> <span class="o">=</span> <span class="s2">&quot;CC[AT]GG&quot;</span>
+<span class="n">alw_1</span> <span class="o">=</span> <span class="s2">&quot;GGATC[GATC]</span><span class="si">{4}</span><span class="s2">&quot;</span>
+<span class="n">ban_1</span> <span class="o">=</span> <span class="s2">&quot;GG[CT]CC&quot;</span>
+<span class="n">bgl_1</span> <span class="o">=</span> <span class="p">:</span><span class="s2">&quot;GCC[GATC]</span><span class="si">{5}</span><span class="s2">GGC&quot;</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="legal-dna-and-protein">
+<h3><span class="section-number">12.10.2. </span>Legal DNA and Protein<a class="headerlink" href="#legal-dna-and-protein" title="Permalink to this headline">#</a></h3>
+<p>DNA consists of the letters A, C, G, and T.<br />
+RNA consists of the letters A, C, G, and U.<br />
+Protein sequences can have the characters A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, and Y.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">re</span></code> module, write a function establishing what type of sequence is passed and returning ‘DNA’, ‘RNA’, ‘PROTEIN’ or ‘UNKNOWN’.<br />
+Demonstrate its usage within a list comprehension.
+<br></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me a hint</summary>
+Use this:    
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^YOUR PATTERN$&#39;</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
+</pre></div>
+</div>
+</details>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sequence_type</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^[gatcGATC]+$&#39;</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;DNA&#39;</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^[gaucGAUC]+$&#39;</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;RNA&#39;</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^[ACDEFGHIKLMNPQRSTVWY]+$&#39;</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;protein&#39;</span>
+    <span class="k">return</span> <span class="s1">&#39;UNKNOWN&#39;</span>
+
+<span class="p">[</span><span class="n">sequence_type</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">sequences</span><span class="p">]</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## some sequences</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="n">sequences</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CATCATGAAATCGCTTGTCGCACTACTGCTGCTTTTAGTCGCTACTTCTGCCTTTGCTGACCAGT&#39;</span><span class="p">,</span> <span class="c1">#DNA</span>
+             <span class="s1">&#39;GACUAGCCAUUACGACGCAUUACAACGAUUAGACA&#39;</span><span class="p">,</span> <span class="c1">#RNA</span>
+             <span class="s1">&#39;GPEAGQTVKHVHVHILPRKAGDFHRNDSIYDALEKHDREDKDSPALWRSEE&#39;</span><span class="p">,</span> <span class="c1">#PROTEIN</span>
+             <span class="s1">&#39;THISISNOTABIOLOGICALSEQUENCE&#39;</span><span class="p">]</span> <span class="c1"># UNKNOWN</span>
+
+<span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dates">
+<h3><span class="section-number">12.10.3. </span>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">#</a></h3>
+<p>In the Netherlands, we write dates as ‘DD/MM/YYYY’: ‘15/10/2024’ of ‘15-10-2024’. When the day or the month is single-digit, we ofte omit the leading zero (<code class="docutils literal notranslate"><span class="pre">9</span></code> instead of <code class="docutils literal notranslate"><span class="pre">09</span></code>).</p>
+<p>a) Write a pattern for Dutch dates and apply these to the given text below using <code class="docutils literal notranslate"><span class="pre">re.findall()</span></code>.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;\d{1,2}[-/]\d{1,2}[-/]\d</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;On 1-3-1947 the first foundations were laid for the European Union, in the Treaty of Brussels. </span>
+<span class="s2">The Treaty of Rome, establishing the European Economic Community (EEC) was signed on 1-1-1957. </span>
+<span class="s2">The date 1/11/1993 marked the start of the European Union. The Euro currency was adopted on 01-01-2002.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>b) Using <code class="docutils literal notranslate"><span class="pre">re.finditer()</span></code> and the correct Match object method(s), extract only the years of the dates out of the text, into a list.<br />
+Challenge: use a list comprehension for this.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s2">&quot;\d{1,2}[-/]\d{1,2}[-/](\d</span><span class="si">{4}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)]</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="telephone-numbers">
+<h3><span class="section-number">12.10.4. </span>Telephone numbers<a class="headerlink" href="#telephone-numbers" title="Permalink to this headline">#</a></h3>
+<p>In the Netherlands, phone numbers are written with an area code or mobile code (06) followed by the individual number. These two can be separated by a space or a hyphen. All phone numbers are 10 digits long. Besides this, phone numbers can be preceded by the country code, indicated by a <code class="docutils literal notranslate"><span class="pre">+</span></code> with the country code. For simplicity’s sake, we’ll assume that all country codes are 2 digits long.</p>
+<p>Given the list of phone numbers below,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;06-27635908&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;050-26653422&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;020-7654321&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;06-23456789&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;06 34567890&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;010 7736961&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;+31-30-4567892&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;+31 10 74638292&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;+31 70 3665287&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;+32 6 27830919&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>a) Write a regular expression that describes all telephone numbers without country codes (numbers 1-6 above). Demonstrate its use with the list of numbers using <code class="docutils literal notranslate"><span class="pre">re.match()</span></code>.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;\d{2,3}[\s-]\d{7,8}&quot;</span>
+<span class="k">for</span> <span class="n">pn</span> <span class="ow">in</span> <span class="n">phone_numbers</span><span class="p">:</span>
+    <span class="n">matched</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">pn</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">matched</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no match: </span><span class="si">{</span><span class="n">pn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>b) Extend the regular expression from part a) to also include international-styled telephone numbers.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me a hint</summary>
+Use the `|`, "or" symbol for this regex. 
+</details>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;\d{2,3}[\s-]\d{7,8}|\+\d</span><span class="si">{2}</span><span class="s2">[\s-]\d{1,3}[ -]\d{7,8}&quot;</span>
+<span class="k">for</span> <span class="n">pn</span> <span class="ow">in</span> <span class="n">phone_numbers</span><span class="p">:</span>
+    <span class="n">matched</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">pn</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">matched</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no match: </span><span class="si">{</span><span class="n">pn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>c) Extract both area codes and phone numbers with area codes and create a dict with a list of phone numbers per area. Treat 06 as a normal area.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me a hint</summary>
+Use the `()`, "grouping" symbols for this regex to extract parts of matches. 
+</details>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;(\d{2,3})[\s-]\d{7,8}|\+\d</span><span class="si">{2}</span><span class="s2">[\s-](\d{1,3})[ -]\d{7,8}&quot;</span>
+<span class="k">for</span> <span class="n">pn</span> <span class="ow">in</span> <span class="n">phone_numbers</span><span class="p">:</span>
+    <span class="n">matched</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">pn</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">matched</span><span class="p">:</span>
+        <span class="n">whole</span> <span class="o">=</span> <span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">area</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">):</span>
+            <span class="n">area</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="n">area</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">area</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">whole</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no match: </span><span class="si">{</span><span class="n">pn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="object-oriented-programming">
@@ -2118,7 +2323,10 @@ Next, head over to <a class="reference external" href="https://www.puzzle-tents.
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">12.10. Regular Expressions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tbd">12.10.1. TBD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restriction-enzymes">12.10.1. Restriction enzymes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-dna-and-protein">12.10.2. Legal DNA and Protein</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dates">12.10.3. Dates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telephone-numbers">12.10.4. Telephone numbers</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming">12.11. Object-oriented Programming</a><ul class="nav section-nav flex-column">
