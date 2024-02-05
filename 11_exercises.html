@@ -159,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Programming is: operations on data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data: types &amp; operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
@@ -441,13 +441,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anagram-maker-to">12.12.2. Anagram maker (✲ to ✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-palindromes-to">12.12.3. Finding palindromes (✲ to ✲✲✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">12.12.4. Hangman word guessing game (✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">12.12.5. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.6. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.7. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.8. Implement k-Means clustering (✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.9. Implement neighbor joining clustering(✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">12.12.10. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.11. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-profiler-to">12.12.5. Sequence Profiler (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fastq-analyser-to">12.12.6. FastQ analyser (✲✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">12.12.7. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.8. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.9. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.10. Implement k-Means clustering (✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.11. Implement neighbor joining clustering(✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">12.12.12. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.13. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
 </ul>
 </li>
 </ul>
@@ -2065,12 +2067,14 @@ The number must be 3!
 </pre></div>
 </div>
 <p>Think before you start! What would be the most efficient “algorithm” to find the number?</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
 <div class="section" id="anagram-maker-to">
 <h3><span class="section-number">12.12.2. </span>Anagram maker (✲ to ✲✲)<a class="headerlink" href="#anagram-maker-to" title="Permalink to this headline">#</a></h3>
 <p>An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, the word <em>anagram</em> itself can be rearranged into <em>nag a ram</em>. (source: Wikipedia)</p>
 <p>You should ask your user for a word (or word combination or phrase) and also (optionally) how many separate words the anagram may or must comprise.
 Next, present a list of anagrams. Preferable, these anagrams should be pronouncable by intelligently placing vowels and consonants.</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
 <div class="section" id="finding-palindromes-to">
 <h3><span class="section-number">12.12.3. </span>Finding palindromes (✲ to ✲✲✲✲)<a class="headerlink" href="#finding-palindromes-to" title="Permalink to this headline">#</a></h3>
@@ -2088,6 +2092,7 @@ Next, present a list of anagrams. Preferable, these anagrams should be pronounca
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="s1">&#39;-AGAGGATCCCTCCCATATATGCGGCGATCGCCGCATATCC-3&#39;</span>
 </pre></div>
 </div>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
 <div class="section" id="hangman-word-guessing-game">
 <h3><span class="section-number">12.12.4. </span>Hangman word guessing game (✲✲)<a class="headerlink" href="#hangman-word-guessing-game" title="Permalink to this headline">#</a></h3>
@@ -2104,9 +2109,55 @@ The guessing party takes turns guessing wich letter will be in the word. If the 
 <span class="sd">=========&#39;&#39;&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+<div class="section" id="sequence-profiler-to">
+<h3><span class="section-number">12.12.5. </span>Sequence Profiler (✲✲ to ✲✲✲✲)<a class="headerlink" href="#sequence-profiler-to" title="Permalink to this headline">#</a></h3>
+<p>Given a multiple sequence alignment of DNA sequences, like the ones below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">T</span> <span class="n">T</span> <span class="n">G</span> <span class="n">C</span> <span class="n">C</span> <span class="n">A</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">T</span> <span class="n">G</span> <span class="n">G</span> <span class="n">C</span> <span class="n">C</span> <span class="n">A</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">T</span> <span class="n">C</span> <span class="n">T</span> <span class="n">C</span> <span class="n">A</span> <span class="n">A</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">T</span> <span class="n">C</span> <span class="n">T</span> <span class="n">T</span> <span class="n">C</span> <span class="n">C</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">C</span> <span class="n">T</span> <span class="n">G</span> <span class="n">A</span> <span class="n">C</span> <span class="n">C</span> <span class="n">T</span> <span class="n">C</span>
+</pre></div>
+</div>
+<p>Given such an (ungapped) aligned set of sequences, provided in an input file, it is your task to build a profile using the <a class="reference external" href="https://www.bioinformatics.org/sms/iupac.html">IUPAC ambiguity codes</a> and report this to the user. In the above example, the profile would look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">Y</span> <span class="n">B</span> <span class="n">K</span> <span class="n">H</span> <span class="n">M</span> <span class="n">M</span> <span class="n">T</span> <span class="n">Y</span>
+</pre></div>
+</div>
+<p>Supercharge your challenge: using such a sequence profile, can you implement the functionality to search a sequence (set) for the presence of this, or any other given profile?</p>
+<p>You can also upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+<div class="section" id="fastq-analyser-to">
+<h3><span class="section-number">12.12.6. </span>FastQ analyser (✲✲✲ to ✲✲✲✲)<a class="headerlink" href="#fastq-analyser-to" title="Permalink to this headline">#</a></h3>
+<p>Below is an example of FastQ sequences, exactly as you would find them in a file generated by a high-throughput sequencer such as Illumina HiSeq:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@HWI</span><span class="o">-</span><span class="mi">962</span><span class="p">:</span><span class="mi">64</span><span class="p">:</span><span class="n">D0BNFACXX</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1227</span><span class="p">:</span><span class="mi">2119</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">GATCAG</span>
+<span class="n">GACATGTTAGATCACTCTTTGGGATGTGTTATCTTGGTGTGTGAAATGAATGTGGGAATTGTTGCACAATTTTTTTTGTTTGAATACTTAATTTGTTGAN</span>
+<span class="o">+</span>
+<span class="n">CCCFFFFFHHHHHJJJJJJJJJJHIJHHIJIJIJJJJGHDHHIIJIJJFIIJHIIJIJJJJJJEHJJIGIJJJJHDDDDDDDDDDEDDDECEDEDEDB</span><span class="o">@</span><span class="c1">#</span>
+<span class="nd">@HWI</span><span class="o">-</span><span class="mi">962</span><span class="p">:</span><span class="mi">64</span><span class="p">:</span><span class="n">D0BNFACXX</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1176</span><span class="p">:</span><span class="mi">2147</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">GATCAG</span>
+<span class="n">CTTTGATGTTGACCGAAAAGATTCAGGAAAGAAGTCTGCCTGAATCTCGAACGAGAAGGACAGTATATCACCTCTATCATTCGATGAGTAATTGGAAAAN</span>
+<span class="o">+</span>
+<span class="n">CCCFFFFFHHHHHIJJJIJEIIJJGIIIIJJIJGIJIGHIIIJJJHHHIEGGIIGGHJHF</span><span class="nd">@HFFFFEFBCCECEEDDCDDEDEDD@ACACC@DA@CDDD</span><span class="c1">#</span>
+</pre></div>
+</div>
+<p>This format is described <a class="reference external" href="https://en.wikipedia.org/wiki/FASTQ_format">here</a>.</p>
+<p>It is your task to read the data in a FastQ file provided by the user, read and process the sequences therein, and report on various quality aspects of the sequences. These can be</p>
+<ul class="simple">
+<li><p>number of sequences</p></li>
+<li><p>length (distribution) of sequences</p></li>
+<li><p>G/C content</p></li>
+<li><p>number of ‘N’ nucleotides per position, per sequence</p></li>
+<li><p>average quality</p></li>
+<li><p>per-base quality</p></li>
+<li><p>sliding-window quality</p></li>
+<li><p>K-mer content</p></li>
+</ul>
+<p>Supercharge your challenge: add a “trimming” and “filtering” option to the app.</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
 <div class="section" id="wordle-lingo-game-to">
-<h3><span class="section-number">12.12.5. </span>Wordle / Lingo game (✲✲ to ✲✲✲✲✲)<a class="headerlink" href="#wordle-lingo-game-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.7. </span>Wordle / Lingo game (✲✲ to ✲✲✲✲✲)<a class="headerlink" href="#wordle-lingo-game-to" title="Permalink to this headline">#</a></h3>
 <p>Lingo was one of the longest-running tv game shows.
 In this game the player needs to guess a word of a fixed length (usually between 5 and 7 letters).
 It looks for instance like this:</p>
@@ -2115,17 +2166,18 @@ It looks for instance like this:</p>
 <p>Configurable (through interface or command-line arguments) should at least be the word length (with default of 5), the language (use a default that suits you) and -optionally- the number of guesses a user can take, with a default of 6.<br />
 After a guess, the user receives information about the letters on correct positions, letters at wrong positions, and wrong letters.</p>
 <p>There are word lists in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of this repo that you can use to randomly pick words: <code class="docutils literal notranslate"><span class="pre">dutch_words.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">english_words.txt</span></code>.<br />
-Many ways exist to make this challenge really challenging. For instance, you can create a GUI (there are several libraries for that purpose available in Python but I suggest you use TkInter - see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>).</p>
+Many ways exist to make this challenge really challenging. For instance, you can create a GUI (there are several libraries for that purpose available in Python but I suggest you use TkInter - see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>) or the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>).</p>
 </div>
 <div class="section" id="encrypt-and-decrypt-messages-using-caesar-cipher-to">
-<h3><span class="section-number">12.12.6. </span>Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)<a class="headerlink" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.8. </span>Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)<a class="headerlink" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to" title="Permalink to this headline">#</a></h3>
 <p>Caesar’s cipher is one of the simplest and most widely known encryption techniques. Each letter in a text is replaced by a letter some fixed number of positions down (or iup) the alphabet.
 For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence (see <a class="reference external" href="https://en.wikipedia.org/wiki/Caesar_cipher">Wikipedia</a>).</p>
 <p>It is your task to create such a cipher, where the program takes two command-line arguments. The first one is the shift (left being negative) and the second a filename or a literal text.</p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module is a good idea, but not required.</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
 <div class="section" id="create-a-data-dashboard-to">
-<h3><span class="section-number">12.12.7. </span>Create a data dashboard (✲✲ to ✲✲✲✲)<a class="headerlink" href="#create-a-data-dashboard-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.9. </span>Create a data dashboard (✲✲ to ✲✲✲✲)<a class="headerlink" href="#create-a-data-dashboard-to" title="Permalink to this headline">#</a></h3>
 <p>Create an app that receives a file with structured data (columns) as input. The app then reads this file <em>in a streaming manner</em> and reports statistics of the file contents. The first three of these are mandatory, the subsequent features are optional and increase the level of this challenge.</p>
 <ol class="arabic simple">
 <li><p>Dimensions of the dataset (rows/comuns)</p></li>
@@ -2137,12 +2189,12 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 </ul>
 </li>
 <li><p>A pairwise correlation matrix of the numeric columns (if less than 6 or so). For this you will need to use something like numpy, see <a class="reference external" href="https://machinelearningmastery.com/how-to-use-correlation-to-understand-the-relationship-between-variables/">here</a></p></li>
-<li><p>Embed this in a GUI; there are several libraries for that purpose available in Python but I suggest you use TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p></li>
+<li><p>Embed this in a GUI; there are several libraries for that purpose available in Python but I suggest you use the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>). Or, if you prefer some extra supercharged challenge: TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p></li>
 <li><p>Be creative; and impress yourself and your teacher.</p></li>
 </ol>
 </div>
 <div class="section" id="implement-k-means-clustering">
-<h3><span class="section-number">12.12.8. </span>Implement k-Means clustering (✲✲✲✲)<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.10. </span>Implement k-Means clustering (✲✲✲✲)<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h3>
 <p>The k-Means clustering algorithm is used much in data science to group data in an unsupervised manner. See <a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">Wikipedia</a> for details.</p>
 <p>For this assignment you should implement this algorithm in a program that takes two command-line arguments. The first is a file with the input data and the second should be an optional argument for the <code class="docutils literal notranslate"><span class="pre">k-parameter</span></code> which defaults to 3.</p>
 <p>The output should be a file holding a copy of the input data, but with an extra column appended indicating the cluster number in which the example is put. For instance, given this input, a random sample from the famous “Fisher’s iris” dataset:</p>
@@ -2172,12 +2224,12 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 <p>With only one mismatch between the <code class="docutils literal notranslate"><span class="pre">Species</span></code> and <code class="docutils literal notranslate"><span class="pre">cluster</span></code> columns.</p>
 </div>
 <div class="section" id="implement-neighbor-joining-clustering">
-<h3><span class="section-number">12.12.9. </span>Implement neighbor joining clustering(✲✲✲✲)<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.11. </span>Implement neighbor joining clustering(✲✲✲✲)<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h3>
 <p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Neighbor_joining">Wikipedia</a> for details.
 You could employ several strategies. The first is classical joining where you end up with a structure with all nodes connected. You can also force the algorithm to stop when a set number of clusters has been formed. This makes it comparable to k-Means but without the random seeding (thus deterministic).</p>
 </div>
 <div class="section" id="a-puzzle-game">
-<h3><span class="section-number">12.12.10. </span>A puzzle game (✲✲✲ - ✲✲✲✲✲)<a class="headerlink" href="#a-puzzle-game" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.12. </span>A puzzle game (✲✲✲ - ✲✲✲✲✲)<a class="headerlink" href="#a-puzzle-game" title="Permalink to this headline">#</a></h3>
 <p>Especially older people will probably know the windows Minesweeper game. It looks like this:</p>
 <a class="reference internal image-reference" href="_images/minesweeper.jpg"><img alt="mine sweeper" class="align-center" src="_images/minesweeper.jpg" style="width: 250px;" /></a>
 <p>I have programmed a slightly different version of it using Python and a GUI framework called TKinter:</p>
@@ -2188,7 +2240,7 @@ You can download that entire repository as zip archive (button <code class="docu
 Next, head over to <a class="reference external" href="https://www.puzzle-tents.com/">https://www.puzzle-tents.com/</a> and choose a game you would like to re-create. Implement that game using python and tkinter.</p>
 </div>
 <div class="section" id="create-a-game-of-life-simulation-app">
-<h3><span class="section-number">12.12.11. </span>Create a Game of Life simulation app (✲✲✲✲✲)<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.12.13. </span>Create a Game of Life simulation app (✲✲✲✲✲)<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> or Conway’s Game of Life is a simulation of a simple growth experiment. It follows a few simple rules deciding whether a cell (an element in a 2D grid) will live or die. The challenge here is to visualize the simulation so you will need to work with a Graphical User Interface (GUI) toolkit. There are several libraries for that purpose available in Python but I suggest you use TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p>
 </div>
 </div>
@@ -2338,13 +2390,15 @@ Next, head over to <a class="reference external" href="https://www.puzzle-tents.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anagram-maker-to">12.12.2. Anagram maker (✲ to ✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-palindromes-to">12.12.3. Finding palindromes (✲ to ✲✲✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">12.12.4. Hangman word guessing game (✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">12.12.5. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.6. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.7. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.8. Implement k-Means clustering (✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.9. Implement neighbor joining clustering(✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">12.12.10. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.11. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-profiler-to">12.12.5. Sequence Profiler (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fastq-analyser-to">12.12.6. FastQ analyser (✲✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">12.12.7. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">12.12.8. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">12.12.9. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">12.12.10. Implement k-Means clustering (✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">12.12.11. Implement neighbor joining clustering(✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">12.12.12. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">12.12.13. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
 </ul>
 </li>
 </ul>

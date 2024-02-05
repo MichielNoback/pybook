@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Programming is: operations on data &#8212; Programming Python</title>
+    <title>3. Data: types &amp; operations &#8212; Programming Python</title>
   
   
   
@@ -157,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Programming is: operations on data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Data: types &amp; operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
@@ -352,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Programming is: operations on data</h1>
+    <h1>Data: types & operations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,8 +411,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="programming-is-operations-on-data">
-<h1><span class="section-number">3. </span>Programming is: operations on data<a class="headerlink" href="#programming-is-operations-on-data" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-types-operations">
+<h1><span class="section-number">3. </span>Data: types &amp; operations<a class="headerlink" href="#data-types-operations" title="Permalink to this headline">#</a></h1>
 <p>Without data there is not much computing to be done. All programs take data as input and most of them also generate data as output. In between, the data is processed, transformed and summarized.<br />
 Input can come from a variety of sources: from file, a database, keyboard, a GUI, web socket and output can go to different destinations as well.<br />
 This chapter deals with both the operators that work on data and the different basic data types Python knows about.</p>
@@ -1144,7 +1144,7 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;beetle&#39;, &#39;deer&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;deer&#39;, &#39;beetle&#39;}
 </pre></div>
 </div>
 </div>
@@ -1162,8 +1162,8 @@ If you attempt to add a mutable type (an unhashable element) you get a <code cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;beetle&#39;, &#39;deer&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;)}
-{&#39;beetle&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;)}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;deer&#39;, (&#39;zebra&#39;, &#39;armadillo&#39;), &#39;beetle&#39;}
+{(&#39;zebra&#39;, &#39;armadillo&#39;), &#39;beetle&#39;}
 </pre></div>
 </div>
 </div>
@@ -1205,11 +1205,11 @@ set B contains the elements <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;orange&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;banana&#39;, &#39;pear&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pear&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;orange&#39;, &#39;banana&#39;}
 {&#39;kiwi&#39;}
 False
 False
-{&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;, &#39;pear&#39;}
+{&#39;pear&#39;, &#39;apple&#39;, &#39;orange&#39;, &#39;banana&#39;}
 </pre></div>
 </div>
 </div>
@@ -1483,7 +1483,7 @@ Given this snippet and output,</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, True, 2, 4, 6, &#39;c&#39;, &#39;a&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, &#39;a&#39;, 2, True, 4, 6, &#39;c&#39;}
 </pre></div>
 </div>
 </div>
