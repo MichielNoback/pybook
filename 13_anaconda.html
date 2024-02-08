@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. (Ana)conda &#8212; Programming Python</title>
+    <title>14. (Ana)conda &#8212; Programming Python</title>
   
   
   
@@ -59,11 +59,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '12_anaconda';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '13_anaconda';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14. Next steps: pandas" href="13_next_steps.html" />
-    <link rel="prev" title="12. Exercises" href="11_exercises.html" />
+    <link rel="next" title="15. Next steps: pandas" href="14_next_steps.html" />
+    <link rel="prev" title="13. Exercises" href="12_exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -157,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Programming is: operations on data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data: types &amp; operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
@@ -166,9 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. (Ana)conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_data_classes.html">12. Data classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_exercises.html">13. Exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_next_steps.html">15. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -240,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F12_anaconda.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F13_anaconda.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/12_anaconda.ipynb" target="_blank"
+      <li><a href="_sources/13_anaconda.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,9 +363,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">13.1. Package manager</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">13.2. Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">13.3. This course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">14.1. Package manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">14.2. Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">14.3. This course</a></li>
 </ul>
             </nav>
         </div>
@@ -377,7 +378,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="ana-conda">
-<h1><span class="section-number">13. </span>(Ana)conda<a class="headerlink" href="#ana-conda" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">14. </span>(Ana)conda<a class="headerlink" href="#ana-conda" title="Permalink to this headline">#</a></h1>
 <p>Anaconda is a distribution of Python containing Python, the “conda” package and environment manager, and many software packages for data analytics, data science, and scientific computing.</p>
 <p>Over 150 packages are automatically installed with Anaconda, including Python, NumPy, Pandas, Matplotlib, Jupyter, IPython, Spyder
 See <a class="reference external" href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a></p>
@@ -388,16 +389,16 @@ See <a class="reference external" href="https://www.anaconda.com/products/distri
 <li><p><strong>Anaconda Navigator</strong> A desktop application that lets you manage integrated applications, packages, and environments without using the command line.</p></li>
 </ol>
 <div class="section" id="package-manager">
-<h2><span class="section-number">13.1. </span>Package manager<a class="headerlink" href="#package-manager" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.1. </span>Package manager<a class="headerlink" href="#package-manager" title="Permalink to this headline">#</a></h2>
 <p>A package is a dedicated set of functions that is wrapped together and labeled with a package name. You load them using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. The core Python library only contains a limited amount of packages: <code class="docutils literal notranslate"><span class="pre">sys</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code> etc. Using a package manager you can install, delete and update packages that do not ship with the core of Python.</p>
 </div>
 <div class="section" id="environments">
-<h2><span class="section-number">13.2. </span>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2. </span>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">#</a></h2>
 <p>When starting to work on bigger projects you will use multiple packages. Between projects, these differ and even sometimes cause some conflicts. That is where environments come in. They are isolated (virtual) spaces for working  with Pyton projects. When installing a package in an environment, it does not affect other environments.</p>
 <p>See <a class="reference external" href="https://www.youtube.com/watch?v=23aQdrS58e0">This video</a> for an excellent explanation of environment management. It is demonstrated using miniconda which is Anaconda without the GUI (the GUI also gives all this functionality).</p>
 </div>
 <div class="section" id="this-course">
-<h2><span class="section-number">13.3. </span>This course<a class="headerlink" href="#this-course" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.3. </span>This course<a class="headerlink" href="#this-course" title="Permalink to this headline">#</a></h2>
 <p>In this course we will be working with the tools provided by Anaconda Navigator: Jupyter Notebooks for <em>literate programming</em> (also the majority of the course material), Qt Console for quick testing and experimenting and Spyder for writing <em>scripts</em>. These can all be launched from the Anaconda Navigator Home panel.<br />
 We will not be working with environments; there is no need because everything we do will be available from any Python 3 distribution.</p>
 </div>
@@ -435,20 +436,20 @@ We will not be working with environments; there is no need because everything we
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="11_exercises.html"
+       href="12_exercises.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Exercises</p>
       </div>
     </a>
     <a class="right-next"
-       href="13_next_steps.html"
+       href="14_next_steps.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Next steps: pandas</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Next steps: pandas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -470,9 +471,9 @@ We will not be working with environments; there is no need because everything we
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">13.1. Package manager</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">13.2. Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">13.3. This course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-manager">14.1. Package manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">14.2. Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course">14.3. This course</a></li>
 </ul>
   </nav></div>
 

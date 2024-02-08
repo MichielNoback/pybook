@@ -157,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Programming is: operations on data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data: types &amp; operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Reading and writing files</a></li>
@@ -166,9 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_exercises.html">12. Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_anaconda.html">13. (Ana)conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_next_steps.html">14. Next steps: pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_data_classes.html">12. Data classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_exercises.html">13. Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_anaconda.html">14. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_next_steps.html">15. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -362,10 +363,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">6.1. Iterating contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">6.2. Closing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">6.3. The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">6.4. Writing to file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-paths">6.1. File paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-separators">6.1.1. Path separators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">6.1.2. Absolute and relative paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">6.1.3. Reading from file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">6.2. Iterating contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">6.3. Closing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">6.4. The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">6.5. Writing to file</a></li>
 </ul>
             </nav>
         </div>
@@ -380,7 +387,133 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="reading-and-writing-files">
 <h1><span class="section-number">6. </span>Reading and writing files<a class="headerlink" href="#reading-and-writing-files" title="Permalink to this headline">#</a></h1>
 <p>In most data science related scripts and analysis workflows, data will enter via files. To be more precise: via text files.<br />
-Fortunately, reading from file is really simple in Python.</p>
+Fortunately, reading from file is really simple in Python.
+Unfortunately, you will need to knwo something about file paths in Linux, Mac and Window operating systems, so that is were we’ll start.</p>
+<div class="section" id="file-paths">
+<h2><span class="section-number">6.1. </span>File paths<a class="headerlink" href="#file-paths" title="Permalink to this headline">#</a></h2>
+<div class="section" id="path-separators">
+<h3><span class="section-number">6.1.1. </span>Path separators<a class="headerlink" href="#path-separators" title="Permalink to this headline">#</a></h3>
+<p>There is a big distinction in file paths on Windows versus Linus (and MacOS): on Windows, file paths start with the drive (e.g. <code class="docutils literal notranslate"><span class="pre">C:</span></code>) and the directory (folder) separator symbol is a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>. On unix-like systems (Linux, MacOS), all paths start at the root: <code class="docutils literal notranslate"><span class="pre">/</span></code> and separator are also the forward slash.
+If you want to work with paths in your programs, you should therefore never use a literal character for these separators, but ask the OS to provide it for you:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+
+<span class="n">folders</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;Michiel&#39;</span><span class="p">,</span> <span class="s1">&#39;projects&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="o">*</span><span class="n">folders</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/
+/users/Michiel/projects/python
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">os.path.join()</span></code> function uses the separator as defined in <code class="docutils literal notranslate"><span class="pre">os.path.sep</span></code>.</p>
+<p>Note that when you type literal backslash characters, as in Windows paths, they need to be escaped because they give special meaning to the character that comes after. This gives an error:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">windows_path</span> <span class="o">=</span> <span class="s1">&#39;C:\Users\Michiel\Projects\Python</span><span class="se">\&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">windows_path</span> <span class="o">=</span> <span class="s1">&#39;C:\Users\Michiel\Projects\Python</span><span class="se">\&#39;</span>
+                                                      <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">EOL</span> <span class="k">while</span> <span class="n">scanning</span> <span class="n">string</span> <span class="n">literal</span>
+</pre></div>
+</div>
+<p>Below is the correct way to deal with that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">windows_path</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">Michiel</span><span class="se">\\</span><span class="s1">Projects</span><span class="se">\\</span><span class="s1">Python</span><span class="se">\\</span><span class="s1">&#39;</span>
+<span class="n">windows_path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\Michiel\\Projects\\Python\\&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that it is always better to use <code class="docutils literal notranslate"><span class="pre">os.path.sep</span></code>, above, or by always using the forward slash (works most most of the time), or like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;C:&#39;</span><span class="p">,</span> <span class="s1">&#39;Users&#39;</span><span class="p">,</span> <span class="s1">&#39;Michiel&#39;</span><span class="p">,</span> <span class="s1">&#39;Projects&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:/Users/Michiel/Projects/Python&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="absolute-and-relative-paths">
+<h3><span class="section-number">6.1.2. </span>Absolute and relative paths<a class="headerlink" href="#absolute-and-relative-paths" title="Permalink to this headline">#</a></h3>
+<p>File system locations can be defined in two ways: absolute and relative.<br />
+The above examples were all absolute because the paths were all defined starting at the <strong>root</strong> of the file system, which is a harddisk drive designation (Windows) or a path starting with a forward slash (Linux-like).</p>
+<p>Relative paths, on the other hand, specify locations relative to the <strong>current working directory</strong>. This is either the location of the running piece of code (script, notebook), or the location you have specified using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/users/michiel/projects/project1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and which you can verify with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Suppose I have a directory structure that looks like this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">users</span>
+    <span class="o">/</span><span class="n">michiel</span>
+        <span class="o">/</span><span class="n">projects</span>
+            <span class="o">/</span><span class="n">project1</span>
+                <span class="o">/</span><span class="n">script1</span><span class="o">.</span><span class="n">py</span>
+                <span class="o">/</span><span class="n">data</span>
+                    <span class="o">/</span><span class="n">users</span><span class="o">.</span><span class="n">txt</span>
+            <span class="o">/</span><span class="n">project2</span>
+                <span class="o">/</span><span class="n">birds</span><span class="o">.</span><span class="n">csv</span>
+
+</pre></div>
+</div>
+<p>and my current working directory is <code class="docutils literal notranslate"><span class="pre">/users/michiel/python/project1</span></code> (because you are working on <code class="docutils literal notranslate"><span class="pre">script1.py</span></code>).</p>
+<p>The different ways to specify the location of the data file <code class="docutils literal notranslate"><span class="pre">users.txt</span></code> are</p>
+<ul class="simple">
+<li><p><strong>absolute</strong>: <code class="docutils literal notranslate"><span class="pre">/users/michiel/projects/project1/data/users.txt</span></code></p></li>
+<li><p><strong>relative to current dir</strong>: <code class="docutils literal notranslate"><span class="pre">data/users.txt</span></code></p></li>
+<li><p><strong>relative to current dir</strong>: <code class="docutils literal notranslate"><span class="pre">./data/users.txt</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">./</span></code> makes it explicit that the start is the current directory.</p>
+<p>The different ways to specify the location of the data file <code class="docutils literal notranslate"><span class="pre">birds.csv</span></code> are</p>
+<ul class="simple">
+<li><p><strong>absolute</strong>: <code class="docutils literal notranslate"><span class="pre">/users/michiel/projects/project2/birds.csv</span></code></p></li>
+<li><p><strong>relative to current dir</strong>: <code class="docutils literal notranslate"><span class="pre">../project2/birds.csv</span></code></p></li>
+</ul>
+<p>The double dot <code class="docutils literal notranslate"><span class="pre">..</span></code> says “go up one directory and work from there.</p>
+<p>Linux users may know about the tilde <code class="docutils literal notranslate"><span class="pre">~</span></code> that specifies the current users’ home folder: <code class="docutils literal notranslate"><span class="pre">~/projects/project2/birds.csv</span></code>. This does not work in python. Instead, you can use <code class="docutils literal notranslate"><span class="pre">os.path.expanduser('~')</span></code> to plug it into your file location:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">),</span> <span class="s1">&#39;projects&#39;</span><span class="p">,</span> <span class="s1">&#39;project2&#39;</span><span class="p">,</span> <span class="s1">&#39;birds.csv&#39;</span><span class="p">),</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;/Users/michielnoback/projects/project2/birds.csv&#39;,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A last note on file and folder names. Although a wide range of characters is allowed in file paths, when working in datascience it is highly advisable to refrain from using “funny” characters in file paths. They cause errors, and are often hard to type in a string variable. So instead of this:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">/homes/michiel/projects/het</span> <span class="pre">'tisser</span> <span class="pre">(best)</span> <span class="pre">koud!</span> <span class="pre">😀</span></code></p>
+</div></blockquote>
+<p>use this:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">/homes/michiel/projects/het_is_er_koud</span></code></p>
+</div></blockquote>
+</div>
+<div class="section" id="reading-from-file">
+<h3><span class="section-number">6.1.3. </span>Reading from file<a class="headerlink" href="#reading-from-file" title="Permalink to this headline">#</a></h3>
 <p>And if you have structured data in the form of csv, tsv, xml or Excel, the Python ecosystem prvides a wealth of dedicated data reading functions. If you are going to work with excel-style data (data organized in rows with examples and variables in columns) a lot, it is recommended to have a look at the Pandas library (we’ll have a peek at that at the end of this chapter).
 In this chapter however we are going to check out the basics of file reading and writing, I/O in short.</p>
 <p>Suppose we have some data file named <code class="docutils literal notranslate"><span class="pre">lengths.csv</span></code> which contains the body lengths (in centimeters) of a sample of male and female subjects:</p>
@@ -396,7 +529,8 @@ In this chapter however we are going to check out the basics of file reading and
 <p>To read this data in the simplest way possible, we can read its contents in one operation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/lengths.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/lengths.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
@@ -404,7 +538,8 @@ In this chapter however we are going to check out the basics of file reading and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1,m,180
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/michielnoback/git_projects/python_intro
+1,m,180
 2,m,188
 3,f,178
 4,f,182
@@ -422,8 +557,10 @@ In this chapter however we are going to check out the basics of file reading and
 </div>
 <p>opens the file in read mode (the second argument is the <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument which defaults to <code class="docutils literal notranslate"><span class="pre">'r'</span></code>, so it could have been omitted). The functions returns a stream, or handle on the file. <strong>Not the actual contents yet</strong>.</p>
 <p>Reading the contents happens with the <code class="docutils literal notranslate"><span class="pre">file.read()</span></code> function call.</p>
+</div>
+</div>
 <div class="section" id="iterating-contents">
-<h2><span class="section-number">6.1. </span>Iterating contents<a class="headerlink" href="#iterating-contents" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.2. </span>Iterating contents<a class="headerlink" href="#iterating-contents" title="Permalink to this headline">#</a></h2>
 <p>Usually you want to iterate over file contents line by line without the need to store it all in memory as-is. This is done by applying the for-loop on the file stream:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -448,7 +585,7 @@ In this chapter however we are going to check out the basics of file reading and
 To only remove whitespace characters at the end, use <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code> with an optional argument specifying which characters to strip off.</p>
 </div>
 <div class="section" id="closing-files">
-<h2><span class="section-number">6.2. </span>Closing files<a class="headerlink" href="#closing-files" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.3. </span>Closing files<a class="headerlink" href="#closing-files" title="Permalink to this headline">#</a></h2>
 <p>It is good custom to close streams to files that you open. In read mode this is not essential, but in write mode it is. You do this using the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method. The above fragment is better like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,7 +609,7 @@ To only remove whitespace characters at the end, use <code class="docutils liter
 </div>
 </div>
 <div class="section" id="the-best-way-using-with">
-<h2><span class="section-number">6.3. </span>The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#the-best-way-using-with" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.4. </span>The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#the-best-way-using-with" title="Permalink to this headline">#</a></h2>
 <p>Since programmers forgot to close their files all the time, the “with open” syntax was introduced. If you simply always use this form you will never go wrong.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -496,7 +633,7 @@ To only remove whitespace characters at the end, use <code class="docutils liter
 </div>
 </div>
 <div class="section" id="writing-to-file">
-<h2><span class="section-number">6.4. </span>Writing to file<a class="headerlink" href="#writing-to-file" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.5. </span>Writing to file<a class="headerlink" href="#writing-to-file" title="Permalink to this headline">#</a></h2>
 <p>To open a stream for writing you need to set the mode to one of these:</p>
 <ul class="simple">
 <li><p>“w” (open for writing, truncating the file first)</p></li>
@@ -595,10 +732,16 @@ If the mode <code class="docutils literal notranslate"><span class="pre">&quot;a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">6.1. Iterating contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">6.2. Closing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">6.3. The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">6.4. Writing to file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-paths">6.1. File paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-separators">6.1.1. Path separators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">6.1.2. Absolute and relative paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">6.1.3. Reading from file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-contents">6.2. Iterating contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-files">6.3. Closing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-best-way-using-with">6.4. The best way: using <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">6.5. Writing to file</a></li>
 </ul>
   </nav></div>
 
