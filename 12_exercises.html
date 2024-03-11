@@ -368,22 +368,24 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">13.1. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">13.2. Getting started</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-math">13.2.1. Simple math</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-edit-a-script">13.2.2. Run and edit a script</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">13.2.3. Operator precedence (1)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">13.2.4. Operator precedence (2)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">13.2.5. Assignment shortcut operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">13.2.6. The Floor division and Modulo operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">13.2.2. Operator precedence (1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">13.2.3. Operator precedence (2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">13.2.4. Assignment shortcut operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">13.2.5. The Floor division and Modulo operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-edit-a-script">13.2.6. Run and edit a script</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">13.3. Data types</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">13.3.1. String methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">13.3.2. String formatting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slicing">13.3.3. String slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slicing">13.3.2. String slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting-challenge">13.3.3. String formatting (challenge)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-lists">13.3.4. Working with lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-lists-or-tuples">13.3.5. Choosing lists or tuples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-lists">13.3.6. Tuples and lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">13.3.7. sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">13.3.8. dict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-strings">13.3.5. Joining strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-difference-between-tuples-and-lists">13.3.6. The difference between tuples and lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-lists-or-tuples">13.3.7. Choosing lists or tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-lists">13.3.8. Tuples and lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">13.3.9. sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">13.3.10. dict</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control">13.4. Flow control</a><ul class="nav section-nav flex-column">
@@ -444,13 +446,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">13.12.4. Hangman word guessing game (✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-profiler-to">13.12.5. Sequence Profiler (✲✲ to ✲✲✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fastq-analyser-to">13.12.6. FastQ analyser (✲✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">13.12.7. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">13.12.8. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">13.12.9. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">13.12.10. Implement k-Means clustering (✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">13.12.11. Implement neighbor joining clustering(✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">13.12.12. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">13.12.13. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis-tool-to">13.12.7. Protein analysis tool  (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genbank-query-tool-to">13.12.8. Genbank query tool (✲✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gff-query-tool-to">13.12.9. GFF query tool (✲✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackjack-eenentwintigen-to">13.12.10. Blackjack (Eenentwintigen) (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">13.12.11. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">13.12.12. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">13.12.13. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">13.12.14. Implement k-Means clustering (✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">13.12.15. Implement neighbor joining clustering(✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">13.12.16. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">13.12.17. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
 </ul>
 </li>
 </ul>
@@ -482,7 +488,7 @@ Give it a try:</p>
 <br>
 Of course, you should always really try to solve it yourself before going to the easy-peasy zone
 </details>
-<p>Alternatively, solutions can be loaded from file by uncommenting and running the commented line of code that looks like this:</p>
+<p>With some exercises, solutions can be loaded from file by uncommenting and running the commented line of code that looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment the following line to see the solution or code hint</span>
 <span class="c1"># %load ./exercise_solutions/exercise_1_1.py</span>
 </pre></div>
@@ -522,17 +528,8 @@ Of course, you should always really try to solve it yourself before going to the
 </div>
 </div>
 </div>
-<div class="section" id="run-and-edit-a-script">
-<h3><span class="section-number">13.2.2. </span>Run and edit a script<a class="headerlink" href="#run-and-edit-a-script" title="Permalink to this headline">#</a></h3>
-<p>On your computer, create a folder that will hold the exercises of this course. In it, put a copy of the script <a class="reference download internal" download="" href="_downloads/aca19472e6dd0fdc764e01ac9ac12d87/triangle_surface.py"><span class="xref download myst">triangle_surface.py</span></a> from the scripts folder. Run the script as demonstrated above. Try out some other command-line arguments.</p>
-<p>Change the script at some points and investigate the effect:
-- comment-out (e.g. put a hash symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> in front of it) the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> statement
-- change <code class="docutils literal notranslate"><span class="pre">float(side)</span></code> to <code class="docutils literal notranslate"><span class="pre">int(side)</span></code>
-- change <code class="docutils literal notranslate"><span class="pre">sys.argv[1:]</span></code> to <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and to <code class="docutils literal notranslate"><span class="pre">sys.argv[2:]</span></code>
-- use your imagination and experiment further</p>
-</div>
 <div class="section" id="operator-precedence-1">
-<h3><span class="section-number">13.2.3. </span>Operator precedence (1)<a class="headerlink" href="#operator-precedence-1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.2.2. </span>Operator precedence (1)<a class="headerlink" href="#operator-precedence-1" title="Permalink to this headline">#</a></h3>
 <p>In the code cell below, it was attempted to calculate the surface area of a circle. However, because of <a class="reference external" href="https://www.tutorialspoint.com/python/operators_precedence_example.htm">operator precedence</a> the outcome is wrong! It should be 12.57. Can you correct this by using parentheses in the calculation? While you are at it, also add some spaces to make the code more readable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,7 +554,7 @@ Of course, you should always really try to solve it yourself before going to the
 </div>
 </details></div>
 <div class="section" id="operator-precedence-2">
-<h3><span class="section-number">13.2.4. </span>Operator precedence (2)<a class="headerlink" href="#operator-precedence-2" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.2.3. </span>Operator precedence (2)<a class="headerlink" href="#operator-precedence-2" title="Permalink to this headline">#</a></h3>
 <p>Correct the calculations below by making use of grouping parentheses.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 <span class="mi">45</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">0</span>
@@ -590,7 +587,7 @@ Of course, you should always really try to solve it yourself before going to the
 </div>
 </details></div>
 <div class="section" id="assignment-shortcut-operators">
-<h3><span class="section-number">13.2.5. </span>Assignment shortcut operators<a class="headerlink" href="#assignment-shortcut-operators" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.2.4. </span>Assignment shortcut operators<a class="headerlink" href="#assignment-shortcut-operators" title="Permalink to this headline">#</a></h3>
 <p>The code cell below is not wrong, but it can be expressed more efficiently by using dedicated <a class="reference external" href="https://www.tutorialspoint.com/python/assignment_operators_example.htm">assignment operators</a>.
 Can you improve by using these? Although flow control was not dealt with explicitly the code should be pretty obvious (this is one of the strengths of Python).</p>
 <div class="cell docutils container">
@@ -625,7 +622,7 @@ i is now 15; the cumulative sum is 35 and the cumulative &quot;fraction&quot; is
 </details>
 </div>
 <div class="section" id="the-floor-division-and-modulo-operators">
-<h3><span class="section-number">13.2.6. </span>The Floor division and Modulo operators<a class="headerlink" href="#the-floor-division-and-modulo-operators" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.2.5. </span>The Floor division and Modulo operators<a class="headerlink" href="#the-floor-division-and-modulo-operators" title="Permalink to this headline">#</a></h3>
 <p>The floor division and modulo operators are handy tools if you want to work with currency, weight and distance units.</p>
 <p>The <strong>modulo operator</strong> <code class="docutils literal notranslate"><span class="pre">%</span></code> gives the <em>remainder</em> of a division:</p>
 <div class="cell docutils container">
@@ -731,6 +728,15 @@ i is now 15; the cumulative sum is 35 and the cumulative &quot;fraction&quot; is
 </div>
 </details>
 </div>
+<div class="section" id="run-and-edit-a-script">
+<h3><span class="section-number">13.2.6. </span>Run and edit a script<a class="headerlink" href="#run-and-edit-a-script" title="Permalink to this headline">#</a></h3>
+<p>On your computer, create a folder that will hold the exercises of this course. In it, put a copy of the script <a class="reference download internal" download="" href="_downloads/aca19472e6dd0fdc764e01ac9ac12d87/triangle_surface.py"><span class="xref download myst">triangle_surface.py</span></a> from the scripts folder. Run the script as demonstrated in chapter 2. Try out some other command-line arguments.</p>
+<p>Change the script at some points and investigate the effect:
+- comment-out (e.g. put a hash symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> in front of it) the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> statement
+- change <code class="docutils literal notranslate"><span class="pre">float(side)</span></code> to <code class="docutils literal notranslate"><span class="pre">int(side)</span></code>
+- change <code class="docutils literal notranslate"><span class="pre">sys.argv[1:]</span></code> to <code class="docutils literal notranslate"><span class="pre">sys.argv[2]</span></code> and to <code class="docutils literal notranslate"><span class="pre">sys.argv[2:]</span></code>
+- use your imagination and experiment further</p>
+</div>
 </div>
 <div class="section" id="data-types">
 <h2><span class="section-number">13.3. </span>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
@@ -756,8 +762,53 @@ Have a look at the <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 </div>
-<div class="section" id="string-formatting">
-<h3><span class="section-number">13.3.2. </span>String formatting<a class="headerlink" href="#string-formatting" title="Permalink to this headline">#</a></h3>
+<div class="section" id="string-slicing">
+<h3><span class="section-number">13.3.2. </span>String slicing<a class="headerlink" href="#string-slicing" title="Permalink to this headline">#</a></h3>
+<p>Given this string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;Een Aap Die Ijs Eet!&#39;</span>
+</pre></div>
+</div>
+<p>write a slice that</p>
+<p>a) prints <code class="docutils literal notranslate"><span class="pre">'Aap'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;Een Aap Die Ijs Eet!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<p>b) prints <code class="docutils literal notranslate"><span class="pre">'EAD'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[:</span><span class="mi">9</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<p>c) prints <code class="docutils literal notranslate"><span class="pre">'!Eje</span> <span class="pre">Ae'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[::</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<p>d) prints <code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160;&#160; <span class="pre">!'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;Een Aap Die Ijs Eet!&#39;</span>
+<span class="c1">#YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-formatting-challenge">
+<h3><span class="section-number">13.3.3. </span>String formatting (challenge)<a class="headerlink" href="#string-formatting-challenge" title="Permalink to this headline">#</a></h3>
 <p>Study this short <a class="reference external" href="https://docs.python.org/3/library/string.html#formatspec">string formatting tutorial</a> and find out</p>
 <ul class="simple">
 <li><p>how, given the variable <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'Bert'</span></code>, you can print <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Bert,</span> <span class="pre">bye</span> <span class="pre">Bert'</span></code> in four different ways using 4 different string formattng techniques</p></li>
@@ -803,51 +854,6 @@ Have a look at the <code class="docutils literal notranslate"><span class="pre">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bert&#39;</span>
-<span class="c1">#YOUR CODE</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="string-slicing">
-<h3><span class="section-number">13.3.3. </span>String slicing<a class="headerlink" href="#string-slicing" title="Permalink to this headline">#</a></h3>
-<p>Given this string:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;Een Aap Die Ijs Eet!&#39;</span>
-</pre></div>
-</div>
-<p>write a slice that</p>
-<p>a) prints <code class="docutils literal notranslate"><span class="pre">'Aap'</span></code></p>
-<details>
-  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;Een Aap Die Ijs Eet!&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</details>
-<p>b) prints <code class="docutils literal notranslate"><span class="pre">'EAD'</span></code></p>
-<details>
-  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[:</span><span class="mi">9</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</details>
-<p>c) prints <code class="docutils literal notranslate"><span class="pre">'!Eje</span> <span class="pre">Ae'</span></code></p>
-<details>
-  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[::</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</details>
-<p>d) prints <code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160;&#160; <span class="pre">!'</span></code></p>
-<details>
-  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">letters</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</details>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;Een Aap Die Ijs Eet!&#39;</span>
 <span class="c1">#YOUR CODE</span>
 </pre></div>
 </div>
@@ -901,19 +907,128 @@ Have a look at the <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 </div>
-<div class="section" id="choosing-lists-or-tuples">
-<h3><span class="section-number">13.3.5. </span>Choosing lists or tuples<a class="headerlink" href="#choosing-lists-or-tuples" title="Permalink to this headline">#</a></h3>
-<p>In essence, a tuple is a list that cannot be changed after it has been created. For the following use cases, choose the most appropriate of these two and implement the case.</p>
-<p>a) Create a collection with the different roles that users of a web application can have: ‘GUEST’, ‘USER’, and ‘ADMIN’.</p>
+<div class="section" id="joining-strings">
+<h3><span class="section-number">13.3.5. </span>Joining strings<a class="headerlink" href="#joining-strings" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> class has a method, <code class="docutils literal notranslate"><span class="pre">join()</span></code>, that makes it possible to join a list (or other iterable) of strings into a single string, with separators in between.<br />
+Study its doc and, from the list</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ham&#39;</span><span class="p">,</span> <span class="s1">&#39;Spam&#39;</span><span class="p">,</span> <span class="s1">&#39;Jam&#39;</span><span class="p">,</span> <span class="s1">&#39;Mam&#39;</span><span class="p">,</span> <span class="s1">&#39;Dam&#39;</span><span class="p">,</span> <span class="s1">&#39;Ram&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>generate the following (you may need to use list slicing as well).</p>
+<p>a) <code class="docutils literal notranslate"><span class="pre">'HamSpamJamMamDamRam'</span></code></p>
 <details>
   <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#a tuple because no other roles should be defined, or removed (accidentally).</span>
-<span class="n">roles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;GUEST&#39;</span><span class="p">,</span> <span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="s1">&#39;ADMIN&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 </pre></div>
 </div>
 </details>
-<br>
-<p>b) A chess board has 64 fields, indicated by letters for the 8 columns (a-h) and numbers for the rows (1-8). See below.<br />
+<p>b) <code class="docutils literal notranslate"><span class="pre">'Ham+-+Spam+-+Jam+-+Mam+-+Dam+-+Ram'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;+-+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<p>c) <code class="docutils literal notranslate"><span class="pre">'Ham</span> <span class="pre">Jam</span> <span class="pre">Dam'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</details>
+<p>d) <code class="docutils literal notranslate"><span class="pre">'RamnDamnMamnJamnSpamnHam'</span></code></p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;n&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ham&#39;</span><span class="p">,</span> <span class="s1">&#39;Spam&#39;</span><span class="p">,</span> <span class="s1">&#39;Jam&#39;</span><span class="p">,</span> <span class="s1">&#39;Mam&#39;</span><span class="p">,</span> <span class="s1">&#39;Dam&#39;</span><span class="p">,</span> <span class="s1">&#39;Ram&#39;</span><span class="p">]</span>
+
+<span class="c1"># YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-difference-between-tuples-and-lists">
+<h3><span class="section-number">13.3.6. </span>The difference between tuples and lists<a class="headerlink" href="#the-difference-between-tuples-and-lists" title="Permalink to this headline">#</a></h3>
+<p>Given these two sequences, one a list and the other a tuple,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sugar&#39;</span><span class="p">,</span> <span class="s1">&#39;butter&#39;</span><span class="p">,</span> <span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;flour&#39;</span><span class="p">]</span>
+<span class="n">additives</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;salt&#39;</span><span class="p">,</span> <span class="s1">&#39;vanilla&#39;</span><span class="p">,</span> <span class="s1">&#39;almond&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>investigate whether the given operations can be done, and how to do them.</p>
+<p>a) Add the additives to the ingredients</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">additives</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<p>b) Replace sugar by saccharin</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;saccharin&#39;</span>
+</pre></div>
+</div>
+</details>
+<p>c) Add monosodium glutamate to the additives</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">possible</span>
+</pre></div>
+</div>
+</details>
+<p>d) Make ‘vanilla’ uppercase</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span> <span class="n">possible</span>
+</pre></div>
+</div>
+</details>
+<p>e) Create this string.<br />
+<code class="docutils literal notranslate"><span class="pre">almond</span> <span class="pre">and</span> <span class="pre">vanilla</span> <span class="pre">and</span> <span class="pre">salt</span> <span class="pre">and</span> <span class="pre">flour</span> <span class="pre">and</span> <span class="pre">egg</span> <span class="pre">and</span> <span class="pre">butter</span> <span class="pre">and</span> <span class="pre">sugar</span></code><br />
+This takes three separate operations.</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">additives</span><span class="p">)</span>
+<span class="n">ingredients</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="s1">&#39; and &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ingredients</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sugar&#39;</span><span class="p">,</span> <span class="s1">&#39;butter&#39;</span><span class="p">,</span> <span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;flour&#39;</span><span class="p">]</span>
+<span class="n">additives</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;salt&#39;</span><span class="p">,</span> <span class="s1">&#39;vanilla&#39;</span><span class="p">,</span> <span class="s1">&#39;almond&#39;</span><span class="p">)</span>
+
+<span class="c1">## YOUR CODE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="choosing-lists-or-tuples">
+<h3><span class="section-number">13.3.7. </span>Choosing lists or tuples<a class="headerlink" href="#choosing-lists-or-tuples" title="Permalink to this headline">#</a></h3>
+<p>In essence, a tuple is a list that cannot be changed after it has been created. For the following use cases, choose the most appropriate of these two and implement the described use case.</p>
+<p>a) Create a collection representing the board of the game ‘tic tac toe’ (Dutch: boter kaas en eieren) in which each ‘cell’ can (1) be empty - a space ‘ ‘ (2) have a cross ‘X’ or (3) a circle ‘O’. Remember, collections can be nested!</p>
+<details>
+  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using module pprint to get a nice 2D printed representation</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="c1"># top level should be tuple, &quot;rows&quot; should be lists</span>
+<span class="n">tic_tac_toe</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">],</span>
+               <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">],</span>
+               <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<br><p>b) A chess board has 64 fields, indicated by letters for the 8 columns (a-h) and numbers for the rows (1-8). See below.<br />
 <img alt="chess board" src="_images/chess_board.png" /></p>
 <p>So ‘a1’ is the lowerleft field and ‘h8’ the upper right one. A chess move consists of a piece (e.g. pawn, knight, queen etc) going from a field of origin (e.g. b2) to a field of destination (e.g. b4). The chess pieces are shown below.<br />
 <img alt="Chess pieces" src="_images/chess_pieces.jpeg" /></p>
@@ -939,23 +1054,9 @@ Demonstrate its use by creating and storing a few moves.</p>
 </pre></div>
 </div>
 </details>
-<br><p>c) Create a collection representing the board of the game ‘tic tac toe’ (Dutch: boter kaas en eieren) in which each ‘cell’ can (1) be empty - a space ‘ ‘ (2) have a cross ‘X’ or (3) a circle ‘O’. Remember, collections can be nested!</p>
-<details>
-  <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me the solution</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using module pprint to get a nice 2D printed representation</span>
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
-<span class="c1"># top level should be tuple, &quot;rows&quot; should be lists</span>
-<span class="n">tic_tac_toe</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">],</span>
-               <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">],</span>
-               <span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
-<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">tic_tac_toe</span><span class="p">)</span>
-</pre></div>
-</div>
-</details>
 <br></div>
 <div class="section" id="tuples-and-lists">
-<h3><span class="section-number">13.3.6. </span>Tuples and lists<a class="headerlink" href="#tuples-and-lists" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.8. </span>Tuples and lists<a class="headerlink" href="#tuples-and-lists" title="Permalink to this headline">#</a></h3>
 <p>Tuples are supposed to be immutable. Let’s explore the extend of this rule, and also some other behaviour of tuples and lists.</p>
 <p>Given this tuple that is the top level collection of this datastructure:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ZP11</span> <span class="o">=</span> <span class="p">({</span><span class="s1">&#39;street&#39;</span><span class="p">:</span> <span class="s1">&#39;Zernikeplein&#39;</span><span class="p">,</span>
@@ -1018,7 +1119,7 @@ Again this is not possible because it is a tuple. This fails:
 </div>
 </div>
 <div class="section" id="sets">
-<h3><span class="section-number">13.3.7. </span>sets<a class="headerlink" href="#sets" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.9. </span>sets<a class="headerlink" href="#sets" title="Permalink to this headline">#</a></h3>
 <p>Create a set named “fruits_a” that has the values ‘apple’, ‘pear’ and ‘banana’. Create a second set, “fruits_b”, that holds the values ‘banana’, ‘guava’ and ‘orange’. Find the union, intersection and difference (both ways) between these sets.</p>
 <details>
   <summary style = "color:OrangeRed;cursor:pointer;">&#10149; Give me a hint!</summary>
@@ -1035,7 +1136,7 @@ Again this is not possible because it is a tuple. This fails:
 <p>Demonstrate all these with code examples.</p>
 </div>
 <div class="section" id="dict">
-<h3><span class="section-number">13.3.8. </span>dict<a class="headerlink" href="#dict" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.10. </span>dict<a class="headerlink" href="#dict" title="Permalink to this headline">#</a></h3>
 <p>There are (at least) three ways to create and fill a dict. Use the suggested resources of chapter 1 to find them. Demonstrate these techniques to create a variable named <code class="docutils literal notranslate"><span class="pre">inventory</span></code> holding this dict:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">513</span><span class="p">:</span> <span class="s1">&#39;hammer&#39;</span><span class="p">,</span> <span class="mi">322</span><span class="p">:</span> <span class="s1">&#39;screwdriver&#39;</span><span class="p">,</span> <span class="mi">462</span><span class="p">:</span> <span class="s1">&#39;nailgun&#39;</span><span class="p">}</span>
 </pre></div>
@@ -2157,8 +2258,83 @@ The guessing party takes turns guessing wich letter will be in the word. If the 
 <p>Supercharge your challenge: add a “trimming” and “filtering” option to the app.</p>
 <p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
+<div class="section" id="protein-analysis-tool-to">
+<h3><span class="section-number">13.12.7. </span>Protein analysis tool  (✲✲ to ✲✲✲✲)<a class="headerlink" href="#protein-analysis-tool-to" title="Permalink to this headline">#</a></h3>
+<p>Proteins consist of long chains of amino acids called polypeptides. These constituent amino acids define the structure and properties of the protein. Amino acids have several relevant properties:</p>
+<ul class="simple">
+<li><p>size</p></li>
+<li><p>molecular weight</p></li>
+<li><p>polarity</p></li>
+<li><p>charge</p></li>
+<li><p>hydrophobicity</p></li>
+</ul>
+<p>Given a protein sequence file (in <a class="reference external" href="https://en.wikipedia.org/wiki/FASTA_format">Fasta</a> format), read in all sequences within the file and generate</p>
+<ol class="arabic simple">
+<li><p>A comma-separated values (csv format) file with for each protein some summary statistics:</p>
+<ul class="simple">
+<li><p>name</p></li>
+<li><p>length (in amino acids)</p></li>
+<li><p>molecular weight</p></li>
+<li><p>average hydrophobicity</p></li>
+<li><p>total charge</p></li>
+<li><p>the frequencies of the 20 amino acids</p></li>
+</ul>
+</li>
+<li><p>For each sequence a separate file where, using a <a class="reference external" href="https://www.geeksforgeeks.org/window-sliding-technique/">sliding window technique</a>. The name of the protein is the file name plus <code class="docutils literal notranslate"><span class="pre">.csv</span></code> as extension. The file has, also in csv format, four columns of data:</p>
+<ul class="simple">
+<li><p>amino acid position</p></li>
+<li><p>average hydrophobicity for the current window</p></li>
+<li><p>average charge for the current window</p></li>
+<li><p>average polarity for the current window</p></li>
+</ul>
+</li>
+</ol>
+<p>As a command-line arguments this tool should accept the input multifasta file, the sliding window size (with a default of 8) and an output folder to write all results to (default to same directory as input file).</p>
+</div>
+<div class="section" id="genbank-query-tool-to">
+<h3><span class="section-number">13.12.8. </span>Genbank query tool (✲✲✲ to ✲✲✲✲)<a class="headerlink" href="#genbank-query-tool-to" title="Permalink to this headline">#</a></h3>
+<p>Given the GenBank format (assume only one DNA sequence resides in a single file – if there are more, ignore these and report this to the user). Create a parser for files of this type, extracting of all Features only these fields:</p>
+<ol class="arabic simple">
+<li><p>Source/organism</p></li>
+<li><p>CDS/coordinates</p></li>
+<li><p>CDS/product</p></li>
+<li><p>CDS/db_xref</p></li>
+<li><p>CDS/translation</p></li>
+<li><p>Gene/coordinates</p></li>
+<li><p>Gene/gene</p></li>
+<li><p>Sequence</p></li>
+</ol>
+<p>Create an appropriate data model. Create an executable that can be used for these use cases:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--help</span></code> shows informative help/usage information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--summary</span></code> – Creates a textual summary of the parsed file: length of the sequence, number and types of features. Average lengths of the genes, number on forward strand, number on reverse strand. Maybe you can think of some more interesting features?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_gene</span> <span class="pre">&lt;GENE</span> <span class="pre">NAME</span> <span class="pre">(-PATTERN)&gt;</span></code> – Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_cds</span> <span class="pre">&lt;PRODUCT</span> <span class="pre">NAME</span> <span class="pre">(-PATTERN)&gt;</span></code> – Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_features</span> <span class="pre">&lt;COORDINATES&gt;</span></code> Returns all features between the given coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--find_sites</span> <span class="pre">&lt;DNA</span> <span class="pre">SEQ</span> <span class="pre">WITH</span> <span class="pre">IUPAC</span> <span class="pre">CODES&gt;</span></code> – Lists the locations of all the sites where the DNA pattern is found: position and actual sequence and (if relevant) the element in which it resides.</p></li>
+</ol>
+<p>Genbank files can be downloaded from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/datasets/genome/">https://www.ncbi.nlm.nih.gov/datasets/genome/</a>. Simply search something like <code class="docutils literal notranslate"><span class="pre">Bacillus</span> <span class="pre">subtilis</span></code> and click on an entry. You can then choose to download sequences in different formats. Choose “Sequence and Annotation” (gbff format).</p>
+</div>
+<div class="section" id="gff-query-tool-to">
+<h3><span class="section-number">13.12.9. </span>GFF query tool (✲✲✲ to ✲✲✲✲)<a class="headerlink" href="#gff-query-tool-to" title="Permalink to this headline">#</a></h3>
+<p>Given the GFF3 sequence format (with or without sequences appended in-file; if not appended, a separate sequence file may be provided). Create a parser for files of this type extracting all annotations. Create an appropriate data model. Create an executable that can be used for these use cases:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">--help</span></code> – shows informative help/usage information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--summary</span></code> – Creates a textual summary of the parsed file: length of the sequence, number and types of annotations. Average lengths of the genes, number on forward strand, number on reverse strand. Maybe you can think of some more interesting features?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_id</span> <span class="pre">&lt;ID&gt;</span></code> – Returns the nucleotide sequence of the element with this ID, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_features</span> <span class="pre">&lt;FEATURE_TYPE_&gt;</span></code> – Returns the nucleotide sequence of all the elements of this type, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_region</span> <span class="pre">&lt;COORDINATES&gt;</span></code> – Returns all features between the given coordinates, in gff format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--find_sites</span> <span class="pre">&lt;DNA</span> <span class="pre">SEQ</span> <span class="pre">WITH</span> <span class="pre">IUPAC</span> <span class="pre">CODES&gt;</span></code> – Lists the locations of all the sites where the DNA pattern is found: position and actual sequence and (if relevant) the element in which it resides.</p></li>
+</ol>
+<p>GFF files can be downloaded from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/datasets/genome/">https://www.ncbi.nlm.nih.gov/datasets/genome/</a>. Simply search something like <code class="docutils literal notranslate"><span class="pre">Bacillus</span> <span class="pre">subtilis</span></code> and click on an entry. You can then choose to download sequences in different formats. Choose “Sequence and Annotation” (gbff format).</p>
+</div>
+<div class="section" id="blackjack-eenentwintigen-to">
+<h3><span class="section-number">13.12.10. </span>Blackjack (Eenentwintigen) (✲✲ to ✲✲✲✲)<a class="headerlink" href="#blackjack-eenentwintigen-to" title="Permalink to this headline">#</a></h3>
+<p>Implement the game Blackjack (Eenentwintigen in Dutch - <a class="reference external" href="https://nl.wikipedia.org/wiki/Eenentwintigen">Wikipedia</a>) where the user can play against your app.<br />
+You can just make it a terminal app, or if you like, you can make a user interface using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>) or any other GUI toolkit, such as TKinter (see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>).</p>
+</div>
 <div class="section" id="wordle-lingo-game-to">
-<h3><span class="section-number">13.12.7. </span>Wordle / Lingo game (✲✲ to ✲✲✲✲✲)<a class="headerlink" href="#wordle-lingo-game-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.11. </span>Wordle / Lingo game (✲✲ to ✲✲✲✲✲)<a class="headerlink" href="#wordle-lingo-game-to" title="Permalink to this headline">#</a></h3>
 <p>Lingo was one of the longest-running tv game shows.
 In this game the player needs to guess a word of a fixed length (usually between 5 and 7 letters).
 It looks for instance like this:</p>
@@ -2170,7 +2346,7 @@ After a guess, the user receives information about the letters on correct positi
 Many ways exist to make this challenge really challenging. For instance, you can create a GUI (there are several libraries for that purpose available in Python but I suggest you use TkInter - see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>) or the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>).</p>
 </div>
 <div class="section" id="encrypt-and-decrypt-messages-using-caesar-cipher-to">
-<h3><span class="section-number">13.12.8. </span>Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)<a class="headerlink" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.12. </span>Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)<a class="headerlink" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to" title="Permalink to this headline">#</a></h3>
 <p>Caesar’s cipher is one of the simplest and most widely known encryption techniques. Each letter in a text is replaced by a letter some fixed number of positions down (or iup) the alphabet.
 For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence (see <a class="reference external" href="https://en.wikipedia.org/wiki/Caesar_cipher">Wikipedia</a>).</p>
 <p>It is your task to create such a cipher, where the program takes two command-line arguments. The first one is the shift (left being negative) and the second a filename or a literal text.</p>
@@ -2178,7 +2354,7 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 <p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
 </div>
 <div class="section" id="create-a-data-dashboard-to">
-<h3><span class="section-number">13.12.9. </span>Create a data dashboard (✲✲ to ✲✲✲✲)<a class="headerlink" href="#create-a-data-dashboard-to" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.13. </span>Create a data dashboard (✲✲ to ✲✲✲✲)<a class="headerlink" href="#create-a-data-dashboard-to" title="Permalink to this headline">#</a></h3>
 <p>Create an app that receives a file with structured data (columns) as input. The app then reads this file <em>in a streaming manner</em> and reports statistics of the file contents. The first three of these are mandatory, the subsequent features are optional and increase the level of this challenge.</p>
 <ol class="arabic simple">
 <li><p>Dimensions of the dataset (rows/comuns)</p></li>
@@ -2195,7 +2371,7 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 </ol>
 </div>
 <div class="section" id="implement-k-means-clustering">
-<h3><span class="section-number">13.12.10. </span>Implement k-Means clustering (✲✲✲✲)<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.14. </span>Implement k-Means clustering (✲✲✲✲)<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h3>
 <p>The k-Means clustering algorithm is used much in data science to group data in an unsupervised manner. See <a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">Wikipedia</a> for details.</p>
 <p>For this assignment you should implement this algorithm in a program that takes two command-line arguments. The first is a file with the input data and the second should be an optional argument for the <code class="docutils literal notranslate"><span class="pre">k-parameter</span></code> which defaults to 3.</p>
 <p>The output should be a file holding a copy of the input data, but with an extra column appended indicating the cluster number in which the example is put. For instance, given this input, a random sample from the famous “Fisher’s iris” dataset:</p>
@@ -2225,12 +2401,12 @@ For example, with a left shift of 3, D would be replaced by A, E would become B,
 <p>With only one mismatch between the <code class="docutils literal notranslate"><span class="pre">Species</span></code> and <code class="docutils literal notranslate"><span class="pre">cluster</span></code> columns.</p>
 </div>
 <div class="section" id="implement-neighbor-joining-clustering">
-<h3><span class="section-number">13.12.11. </span>Implement neighbor joining clustering(✲✲✲✲)<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.15. </span>Implement neighbor joining clustering(✲✲✲✲)<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h3>
 <p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Neighbor_joining">Wikipedia</a> for details.
 You could employ several strategies. The first is classical joining where you end up with a structure with all nodes connected. You can also force the algorithm to stop when a set number of clusters has been formed. This makes it comparable to k-Means but without the random seeding (thus deterministic).</p>
 </div>
 <div class="section" id="a-puzzle-game">
-<h3><span class="section-number">13.12.12. </span>A puzzle game (✲✲✲ - ✲✲✲✲✲)<a class="headerlink" href="#a-puzzle-game" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.16. </span>A puzzle game (✲✲✲ - ✲✲✲✲✲)<a class="headerlink" href="#a-puzzle-game" title="Permalink to this headline">#</a></h3>
 <p>Especially older people will probably know the windows Minesweeper game. It looks like this:</p>
 <a class="reference internal image-reference" href="_images/minesweeper.jpg"><img alt="mine sweeper" class="align-center" src="_images/minesweeper.jpg" style="width: 250px;" /></a>
 <p>I have programmed a slightly different version of it using Python and a GUI framework called TKinter:</p>
@@ -2241,7 +2417,7 @@ You can download that entire repository as zip archive (button <code class="docu
 Next, head over to <a class="reference external" href="https://www.puzzle-tents.com/">https://www.puzzle-tents.com/</a> and choose a game you would like to re-create. Implement that game using python and tkinter.</p>
 </div>
 <div class="section" id="create-a-game-of-life-simulation-app">
-<h3><span class="section-number">13.12.13. </span>Create a Game of Life simulation app (✲✲✲✲✲)<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.12.17. </span>Create a Game of Life simulation app (✲✲✲✲✲)<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> or Conway’s Game of Life is a simulation of a simple growth experiment. It follows a few simple rules deciding whether a cell (an element in a 2D grid) will live or die. The challenge here is to visualize the simulation so you will need to work with a Graphical User Interface (GUI) toolkit. There are several libraries for that purpose available in Python but I suggest you use TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p>
 </div>
 </div>
@@ -2317,22 +2493,24 @@ Next, head over to <a class="reference external" href="https://www.puzzle-tents.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">13.1. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">13.2. Getting started</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-math">13.2.1. Simple math</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-edit-a-script">13.2.2. Run and edit a script</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">13.2.3. Operator precedence (1)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">13.2.4. Operator precedence (2)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">13.2.5. Assignment shortcut operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">13.2.6. The Floor division and Modulo operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-1">13.2.2. Operator precedence (1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence-2">13.2.3. Operator precedence (2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-shortcut-operators">13.2.4. Assignment shortcut operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floor-division-and-modulo-operators">13.2.5. The Floor division and Modulo operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-edit-a-script">13.2.6. Run and edit a script</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">13.3. Data types</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">13.3.1. String methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">13.3.2. String formatting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slicing">13.3.3. String slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slicing">13.3.2. String slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting-challenge">13.3.3. String formatting (challenge)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-lists">13.3.4. Working with lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-lists-or-tuples">13.3.5. Choosing lists or tuples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-lists">13.3.6. Tuples and lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">13.3.7. sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">13.3.8. dict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-strings">13.3.5. Joining strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-difference-between-tuples-and-lists">13.3.6. The difference between tuples and lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-lists-or-tuples">13.3.7. Choosing lists or tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-lists">13.3.8. Tuples and lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">13.3.9. sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">13.3.10. dict</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control">13.4. Flow control</a><ul class="nav section-nav flex-column">
@@ -2393,13 +2571,17 @@ Next, head over to <a class="reference external" href="https://www.puzzle-tents.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">13.12.4. Hangman word guessing game (✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-profiler-to">13.12.5. Sequence Profiler (✲✲ to ✲✲✲✲)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fastq-analyser-to">13.12.6. FastQ analyser (✲✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">13.12.7. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">13.12.8. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">13.12.9. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">13.12.10. Implement k-Means clustering (✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">13.12.11. Implement neighbor joining clustering(✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">13.12.12. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">13.12.13. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis-tool-to">13.12.7. Protein analysis tool  (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genbank-query-tool-to">13.12.8. Genbank query tool (✲✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gff-query-tool-to">13.12.9. GFF query tool (✲✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blackjack-eenentwintigen-to">13.12.10. Blackjack (Eenentwintigen) (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game-to">13.12.11. Wordle / Lingo game (✲✲ to ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encrypt-and-decrypt-messages-using-caesar-cipher-to">13.12.12. Encrypt and decrypt messages using Caesar cipher (✲✲ to ✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard-to">13.12.13. Create a data dashboard (✲✲ to ✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">13.12.14. Implement k-Means clustering (✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">13.12.15. Implement neighbor joining clustering(✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">13.12.16. A puzzle game (✲✲✲ - ✲✲✲✲✲)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">13.12.17. Create a Game of Life simulation app (✲✲✲✲✲)</a></li>
 </ul>
 </li>
 </ul>
