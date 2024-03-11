@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Next steps: pandas &#8212; Programming Python</title>
+    <title>16. Next steps: pandas &#8212; Programming Python</title>
   
   
   
@@ -59,10 +59,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '14_next_steps';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '15_next_steps';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="14. (Ana)conda" href="13_anaconda.html" />
+    <link rel="prev" title="15. (Ana)conda" href="14_anaconda.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -167,8 +167,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_data_classes.html">12. Data classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_exercises.html">13. Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_anaconda.html">14. (Ana)conda</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Next steps: pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_challenges.html">14. Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_anaconda.html">15. (Ana)conda</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Next steps: pandas</a></li>
 </ul>
 
     </div>
@@ -240,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F14_next_steps.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F15_next_steps.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/14_next_steps.ipynb" target="_blank"
+      <li><a href="_sources/15_next_steps.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,8 +363,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-setting-data">15.1. Selecting (and setting) data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">15.2. Summary statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-setting-data">16.1. Selecting (and setting) data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">16.2. Summary statistics</a></li>
 </ul>
             </nav>
         </div>
@@ -376,7 +377,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="next-steps-pandas">
-<h1><span class="section-number">15. </span>Next steps: pandas<a class="headerlink" href="#next-steps-pandas" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">16. </span>Next steps: pandas<a class="headerlink" href="#next-steps-pandas" title="Permalink to this headline">#</a></h1>
 <p>Classical programming revolves around building applications. This is in contrast with data science, where building analysis pipelines of datasets is the main focus.<br />
 In classical programming you mainly write <code class="docutils literal notranslate"><span class="pre">.py</span></code> source files. In data science the notebook is the predominant form.<br />
 This chapter deals with an essential library if you want to embark in data science: <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the core library in working with tabular data.</p>
@@ -708,7 +709,7 @@ dtype: object
 </div>
 </div>
 <div class="section" id="selecting-and-setting-data">
-<h2><span class="section-number">15.1. </span>Selecting (and setting) data<a class="headerlink" href="#selecting-and-setting-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.1. </span>Selecting (and setting) data<a class="headerlink" href="#selecting-and-setting-data" title="Permalink to this headline">#</a></h2>
 <p>DataFrame provides several ways to access (get or set) positions, columns, rows or  partial DataFrames. These are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>: slicing the data frame itself</p></li>
@@ -1173,7 +1174,7 @@ Name: Valproate, dtype: int64
 <p>All of the above selection methods can also be used to assign values.</p>
 </div>
 <div class="section" id="summary-statistics">
-<h2><span class="section-number">15.2. </span>Summary statistics<a class="headerlink" href="#summary-statistics" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.2. </span>Summary statistics<a class="headerlink" href="#summary-statistics" title="Permalink to this headline">#</a></h2>
 <p>Summary statistics is where you usually begin. There are many functions available</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1226,12 +1227,12 @@ dtype: float64
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="13_anaconda.html"
+       href="14_anaconda.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>(Ana)conda</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>(Ana)conda</p>
       </div>
     </a>
 </div></div>
@@ -1252,8 +1253,8 @@ dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-setting-data">15.1. Selecting (and setting) data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">15.2. Summary statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-setting-data">16.1. Selecting (and setting) data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">16.2. Summary statistics</a></li>
 </ul>
   </nav></div>
 

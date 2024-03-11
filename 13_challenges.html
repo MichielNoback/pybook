@@ -1,0 +1,956 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14. Challenges &#8212; Programming Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '13_challenges';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="15. (Ana)conda" href="14_anaconda.html" />
+    <link rel="prev" title="13. Exercises" href="12_exercises.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Hanze-Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Hanze-Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    An intro to Python programming
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_jupyter.html">1. Jupyter notebook and Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. A quick overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_data.html">3. Data: types &amp; operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_flow_control.html">4. Control the flow of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_functions.html">5. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_reading_writing_files.html">6. Reading and writing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_core_library_functions.html">7. The core library functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_comprehensions.html">8. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_exception_mechanism.html">9. The exception mechanism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_regex.html">10. Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_oo_programming.html">11. Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_data_classes.html">12. Data classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_exercises.html">13. Exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_anaconda.html">15. (Ana)conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_next_steps.html">16. Next steps: pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MichielNoback/pybook/issues/new?title=Issue%20on%20page%20%2F13_challenges.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/13_challenges.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Challenges</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-guessing-game">14.1. A number guessing game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difficulty-level">14.1.1. Difficulty level: ✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anagram-maker">14.2. Anagram maker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difficulty-level-to">14.2.1. Difficulty level: ✲ to ✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-palindromes">14.3. Finding palindromes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.3.1. Difficulty level: ✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">14.4. Hangman word guessing game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.4.1. Difficulty level: ✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-profiler">14.5. Sequence Profiler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.5.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fastq-analyser">14.6. FastQ analyser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">14.6.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis-tool">14.7. Protein analysis tool</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">14.7.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genbank-query-tool">14.8. Genbank query tool</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">14.8.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gff-query-tool">14.9. GFF query tool</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">14.9.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackjack-eenentwintigen">14.10. Blackjack (Eenentwintigen)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">14.10.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game">14.11. Wordle / Lingo game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">14.11.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encryption-using-caesar-cipher">14.12. Encryption using Caesar cipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">14.12.1. Difficulty level: ✲✲ to ✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard">14.13. Create a data dashboard</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">14.13.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">14.14. Implement k-Means clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">14.14.1. Difficulty level: ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">14.15. Implement neighbor joining clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">14.15.1. Difficulty level: ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">14.16. A puzzle game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">14.16.1. Difficulty level: ✲✲✲ to ✲✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">14.17. Create a Game of Life simulation app</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">14.17.1. Difficulty level: ✲✲✲✲✲</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="challenges">
+<h1><span class="section-number">14. </span>Challenges<a class="headerlink" href="#challenges" title="Permalink to this headline">#</a></h1>
+<div class="section" id="a-number-guessing-game">
+<h2><span class="section-number">14.1. </span>A number guessing game<a class="headerlink" href="#a-number-guessing-game" title="Permalink to this headline">#</a></h2>
+<div class="section" id="difficulty-level">
+<h3><span class="section-number">14.1.1. </span>Difficulty level: ✲<a class="headerlink" href="#difficulty-level" title="Permalink to this headline">#</a></h3>
+<p>Write an application that asks the user to think of a number, and try to guess this number as efficiently as possible.</p>
+<p>For instance, program output could be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Please think of a number between 0 and 10. Press enter when you are ready.
+
+Is the number above 3? [enter y for yes and n for no]
+n
+Is the number above 1? [enter y for yes and n for no]
+y
+Is the number 2?
+n
+The number must be 3!
+</pre></div>
+</div>
+<p>Think before you start! What would be the most efficient “algorithm” to find the number?</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="anagram-maker">
+<h2><span class="section-number">14.2. </span>Anagram maker<a class="headerlink" href="#anagram-maker" title="Permalink to this headline">#</a></h2>
+<div class="section" id="difficulty-level-to">
+<h3><span class="section-number">14.2.1. </span>Difficulty level: ✲ to ✲✲<a class="headerlink" href="#difficulty-level-to" title="Permalink to this headline">#</a></h3>
+<p>An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, the word <em>anagram</em> itself can be rearranged into <em>nag a ram</em>. (source: Wikipedia)</p>
+<p>You should ask your user for a word (or word combination or phrase) and also (optionally) how many separate words the anagram may or must comprise.
+Next, present a list of anagrams. Preferable, these anagrams should be pronouncable by intelligently placing vowels and consonants.</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="finding-palindromes">
+<h2><span class="section-number">14.3. </span>Finding palindromes<a class="headerlink" href="#finding-palindromes" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">14.3.1. </span>Difficulty level: ✲ to ✲✲✲✲<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>A palindrome is a word, phrase, or sequence that reads the same backwards as forwards, e.g. “madam” or “nurses run”. In biological sequence analysis palindromes are often important protein-binding DNA elements. They are sometimes literal palindromes, as in “GGATTAGG”, or <em>complementary</em> palindromes, where the same sequence is present in the reverse complement strand of the double helix, as in GGAATTCC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="s1">&#39;-GGAATTCC-3&#39;</span>
+<span class="mi">3</span><span class="s1">&#39;-CCTTAAGG-5&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Start by writing a single function that determines whether a given input string is a palindrome.</p></li>
+<li><p>Next, write a function that looks for a palindrome with a minimal length within a given input string, where the rest of the string is not important. Apply this to</p></li>
+<li><p>Extend this to processing a word list passed through the command-line. There are two such lists to be found in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of this repo: <code class="docutils literal notranslate"><span class="pre">dutch_words.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">english_words.txt</span></code></p></li>
+<li><p>Apply yourself to molecular biology: create a program that looks for palindromes in a given DNA sequence. The sequence below contains at least 2 palindromes of differing lengths. Challenges could be: Find all 6-nucleotide palindromes, or What is the longest palindrome in the human genome?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="s1">&#39;-AGAGGATCCCTCCCATATATGCGGCGATCGCCGCATATCC-3&#39;</span>
+</pre></div>
+</div>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="hangman-word-guessing-game">
+<h2><span class="section-number">14.4. </span>Hangman word guessing game<a class="headerlink" href="#hangman-word-guessing-game" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id2">
+<h3><span class="section-number">14.4.1. </span>Difficulty level: ✲✲<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Hangman is a word-quessing game where one party (in this case the computerprogram you will write) chooses a word that the other party needs to guess. The number of letters in the word is indicated with dashes or underscores.<br />
+The guessing party takes turns guessing wich letter will be in the word. If the guessed letter is in the word the dashes are replaced at the correct position(s) with the letter. If the guessed letter is not in the word, a gallow is build piece by piece (one piece for each absent letter). In total, the gallow consists of nine parts, including the hanged. You can choose to visualize progress using another picture of course. The easiest way is using “ASCII art”, as in this example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">HANGMAN</span> <span class="o">=</span> <span class="p">[</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  +---+</span>
+<span class="sd">  |   |</span>
+<span class="sd">  O   |</span>
+<span class="sd"> /|\  |</span>
+<span class="sd"> / \  |</span>
+<span class="sd">      |</span>
+<span class="sd">=========&#39;&#39;&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="sequence-profiler">
+<h2><span class="section-number">14.5. </span>Sequence Profiler<a class="headerlink" href="#sequence-profiler" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id3">
+<h3><span class="section-number">14.5.1. </span>Difficulty level: ✲✲ to ✲✲✲✲<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Given a multiple sequence alignment of DNA sequences, like the ones below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">T</span> <span class="n">T</span> <span class="n">G</span> <span class="n">C</span> <span class="n">C</span> <span class="n">A</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">T</span> <span class="n">G</span> <span class="n">G</span> <span class="n">C</span> <span class="n">C</span> <span class="n">A</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">T</span> <span class="n">C</span> <span class="n">T</span> <span class="n">C</span> <span class="n">A</span> <span class="n">A</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">T</span> <span class="n">C</span> <span class="n">T</span> <span class="n">T</span> <span class="n">C</span> <span class="n">C</span> <span class="n">T</span> <span class="n">T</span>
+<span class="n">A</span> <span class="n">C</span> <span class="n">T</span> <span class="n">G</span> <span class="n">A</span> <span class="n">C</span> <span class="n">C</span> <span class="n">T</span> <span class="n">C</span>
+</pre></div>
+</div>
+<p>Given such an (ungapped) aligned set of sequences, provided in an input file, it is your task to build a profile using the <a class="reference external" href="https://www.bioinformatics.org/sms/iupac.html">IUPAC ambiguity codes</a> and report this to the user. In the above example, the profile would look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">Y</span> <span class="n">B</span> <span class="n">K</span> <span class="n">H</span> <span class="n">M</span> <span class="n">M</span> <span class="n">T</span> <span class="n">Y</span>
+</pre></div>
+</div>
+<p>Supercharge your challenge: using such a sequence profile, can you implement the functionality to search a sequence (set) for the presence of this, or any other given profile?</p>
+<p>You can also upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="fastq-analyser">
+<h2><span class="section-number">14.6. </span>FastQ analyser<a class="headerlink" href="#fastq-analyser" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id4">
+<h3><span class="section-number">14.6.1. </span>Difficulty level: ✲✲✲ to ✲✲✲✲<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Below is an example of FastQ sequences, exactly as you would find them in a file generated by a high-throughput sequencer such as Illumina HiSeq:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@HWI</span><span class="o">-</span><span class="mi">962</span><span class="p">:</span><span class="mi">64</span><span class="p">:</span><span class="n">D0BNFACXX</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1227</span><span class="p">:</span><span class="mi">2119</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">GATCAG</span>
+<span class="n">GACATGTTAGATCACTCTTTGGGATGTGTTATCTTGGTGTGTGAAATGAATGTGGGAATTGTTGCACAATTTTTTTTGTTTGAATACTTAATTTGTTGAN</span>
+<span class="o">+</span>
+<span class="n">CCCFFFFFHHHHHJJJJJJJJJJHIJHHIJIJIJJJJGHDHHIIJIJJFIIJHIIJIJJJJJJEHJJIGIJJJJHDDDDDDDDDDEDDDECEDEDEDB</span><span class="o">@</span><span class="c1">#</span>
+<span class="nd">@HWI</span><span class="o">-</span><span class="mi">962</span><span class="p">:</span><span class="mi">64</span><span class="p">:</span><span class="n">D0BNFACXX</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1176</span><span class="p">:</span><span class="mi">2147</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">GATCAG</span>
+<span class="n">CTTTGATGTTGACCGAAAAGATTCAGGAAAGAAGTCTGCCTGAATCTCGAACGAGAAGGACAGTATATCACCTCTATCATTCGATGAGTAATTGGAAAAN</span>
+<span class="o">+</span>
+<span class="n">CCCFFFFFHHHHHIJJJIJEIIJJGIIIIJJIJGIJIGHIIIJJJHHHIEGGIIGGHJHF</span><span class="nd">@HFFFFEFBCCECEEDDCDDEDEDD@ACACC@DA@CDDD</span><span class="c1">#</span>
+</pre></div>
+</div>
+<p>This format is described <a class="reference external" href="https://en.wikipedia.org/wiki/FASTQ_format">here</a>.</p>
+<p>It is your task to read the data in a FastQ file provided by the user, read and process the sequences therein, and report on various quality aspects of the sequences. These can be</p>
+<ul class="simple">
+<li><p>number of sequences</p></li>
+<li><p>length (distribution) of sequences</p></li>
+<li><p>G/C content</p></li>
+<li><p>number of ‘N’ nucleotides per position, per sequence</p></li>
+<li><p>average quality</p></li>
+<li><p>per-base quality</p></li>
+<li><p>sliding-window quality</p></li>
+<li><p>K-mer content</p></li>
+</ul>
+<p>Supercharge your challenge: add a “trimming” and “filtering” option to the app.</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="protein-analysis-tool">
+<h2><span class="section-number">14.7. </span>Protein analysis tool<a class="headerlink" href="#protein-analysis-tool" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id5">
+<h3><span class="section-number">14.7.1. </span>Difficulty level: ✲✲ to ✲✲✲✲<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>Proteins consist of long chains of amino acids called polypeptides. These constituent amino acids define the structure and properties of the protein. Amino acids have several relevant properties:</p>
+<ul class="simple">
+<li><p>size</p></li>
+<li><p>molecular weight</p></li>
+<li><p>polarity</p></li>
+<li><p>charge</p></li>
+<li><p>hydrophobicity</p></li>
+</ul>
+<p>Given a protein sequence file (in <a class="reference external" href="https://en.wikipedia.org/wiki/FASTA_format">Fasta</a> format), read in all sequences within the file and generate</p>
+<ol class="arabic simple">
+<li><p>A comma-separated values (csv format) file with for each protein some summary statistics:</p>
+<ul class="simple">
+<li><p>name</p></li>
+<li><p>length (in amino acids)</p></li>
+<li><p>molecular weight</p></li>
+<li><p>average hydrophobicity</p></li>
+<li><p>total charge</p></li>
+<li><p>the frequencies of the 20 amino acids</p></li>
+</ul>
+</li>
+<li><p>For each sequence a separate file where, using a <a class="reference external" href="https://www.geeksforgeeks.org/window-sliding-technique/">sliding window technique</a>. The name of the protein is the file name plus <code class="docutils literal notranslate"><span class="pre">.csv</span></code> as extension. The file has, also in csv format, four columns of data:</p>
+<ul class="simple">
+<li><p>amino acid position</p></li>
+<li><p>average hydrophobicity for the current window</p></li>
+<li><p>average charge for the current window</p></li>
+<li><p>average polarity for the current window</p></li>
+</ul>
+</li>
+</ol>
+<p>As a command-line arguments this tool should accept the input multifasta file, the sliding window size (with a default of 8) and an output folder to write all results to (default to same directory as input file).</p>
+</div>
+</div>
+<div class="section" id="genbank-query-tool">
+<h2><span class="section-number">14.8. </span>Genbank query tool<a class="headerlink" href="#genbank-query-tool" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id6">
+<h3><span class="section-number">14.8.1. </span>Difficulty level: ✲✲✲ to ✲✲✲✲<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>Given the GenBank format (assume only one DNA sequence resides in a single file – if there are more, ignore these and report this to the user). Create a parser for files of this type, extracting of all Features only these fields:</p>
+<ol class="arabic simple">
+<li><p>Source/organism</p></li>
+<li><p>CDS/coordinates</p></li>
+<li><p>CDS/product</p></li>
+<li><p>CDS/db_xref</p></li>
+<li><p>CDS/translation</p></li>
+<li><p>Gene/coordinates</p></li>
+<li><p>Gene/gene</p></li>
+<li><p>Sequence</p></li>
+</ol>
+<p>Create an appropriate data model. Create an executable that can be used for these use cases:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--help</span></code> shows informative help/usage information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--summary</span></code> – Creates a textual summary of the parsed file: length of the sequence, number and types of features. Average lengths of the genes, number on forward strand, number on reverse strand. Maybe you can think of some more interesting features?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_gene</span> <span class="pre">&lt;GENE</span> <span class="pre">NAME</span> <span class="pre">(-PATTERN)&gt;</span></code> – Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_cds</span> <span class="pre">&lt;PRODUCT</span> <span class="pre">NAME</span> <span class="pre">(-PATTERN)&gt;</span></code> – Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_features</span> <span class="pre">&lt;COORDINATES&gt;</span></code> Returns all features between the given coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GenBankReader.py</span> <span class="pre">--infile</span>&#160; <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--find_sites</span> <span class="pre">&lt;DNA</span> <span class="pre">SEQ</span> <span class="pre">WITH</span> <span class="pre">IUPAC</span> <span class="pre">CODES&gt;</span></code> – Lists the locations of all the sites where the DNA pattern is found: position and actual sequence and (if relevant) the element in which it resides.</p></li>
+</ol>
+<p>Genbank files can be downloaded from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/datasets/genome/">https://www.ncbi.nlm.nih.gov/datasets/genome/</a>. Simply search something like <code class="docutils literal notranslate"><span class="pre">Bacillus</span> <span class="pre">subtilis</span></code> and click on an entry. You can then choose to download sequences in different formats. Choose “Sequence and Annotation” (gbff format).</p>
+</div>
+</div>
+<div class="section" id="gff-query-tool">
+<h2><span class="section-number">14.9. </span>GFF query tool<a class="headerlink" href="#gff-query-tool" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id7">
+<h3><span class="section-number">14.9.1. </span>Difficulty level: ✲✲✲ to ✲✲✲✲<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>Given the GFF3 sequence format (with or without sequences appended in-file; if not appended, a separate sequence file may be provided). Create a parser for files of this type extracting all annotations. Create an appropriate data model. Create an executable that can be used for these use cases:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">--help</span></code> – shows informative help/usage information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--summary</span></code> – Creates a textual summary of the parsed file: length of the sequence, number and types of annotations. Average lengths of the genes, number on forward strand, number on reverse strand. Maybe you can think of some more interesting features?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_id</span> <span class="pre">&lt;ID&gt;</span></code> – Returns the nucleotide sequence of the element with this ID, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_features</span> <span class="pre">&lt;FEATURE_TYPE_&gt;</span></code> – Returns the nucleotide sequence of all the elements of this type, in Fasta format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--fetch_region</span> <span class="pre">&lt;COORDINATES&gt;</span></code> – Returns all features between the given coordinates, in gff format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GffQuery.py</span> <span class="pre">–infile</span> <span class="pre">&lt;INFILE&gt;</span> <span class="pre">--find_sites</span> <span class="pre">&lt;DNA</span> <span class="pre">SEQ</span> <span class="pre">WITH</span> <span class="pre">IUPAC</span> <span class="pre">CODES&gt;</span></code> – Lists the locations of all the sites where the DNA pattern is found: position and actual sequence and (if relevant) the element in which it resides.</p></li>
+</ol>
+<p>GFF files can be downloaded from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/datasets/genome/">https://www.ncbi.nlm.nih.gov/datasets/genome/</a>. Simply search something like <code class="docutils literal notranslate"><span class="pre">Bacillus</span> <span class="pre">subtilis</span></code> and click on an entry. You can then choose to download sequences in different formats. Choose “Sequence and Annotation” (gbff format).</p>
+</div>
+</div>
+<div class="section" id="blackjack-eenentwintigen">
+<h2><span class="section-number">14.10. </span>Blackjack (Eenentwintigen)<a class="headerlink" href="#blackjack-eenentwintigen" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id8">
+<h3><span class="section-number">14.10.1. </span>Difficulty level: ✲✲ to ✲✲✲✲<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>Implement the game Blackjack (Eenentwintigen in Dutch - <a class="reference external" href="https://nl.wikipedia.org/wiki/Eenentwintigen">Wikipedia</a>) where the user can play against your app.<br />
+You can just make it a terminal app, or if you like, you can make a user interface using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>) or any other GUI toolkit, such as TKinter (see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>).</p>
+</div>
+</div>
+<div class="section" id="wordle-lingo-game">
+<h2><span class="section-number">14.11. </span>Wordle / Lingo game<a class="headerlink" href="#wordle-lingo-game" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id9">
+<h3><span class="section-number">14.11.1. </span>Difficulty level: ✲✲✲ to ✲✲✲✲<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>Lingo was one of the longest-running tv game shows.
+In this game the player needs to guess a word of a fixed length (usually between 5 and 7 letters).
+It looks for instance like this:</p>
+<p><img alt="wordle" src="_images/wordle.png" /></p>
+<p>It is you challenge to create such a game.</p>
+<p>Configurable (through interface or command-line arguments) should at least be the word length (with default of 5), the language (use a default that suits you) and -optionally- the number of guesses a user can take, with a default of 6.<br />
+After a guess, the user receives information about the letters on correct positions, letters at wrong positions, and wrong letters.</p>
+<p>There are word lists in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder of this repo that you can use to randomly pick words: <code class="docutils literal notranslate"><span class="pre">dutch_words.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">english_words.txt</span></code>.<br />
+Many ways exist to make this challenge really challenging. For instance, you can create a GUI (there are several libraries for that purpose available in Python but I suggest you use TkInter - see <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">here</a>) or the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>).</p>
+</div>
+</div>
+<div class="section" id="encryption-using-caesar-cipher">
+<h2><span class="section-number">14.12. </span>Encryption using Caesar cipher<a class="headerlink" href="#encryption-using-caesar-cipher" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id10">
+<h3><span class="section-number">14.12.1. </span>Difficulty level: ✲✲ to ✲✲✲<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>Caesar’s cipher is one of the simplest and most widely known encryption techniques. Each letter in a text is replaced by a letter some fixed number of positions down (or iup) the alphabet.
+For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence (see <a class="reference external" href="https://en.wikipedia.org/wiki/Caesar_cipher">Wikipedia</a>).</p>
+<p>It is your task to create such a cipher, where the program takes two command-line arguments. The first one is the shift (left being negative) and the second a filename or a literal text.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> module is a good idea, but not required.</p>
+<p>You can upgrade this assignment by making it a GUI application using the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>)</p>
+</div>
+</div>
+<div class="section" id="create-a-data-dashboard">
+<h2><span class="section-number">14.13. </span>Create a data dashboard<a class="headerlink" href="#create-a-data-dashboard" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id11">
+<h3><span class="section-number">14.13.1. </span>Difficulty level: ✲✲ to ✲✲✲✲<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>Create an app that receives a file with structured data (columns) as input. The app then reads this file <em>in a streaming manner</em> and reports statistics of the file contents. The first three of these are mandatory, the subsequent features are optional and increase the level of this challenge.</p>
+<ol class="arabic simple">
+<li><p>Dimensions of the dataset (rows/comuns)</p></li>
+<li><p>Type of data in the columns</p></li>
+<li><p>Descriptive statistics of each column;</p>
+<ul class="simple">
+<li><p>if numeric: a <a class="reference external" href="https://en.wikipedia.org/wiki/Five-number_summary">five-number summary</a> plus the mean</p></li>
+<li><p>if character: the number of unique values and a listing of frequencies of these if the number of unique values is below 10</p></li>
+</ul>
+</li>
+<li><p>A pairwise correlation matrix of the numeric columns (if less than 6 or so). For this you will need to use something like numpy, see <a class="reference external" href="https://machinelearningmastery.com/how-to-use-correlation-to-understand-the-relationship-between-variables/">here</a></p></li>
+<li><p>Embed this in a GUI; there are several libraries for that purpose available in Python but I suggest you use the Panel library (see <a class="reference external" href="https://panel.holoviz.org/">the website</a>). Or, if you prefer some extra supercharged challenge: TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p></li>
+<li><p>Be creative; and impress yourself and your teacher.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="implement-k-means-clustering">
+<h2><span class="section-number">14.14. </span>Implement k-Means clustering<a class="headerlink" href="#implement-k-means-clustering" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id12">
+<h3><span class="section-number">14.14.1. </span>Difficulty level: ✲✲✲✲<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>The k-Means clustering algorithm is used much in data science to group data in an unsupervised manner. See <a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">Wikipedia</a> for details.</p>
+<p>For this assignment you should implement this algorithm in a program that takes two command-line arguments. The first is a file with the input data and the second should be an optional argument for the <code class="docutils literal notranslate"><span class="pre">k-parameter</span></code> which defaults to 3.</p>
+<p>The output should be a file holding a copy of the input data, but with an extra column appended indicating the cluster number in which the example is put. For instance, given this input, a random sample from the famous “Fisher’s iris” dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Sepal</span><span class="o">.</span><span class="n">Length</span> <span class="n">Sepal</span><span class="o">.</span><span class="n">Width</span> <span class="n">Petal</span><span class="o">.</span><span class="n">Length</span> <span class="n">Petal</span><span class="o">.</span><span class="n">Width</span>    <span class="n">Species</span>
+          <span class="mf">6.2</span>         <span class="mf">3.4</span>          <span class="mf">5.4</span>         <span class="mf">2.3</span>  <span class="n">virginica</span>
+          <span class="mf">6.7</span>         <span class="mf">3.1</span>          <span class="mf">4.7</span>         <span class="mf">1.5</span> <span class="n">versicolor</span>
+          <span class="mf">5.8</span>         <span class="mf">2.7</span>          <span class="mf">5.1</span>         <span class="mf">1.9</span>  <span class="n">virginica</span>
+          <span class="mf">4.8</span>         <span class="mf">3.0</span>          <span class="mf">1.4</span>         <span class="mf">0.1</span>     <span class="n">setosa</span>
+          <span class="mf">4.8</span>         <span class="mf">3.4</span>          <span class="mf">1.9</span>         <span class="mf">0.2</span>     <span class="n">setosa</span>
+          <span class="mf">6.5</span>         <span class="mf">3.0</span>          <span class="mf">5.8</span>         <span class="mf">2.2</span>  <span class="n">virginica</span>
+          <span class="mf">5.6</span>         <span class="mf">3.0</span>          <span class="mf">4.5</span>         <span class="mf">1.5</span> <span class="n">versicolor</span>
+          <span class="mf">4.9</span>         <span class="mf">3.1</span>          <span class="mf">1.5</span>         <span class="mf">0.1</span>     <span class="n">setosa</span>
+</pre></div>
+</div>
+<p>could be clustered (using only the numerical columns!) as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Sepal</span><span class="o">.</span><span class="n">Length</span> <span class="n">Sepal</span><span class="o">.</span><span class="n">Width</span> <span class="n">Petal</span><span class="o">.</span><span class="n">Length</span> <span class="n">Petal</span><span class="o">.</span><span class="n">Width</span>    <span class="n">Species</span>   <span class="n">cluster</span>
+          <span class="mf">6.2</span>         <span class="mf">3.4</span>          <span class="mf">5.4</span>         <span class="mf">2.3</span>  <span class="n">virginica</span>         <span class="mi">1</span>
+          <span class="mf">6.7</span>         <span class="mf">3.1</span>          <span class="mf">4.7</span>         <span class="mf">1.5</span> <span class="n">versicolor</span>         <span class="mi">2</span>
+          <span class="mf">5.8</span>         <span class="mf">2.7</span>          <span class="mf">5.1</span>         <span class="mf">1.9</span>  <span class="n">virginica</span>         <span class="mi">1</span>
+          <span class="mf">4.8</span>         <span class="mf">3.0</span>          <span class="mf">1.4</span>         <span class="mf">0.1</span>     <span class="n">setosa</span>         <span class="mi">3</span>
+          <span class="mf">4.8</span>         <span class="mf">3.4</span>          <span class="mf">1.9</span>         <span class="mf">0.2</span>     <span class="n">setosa</span>         <span class="mi">3</span>
+          <span class="mf">6.5</span>         <span class="mf">3.0</span>          <span class="mf">5.8</span>         <span class="mf">2.2</span>  <span class="n">virginica</span>         <span class="mi">2</span>
+          <span class="mf">5.6</span>         <span class="mf">3.0</span>          <span class="mf">4.5</span>         <span class="mf">1.5</span> <span class="n">versicolor</span>         <span class="mi">2</span>
+          <span class="mf">4.9</span>         <span class="mf">3.1</span>          <span class="mf">1.5</span>         <span class="mf">0.1</span>     <span class="n">setosa</span>         <span class="mi">3</span>
+</pre></div>
+</div>
+<p>With only one mismatch between the <code class="docutils literal notranslate"><span class="pre">Species</span></code> and <code class="docutils literal notranslate"><span class="pre">cluster</span></code> columns.</p>
+</div>
+</div>
+<div class="section" id="implement-neighbor-joining-clustering">
+<h2><span class="section-number">14.15. </span>Implement neighbor joining clustering<a class="headerlink" href="#implement-neighbor-joining-clustering" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id13">
+<h3><span class="section-number">14.15.1. </span>Difficulty level: ✲✲✲✲<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Neighbor_joining">Wikipedia</a> for details.
+You could employ several strategies. The first is classical joining where you end up with a structure with all nodes connected. You can also force the algorithm to stop when a set number of clusters has been formed. This makes it comparable to k-Means but without the random seeding (thus deterministic).</p>
+</div>
+</div>
+<div class="section" id="a-puzzle-game">
+<h2><span class="section-number">14.16. </span>A puzzle game<a class="headerlink" href="#a-puzzle-game" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id14">
+<h3><span class="section-number">14.16.1. </span>Difficulty level: ✲✲✲ to ✲✲✲✲✲<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p>Especially older people will probably know the windows Minesweeper game. It looks like this:</p>
+<a class="reference internal image-reference" href="_images/minesweeper.jpg"><img alt="mine sweeper" class="align-center" src="_images/minesweeper.jpg" style="width: 250px;" /></a>
+<p>I have programmed a slightly different version of it using Python and a GUI framework called TKinter:</p>
+<a class="reference internal image-reference" href="_images/mine_hunter.png"><img alt="mine hunter" class="align-center" src="_images/mine_hunter.png" style="width: 300px;" /></a>
+<p>The app code is in the repo of this book <a class="reference external" href="https://github.com/MichielNoback/python_intro">here</a> (in folder <code class="docutils literal notranslate"><span class="pre">gui_demo</span></code>).<br />
+You can download that entire repository as zip archive (button <code class="docutils literal notranslate"><span class="pre">Code</span></code>).</p>
+<p>Study the code, and read or watch some tutorials.<br />
+Next, head over to <a class="reference external" href="https://www.puzzle-tents.com/">https://www.puzzle-tents.com/</a> and choose a game you would like to re-create. Implement that game using python and tkinter.</p>
+</div>
+</div>
+<div class="section" id="create-a-game-of-life-simulation-app">
+<h2><span class="section-number">14.17. </span>Create a Game of Life simulation app<a class="headerlink" href="#create-a-game-of-life-simulation-app" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id15">
+<h3><span class="section-number">14.17.1. </span>Difficulty level: ✲✲✲✲✲<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> or Conway’s Game of Life is a simulation of a simple growth experiment. It follows a few simple rules deciding whether a cell (an element in a 2D grid) will live or die. The challenge here is to visualize the simulation so you will need to work with a Graphical User Interface (GUI) toolkit. There are several libraries for that purpose available in Python but I suggest you use TkInter, PyQt5 or PySimpleGUI - see <a class="reference external" href="https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/">here</a>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "education"
+        },
+        kernelOptions: {
+            name: "education",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'education'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="12_exercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="14_anaconda.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>(Ana)conda</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-guessing-game">14.1. A number guessing game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difficulty-level">14.1.1. Difficulty level: ✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anagram-maker">14.2. Anagram maker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difficulty-level-to">14.2.1. Difficulty level: ✲ to ✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-palindromes">14.3. Finding palindromes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.3.1. Difficulty level: ✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hangman-word-guessing-game">14.4. Hangman word guessing game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.4.1. Difficulty level: ✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-profiler">14.5. Sequence Profiler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.5.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fastq-analyser">14.6. FastQ analyser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">14.6.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis-tool">14.7. Protein analysis tool</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">14.7.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genbank-query-tool">14.8. Genbank query tool</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">14.8.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gff-query-tool">14.9. GFF query tool</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">14.9.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackjack-eenentwintigen">14.10. Blackjack (Eenentwintigen)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">14.10.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordle-lingo-game">14.11. Wordle / Lingo game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">14.11.1. Difficulty level: ✲✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encryption-using-caesar-cipher">14.12. Encryption using Caesar cipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">14.12.1. Difficulty level: ✲✲ to ✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-data-dashboard">14.13. Create a data dashboard</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">14.13.1. Difficulty level: ✲✲ to ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-k-means-clustering">14.14. Implement k-Means clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">14.14.1. Difficulty level: ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-neighbor-joining-clustering">14.15. Implement neighbor joining clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">14.15.1. Difficulty level: ✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-puzzle-game">14.16. A puzzle game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">14.16.1. Difficulty level: ✲✲✲ to ✲✲✲✲✲</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-game-of-life-simulation-app">14.17. Create a Game of Life simulation app</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">14.17.1. Difficulty level: ✲✲✲✲✲</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michiel Noback
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
